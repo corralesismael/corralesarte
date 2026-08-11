@@ -1,246 +1,843 @@
-<!DOCTYPE html>
-<html lang="es">
+/* =========================================================
+   CORRALES — STYLESHEET
+   ========================================================= */
+
+:root{
+  --bg:#f3efe7;
+  --ink:#161513;
+  --muted:#6f6a62;
+  --line:rgba(22,21,19,.18);
+  --max:1420px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+}
+
+img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  min-height:72px;
+  padding:18px 28px;
+
+  border-bottom:1px solid var(--line);
+
+  background:rgba(243,239,231,.96);
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
 
-  <title>Archivo de obra — Ismael Corrales</title>
+.brand{
+  font-weight:600;
+  letter-spacing:.18em;
+  font-size:.86rem;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.nav{
+  display:flex;
+  gap:28px;
+  font-size:.9rem;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=4">
-</head>
+/* =========================================================
+   CONTENEDORES
+   ========================================================= */
 
+main,
+.footer{
+  max-width:var(--max);
+  margin:auto;
+}
 
-<body>
 
-  <!-- CABECERA -->
+/* =========================================================
+   TIPOGRAFÍA GENERAL
+   ========================================================= */
 
-  <header class="site-header">
-    <a href="index.html" class="brand">CORRALES</a>
+.eyebrow,
+.section-number{
+  margin:0;
 
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="obra.html">Obra</a>
-      <a href="index.html#artista">Artista</a>
-      <a href="index.html#contacto">Contacto</a>
-    </nav>
-  </header>
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+}
 
+h1,
+h2{
+  font-family:"Playfair Display",serif;
+  font-weight:500;
+}
 
-  <main>
 
-    <!-- INTRODUCCIÓN DEL ARCHIVO -->
+/* =========================================================
+   HOME — HERO
+   ========================================================= */
 
-    <section class="catalog-header">
+.hero{
+  min-height:92vh;
 
-      <p class="eyebrow">OBRA · ARCHIVO</p>
+  padding:42px 28px 64px;
 
-      <h1>Archivo de<br>obra.</h1>
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:48px;
 
-      <p class="catalog-intro">
-        Selección de pinturas originales de Ismael Corrales.
-      </p>
+  align-items:end;
+}
 
-      <div class="catalog-filters">
-        <span>Todas</span>
-        <span>Disponibles</span>
-        <span>2026</span>
-        <span>2025</span>
-      </div>
+.hero-copy{
+  padding-bottom:8vh;
+}
 
-    </section>
+.hero h1{
+  font-size:clamp(3.1rem,7vw,7.2rem);
+  line-height:.92;
+  max-width:8.5ch;
 
+  margin:20px 0 34px;
+}
 
-    <!-- CATÁLOGO -->
+.text-link{
+  border-bottom:1px solid var(--ink);
+  padding-bottom:3px;
+}
 
-    <section class="catalog-grid">
+.hero-art img{
+  max-height:74vh;
+  object-fit:cover;
+}
 
+figcaption{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
 
-      <!-- 01 — ESE CONSUELO -->
+  margin-top:10px;
 
-      <article class="catalog-item">
+  font-size:.8rem;
+  color:var(--muted);
+}
 
-        <img
-          src="assets/consuelo.jpg"
-          alt="Ese consuelo, Ismael Corrales"
-          loading="lazy"
-        >
 
-        <div class="catalog-info">
+/* =========================================================
+   HOME — SECCIONES
+   ========================================================= */
 
-          <h2>Ese consuelo</h2>
+.section{
+  padding:100px 28px;
 
-          <p>2025 · Acrílico sobre lienzo</p>
-          <p>75 × 100 cm</p>
+  border-top:1px solid var(--line);
+}
 
-          <div class="catalog-bottom">
-            <span>$80 USD</span>
-            <span>Disponible</span>
-          </div>
+.section h2{
+  font-size:clamp(2.8rem,5vw,5.8rem);
+  line-height:1;
 
-        </div>
+  margin:18px 0 40px;
+}
 
-      </article>
+.section p{
+  line-height:1.65;
+}
 
 
-      <!-- 02 — LO QUE PASA EN LA TIERRA -->
+/* =========================================================
+   HOME — OBRAS
+   ========================================================= */
 
-      <article class="catalog-item">
+.works-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:70px 28px;
+}
 
-        <img
-          src="assets/tierra.jpg"
-          alt="Lo que pasa en la tierra se queda en la tierra, Ismael Corrales"
-          loading="lazy"
-        >
+.work h3{
+  margin:14px 0 6px;
 
-        <div class="catalog-info">
+  font-family:"Playfair Display",serif;
+  font-size:1.4rem;
+  font-weight:500;
+}
 
-          <h2>Lo que pasa en la tierra se queda en la tierra</h2>
+.work p{
+  margin:3px 0;
+  color:var(--muted);
+  font-size:.85rem;
+}
 
-          <p>2026 · Acrílico sobre lienzo</p>
-          <p>60 × 80 cm</p>
 
-          <div class="catalog-bottom">
-            <span>$80 USD</span>
-            <span>Disponible</span>
-          </div>
+/* =========================================================
+   CATÁLOGO — CABECERA
+   ========================================================= */
 
-        </div>
+.catalog-header{
+  padding:110px 28px 65px;
 
-      </article>
+  border-bottom:1px solid var(--line);
+}
 
+.catalog-header h1{
+  margin:18px 0 18px;
 
-      <!-- 03 — EL PESO DEL PERDÓN -->
+  font-size:clamp(3.5rem,8vw,7rem);
+  line-height:.95;
+}
 
-      <article class="catalog-item">
+.catalog-intro{
+  max-width:680px;
+  margin:0;
 
-        <img
-          src="assets/perdon.jpg"
-          alt="El peso del perdón, Ismael Corrales"
-          loading="lazy"
-        >
+  font-size:1.15rem;
+  line-height:1.6;
 
-        <div class="catalog-info">
+  color:var(--muted);
+}
 
-          <h2>El peso del perdón</h2>
 
-          <p>2025 · Acrílico sobre lienzo</p>
-          <p>60 × 50 cm</p>
+/* =========================================================
+   CATÁLOGO — FILTROS
+   ========================================================= */
 
-          <div class="catalog-bottom">
-            <span>$80 USD</span>
-            <span>Disponible</span>
-          </div>
+.catalog-filters{
+  display:flex;
+  flex-wrap:wrap;
 
-        </div>
+  gap:10px 26px;
 
-      </article>
+  margin-top:48px;
+  padding-top:18px;
 
+  border-top:1px solid var(--line);
 
-      <!-- 04 — MI CULPA -->
+  font-size:.85rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
 
-      <article class="catalog-item">
+.catalog-filters span{
+  cursor:pointer;
+}
 
-        <img
-          src="assets/culpa.jpg"
-          alt="Mi culpa, Ismael Corrales"
-          loading="lazy"
-        >
 
-        <div class="catalog-info">
+/* =========================================================
+   CATÁLOGO — GRID
+   ========================================================= */
 
-          <h2>Mi culpa</h2>
+.catalog-grid{
+  padding:70px 28px 120px;
 
-          <p>2025 · Acrílico sobre lienzo</p>
-          <p>60 × 90 cm</p>
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
 
-          <div class="catalog-bottom">
-            <span>$80 USD</span>
-            <span>Disponible</span>
-          </div>
+  gap:80px 28px;
+}
 
-        </div>
+.catalog-item{
+  min-width:0;
 
-      </article>
+  display:flex;
+  flex-direction:column;
+}
 
+.catalog-item img{
+  width:100%;
+  height:auto;
 
-      <!-- 05 — LA NOCHE OSCURA DEL ALMA -->
+  background:#ddd;
+}
 
-      <article class="catalog-item">
+.catalog-info{
+  margin-top:12px;
+  padding-top:14px;
 
-        <img
-          src="assets/noche.jpg"
-          alt="La noche oscura del alma, Ismael Corrales"
-          loading="lazy"
-        >
+  border-top:1px solid var(--line);
+}
 
-        <div class="catalog-info">
+.catalog-info h2{
+  margin:0 0 10px;
 
-          <h2>La noche oscura del alma</h2>
+  font-size:1.5rem;
+  line-height:1.15;
+}
 
-          <p>2025 · Acrílico sobre lienzo</p>
-          <p>60 × 45 cm</p>
+.catalog-info p{
+  margin:4px 0;
 
-          <div class="catalog-bottom">
-            <span>$80 USD</span>
-            <span>Disponible</span>
-          </div>
+  color:var(--muted);
 
-        </div>
+  font-size:.85rem;
+  line-height:1.45;
+}
 
-      </article>
+.catalog-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
 
+  margin-top:16px;
+  padding-top:12px;
 
-      <!-- 06 — SOLO AMO A MI CUENTA DE BANCO -->
+  border-top:1px solid var(--line);
 
-      <article class="catalog-item">
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
 
-        <img
-          src="assets/banco.jpg"
-          alt="Solo amo a mi cuenta de banco, Ismael Corrales"
-          loading="lazy"
-        >
 
-        <div class="catalog-info">
+/* =========================================================
+   FICHA INDIVIDUAL — OBRA
+   ========================================================= */
 
-          <h2>Solo amo a mi cuenta de banco</h2>
+.artwork-page{
+  padding-bottom:120px;
+}
 
-          <p>2025 · Acrílico sobre lienzo</p>
-          <p>50 × 35 cm</p>
+.artwork-heading{
+  padding:110px 28px 60px;
 
-          <div class="catalog-bottom">
-            <span>$80 USD</span>
-            <span>Disponible</span>
-          </div>
+  border-bottom:1px solid var(--line);
+}
 
-        </div>
+.artwork-heading h1{
+  margin:18px 0 0;
 
-      </article>
+  max-width:none;
 
+  font-size:clamp(3.8rem,8vw,8rem);
+  line-height:.92;
+}
 
-    </section>
 
-  </main>
+/* ---------- IMAGEN + INFORMACIÓN ---------- */
 
+.artwork-layout{
+  padding:70px 28px 110px;
 
-  <!-- PIE -->
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(280px,.65fr);
+  gap:55px;
 
-  <footer class="footer">
+  align-items:start;
+}
 
-    <div>
-      <p class="section-number">CORRALES</p>
-      <p>Arte contemporáneo · Originales sobre lienzo</p>
-    </div>
+.artwork-image{
+  width:100%;
+}
 
-    <p>© 2026 Ismael Corrales</p>
+.artwork-image img{
+  width:100%;
+  height:auto;
 
-  </footer>
+  object-fit:contain;
+  background:#e7e1d7;
+}
 
 
-</body>
-</html>
+/* ---------- PANEL DE DATOS ---------- */
+
+.artwork-details{
+  position:sticky;
+  top:110px;
+}
+
+.artwork-meta{
+  border-top:1px solid var(--line);
+}
+
+.artwork-meta p{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:20px;
+
+  margin:0;
+  padding:14px 0;
+
+  border-bottom:1px solid var(--line);
+
+  font-size:.9rem;
+  line-height:1.45;
+}
+
+.artwork-meta p span{
+  color:var(--muted);
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+
+  font-size:.69rem;
+}
+
+
+/* ---------- BOTÓN ---------- */
+
+.artwork-button{
+  display:inline-block;
+
+  margin-top:28px;
+  padding:15px 20px;
+
+  background:var(--ink);
+  color:var(--bg);
+
+  font-size:.8rem;
+
+  text-transform:uppercase;
+  letter-spacing:.1em;
+
+  transition:opacity .2s ease;
+}
+
+.artwork-button:hover{
+  opacity:.8;
+}
+
+
+/* =========================================================
+   FICHA — SOBRE LA OBRA
+   ========================================================= */
+
+.artwork-text{
+  padding:100px 28px;
+
+  border-top:1px solid var(--line);
+
+  display:grid;
+  grid-template-columns:.4fr 1.6fr;
+  gap:50px;
+}
+
+.artwork-text h2{
+  margin:0 0 25px;
+
+  font-size:clamp(2.8rem,5vw,5rem);
+  line-height:1;
+}
+
+.artwork-text > div > p{
+  max-width:760px;
+
+  margin:0;
+
+  font-size:1.15rem;
+  line-height:1.7;
+
+  color:#38342f;
+}
+
+
+/* =========================================================
+   FICHA — ADQUIRIR
+   ========================================================= */
+
+.artwork-purchase{
+  padding:100px 28px;
+
+  border-top:1px solid var(--line);
+
+  display:grid;
+  grid-template-columns:.4fr 1.6fr;
+  gap:50px;
+}
+
+.artwork-purchase h2{
+  margin:0 0 25px;
+
+  font-size:clamp(2.8rem,5vw,5rem);
+  line-height:1;
+}
+
+.artwork-purchase > div > p{
+  max-width:700px;
+
+  margin:0;
+
+  font-size:1.05rem;
+  line-height:1.7;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer{
+  padding:60px 28px 40px;
+
+  border-top:1px solid var(--line);
+
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .works-grid{
+    grid-template-columns:1fr;
+  }
+
+  .artwork-layout{
+    grid-template-columns:1fr;
+  }
+
+  .artwork-details{
+    position:static;
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media(max-width:800px){
+
+  /* ---------- HEADER ---------- */
+
+  .site-header{
+    padding:18px;
+  }
+
+  .nav{
+    display:none;
+  }
+
+
+  /* =======================================================
+     HOME
+     ======================================================= */
+
+  .hero{
+    min-height:auto;
+
+    padding:50px 18px 70px;
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+  }
+
+  .hero-copy{
+    padding-bottom:0;
+  }
+
+  .hero h1{
+    font-size:clamp(3.2rem,15vw,5.2rem);
+  }
+
+  .section{
+    padding:75px 18px;
+  }
+
+  .works-grid{
+    grid-template-columns:1fr;
+    gap:55px;
+  }
+
+
+  /* =======================================================
+     CATÁLOGO
+     ======================================================= */
+
+  .catalog-header{
+    padding:70px 18px 42px;
+  }
+
+  .catalog-header h1{
+    margin:18px 0 26px;
+
+    font-size:clamp(3.2rem,14vw,5rem);
+    line-height:.94;
+  }
+
+  .catalog-intro{
+    max-width:330px;
+
+    font-size:.98rem;
+    line-height:1.55;
+  }
+
+  .catalog-filters{
+    gap:12px 18px;
+
+    margin-top:32px;
+    padding-top:18px;
+
+    font-size:.68rem;
+    letter-spacing:.07em;
+  }
+
+  .catalog-grid{
+    padding:42px 18px 90px;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    column-gap:14px;
+    row-gap:52px;
+  }
+
+  .catalog-item img{
+    aspect-ratio:4 / 5;
+
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .catalog-info{
+    margin-top:9px;
+    padding-top:9px;
+  }
+
+  .catalog-info h2{
+    margin:0 0 7px;
+
+    font-size:.92rem;
+    line-height:1.08;
+  }
+
+  .catalog-info p{
+    margin:2px 0;
+
+    font-size:.64rem;
+    line-height:1.28;
+  }
+
+  .catalog-bottom{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+
+    margin-top:7px;
+    padding-top:7px;
+
+    font-size:.56rem;
+    line-height:1.25;
+    letter-spacing:.05em;
+  }
+
+
+  /* =======================================================
+     FICHA INDIVIDUAL
+     ======================================================= */
+
+  .artwork-page{
+    padding-bottom:80px;
+  }
+
+  .artwork-heading{
+    padding:72px 18px 42px;
+  }
+
+  .artwork-heading h1{
+    margin:16px 0 0;
+
+    font-size:clamp(3.4rem,15vw,5.5rem);
+    line-height:.92;
+  }
+
+
+  /* ---------- IMAGEN ---------- */
+
+  .artwork-layout{
+    padding:38px 18px 80px;
+
+    display:block;
+  }
+
+  .artwork-image{
+    margin-bottom:38px;
+  }
+
+  .artwork-image img{
+    width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+
+    background:transparent;
+  }
+
+
+  /* ---------- DATOS ---------- */
+
+  .artwork-details{
+    position:static;
+  }
+
+  .artwork-meta p{
+    grid-template-columns:92px 1fr;
+
+    gap:14px;
+
+    padding:12px 0;
+
+    font-size:.82rem;
+  }
+
+  .artwork-meta p span{
+    font-size:.6rem;
+  }
+
+  .artwork-button{
+    width:100%;
+
+    text-align:center;
+
+    margin-top:22px;
+
+    padding:15px 14px;
+
+    font-size:.72rem;
+  }
+
+
+  /* ---------- SOBRE LA OBRA ---------- */
+
+  .artwork-text{
+    padding:72px 18px;
+
+    display:block;
+  }
+
+  .artwork-text .section-number{
+    margin-bottom:28px;
+  }
+
+  .artwork-text h2{
+    margin:0 0 24px;
+
+    font-size:clamp(2.7rem,12vw,4rem);
+  }
+
+  .artwork-text > div > p{
+    font-size:1rem;
+
+    line-height:1.65;
+  }
+
+
+  /* ---------- ADQUIRIR ---------- */
+
+  .artwork-purchase{
+    padding:72px 18px;
+
+    display:block;
+  }
+
+  .artwork-purchase .section-number{
+    margin-bottom:28px;
+  }
+
+  .artwork-purchase h2{
+    margin:0 0 24px;
+
+    font-size:clamp(2.7rem,12vw,4rem);
+  }
+
+  .artwork-purchase > div > p{
+    font-size:.98rem;
+    line-height:1.65;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer{
+    padding:45px 18px 30px;
+
+    display:block;
+
+    font-size:.78rem;
+  }
+
+  .footer > p{
+    margin-top:30px;
+  }
+
+}
+
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media(max-width:380px){
+
+  .catalog-grid{
+    padding-left:14px;
+    padding-right:14px;
+
+    column-gap:10px;
+  }
+
+  .catalog-info h2{
+    font-size:.86rem;
+  }
+
+  .catalog-info p{
+    font-size:.61rem;
+  }
+
+  .catalog-bottom{
+    font-size:.53rem;
+  }
+
+  .artwork-meta p{
+    grid-template-columns:82px 1fr;
+  }
+
+}
