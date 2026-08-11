@@ -3,204 +3,110 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Archivo de obra — Ismael Corrales</title>
 
   <meta
     name="description"
-    content="Archivo de pinturas originales del artista Ismael Corrales."
+    content="Archivo de obra de Ismael Corrales. Selección de pinturas originales contemporáneas."
   >
-
-  <!-- FUENTES -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS -->
-
-  <link
-    rel="stylesheet"
-    href="./styles.css?v=6"
-  >
-
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 
 
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
-
+  <!-- HEADER -->
   <header class="site-header">
 
-    <a
-      class="brand"
-      href="./index.html"
-    >
+    <a href="index.html" class="brand">
       CORRALES
     </a>
 
-
     <nav class="nav">
-
-      <a href="./index.html">
-        Inicio
-      </a>
-
-      <a href="./obra.html">
-        Obra
-      </a>
-
-      <a href="./index.html#artista">
-        Artista
-      </a>
-
-      <a href="./index.html#contacto">
-        Contacto
-      </a>
-
+      <a href="index.html">Inicio</a>
+      <a href="obra.html">Obra</a>
+      <a href="index.html#artista">Artista</a>
+      <a href="index.html#contacto">Contacto</a>
     </nav>
 
   </header>
 
 
-
-  <!-- =====================================================
-       CONTENIDO
-       ===================================================== -->
-
   <main>
 
-
-    <!-- ===================================================
-         CABECERA DEL ARCHIVO
-         =================================================== -->
-
-    <section class="catalog-header">
+    <!-- INTRODUCCIÓN DEL ARCHIVO -->
+    <section class="catalog-hero">
 
       <p class="eyebrow">
         OBRA · ARCHIVO
       </p>
-
 
       <h1>
         Archivo de<br>
         obra.
       </h1>
 
-
       <p class="catalog-intro">
         Selección de pinturas originales de Ismael Corrales.
       </p>
 
-
-      <!-- FILTROS -->
-
       <div class="catalog-filters">
-
-        <span>
-          TODAS
-        </span>
-
-        <span>
-          DISPONIBLES
-        </span>
-
-        <span>
-          2026
-        </span>
-
-        <span>
-          2025
-        </span>
-
+        <a href="#todas">TODAS</a>
+        <a href="#disponibles">DISPONIBLES</a>
+        <a href="#2026">2026</a>
+        <a href="#2025">2025</a>
       </div>
 
     </section>
 
 
-
-    <!-- ===================================================
-         CATÁLOGO DE OBRAS
-         =================================================== -->
-
-    <section class="catalog-grid">
+    <!-- CATÁLOGO -->
+    <section class="catalog-grid" id="todas">
 
 
-      <!-- =================================================
-           01 — ESE CONSUELO
-           ================================================= -->
+      <!-- 01 — ESE CONSUELO -->
+      <article class="catalog-item" data-year="2025">
 
-      <article class="catalog-item">
-
-
-        <!--
-          IMPORTANTE:
-          Al tocar esta imagen abre consuelo.html
-        -->
-
-        <a
-          href="./consuelo.html"
-          aria-label="Ver Ese consuelo"
-        >
+        <a href="./consuelo.html" class="catalog-image-link">
 
           <img
-            src="./assets/consuelo.jpg"
+            src="assets/consuelo.jpg"
             alt="Ese consuelo, pintura de Ismael Corrales"
             loading="lazy"
           >
 
         </a>
 
-
         <div class="catalog-info">
 
           <h2>
-
             <a href="./consuelo.html">
               Ese consuelo
             </a>
-
           </h2>
-
 
           <p>
             2025 · Acrílico sobre lienzo
           </p>
-
 
           <p>
             75 × 100 cm
           </p>
 
-
           <div class="catalog-bottom">
-
-            <span>
-              $80 USD
-            </span>
-
-            <span>
-              DISPONIBLE
-            </span>
-
+            <span>$80 USD</span>
+            <span>DISPONIBLE</span>
           </div>
 
         </div>
@@ -209,46 +115,38 @@
 
 
 
-      <!-- =================================================
-           02 — LO QUE PASA EN LA TIERRA
-           ================================================= -->
+      <!-- 02 — LO QUE PASA EN LA TIERRA -->
+      <article class="catalog-item" data-year="2026" id="2026">
 
-      <article class="catalog-item">
+        <a href="./tierra.html" class="catalog-image-link">
 
-        <img
-          src="./assets/tierra.jpg"
-          alt="Lo que pasa en la tierra se queda en la tierra, pintura de Ismael Corrales"
-          loading="lazy"
-        >
+          <img
+            src="assets/tierra.jpg"
+            alt="Lo que pasa en la tierra se queda en la tierra, pintura de Ismael Corrales"
+            loading="lazy"
+          >
 
+        </a>
 
         <div class="catalog-info">
 
           <h2>
-            Lo que pasa en la tierra se queda en la tierra
+            <a href="./tierra.html">
+              Lo que pasa en la tierra se queda en la tierra
+            </a>
           </h2>
-
 
           <p>
             2026 · Acrílico sobre lienzo
           </p>
 
-
           <p>
             60 × 80 cm
           </p>
 
-
           <div class="catalog-bottom">
-
-            <span>
-              $80 USD
-            </span>
-
-            <span>
-              DISPONIBLE
-            </span>
-
+            <span>$80 USD</span>
+            <span>DISPONIBLE</span>
           </div>
 
         </div>
@@ -257,66 +155,14 @@
 
 
 
-      <!-- =================================================
-           03 — EL PESO DEL PERDÓN
-           ================================================= -->
-
-      <article class="catalog-item">
+      <!-- 03 — MI CULPA -->
+      <article class="catalog-item" data-year="2025">
 
         <img
-          src="./assets/perdon.jpg"
-          alt="El peso del perdón, pintura de Ismael Corrales"
-          loading="lazy"
-        >
-
-
-        <div class="catalog-info">
-
-          <h2>
-            El peso del perdón
-          </h2>
-
-
-          <p>
-            2025 · Acrílico sobre lienzo
-          </p>
-
-
-          <p>
-            60 × 50 cm
-          </p>
-
-
-          <div class="catalog-bottom">
-
-            <span>
-              $80 USD
-            </span>
-
-            <span>
-              DISPONIBLE
-            </span>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =================================================
-           04 — MI CULPA
-           ================================================= -->
-
-      <article class="catalog-item">
-
-        <img
-          src="./assets/culpa.jpg"
+          src="assets/culpa.jpg"
           alt="Mi culpa, pintura de Ismael Corrales"
           loading="lazy"
         >
-
 
         <div class="catalog-info">
 
@@ -324,27 +170,17 @@
             Mi culpa
           </h2>
 
-
           <p>
             2025 · Acrílico sobre lienzo
           </p>
-
 
           <p>
             60 × 90 cm
           </p>
 
-
           <div class="catalog-bottom">
-
-            <span>
-              $80 USD
-            </span>
-
-            <span>
-              DISPONIBLE
-            </span>
-
+            <span>$80 USD</span>
+            <span>DISPONIBLE</span>
           </div>
 
         </div>
@@ -353,18 +189,14 @@
 
 
 
-      <!-- =================================================
-           05 — LA NOCHE OSCURA DEL ALMA
-           ================================================= -->
-
-      <article class="catalog-item">
+      <!-- 04 — LA NOCHE OSCURA DEL ALMA -->
+      <article class="catalog-item" data-year="2025">
 
         <img
-          src="./assets/noche.jpg"
+          src="assets/noche.jpg"
           alt="La noche oscura del alma, pintura de Ismael Corrales"
           loading="lazy"
         >
-
 
         <div class="catalog-info">
 
@@ -372,27 +204,17 @@
             La noche oscura del alma
           </h2>
 
-
           <p>
             2025 · Acrílico sobre lienzo
           </p>
-
 
           <p>
             60 × 45 cm
           </p>
 
-
           <div class="catalog-bottom">
-
-            <span>
-              $80 USD
-            </span>
-
-            <span>
-              DISPONIBLE
-            </span>
-
+            <span>$80 USD</span>
+            <span>DISPONIBLE</span>
           </div>
 
         </div>
@@ -401,18 +223,48 @@
 
 
 
-      <!-- =================================================
-           06 — SOLO AMO A MI CUENTA DE BANCO
-           ================================================= -->
-
-      <article class="catalog-item">
+      <!-- 05 — EL PESO DEL PERDÓN -->
+      <article class="catalog-item" data-year="2025" id="2025">
 
         <img
-          src="./assets/banco.jpg"
-          alt="Solo amo a mi cuenta de banco, pintura de Ismael Corrales"
+          src="assets/perdon.jpg"
+          alt="El peso del perdón, pintura de Ismael Corrales"
           loading="lazy"
         >
 
+        <div class="catalog-info">
+
+          <h2>
+            El peso del perdón
+          </h2>
+
+          <p>
+            2025 · Acrílico sobre lienzo
+          </p>
+
+          <p>
+            60 × 50 cm
+          </p>
+
+          <div class="catalog-bottom">
+            <span>$80 USD</span>
+            <span>DISPONIBLE</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 06 — SOLO AMO A MI CUENTA DE BANCO -->
+      <article class="catalog-item" data-year="2025">
+
+        <img
+          src="assets/banco.jpg"
+          alt="Solo amo a mi cuenta de banco, pintura de Ismael Corrales"
+          loading="lazy"
+        >
 
         <div class="catalog-info">
 
@@ -420,27 +272,17 @@
             Solo amo a mi cuenta de banco
           </h2>
 
-
           <p>
             2025 · Acrílico sobre lienzo
           </p>
-
 
           <p>
             50 × 35 cm
           </p>
 
-
           <div class="catalog-bottom">
-
-            <span>
-              $80 USD
-            </span>
-
-            <span>
-              DISPONIBLE
-            </span>
-
+            <span>$80 USD</span>
+            <span>DISPONIBLE</span>
           </div>
 
         </div>
@@ -450,14 +292,35 @@
 
     </section>
 
+
+    <!-- BLOQUE FINAL -->
+    <section class="catalog-end" id="disponibles">
+
+      <p class="eyebrow">
+        ADQUIRIR
+      </p>
+
+      <h2>
+        Obras originales<br>
+        disponibles.
+      </h2>
+
+      <p>
+        Las obras marcadas como disponibles pueden adquirirse
+        directamente. La disponibilidad, envío y entrega se
+        coordinan de manera individual.
+      </p>
+
+      <a href="index.html#contacto" class="artwork-button">
+        CONSULTAR DISPONIBILIDAD
+      </a>
+
+    </section>
+
   </main>
 
 
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
+  <!-- FOOTER -->
   <footer class="footer">
 
     <div>
@@ -472,14 +335,11 @@
 
     </div>
 
-
     <p>
       © 2026 Ismael Corrales
     </p>
 
   </footer>
 
-
 </body>
-
 </html>
