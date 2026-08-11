@@ -61,6 +61,7 @@ a{
   border-bottom:1px solid var(--line);
 
   background:rgba(243,239,231,.92);
+
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
 }
@@ -86,7 +87,7 @@ a{
 
 
 /* =========================================================
-   CONTENEDORES GENERALES
+   CONTENEDORES
    ========================================================= */
 
 main,
@@ -102,10 +103,13 @@ main,
 
 .hero{
   min-height:92vh;
+
   padding:42px 28px 64px;
 
   display:grid;
+
   grid-template-columns:.8fr 1.2fr;
+
   gap:48px;
 
   align-items:end;
@@ -118,8 +122,11 @@ main,
 .eyebrow,
 .section-number{
   font-size:.78rem;
+
   text-transform:uppercase;
+
   letter-spacing:.14em;
+
   color:var(--muted);
 }
 
@@ -131,8 +138,11 @@ h2{
 
 h1{
   font-size:clamp(3.1rem,7vw,7.2rem);
+
   line-height:.92;
+
   max-width:8.5ch;
+
   margin:20px 0 34px;
 }
 
@@ -148,12 +158,15 @@ h1{
 
 figcaption{
   display:flex;
+
   justify-content:space-between;
+
   gap:12px;
 
   margin-top:10px;
 
   font-size:.8rem;
+
   color:var(--muted);
 }
 
@@ -164,12 +177,15 @@ figcaption{
 
 .section{
   padding:100px 28px;
+
   border-top:1px solid var(--line);
 }
 
 .section h2{
   font-size:clamp(2.8rem,5vw,5.8rem);
+
   line-height:1;
+
   margin:18px 0 40px;
 }
 
@@ -184,7 +200,9 @@ figcaption{
 
 .works-grid{
   display:grid;
+
   grid-template-columns:repeat(2,minmax(0,1fr));
+
   gap:70px 28px;
 }
 
@@ -194,14 +212,19 @@ figcaption{
 
 .work h3{
   margin:14px 0 6px;
+
   font-family:"Playfair Display",serif;
+
   font-size:1.4rem;
+
   font-weight:500;
 }
 
 .work p{
   margin:3px 0;
+
   color:var(--muted);
+
   font-size:.85rem;
 }
 
@@ -212,13 +235,17 @@ figcaption{
 
 .footer{
   padding:60px 28px 40px;
+
   border-top:1px solid var(--line);
 
   display:flex;
+
   justify-content:space-between;
+
   gap:30px;
 
   color:var(--muted);
+
   font-size:.85rem;
 }
 
@@ -229,6 +256,7 @@ figcaption{
 
 .catalog-header{
   padding:110px 28px 65px;
+
   border-bottom:1px solid var(--line);
 }
 
@@ -236,17 +264,23 @@ figcaption{
   margin:18px 0 18px;
 
   font-family:"Playfair Display",serif;
+
   font-size:clamp(3.5rem,8vw,7rem);
+
   font-weight:500;
+
   line-height:.95;
 }
 
 .catalog-intro{
   max-width:680px;
+
   margin:0;
 
   font-size:1.15rem;
+
   line-height:1.6;
+
   color:var(--muted);
 }
 
@@ -257,16 +291,21 @@ figcaption{
 
 .catalog-filters{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:10px 26px;
 
   margin-top:48px;
+
   padding-top:18px;
 
   border-top:1px solid var(--line);
 
   font-size:.85rem;
+
   text-transform:uppercase;
+
   letter-spacing:.08em;
 }
 
@@ -283,6 +322,7 @@ figcaption{
   padding:70px 28px 120px;
 
   display:grid;
+
   grid-template-columns:repeat(2,minmax(0,1fr));
 
   gap:80px 28px;
@@ -295,14 +335,19 @@ figcaption{
 
 .catalog-item{
   min-width:0;
+
   display:flex;
+
   flex-direction:column;
 }
 
 .catalog-item img{
   width:100%;
+
   height:auto;
+
   display:block;
+
   background:#ddd;
 }
 
@@ -311,7 +356,9 @@ figcaption{
 
 .catalog-info{
   padding-top:14px;
+
   border-top:1px solid var(--line);
+
   margin-top:12px;
 }
 
@@ -319,8 +366,11 @@ figcaption{
   margin:0 0 10px;
 
   font-family:"Playfair Display",serif;
+
   font-size:1.5rem;
+
   font-weight:500;
+
   line-height:1.15;
 }
 
@@ -330,6 +380,7 @@ figcaption{
   color:var(--muted);
 
   font-size:.85rem;
+
   line-height:1.45;
 }
 
@@ -338,16 +389,21 @@ figcaption{
 
 .catalog-bottom{
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
 
   margin-top:16px;
+
   padding-top:12px;
 
   border-top:1px solid var(--line);
 
   font-size:.78rem;
+
   text-transform:uppercase;
+
   letter-spacing:.07em;
 }
 
@@ -395,6 +451,7 @@ figcaption{
     padding:50px 18px 70px;
 
     grid-template-columns:1fr;
+
     gap:45px;
   }
 
@@ -412,6 +469,7 @@ figcaption{
 
   .works-grid{
     grid-template-columns:1fr;
+
     gap:55px;
   }
 
@@ -428,6 +486,7 @@ figcaption{
     margin:16px 0 24px;
 
     font-size:clamp(3.2rem,14vw,5rem);
+
     line-height:.94;
   }
 
@@ -435,6 +494,7 @@ figcaption{
     max-width:320px;
 
     font-size:.98rem;
+
     line-height:1.55;
   }
 
@@ -445,9 +505,11 @@ figcaption{
     gap:12px 18px;
 
     margin-top:32px;
+
     padding-top:18px;
 
     font-size:.68rem;
+
     letter-spacing:.07em;
   }
 
@@ -455,13 +517,14 @@ figcaption{
   /* ---------- DOS OBRAS POR FILA ---------- */
 
   .catalog-grid{
-    padding:38px 18px 85px;
+    padding:42px 18px 90px;
 
     grid-template-columns:
       repeat(2,minmax(0,1fr));
 
-    column-gap:12px;
-    row-gap:48px;
+    column-gap:14px;
+
+    row-gap:54px;
   }
 
 
@@ -473,6 +536,7 @@ figcaption{
     aspect-ratio:4 / 5;
 
     object-fit:cover;
+
     object-position:center;
   }
 
@@ -480,22 +544,25 @@ figcaption{
   /* ---------- INFORMACIÓN ---------- */
 
   .catalog-info{
-    margin-top:8px;
-    padding-top:8px;
+    margin-top:10px;
+
+    padding-top:9px;
   }
 
   .catalog-info h2{
-    margin:0 0 7px;
+    margin:0 0 6px;
 
-    font-size:1rem;
-    line-height:1.12;
+    font-size:.92rem;
+
+    line-height:1.08;
   }
 
   .catalog-info p{
-    margin:3px 0;
+    margin:2px 0;
 
-    font-size:.68rem;
-    line-height:1.35;
+    font-size:.64rem;
+
+    line-height:1.3;
   }
 
 
@@ -504,16 +571,20 @@ figcaption{
   .catalog-bottom{
     display:block;
 
-    margin-top:9px;
+    margin-top:10px;
+
     padding-top:8px;
 
-    font-size:.59rem;
-    line-height:1.4;
+    font-size:.56rem;
+
+    line-height:1.35;
+
     letter-spacing:.05em;
   }
 
   .catalog-bottom span{
     display:block;
+
     margin-bottom:3px;
   }
 
@@ -543,17 +614,22 @@ figcaption{
 
   .catalog-grid{
     padding-left:14px;
+
     padding-right:14px;
 
     column-gap:10px;
   }
 
   .catalog-info h2{
-    font-size:.92rem;
+    font-size:.86rem;
   }
 
   .catalog-info p{
-    font-size:.64rem;
+    font-size:.61rem;
+  }
+
+  .catalog-bottom{
+    font-size:.53rem;
   }
 
 }
