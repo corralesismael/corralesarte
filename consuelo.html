@@ -2,169 +2,830 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Ese consuelo — Ismael Corrales</title>
 
   <meta
     name="description"
-    content="Ese consuelo, obra original de Ismael Corrales. Acrílico sobre lienzo, 2025."
+    content="Ese consuelo, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2025."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link
+    rel="stylesheet"
+    href="./styles.css?v=28"
+  >
+
+  <style>
+
+    /* MENÚ MÓVIL */
+
+    #menuButton{
+      display:none !important;
+    }
+
+    #mobileMenu{
+      display:none;
+    }
+
+    @media(max-width:800px){
+
+      .site-header{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:space-between !important;
+        min-height:72px !important;
+        padding:18px !important;
+      }
+
+      .site-header .nav{
+        display:none !important;
+      }
+
+      #menuButton{
+        display:block !important;
+        visibility:visible !important;
+        opacity:1 !important;
+        position:relative !important;
+        z-index:10001 !important;
+
+        border:0 !important;
+        background:transparent !important;
+
+        color:#161513 !important;
+
+        font-family:"DM Sans",sans-serif !important;
+        font-size:12px !important;
+        font-weight:500 !important;
+
+        letter-spacing:.12em !important;
+        text-transform:uppercase !important;
+
+        padding:10px 0 !important;
+      }
+
+      #mobileMenu{
+        display:none;
+        position:fixed;
+
+        top:72px;
+        left:0;
+        right:0;
+
+        z-index:10000;
+
+        padding:20px 18px 30px;
+
+        background:#f3efe7;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+      }
+
+      #mobileMenu.open{
+        display:block !important;
+      }
+
+      #mobileMenu a{
+        display:block;
+
+        padding:17px 0;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+
+        color:#161513;
+
+        font-family:
+          "Playfair Display",
+          serif;
+
+        font-size:32px;
+        line-height:1;
+
+        text-decoration:none;
+      }
+
+    }
+
+
+
+    /* FICHA DE OBRA */
+
+    .artwork-page{
+      padding:80px 28px 0;
+    }
+
+    .artwork-header{
+      max-width:1200px;
+      margin:0 auto 55px;
+    }
+
+    .artwork-header h1{
+      margin:18px 0 0;
+
+      max-width:900px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(4rem,9vw,8rem);
+
+      font-weight:400;
+      line-height:.9;
+
+      letter-spacing:-.035em;
+    }
+
+
+
+    .artwork-image{
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .artwork-image img{
+      display:block;
+
+      width:100%;
+      height:auto;
+    }
+
+
+
+    .artwork-information{
+      max-width:1200px;
+
+      margin:70px auto 0;
+
+      display:grid;
+
+      grid-template-columns:
+        .65fr 1.35fr;
+
+      gap:70px;
+
+      padding-bottom:90px;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+
+    .artwork-information h2{
+      margin:0;
+
+      font-size:
+        clamp(2.6rem,5vw,4.8rem);
+
+      line-height:1;
+    }
+
+
+
+    .artwork-meta{
+      border-top:
+        1px solid var(--line);
+    }
+
+
+
+    .artwork-meta-row{
+      display:grid;
+
+      grid-template-columns:
+        130px 1fr;
+
+      gap:25px;
+
+      padding:18px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+
+    .artwork-meta-label{
+      font-size:.7rem;
+
+      letter-spacing:.12em;
+
+      text-transform:uppercase;
+
+      color:var(--muted);
+    }
+
+
+
+    .artwork-meta-value{
+      font-size:.95rem;
+
+      line-height:1.5;
+    }
+
+
+
+    .artwork-button{
+      display:inline-block;
+
+      margin-top:35px;
+
+      padding:15px 22px;
+
+      border:
+        1px solid #161513;
+
+      color:#161513;
+
+      text-decoration:none;
+
+      font-size:.72rem;
+
+      letter-spacing:.12em;
+
+      text-transform:uppercase;
+    }
+
+
+
+    .artwork-about{
+      max-width:1200px;
+
+      margin:0 auto;
+
+      padding:90px 0;
+
+      display:grid;
+
+      grid-template-columns:
+        .65fr 1.35fr;
+
+      gap:70px;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+
+    .artwork-about h2{
+      margin:0;
+
+      font-size:
+        clamp(2.6rem,5vw,4.8rem);
+
+      line-height:1;
+    }
+
+
+
+    .artwork-about p{
+      max-width:720px;
+
+      margin:0 0 24px;
+
+      color:#4f4a43;
+
+      font-size:1.05rem;
+
+      line-height:1.75;
+    }
+
+
+
+    .artwork-contact{
+      max-width:1200px;
+
+      margin:0 auto;
+
+      padding:90px 0 110px;
+    }
+
+
+
+    .artwork-contact h2{
+      margin:18px 0 30px;
+
+      max-width:900px;
+
+      font-size:
+        clamp(3.2rem,7vw,6.5rem);
+
+      line-height:.95;
+    }
+
+
+
+    @media(max-width:800px){
+
+      .artwork-page{
+        padding:
+          65px 18px 0;
+      }
+
+
+
+      .artwork-header{
+        margin-bottom:40px;
+      }
+
+
+
+      .artwork-header h1{
+        font-size:
+          clamp(3.5rem,16vw,5.6rem);
+      }
+
+
+
+      .artwork-information,
+      .artwork-about{
+        display:block;
+
+        margin-top:55px;
+
+        padding-bottom:65px;
+      }
+
+
+
+      .artwork-information h2,
+      .artwork-about h2{
+        margin-bottom:35px;
+
+        font-size:
+          clamp(2.8rem,12vw,4rem);
+      }
+
+
+
+      .artwork-meta-row{
+        grid-template-columns:
+          105px 1fr;
+
+        gap:15px;
+      }
+
+
+
+      .artwork-about{
+        padding-top:65px;
+      }
+
+
+
+      .artwork-about p{
+        font-size:.98rem;
+        line-height:1.7;
+      }
+
+
+
+      .artwork-contact{
+        padding:
+          65px 0 85px;
+      }
+
+
+
+      .artwork-contact h2{
+        font-size:
+          clamp(3rem,14vw,4.8rem);
+      }
+
+    }
+
+  </style>
+
 </head>
 
 
 <body>
 
+
+  <!-- HEADER -->
+
   <header class="site-header">
-    <a href="index.html" class="brand">CORRALES</a>
+
+    <a
+      href="./index.html"
+      class="brand"
+    >
+      CORRALES
+    </a>
+
 
     <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="obra.html">Obra</a>
-      <a href="index.html#artista">Artista</a>
-      <a href="index.html#contacto">Contacto</a>
+
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
+
     </nav>
+
+
+    <button
+      id="menuButton"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      MENÚ
+    </button>
+
   </header>
 
 
-  <main>
 
-    <section class="artwork-page">
+  <!-- MENÚ MÓVIL -->
 
-      <div class="artwork-heading">
-        <p class="eyebrow">OBRA · 2025</p>
+  <nav
+    id="mobileMenu"
+    aria-label="Navegación móvil"
+  >
 
-        <h1>Ese consuelo</h1>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
+
+  </nav>
+
+
+
+  <main class="artwork-page">
+
+
+    <!-- TÍTULO -->
+
+    <section class="artwork-header">
+
+      <p class="eyebrow">
+        OBRA · 2025
+      </p>
+
+      <h1>
+        Ese consuelo
+      </h1>
+
+    </section>
+
+
+
+    <!-- IMAGEN -->
+
+    <section class="artwork-image">
+
+      <img
+        src="./assets/consuelo.jpg"
+        alt="Ese consuelo, pintura de Ismael Corrales"
+      >
+
+    </section>
+
+
+
+    <!-- INFORMACIÓN -->
+
+    <section class="artwork-information">
+
+
+      <div>
+
+        <p class="eyebrow">
+          INFORMACIÓN
+        </p>
+
+        <h2>
+          Ese<br>
+          consuelo.
+        </h2>
+
       </div>
 
 
-      <div class="artwork-layout">
 
-        <div class="artwork-image">
-          <img
-            src="assets/consuelo.jpg"
-            alt="Ese consuelo, pintura de Ismael Corrales"
-          >
-        </div>
+      <div>
 
 
-        <aside class="artwork-details">
+        <div class="artwork-meta">
 
-          <div class="artwork-meta">
 
-            <p>
-              <span>Artista</span>
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Artista
+            </span>
+
+            <span class="artwork-meta-value">
               Ismael Corrales
-            </p>
-
-            <p>
-              <span>Título</span>
-              Ese consuelo
-            </p>
-
-            <p>
-              <span>Año</span>
-              2025
-            </p>
-
-            <p>
-              <span>Técnica</span>
-              Acrílico sobre lienzo
-            </p>
-
-            <p>
-              <span>Dimensiones</span>
-              75 × 100 cm
-            </p>
-
-            <p>
-              <span>Estado</span>
-              Disponible
-            </p>
-
-            <p>
-              <span>Precio</span>
-              $80 USD
-            </p>
+            </span>
 
           </div>
 
 
-          <a class="artwork-button" href="#consulta">
-            Adquirir obra
-          </a>
 
-        </aside>
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Título
+            </span>
+
+            <span class="artwork-meta-value">
+              Ese consuelo
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Año
+            </span>
+
+            <span class="artwork-meta-value">
+              2025
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Técnica
+            </span>
+
+            <span class="artwork-meta-value">
+              Acrílico sobre lienzo
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Dimensiones
+            </span>
+
+            <span class="artwork-meta-value">
+              75 × 100 cm
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Estado
+            </span>
+
+            <span class="artwork-meta-value">
+              Disponible
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Precio
+            </span>
+
+            <span class="artwork-meta-value">
+              $80 USD
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <a
+          href="./contacto.html"
+          class="artwork-button"
+        >
+          Adquirir obra
+        </a>
+
 
       </div>
 
 
-      <section class="artwork-text">
-
-        <p class="section-number">Sobre la obra</p>
-
-        <div>
-          <h2>Ese consuelo</h2>
-
-          <p>
-            Esta obra presenta una escena de naturaleza muerta donde una botella,
-            una copa y otros objetos cotidianos construyen una atmósfera íntima.
-            El título introduce una lectura sobre aquello que se busca para
-            sobrellevar, olvidar o encontrar alivio.
-          </p>
-        </div>
-
-      </section>
+    </section>
 
 
-      <section class="artwork-purchase" id="consulta">
 
-        <p class="section-number">Adquirir</p>
+    <!-- SOBRE LA OBRA -->
 
-        <div>
-          <h2>Consultar disponibilidad.</h2>
+    <section class="artwork-about">
 
-          <p>
-            Esta obra se encuentra disponible. Para solicitar información sobre
-            compra, envío o entrega, puedes ponerte en contacto directamente.
-          </p>
 
-          <a
-            class="artwork-button"
-            href="mailto:contacto@corralesarte.com?subject=Consulta%20sobre%20Ese%20consuelo"
-          >
-            Consultar obra
-          </a>
-        </div>
+      <div>
 
-      </section>
+        <p class="eyebrow">
+          SOBRE LA OBRA
+        </p>
+
+        <h2>
+          Ese<br>
+          consuelo.
+        </h2>
+
+      </div>
+
+
+
+      <div>
+
+        <p>
+          Parte del archivo pictórico de Ismael Corrales, esta obra
+          se construye desde la observación de una escena cotidiana
+          y su transformación mediante la pintura.
+        </p>
+
+        <p>
+          La composición, la relación entre las figuras y el tratamiento
+          de la luz forman parte de una búsqueda centrada en la presencia,
+          la memoria y la experiencia humana.
+        </p>
+
+      </div>
+
 
     </section>
 
+
+
+    <!-- CONSULTAR -->
+
+    <section class="artwork-contact">
+
+      <p class="eyebrow">
+        ADQUIRIR
+      </p>
+
+      <h2>
+        Consultar<br>
+        disponibilidad.
+      </h2>
+
+      <a
+        href="./contacto.html"
+        class="text-link"
+      >
+        CONTACTAR →
+      </a>
+
+    </section>
+
+
   </main>
+
 
 
   <footer class="footer">
 
     <div>
-      <p class="section-number">CORRALES</p>
-      <p>Arte contemporáneo · Originales sobre lienzo</p>
+
+      <p class="section-number">
+        CORRALES
+      </p>
+
+      <p>
+        Arte contemporáneo · Originales sobre lienzo
+      </p>
+
     </div>
 
-    <p>© 2026 Ismael Corrales</p>
+    <a href="./obra.html">
+      Volver al archivo ↑
+    </a>
 
   </footer>
+
+
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuButton.addEventListener(
+      "click",
+      function(){
+
+        const isOpen =
+          mobileMenu.classList.toggle("open");
+
+        menuButton.textContent =
+          isOpen ? "CERRAR" : "MENÚ";
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+      }
+    );
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            mobileMenu
+              .classList
+              .remove("open");
+
+            menuButton.textContent =
+              "MENÚ";
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+  </script>
+
 
 </body>
 
