@@ -2,25 +2,110 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Archivo de obra — Ismael Corrales</title>
 
   <meta
     name="description"
-    content="Archivo de obra de Ismael Corrales. Selección de pinturas originales."
+    content="Archivo de obra de Ismael Corrales. Selección de pinturas originales disponibles."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=8">
+  <link
+    rel="stylesheet"
+    href="./styles.css?v=19"
+  >
+
+
+  <!-- MENÚ MÓVIL -->
+
+  <style>
+
+    .mobile-menu-toggle{
+      display:none;
+    }
+
+    .mobile-nav{
+      display:none;
+    }
+
+    @media(max-width:800px){
+
+      .site-header{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:space-between !important;
+        min-height:72px;
+        padding:18px !important;
+      }
+
+      .site-header .nav{
+        display:none !important;
+      }
+
+      .mobile-menu-toggle{
+        display:block !important;
+        border:0;
+        background:transparent;
+        color:#161513;
+        font-family:"DM Sans",sans-serif;
+        font-size:12px;
+        font-weight:500;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+        padding:10px 0;
+        cursor:pointer;
+      }
+
+      .mobile-nav{
+        display:none;
+        position:fixed;
+        top:72px;
+        left:0;
+        right:0;
+        z-index:9999;
+        padding:20px 18px 30px;
+        background:#f3efe7;
+        border-bottom:1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-nav.open{
+        display:block !important;
+      }
+
+      .mobile-nav a{
+        display:block;
+        padding:17px 0;
+        border-bottom:1px solid rgba(22,21,19,.18);
+        color:#161513;
+        font-family:"Playfair Display",serif;
+        font-size:32px;
+        line-height:1;
+        text-decoration:none;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -28,15 +113,17 @@
 <body>
 
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
-    <a href="./index.html" class="brand">
+    <a
+      href="./index.html"
+      class="brand"
+    >
       CORRALES
     </a>
+
 
     <nav class="nav">
 
@@ -48,26 +135,70 @@
         Obra
       </a>
 
-      <a href="./index.html#artista">
+      <a href="./artista.html">
         Artista
       </a>
 
-      <a href="./index.html#contacto">
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
         Contacto
       </a>
 
     </nav>
 
+
+    <button
+      class="mobile-menu-toggle"
+      id="menuButton"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      MENÚ
+    </button>
+
   </header>
+
+
+
+  <!-- MENÚ MÓVIL -->
+
+  <nav
+    class="mobile-nav"
+    id="mobileMenu"
+  >
+
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
+
+  </nav>
 
 
 
   <main>
 
 
-    <!-- ===================================================
-         CABECERA DEL ARCHIVO
-         =================================================== -->
+    <!-- CABECERA -->
 
     <section class="catalog-header">
 
@@ -87,13 +218,21 @@
 
       <div class="catalog-filters">
 
-        <span>TODAS</span>
+        <span>
+          TODAS
+        </span>
 
-        <span>DISPONIBLES</span>
+        <span>
+          DISPONIBLES
+        </span>
 
-        <span>2026</span>
+        <span>
+          2026
+        </span>
 
-        <span>2025</span>
+        <span>
+          2025
+        </span>
 
       </div>
 
@@ -101,24 +240,18 @@
 
 
 
-    <!-- ===================================================
-         CATÁLOGO
-         =================================================== -->
+    <!-- CATÁLOGO -->
 
     <section class="catalog-grid">
 
 
-
-      <!-- =================================================
-           01 — ESE CONSUELO
-           ================================================= -->
+      <!-- 01 — ESE CONSUELO -->
 
       <article class="catalog-item">
 
         <a
           href="./consuelo.html"
           class="catalog-image-link"
-          aria-label="Abrir ficha de Ese consuelo"
         >
 
           <img
@@ -139,7 +272,6 @@
             </a>
 
           </h2>
-
 
           <p>
             2025 · Acrílico sobre lienzo
@@ -168,21 +300,18 @@
 
 
 
-      <!-- =================================================
-           02 — LO QUE PASA EN LA TIERRA
-           ================================================= -->
+      <!-- 02 — TIERRA -->
 
       <article class="catalog-item">
 
         <a
           href="./tierra.html"
           class="catalog-image-link"
-          aria-label="Abrir ficha de Lo que pasa en la tierra se queda en la tierra"
         >
 
           <img
             src="./assets/tierra.jpg"
-            alt="Lo que pasa en la tierra se queda en la tierra, pintura de Ismael Corrales"
+            alt="Lo que pasa en la tierra se queda en la tierra"
             loading="lazy"
           >
 
@@ -198,7 +327,6 @@
             </a>
 
           </h2>
-
 
           <p>
             2026 · Acrílico sobre lienzo
@@ -227,21 +355,18 @@
 
 
 
-      <!-- =================================================
-           03 — EL PESO DEL PERDÓN
-           ================================================= -->
+      <!-- 03 — PERDÓN -->
 
       <article class="catalog-item">
 
         <a
           href="./perdon.html"
           class="catalog-image-link"
-          aria-label="Abrir ficha de El peso del perdón"
         >
 
           <img
             src="./assets/perdon.jpg"
-            alt="El peso del perdón, pintura de Ismael Corrales"
+            alt="El peso del perdón"
             loading="lazy"
           >
 
@@ -257,7 +382,6 @@
             </a>
 
           </h2>
-
 
           <p>
             2025 · Acrílico sobre lienzo
@@ -286,21 +410,18 @@
 
 
 
-      <!-- =================================================
-           04 — MI CULPA
-           ================================================= -->
+      <!-- 04 — MI CULPA -->
 
       <article class="catalog-item">
 
         <a
           href="./culpa.html"
           class="catalog-image-link"
-          aria-label="Abrir ficha de Mi culpa"
         >
 
           <img
             src="./assets/culpa.jpg"
-            alt="Mi culpa, pintura de Ismael Corrales"
+            alt="Mi culpa"
             loading="lazy"
           >
 
@@ -316,7 +437,6 @@
             </a>
 
           </h2>
-
 
           <p>
             2025 · Acrílico sobre lienzo
@@ -345,21 +465,18 @@
 
 
 
-      <!-- =================================================
-           05 — LA NOCHE OSCURA DEL ALMA
-           ================================================= -->
+      <!-- 05 — NOCHE OSCURA -->
 
       <article class="catalog-item">
 
         <a
           href="./noche.html"
           class="catalog-image-link"
-          aria-label="Abrir ficha de La noche oscura del alma"
         >
 
           <img
             src="./assets/noche.jpg"
-            alt="La noche oscura del alma, pintura de Ismael Corrales"
+            alt="La noche oscura del alma"
             loading="lazy"
           >
 
@@ -375,7 +492,6 @@
             </a>
 
           </h2>
-
 
           <p>
             2025 · Acrílico sobre lienzo
@@ -404,21 +520,18 @@
 
 
 
-      <!-- =================================================
-           06 — SOLO AMO A MI CUENTA DE BANCO
-           ================================================= -->
+      <!-- 06 — CUENTA DE BANCO -->
 
       <article class="catalog-item">
 
         <a
           href="./banco.html"
           class="catalog-image-link"
-          aria-label="Abrir ficha de Solo amo a mi cuenta de banco"
         >
 
           <img
             src="./assets/banco.jpg"
-            alt="Solo amo a mi cuenta de banco, pintura de Ismael Corrales"
+            alt="Solo amo a mi cuenta de banco"
             loading="lazy"
           >
 
@@ -434,7 +547,6 @@
             </a>
 
           </h2>
-
 
           <p>
             2025 · Acrílico sobre lienzo
@@ -464,13 +576,12 @@
 
     </section>
 
+
   </main>
 
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -486,12 +597,82 @@
 
     </div>
 
-
-    <p>
-      © 2026 Ismael Corrales
-    </p>
+    <a href="./index.html">
+      Inicio ↑
+    </a>
 
   </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuButton.addEventListener(
+      "click",
+      function(){
+
+        mobileMenu.classList.toggle("open");
+
+        const isOpen =
+          mobileMenu.classList.contains("open");
+
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+
+        if(isOpen){
+
+          menuButton.textContent = "CERRAR";
+
+        }else{
+
+          menuButton.textContent = "MENÚ";
+
+        }
+
+      }
+    );
+
+
+    const mobileLinks =
+      mobileMenu.querySelectorAll("a");
+
+
+    mobileLinks.forEach(
+      function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.textContent = "MENÚ";
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      }
+    );
+
+  </script>
 
 
 </body>
