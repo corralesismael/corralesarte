@@ -2,8 +2,13 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Corrales Arte — Ismael Corrales</title>
 
@@ -12,39 +17,136 @@
     content="Sitio oficial del artista visual Ismael Corrales. Pintura contemporánea, obras originales y arte disponible."
   >
 
-  <!-- Hoja de estilos -->
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./styles.css?v=17"
+  >
+
 </head>
 
 
 <body>
 
-  <!-- =========================
-       MENÚ
-  ========================== -->
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
 
   <header class="site-header">
 
-    <a class="brand" href="#inicio">
+    <a
+      href="./index.html"
+      class="brand"
+    >
       CORRALES
     </a>
 
+
+    <!-- MENÚ ESCRITORIO -->
+
     <nav class="nav">
-      <a href="#obra">Obra</a>
-      <a href="#artista">Artista</a>
-      <a href="#contacto">Contacto</a>
+
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
+
     </nav>
+
+
+    <!-- BOTÓN MÓVIL -->
+
+    <button
+      class="mobile-menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      onclick="
+        const menu = document.querySelector('.mobile-nav');
+        menu.classList.toggle('open');
+        this.setAttribute(
+          'aria-expanded',
+          menu.classList.contains('open')
+        );
+      "
+    >
+      MENÚ
+    </button>
 
   </header>
 
 
+
+  <!-- =====================================================
+       MENÚ MÓVIL
+       ===================================================== -->
+
+  <nav class="mobile-nav">
+
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
+
+  </nav>
+
+
+
   <main>
 
-    <!-- =========================
-         PORTADA
-    ========================== -->
 
-    <section class="hero" id="inicio">
+    <!-- =====================================================
+         PORTADA
+         ===================================================== -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
 
       <div class="hero-copy">
 
@@ -52,47 +154,79 @@
           Ismael Corrales · Pintura contemporánea
         </p>
 
+
         <h1>
-          La pintura como memoria,<br>
+          La pintura como memoria,
           tensión y presencia.
         </h1>
 
-        <a class="text-link" href="#obra">
+
+        <a
+          class="text-link"
+          href="./obra.html"
+        >
           Explorar obras ↓
         </a>
 
       </div>
 
 
+
       <figure class="hero-art">
 
-        <img
-          src="./assets/tierra.jpg"
-          alt="Lo que pasa en la tierra se queda en la tierra, obra de Ismael Corrales"
-        >
+        <a href="./tierra.html">
+
+          <img
+            src="./assets/tierra.jpg"
+            alt="Lo que pasa en la tierra se queda en la tierra, obra de Ismael Corrales"
+          >
+
+        </a>
 
         <figcaption>
-          Lo que pasa en la tierra se queda en la tierra · 2026
+
+          <span>
+            Lo que pasa en la tierra se queda en la tierra
+          </span>
+
+          <span>
+            2026
+          </span>
+
         </figcaption>
 
       </figure>
 
+
     </section>
 
 
-    <!-- =========================
-         ARTISTA
-    ========================== -->
 
-    <section class="artist" id="artista">
+    <!-- =====================================================
+         ARTISTA
+         ===================================================== -->
+
+    <section
+      class="artist"
+      id="artista"
+    >
+
 
       <div>
-        <p class="section-number">01 — Artista</p>
+
+        <p class="section-number">
+          01 — Artista
+        </p>
+
       </div>
 
+
       <div>
 
-        <h2>Ismael Corrales</h2>
+        <h2>
+          Ismael Corrales
+        </h2>
+
 
         <p>
           Artista visual enfocado en pintura acrílica sobre lienzo.
@@ -101,22 +235,37 @@
           cercana al claroscuro.
         </p>
 
+
+        <a
+          href="./artista.html"
+          class="text-link"
+        >
+          Conoce mi historia →
+        </a>
+
       </div>
+
 
     </section>
 
 
-    <!-- =========================
-         OBRAS
-    ========================== -->
 
-    <section class="works" id="obra">
+    <!-- =====================================================
+         OBRAS
+         ===================================================== -->
+
+    <section
+      class="works"
+      id="obra"
+    >
+
 
       <div class="works-heading">
 
         <p class="section-number">
           02 — Obras disponibles
         </p>
+
 
         <h2>
           Selección actual · originales
@@ -125,21 +274,37 @@
       </div>
 
 
+
       <div class="work-grid">
 
 
-        <!-- OBRA 1 -->
+        <!-- ===============================================
+             01 — ESE CONSUELO
+             =============================================== -->
 
         <article class="work">
 
-          <img
-            src="./assets/consuelo.jpg"
-            alt="Ese consuelo, pintura de Ismael Corrales"
-          >
+          <a href="./consuelo.html">
+
+            <img
+              src="./assets/consuelo.jpg"
+              alt="Ese consuelo, pintura de Ismael Corrales"
+              loading="lazy"
+            >
+
+          </a>
+
 
           <div class="work-info">
 
-            <h3>Ese consuelo</h3>
+            <h3>
+
+              <a href="./consuelo.html">
+                Ese consuelo
+              </a>
+
+            </h3>
+
 
             <p>
               2025 · Acrílico sobre lienzo
@@ -158,20 +323,34 @@
         </article>
 
 
-        <!-- OBRA 2 -->
+
+        <!-- ===============================================
+             02 — LO QUE PASA EN LA TIERRA
+             =============================================== -->
 
         <article class="work">
 
-          <img
-            src="./assets/tierra.jpg"
-            alt="Lo que pasa en la tierra se queda en la tierra, pintura de Ismael Corrales"
-          >
+          <a href="./tierra.html">
+
+            <img
+              src="./assets/tierra.jpg"
+              alt="Lo que pasa en la tierra se queda en la tierra, pintura de Ismael Corrales"
+              loading="lazy"
+            >
+
+          </a>
+
 
           <div class="work-info">
 
             <h3>
-              Lo que pasa en la tierra se queda en la tierra
+
+              <a href="./tierra.html">
+                Lo que pasa en la tierra se queda en la tierra
+              </a>
+
             </h3>
+
 
             <p>
               2026 · Acrílico sobre lienzo
@@ -190,20 +369,34 @@
         </article>
 
 
-        <!-- OBRA 3 -->
+
+        <!-- ===============================================
+             03 — EL PESO DEL PERDÓN
+             =============================================== -->
 
         <article class="work">
 
-          <img
-            src="./assets/perdon.jpg"
-            alt="El peso del perdón, pintura de Ismael Corrales"
-          >
+          <a href="./perdon.html">
+
+            <img
+              src="./assets/perdon.jpg"
+              alt="El peso del perdón, pintura de Ismael Corrales"
+              loading="lazy"
+            >
+
+          </a>
+
 
           <div class="work-info">
 
             <h3>
-              El peso del perdón
+
+              <a href="./perdon.html">
+                El peso del perdón
+              </a>
+
             </h3>
+
 
             <p>
               2025 · Acrílico sobre lienzo
@@ -222,20 +415,34 @@
         </article>
 
 
-        <!-- OBRA 4 -->
+
+        <!-- ===============================================
+             04 — MI CULPA
+             =============================================== -->
 
         <article class="work">
 
-          <img
-            src="./assets/culpa.jpg"
-            alt="Mi culpa, pintura de Ismael Corrales"
-          >
+          <a href="./culpa.html">
+
+            <img
+              src="./assets/culpa.jpg"
+              alt="Mi culpa, pintura de Ismael Corrales"
+              loading="lazy"
+            >
+
+          </a>
+
 
           <div class="work-info">
 
             <h3>
-              Mi culpa
+
+              <a href="./culpa.html">
+                Mi culpa
+              </a>
+
             </h3>
+
 
             <p>
               2025 · Acrílico sobre lienzo
@@ -254,20 +461,34 @@
         </article>
 
 
-        <!-- OBRA 5 -->
+
+        <!-- ===============================================
+             05 — LA NOCHE OSCURA DEL ALMA
+             =============================================== -->
 
         <article class="work">
 
-          <img
-            src="./assets/noche.jpg"
-            alt="La noche oscura del alma, pintura de Ismael Corrales"
-          >
+          <a href="./noche.html">
+
+            <img
+              src="./assets/noche.jpg"
+              alt="La noche oscura del alma, pintura de Ismael Corrales"
+              loading="lazy"
+            >
+
+          </a>
+
 
           <div class="work-info">
 
             <h3>
-              La noche oscura del alma
+
+              <a href="./noche.html">
+                La noche oscura del alma
+              </a>
+
             </h3>
+
 
             <p>
               2025 · Acrílico sobre lienzo
@@ -286,20 +507,34 @@
         </article>
 
 
-        <!-- OBRA 6 -->
+
+        <!-- ===============================================
+             06 — SOLO AMO A MI CUENTA DE BANCO
+             =============================================== -->
 
         <article class="work">
 
-          <img
-            src="./assets/banco.jpg"
-            alt="Solo amo a mi cuenta de banco, pintura de Ismael Corrales"
-          >
+          <a href="./banco.html">
+
+            <img
+              src="./assets/banco.jpg"
+              alt="Solo amo a mi cuenta de banco, pintura de Ismael Corrales"
+              loading="lazy"
+            >
+
+          </a>
+
 
           <div class="work-info">
 
             <h3>
-              Solo amo a mi cuenta de banco
+
+              <a href="./banco.html">
+                Solo amo a mi cuenta de banco
+              </a>
+
             </h3>
+
 
             <p>
               2025 · Acrílico sobre lienzo
@@ -320,72 +555,164 @@
 
       </div>
 
+
+
+      <div
+        style="
+          margin-top:60px;
+          text-align:center;
+        "
+      >
+
+        <a
+          href="./obra.html"
+          class="text-link"
+        >
+          Ver archivo de obra →
+        </a>
+
+      </div>
+
+
     </section>
 
 
-    <!-- =========================
-         COMPRA
-    ========================== -->
+
+    <!-- =====================================================
+         PROCESO
+         ===================================================== -->
 
     <section class="purchase">
 
+
       <p class="section-number">
-        03 — Adquirir obra
+        03 — Proceso
       </p>
+
+
+      <h2>
+        Del entorno al lienzo.
+      </h2>
+
+
+      <p>
+        Observación, fotografía, composición y pintura forman parte
+        de un proceso continuo para transformar escenas cotidianas
+        en imágenes.
+      </p>
+
+
+      <a
+        class="text-link"
+        href="./proceso.html"
+      >
+        Conocer el proceso →
+      </a>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ADQUIRIR
+         ===================================================== -->
+
+    <section class="purchase">
+
+
+      <p class="section-number">
+        04 — Adquirir obra
+      </p>
+
 
       <h2>
         Obras originales disponibles.
       </h2>
 
+
       <p>
-        Por ahora, las compras se coordinan directamente.
-        Más adelante esta sección se conectará a un checkout
-        seguro para pagar con tarjeta.
+        Consulta las obras disponibles y obtén información sobre
+        compra, pago, envío o entrega.
       </p>
 
-      <a class="text-link" href="#contacto">
-        Consultar disponibilidad
+
+      <a
+        class="text-link"
+        href="./contacto.html"
+      >
+        Consultar disponibilidad →
       </a>
+
 
     </section>
 
 
-    <!-- =========================
-         CONTACTO
-    ========================== -->
 
-    <section class="contact" id="contacto">
+    <!-- =====================================================
+         CONTACTO
+         ===================================================== -->
+
+    <section
+      class="contact"
+      id="contacto"
+    >
+
 
       <p class="section-number">
-        04 — Contacto
+        05 — Contacto
       </p>
+
 
       <h2>
         CORRALES
       </h2>
 
+
       <p>
         Arte contemporáneo · Originales sobre lienzo
       </p>
 
+
+      <a
+        href="./contacto.html"
+        class="text-link"
+      >
+        Contacto →
+      </a>
+
+
     </section>
+
 
   </main>
 
 
-  <!-- =========================
-       PIE DE PÁGINA
-  ========================== -->
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
   <footer class="footer">
 
-    <p>
-      © 2026 Ismael Corrales
-    </p>
+
+    <div>
+
+      <p class="section-number">
+        CORRALES
+      </p>
+
+      <p>
+        Arte contemporáneo · Originales sobre lienzo
+      </p>
+
+    </div>
+
 
     <a href="#inicio">
       Volver arriba ↑
     </a>
+
 
   </footer>
 
@@ -393,4 +720,3 @@
 </body>
 
 </html>
-
