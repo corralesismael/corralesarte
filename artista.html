@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -11,221 +12,282 @@
 
   <title>Ismael Corrales — Artista</title>
 
-  <link rel="stylesheet" href="./styles.css?v=12">
+  <meta
+    name="description"
+    content="Conoce la historia, trayectoria y práctica artística de Ismael Corrales."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./styles.css?v=21"
+  >
 
   <style>
 
-    /* =========================
-       PÁGINA ARTISTA
-    ========================= */
-
-    .artist-page {
-      background: #f3efe5;
-      color: #111;
+    .mobile-menu-toggle{
+      display:none;
     }
 
-
-    /* CABECERA */
-
-    .artist-header {
-      padding: 58px 33px 55px;
-      border-bottom: 1px solid rgba(0,0,0,.18);
+    .mobile-nav{
+      display:none;
     }
 
-    .artist-eyebrow {
-      margin: 0 0 30px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: #777269;
-    }
+    @media(max-width:800px){
 
-    .artist-title {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(64px, 14vw, 110px);
-      line-height: .86;
-      font-weight: 400;
-      letter-spacing: -.045em;
-    }
-
-    .artist-statement {
-      max-width: 620px;
-      margin: 54px 0 28px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(31px, 7vw, 50px);
-      line-height: 1.12;
-      font-weight: 400;
-    }
-
-    .artist-intro {
-      max-width: 620px;
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #777269;
-    }
-
-
-    /* RETRATO */
-
-    .artist-portrait {
-      padding: 0 33px 70px;
-      border-bottom: 1px solid rgba(0,0,0,.18);
-    }
-
-    .artist-photo {
-      margin: 0;
-      padding-top: 50px;
-    }
-
-    .artist-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 820px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .artist-photo figcaption {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding-top: 16px;
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      color: #777269;
-    }
-
-
-    /* BIOGRAFÍA */
-
-    .artist-biography {
-      padding: 75px 33px;
-      border-bottom: 1px solid rgba(0,0,0,.18);
-    }
-
-    .section-label {
-      margin: 0 0 30px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: #777269;
-    }
-
-    .biography-title {
-      max-width: 650px;
-      margin: 0 0 45px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 9vw, 70px);
-      line-height: .98;
-      font-weight: 400;
-      letter-spacing: -.025em;
-    }
-
-    .biography-text {
-      max-width: 680px;
-    }
-
-    .biography-text p {
-      margin: 0 0 28px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 18px;
-      line-height: 1.75;
-      color: #5f5b54;
-    }
-
-
-    /* DATOS */
-
-    .artist-details {
-      padding: 70px 33px;
-    }
-
-    .artist-detail-row {
-      display: grid;
-      grid-template-columns: 115px 1fr;
-      gap: 30px;
-
-      padding: 22px 0;
-      border-top: 1px solid rgba(0,0,0,.16);
-    }
-
-    .artist-detail-row:last-child {
-      border-bottom: 1px solid rgba(0,0,0,.16);
-    }
-
-    .detail-label {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #777269;
-    }
-
-    .detail-value {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-
-    /* MÓVIL */
-
-    @media (max-width: 600px) {
-
-      .artist-header {
-        padding: 55px 33px 60px;
+      .site-header{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:space-between !important;
+        min-height:72px;
+        padding:18px !important;
       }
 
-      .artist-title {
-        font-size: 19vw;
+      .site-header .nav{
+        display:none !important;
       }
 
-      .artist-statement {
-        margin-top: 48px;
-        font-size: 9vw;
+      .mobile-menu-toggle{
+        display:block !important;
+        border:0;
+        background:transparent;
+        color:#161513;
+        font-family:"DM Sans",sans-serif;
+        font-size:12px;
+        font-weight:500;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+        padding:10px 0;
+        cursor:pointer;
       }
 
-      .artist-intro {
-        font-size: 17px;
+      .mobile-nav{
+        display:none;
+        position:fixed;
+        top:72px;
+        left:0;
+        right:0;
+        z-index:9999;
+        padding:20px 18px 30px;
+        background:#f3efe7;
+        border-bottom:1px solid rgba(22,21,19,.18);
       }
 
-      .artist-portrait {
-        padding-left: 33px;
-        padding-right: 33px;
+      .mobile-nav.open{
+        display:block !important;
       }
 
-      .artist-photo img {
-        width: 100%;
-        max-height: none;
+      .mobile-nav a{
+        display:block;
+        padding:17px 0;
+        border-bottom:1px solid rgba(22,21,19,.18);
+        color:#161513;
+        font-family:"Playfair Display",serif;
+        font-size:32px;
+        line-height:1;
+        text-decoration:none;
       }
 
-      .artist-biography {
-        padding-top: 65px;
-        padding-bottom: 65px;
+      .artist-header{
+        padding:55px 33px 60px;
       }
 
-      .artist-detail-row {
-        grid-template-columns: 100px 1fr;
-        gap: 20px;
+      .artist-title{
+        font-size:19vw;
       }
 
+      .artist-statement{
+        margin-top:48px;
+        font-size:9vw;
+      }
+
+      .artist-intro{
+        font-size:17px;
+      }
+
+      .artist-portrait{
+        padding-left:33px;
+        padding-right:33px;
+      }
+
+      .artist-photo img{
+        width:100%;
+        max-height:none;
+      }
+
+      .artist-biography{
+        padding-top:65px;
+        padding-bottom:65px;
+      }
+
+      .artist-detail-row{
+        grid-template-columns:100px 1fr;
+        gap:20px;
+      }
+
+    }
+
+
+    .artist-page{
+      background:#f3efe5;
+      color:#111;
+    }
+
+    .artist-header{
+      padding:58px 33px 55px;
+      border-bottom:1px solid rgba(0,0,0,.18);
+    }
+
+    .artist-eyebrow{
+      margin:0 0 30px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:14px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#777269;
+    }
+
+    .artist-title{
+      margin:0;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(64px,14vw,110px);
+      line-height:.86;
+      font-weight:400;
+      letter-spacing:-.045em;
+    }
+
+    .artist-statement{
+      max-width:620px;
+      margin:54px 0 28px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(31px,7vw,50px);
+      line-height:1.12;
+      font-weight:400;
+    }
+
+    .artist-intro{
+      max-width:620px;
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:18px;
+      line-height:1.7;
+      color:#777269;
+    }
+
+    .artist-portrait{
+      padding:0 33px 70px;
+      border-bottom:1px solid rgba(0,0,0,.18);
+    }
+
+    .artist-photo{
+      margin:0;
+      padding-top:50px;
+    }
+
+    .artist-photo img{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:820px;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .artist-photo figcaption{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding-top:16px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:15px;
+      color:#777269;
+    }
+
+    .artist-biography{
+      padding:75px 33px;
+      border-bottom:1px solid rgba(0,0,0,.18);
+    }
+
+    .section-label{
+      margin:0 0 30px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:14px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#777269;
+    }
+
+    .biography-title{
+      max-width:650px;
+      margin:0 0 45px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(42px,9vw,70px);
+      line-height:.98;
+      font-weight:400;
+      letter-spacing:-.025em;
+    }
+
+    .biography-text{
+      max-width:680px;
+    }
+
+    .biography-text p{
+      margin:0 0 28px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:18px;
+      line-height:1.75;
+      color:#5f5b54;
+    }
+
+    .artist-details{
+      padding:70px 33px;
+    }
+
+    .artist-detail-row{
+      display:grid;
+      grid-template-columns:115px 1fr;
+      gap:30px;
+      padding:22px 0;
+      border-top:1px solid rgba(0,0,0,.16);
+    }
+
+    .artist-detail-row:last-child{
+      border-bottom:1px solid rgba(0,0,0,.16);
+    }
+
+    .detail-label{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#777269;
+    }
+
+    .detail-value{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:16px;
+      line-height:1.5;
     }
 
   </style>
+
 </head>
 
 
 <body class="artist-page">
 
-
-  <!-- CABECERA GENERAL -->
 
   <header class="site-header">
 
@@ -233,14 +295,44 @@
       CORRALES
     </a>
 
+    <nav class="nav">
+      <a href="./index.html">Inicio</a>
+      <a href="./obra.html">Obra</a>
+      <a href="./artista.html">Artista</a>
+      <a href="./proceso.html">Proceso</a>
+      <a href="./contacto.html">Contacto</a>
+    </nav>
+
+    <button
+      class="mobile-menu-toggle"
+      id="menuButton"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      MENÚ
+    </button>
+
   </header>
+
+
+  <nav
+    class="mobile-nav"
+    id="mobileMenu"
+  >
+
+    <a href="./index.html">Inicio</a>
+    <a href="./obra.html">Obra</a>
+    <a href="./artista.html">Artista</a>
+    <a href="./proceso.html">Proceso</a>
+    <a href="./contacto.html">Contacto</a>
+
+  </nav>
 
 
 
   <main>
 
-
-    <!-- INTRODUCCIÓN -->
 
     <section class="artist-header">
 
@@ -267,8 +359,6 @@
 
 
 
-    <!-- RETRATO -->
-
     <section class="artist-portrait">
 
       <figure class="artist-photo">
@@ -289,8 +379,6 @@
     </section>
 
 
-
-    <!-- BIOGRAFÍA -->
 
     <section class="artist-biography">
 
@@ -338,8 +426,6 @@
 
 
 
-    <!-- INFORMACIÓN -->
-
     <section class="artist-details">
 
       <p class="section-label">
@@ -348,60 +434,88 @@
 
 
       <div class="artist-detail-row">
-
-        <span class="detail-label">
-          Artista
-        </span>
-
-        <span class="detail-value">
-          Ismael Corrales
-        </span>
-
+        <span class="detail-label">Artista</span>
+        <span class="detail-value">Ismael Corrales</span>
       </div>
 
 
       <div class="artist-detail-row">
-
-        <span class="detail-label">
-          Práctica
-        </span>
-
-        <span class="detail-value">
-          Pintura
-        </span>
-
+        <span class="detail-label">Práctica</span>
+        <span class="detail-value">Pintura</span>
       </div>
 
 
       <div class="artist-detail-row">
-
-        <span class="detail-label">
-          Técnica
-        </span>
-
-        <span class="detail-value">
-          Acrílico sobre lienzo
-        </span>
-
+        <span class="detail-label">Técnica</span>
+        <span class="detail-value">Acrílico sobre lienzo</span>
       </div>
 
 
       <div class="artist-detail-row">
-
-        <span class="detail-label">
-          Inicio
-        </span>
-
-        <span class="detail-value">
-          2020
-        </span>
-
+        <span class="detail-label">Inicio</span>
+        <span class="detail-value">2020</span>
       </div>
 
     </section>
 
 
   </main>
+
+
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuButton.addEventListener(
+      "click",
+      function(){
+
+        mobileMenu.classList.toggle("open");
+
+        const isOpen =
+          mobileMenu.classList.contains("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+        menuButton.textContent =
+          isOpen ? "CERRAR" : "MENÚ";
+
+      }
+    );
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.textContent = "MENÚ";
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+  </script>
 
 
 </body>
