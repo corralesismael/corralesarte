@@ -1167,3 +1167,61 @@ figcaption{
   }
 
 }
+/* =========================================================
+   NAVEGACIÓN MÓVIL
+   ========================================================= */
+
+.mobile-menu-toggle{
+  display:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:8px 0;
+}
+
+.mobile-nav{
+  display:none;
+}
+
+@media(max-width:800px){
+
+  .site-header{
+    justify-content:space-between;
+  }
+
+  .mobile-menu-toggle{
+    display:block;
+  }
+
+  .mobile-nav{
+    display:none;
+    position:fixed;
+    inset:72px 0 auto 0;
+    z-index:50;
+
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+
+    padding:28px 18px 34px;
+  }
+
+  .mobile-nav.open{
+    display:block;
+  }
+
+  .mobile-nav a{
+    display:block;
+    padding:15px 0;
+
+    border-bottom:1px solid var(--line);
+
+    font-family:"Playfair Display",serif;
+    font-size:2rem;
+    line-height:1;
+  }
+
+}
