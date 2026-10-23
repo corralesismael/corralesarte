@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -31,14 +32,76 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=16"
+    href="./styles.css?v=24"
   >
 
   <style>
 
-    /* ==========================================
-       CONTACTO
-       ========================================== */
+    .mobile-menu-toggle{
+      display:none;
+    }
+
+    .mobile-nav{
+      display:none;
+    }
+
+    @media(max-width:800px){
+
+      .site-header{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:space-between !important;
+        min-height:72px;
+        padding:18px !important;
+      }
+
+      .site-header .nav{
+        display:none !important;
+      }
+
+      .mobile-menu-toggle{
+        display:block !important;
+        border:0;
+        background:transparent;
+        color:#161513;
+        font-family:"DM Sans",sans-serif;
+        font-size:12px;
+        font-weight:500;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+        padding:10px 0;
+        cursor:pointer;
+      }
+
+      .mobile-nav{
+        display:none;
+        position:fixed;
+        top:72px;
+        left:0;
+        right:0;
+        z-index:9999;
+        padding:20px 18px 30px;
+        background:#f3efe7;
+        border-bottom:1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-nav.open{
+        display:block !important;
+      }
+
+      .mobile-nav a{
+        display:block;
+        padding:17px 0;
+        border-bottom:1px solid rgba(22,21,19,.18);
+        color:#161513;
+        font-family:"Playfair Display",serif;
+        font-size:32px;
+        line-height:1;
+        text-decoration:none;
+      }
+
+    }
+
 
     .contact-hero{
       padding:90px 28px 90px;
@@ -48,7 +111,6 @@
     .contact-hero h1{
       margin:18px 0 35px;
       max-width:9ch;
-
       font-size:clamp(4rem,9vw,8rem);
       line-height:.9;
     }
@@ -56,25 +118,16 @@
     .contact-intro{
       max-width:700px;
       margin:0;
-
       font-size:1.15rem;
       line-height:1.7;
-
       color:var(--muted);
     }
 
-
-    /* ==========================================
-       ADQUIRIR
-       ========================================== */
-
     .contact-purchase{
       padding:110px 28px;
-
       display:grid;
       grid-template-columns:.4fr 1.6fr;
       gap:55px;
-
       border-bottom:1px solid var(--line);
     }
 
@@ -84,9 +137,7 @@
 
     .contact-content h2{
       margin:0 0 35px;
-
       max-width:12ch;
-
       font-size:clamp(3rem,6vw,6rem);
       line-height:.96;
     }
@@ -94,21 +145,13 @@
     .contact-content > p{
       max-width:720px;
       margin:0 0 24px;
-
       font-size:1.05rem;
       line-height:1.75;
-
       color:#38342f;
     }
 
-
-    /* ==========================================
-       PASOS DE COMPRA
-       ========================================== */
-
     .purchase-steps{
       margin-top:55px;
-
       border-top:1px solid var(--line);
     }
 
@@ -116,9 +159,7 @@
       display:grid;
       grid-template-columns:65px 1fr;
       gap:25px;
-
       padding:25px 0;
-
       border-bottom:1px solid var(--line);
     }
 
@@ -129,7 +170,6 @@
 
     .purchase-step h3{
       margin:0 0 8px;
-
       font-family:"Playfair Display",serif;
       font-size:1.4rem;
       font-weight:500;
@@ -138,24 +178,15 @@
     .purchase-step p{
       max-width:620px;
       margin:0;
-
       color:var(--muted);
-
       line-height:1.6;
     }
 
-
-    /* ==========================================
-       CONTACTO DIRECTO
-       ========================================== */
-
     .contact-direct{
       padding:110px 28px;
-
       display:grid;
       grid-template-columns:.4fr 1.6fr;
       gap:55px;
-
       border-bottom:1px solid var(--line);
     }
 
@@ -165,14 +196,10 @@
 
     .contact-option{
       display:flex;
-
       justify-content:space-between;
       align-items:center;
-
       gap:30px;
-
       padding:25px 0;
-
       border-bottom:1px solid var(--line);
     }
 
@@ -183,17 +210,10 @@
 
     .contact-status{
       color:var(--muted);
-
       font-size:.72rem;
       letter-spacing:.1em;
-
       text-transform:uppercase;
     }
-
-
-    /* ==========================================
-       NOTA
-       ========================================== */
 
     .contact-note{
       padding:110px 28px;
@@ -201,26 +221,17 @@
 
     .contact-note h2{
       margin:18px 0 30px;
-
       max-width:11ch;
-
       font-size:clamp(3.2rem,7vw,6.5rem);
       line-height:.95;
     }
 
     .contact-note p{
       max-width:700px;
-
       font-size:1.05rem;
       line-height:1.7;
-
       color:var(--muted);
     }
-
-
-    /* ==========================================
-       MÓVIL
-       ========================================== */
 
     @media(max-width:800px){
 
@@ -239,7 +250,6 @@
       .contact-purchase,
       .contact-direct{
         padding:78px 18px;
-
         display:block;
       }
 
@@ -300,50 +310,50 @@
 <body>
 
 
-  <!-- HEADER -->
-
   <header class="site-header">
 
-    <a
-      href="./index.html"
-      class="brand"
-    >
+    <a href="./index.html" class="brand">
       CORRALES
     </a>
 
     <nav class="nav">
-
-      <a href="./index.html">
-        Inicio
-      </a>
-
-      <a href="./obra.html">
-        Obra
-      </a>
-
-      <a href="./artista.html">
-        Artista
-      </a>
-
-      <a href="./proceso.html">
-        Proceso
-      </a>
-
-      <a href="./contacto.html">
-        Contacto
-      </a>
-
+      <a href="./index.html">Inicio</a>
+      <a href="./obra.html">Obra</a>
+      <a href="./artista.html">Artista</a>
+      <a href="./proceso.html">Proceso</a>
+      <a href="./contacto.html">Contacto</a>
     </nav>
+
+    <button
+      class="mobile-menu-toggle"
+      id="menuButton"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      MENÚ
+    </button>
 
   </header>
 
 
+  <nav
+    class="mobile-nav"
+    id="mobileMenu"
+  >
+
+    <a href="./index.html">Inicio</a>
+    <a href="./obra.html">Obra</a>
+    <a href="./artista.html">Artista</a>
+    <a href="./proceso.html">Proceso</a>
+    <a href="./contacto.html">Contacto</a>
+
+  </nav>
+
+
+
   <main>
 
-
-    <!-- ==========================================
-         HERO
-         ========================================== -->
 
     <section class="contact-hero">
 
@@ -365,10 +375,6 @@
     </section>
 
 
-
-    <!-- ==========================================
-         CÓMO ADQUIRIR
-         ========================================== -->
 
     <section class="contact-purchase">
 
@@ -477,10 +483,6 @@
 
 
 
-    <!-- ==========================================
-         CONTACTO
-         ========================================== -->
-
     <section class="contact-direct">
 
       <p class="section-number">
@@ -551,10 +553,6 @@
 
 
 
-    <!-- ==========================================
-         NOTA FINAL
-         ========================================== -->
-
     <section class="contact-note">
 
       <p class="eyebrow">
@@ -578,8 +576,6 @@
 
 
 
-  <!-- FOOTER -->
-
   <footer class="footer">
 
     <div>
@@ -594,11 +590,67 @@
 
     </div>
 
-    <p>
-      © 2026 Ismael Corrales
-    </p>
+    <a href="./index.html">
+      Inicio ↑
+    </a>
 
   </footer>
+
+
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuButton.addEventListener(
+      "click",
+      function(){
+
+        mobileMenu.classList.toggle("open");
+
+        const isOpen =
+          mobileMenu.classList.contains("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+        menuButton.textContent =
+          isOpen ? "CERRAR" : "MENÚ";
+
+      }
+    );
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.textContent = "MENÚ";
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+  </script>
 
 
 </body>
