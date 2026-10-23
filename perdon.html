@@ -32,20 +32,100 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=42"
+    href="./styles.css?v=50"
   >
 
   <style>
 
-    /* MENÚ MÓVIL */
+    /* =========================
+       BOTÓN MENÚ
+       ========================= */
 
     #fixedMenuButton{
-      display:none;
+      position:fixed !important;
+      top:23px !important;
+      right:18px !important;
+
+      z-index:9999999 !important;
+
+      display:block !important;
+      visibility:visible !important;
+      opacity:1 !important;
+
+      width:auto !important;
+      height:auto !important;
+
+      margin:0 !important;
+      padding:5px 0 !important;
+
+      border:0 !important;
+
+      background:#f3efe7 !important;
+      color:#161513 !important;
+
+      font-family:"DM Sans",sans-serif !important;
+      font-size:12px !important;
+      font-weight:500 !important;
+
+      line-height:1 !important;
+
+      letter-spacing:.12em !important;
+      text-transform:uppercase !important;
+
+      appearance:none !important;
+      -webkit-appearance:none !important;
+
+      cursor:pointer !important;
     }
+
 
     #mobileMenu{
       display:none;
+
+      position:fixed !important;
+
+      top:72px !important;
+      left:0 !important;
+      right:0 !important;
+
+      z-index:9999998 !important;
+
+      padding:20px 18px 30px !important;
+
+      background:#f3efe7 !important;
+
+      border-bottom:
+        1px solid rgba(22,21,19,.18) !important;
     }
+
+
+    #mobileMenu.open{
+      display:block !important;
+    }
+
+
+    #mobileMenu a{
+      display:block !important;
+
+      padding:17px 0 !important;
+
+      border-bottom:
+        1px solid rgba(22,21,19,.18) !important;
+
+      color:#161513 !important;
+
+      font-family:
+        "Playfair Display",
+        serif !important;
+
+      font-size:32px !important;
+
+      line-height:1 !important;
+
+      text-decoration:none !important;
+    }
+
+
 
     @media(max-width:800px){
 
@@ -58,60 +138,9 @@
         display:none !important;
       }
 
-      #fixedMenuButton{
-        display:block !important;
-        position:fixed !important;
-        top:23px !important;
-        right:18px !important;
-        z-index:9999999 !important;
-        width:auto !important;
-        height:auto !important;
-        margin:0 !important;
-        padding:4px 0 !important;
-        border:0 !important;
-        background:#f3efe7 !important;
-        color:#161513 !important;
-        font-family:"DM Sans",sans-serif !important;
-        font-size:12px !important;
-        font-weight:500 !important;
-        line-height:1 !important;
-        letter-spacing:.12em !important;
-        text-transform:uppercase !important;
-        visibility:visible !important;
-        opacity:1 !important;
-        appearance:none !important;
-        -webkit-appearance:none !important;
-        cursor:pointer !important;
-      }
-
-      #mobileMenu{
-        display:none;
-        position:fixed !important;
-        top:72px !important;
-        left:0 !important;
-        right:0 !important;
-        z-index:9999998 !important;
-        padding:20px 18px 30px !important;
-        background:#f3efe7 !important;
-        border-bottom:1px solid rgba(22,21,19,.18) !important;
-      }
-
-      #mobileMenu.open{
-        display:block !important;
-      }
-
-      #mobileMenu a{
-        display:block !important;
-        padding:17px 0 !important;
-        border-bottom:1px solid rgba(22,21,19,.18) !important;
-        color:#161513 !important;
-        font-family:"Playfair Display",serif !important;
-        font-size:32px !important;
-        line-height:1 !important;
-        text-decoration:none !important;
-      }
-
     }
+
+
 
     @media(min-width:801px){
 
@@ -126,31 +155,48 @@
     }
 
 
-    /* FICHA DE OBRA */
+
+    /* =========================
+       FICHA DE OBRA
+       ========================= */
 
     .artwork-page{
       padding:80px 28px 0;
     }
+
 
     .artwork-header{
       max-width:1200px;
       margin:0 auto 55px;
     }
 
+
     .artwork-header h1{
       margin:18px 0 0;
+
       max-width:1000px;
-      font-family:"Playfair Display",serif;
-      font-size:clamp(4rem,9vw,8rem);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(4rem,9vw,8rem);
+
       font-weight:400;
+
       line-height:.9;
+
       letter-spacing:-.035em;
     }
+
+
 
     .artwork-image{
       max-width:1200px;
       margin:0 auto;
     }
+
 
     .artwork-image img{
       display:block;
@@ -158,94 +204,171 @@
       height:auto;
     }
 
+
+
     .artwork-information{
       max-width:1200px;
+
       margin:70px auto 0;
+
       display:grid;
-      grid-template-columns:.65fr 1.35fr;
+
+      grid-template-columns:
+        .65fr 1.35fr;
+
       gap:70px;
+
       padding-bottom:90px;
-      border-bottom:1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
     }
+
+
 
     .artwork-information h2{
       margin:0;
-      font-size:clamp(2.6rem,5vw,4.8rem);
+
+      font-size:
+        clamp(2.6rem,5vw,4.8rem);
+
       line-height:1;
     }
 
+
+
     .artwork-meta{
-      border-top:1px solid var(--line);
+      border-top:
+        1px solid var(--line);
     }
+
+
 
     .artwork-meta-row{
       display:grid;
-      grid-template-columns:130px 1fr;
+
+      grid-template-columns:
+        130px 1fr;
+
       gap:25px;
+
       padding:18px 0;
-      border-bottom:1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
     }
+
+
 
     .artwork-meta-label{
       font-size:.7rem;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
+
       color:var(--muted);
     }
+
+
 
     .artwork-meta-value{
       font-size:.95rem;
       line-height:1.5;
     }
 
+
+
     .artwork-button{
       display:inline-block;
+
       margin-top:35px;
+
       padding:15px 22px;
-      border:1px solid #161513;
+
+      border:
+        1px solid #161513;
+
       color:#161513;
+
       text-decoration:none;
+
       font-size:.72rem;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
     }
 
+
+
     .artwork-about{
       max-width:1200px;
+
       margin:0 auto;
+
       padding:90px 0;
+
       display:grid;
-      grid-template-columns:.65fr 1.35fr;
+
+      grid-template-columns:
+        .65fr 1.35fr;
+
       gap:70px;
-      border-bottom:1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
     }
+
+
 
     .artwork-about h2{
       margin:0;
-      font-size:clamp(2.6rem,5vw,4.8rem);
+
+      font-size:
+        clamp(2.6rem,5vw,4.8rem);
+
       line-height:1;
     }
 
+
+
     .artwork-about p{
       max-width:720px;
+
       margin:0 0 24px;
+
       color:#4f4a43;
+
       font-size:1.05rem;
+
       line-height:1.75;
     }
 
+
+
     .artwork-contact{
       max-width:1200px;
+
       margin:0 auto;
+
       padding:90px 0 110px;
     }
 
+
+
     .artwork-contact h2{
       margin:18px 0 30px;
+
       max-width:900px;
-      font-size:clamp(3.2rem,7vw,6.5rem);
+
+      font-size:
+        clamp(3.2rem,7vw,6.5rem);
+
       line-height:.95;
     }
+
+
 
     @media(max-width:800px){
 
@@ -253,47 +376,64 @@
         padding:65px 18px 0;
       }
 
+
       .artwork-header{
         margin-bottom:40px;
       }
 
+
       .artwork-header h1{
-        font-size:clamp(3.3rem,15vw,5.3rem);
+        font-size:
+          clamp(3.3rem,15vw,5.3rem);
       }
+
 
       .artwork-information,
       .artwork-about{
         display:block;
+
         margin-top:55px;
+
         padding-bottom:65px;
       }
+
 
       .artwork-information h2,
       .artwork-about h2{
         margin-bottom:35px;
-        font-size:clamp(2.8rem,12vw,4rem);
+
+        font-size:
+          clamp(2.8rem,12vw,4rem);
       }
 
+
       .artwork-meta-row{
-        grid-template-columns:105px 1fr;
+        grid-template-columns:
+          105px 1fr;
+
         gap:15px;
       }
+
 
       .artwork-about{
         padding-top:65px;
       }
+
 
       .artwork-about p{
         font-size:.98rem;
         line-height:1.7;
       }
 
+
       .artwork-contact{
         padding:65px 0 85px;
       }
 
+
       .artwork-contact h2{
-        font-size:clamp(3rem,14vw,4.8rem);
+        font-size:
+          clamp(3rem,14vw,4.8rem);
       }
 
     }
@@ -313,36 +453,50 @@
     type="button"
     aria-label="Abrir menú"
     aria-expanded="false"
-    style="
-      position:fixed;
-      top:23px;
-      right:18px;
-      z-index:9999999;
-    "
   >
     MENÚ
   </button>
+
 
 
   <!-- HEADER -->
 
   <header class="site-header">
 
-    <a href="./index.html" class="brand">
+    <a
+      href="./index.html"
+      class="brand"
+    >
       CORRALES
     </a>
 
+
     <nav class="nav">
 
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
 
     </nav>
 
   </header>
+
 
 
   <!-- MENÚ MÓVIL -->
@@ -352,13 +506,28 @@
     aria-label="Navegación móvil"
   >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
 
   </nav>
+
 
 
   <main class="artwork-page">
@@ -379,6 +548,7 @@
     </section>
 
 
+
     <!-- IMAGEN -->
 
     <section class="artwork-image">
@@ -391,9 +561,11 @@
     </section>
 
 
+
     <!-- INFORMACIÓN -->
 
     <section class="artwork-information">
+
 
       <div>
 
@@ -409,46 +581,112 @@
       </div>
 
 
+
       <div>
+
 
         <div class="artwork-meta">
 
-          <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Artista</span>
-            <span class="artwork-meta-value">Ismael Corrales</span>
-          </div>
 
           <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Título</span>
-            <span class="artwork-meta-value">El peso del perdón</span>
+
+            <span class="artwork-meta-label">
+              Artista
+            </span>
+
+            <span class="artwork-meta-value">
+              Ismael Corrales
+            </span>
+
           </div>
 
-          <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Año</span>
-            <span class="artwork-meta-value">2025</span>
-          </div>
+
 
           <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Técnica</span>
-            <span class="artwork-meta-value">Acrílico sobre lienzo</span>
+
+            <span class="artwork-meta-label">
+              Título
+            </span>
+
+            <span class="artwork-meta-value">
+              El peso del perdón
+            </span>
+
           </div>
 
-          <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Dimensiones</span>
-            <span class="artwork-meta-value">60 × 50 cm</span>
-          </div>
+
 
           <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Estado</span>
-            <span class="artwork-meta-value">Disponible</span>
+
+            <span class="artwork-meta-label">
+              Año
+            </span>
+
+            <span class="artwork-meta-value">
+              2025
+            </span>
+
           </div>
 
+
+
           <div class="artwork-meta-row">
-            <span class="artwork-meta-label">Precio</span>
-            <span class="artwork-meta-value">$80 USD</span>
+
+            <span class="artwork-meta-label">
+              Técnica
+            </span>
+
+            <span class="artwork-meta-value">
+              Acrílico sobre lienzo
+            </span>
+
           </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Dimensiones
+            </span>
+
+            <span class="artwork-meta-value">
+              60 × 50 cm
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Estado
+            </span>
+
+            <span class="artwork-meta-value">
+              Disponible
+            </span>
+
+          </div>
+
+
+
+          <div class="artwork-meta-row">
+
+            <span class="artwork-meta-label">
+              Precio
+            </span>
+
+            <span class="artwork-meta-value">
+              $80 USD
+            </span>
+
+          </div>
+
 
         </div>
+
 
 
         <a
@@ -458,14 +696,18 @@
           Adquirir obra
         </a>
 
+
       </div>
 
+
     </section>
+
 
 
     <!-- SOBRE LA OBRA -->
 
     <section class="artwork-about">
+
 
       <div>
 
@@ -479,6 +721,7 @@
         </h2>
 
       </div>
+
 
 
       <div>
@@ -498,7 +741,9 @@
 
       </div>
 
+
     </section>
+
 
 
     <!-- ADQUIRIR -->
@@ -527,7 +772,6 @@
   </main>
 
 
-  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -550,7 +794,6 @@
   </footer>
 
 
-  <!-- JAVASCRIPT -->
 
   <script>
 
@@ -561,6 +804,40 @@
       document.getElementById("mobileMenu");
 
 
+    function updateMenuButtonVisibility(){
+
+      if(window.innerWidth <= 800){
+
+        menuButton.style.setProperty(
+          "display",
+          "block",
+          "important"
+        );
+
+      }else{
+
+        menuButton.style.setProperty(
+          "display",
+          "none",
+          "important"
+        );
+
+        mobileMenu.classList.remove("open");
+
+      }
+
+    }
+
+
+    updateMenuButtonVisibility();
+
+
+    window.addEventListener(
+      "resize",
+      updateMenuButtonVisibility
+    );
+
+
     menuButton.addEventListener(
       "click",
       function(){
@@ -568,12 +845,18 @@
         const isOpen =
           mobileMenu.classList.toggle("open");
 
+
         menuButton.textContent =
-          isOpen ? "CERRAR" : "MENÚ";
+          isOpen
+            ? "CERRAR"
+            : "MENÚ";
+
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen ? "true" : "false"
+          isOpen
+            ? "true"
+            : "false"
         );
 
       }
@@ -590,7 +873,8 @@
 
             mobileMenu.classList.remove("open");
 
-            menuButton.textContent = "MENÚ";
+            menuButton.textContent =
+              "MENÚ";
 
             menuButton.setAttribute(
               "aria-expanded",
