@@ -2019,3 +2019,56 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — LOGO MÓVIL CORREGIDO
+   ========================================================= */
+
+.header-logo{
+  width:112px !important;
+  height:112px !important;
+  overflow:visible !important;
+}
+
+.header-logo img{
+  display:block !important;
+
+  width:106px !important;
+  height:106px !important;
+
+  min-width:106px !important;
+  min-height:106px !important;
+
+  max-width:106px !important;
+  max-height:106px !important;
+
+  object-fit:contain !important;
+
+  transform:none !important;
+}
+
+@media(max-width:800px){
+
+  .header-logo{
+    left:50% !important;
+    top:50% !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    width:112px !important;
+    height:112px !important;
+  }
+
+  .header-logo img{
+    width:106px !important;
+    height:106px !important;
+
+    min-width:106px !important;
+    min-height:106px !important;
+
+    max-width:106px !important;
+    max-height:106px !important;
+
+    transform:none !important;
+  }
+
+}
