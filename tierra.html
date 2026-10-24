@@ -7,10 +7,8 @@
 
   <title>Lo que pasa en la tierra se queda en la tierra — Ismael Corrales</title>
 
-  <meta
-    name="description"
-    content="Lo que pasa en la tierra se queda en la tierra, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2026."
-  >
+  <meta name="description"
+    content="Lo que pasa en la tierra se queda en la tierra, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2026.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,22 +18,22 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=156">
+  <link rel="stylesheet" href="./styles.css?v=157">
 
   <style>
 
-    /* ENCABEZADO INTELIGENTE */
+    /* ENCABEZADO */
 
     .site-header {
       position: sticky !important;
       top: 0 !important;
       z-index: 999999 !important;
       transition: transform .3s ease, opacity .3s ease !important;
-      will-change: transform;
       background: rgba(243,239,231,.96) !important;
       backdrop-filter: blur(10px) !important;
       -webkit-backdrop-filter: blur(10px) !important;
       overflow: visible !important;
+      will-change: transform;
     }
 
     .site-header.header-hidden {
@@ -43,76 +41,12 @@
       opacity: 0 !important;
     }
 
-    #menuButton {
-      display: none !important;
-    }
-
-    #mobileMenu {
+    .mobile-menu-toggle {
       display: none;
     }
 
-    @media (max-width:800px) {
-
-      .site-header {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        min-height: 118px !important;
-        padding: 18px !important;
-        overflow: visible !important;
-      }
-
-      .site-header .nav {
-        display: none !important;
-      }
-
-      #menuButton {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        z-index: 100001 !important;
-        margin: 0 !important;
-        padding: 10px 0 !important;
-        border: 0 !important;
-        background: transparent !important;
-        color: #161513 !important;
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        letter-spacing: .12em !important;
-        text-transform: uppercase !important;
-        cursor: pointer;
-      }
-
-      #mobileMenu {
-        display: none;
-        position: fixed;
-        top: 118px !important;
-        left: 0;
-        right: 0;
-        z-index: 999998;
-        padding: 20px 18px 30px;
-        background: #f3efe7;
-        border-bottom: 1px solid rgba(22,21,19,.18);
-      }
-
-      #mobileMenu.open {
-        display: block !important;
-      }
-
-      #mobileMenu a {
-        display: block;
-        padding: 17px 0;
-        border-bottom: 1px solid rgba(22,21,19,.18);
-        color: #161513;
-        font-family: "Playfair Display", serif;
-        font-size: 32px;
-        line-height: 1;
-        text-decoration: none;
-      }
+    .mobile-nav {
+      display: none;
     }
 
     /* IMAGEN */
@@ -259,6 +193,63 @@
 
     @media (max-width:800px) {
 
+      .site-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 118px !important;
+        padding: 18px !important;
+        overflow: visible !important;
+      }
+
+      .site-header .nav {
+        display: none !important;
+      }
+
+      .mobile-menu-toggle {
+        display: block !important;
+        position: relative !important;
+        z-index: 100001 !important;
+        margin: 0 !important;
+        padding: 10px 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: #161513 !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        letter-spacing: .12em !important;
+        text-transform: uppercase !important;
+        cursor: pointer;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 118px;
+        left: 0;
+        right: 0;
+        z-index: 999998;
+        padding: 20px 18px 30px;
+        background: #f3efe7;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-nav.open {
+        display: block !important;
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 17px 0;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+        color: #161513;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        line-height: 1;
+        text-decoration: none;
+      }
+
       .artwork-image-section {
         padding: 40px 18px 0;
       }
@@ -300,10 +291,6 @@
 
       .artwork-purchase {
         margin-top: 26px !important;
-      }
-
-      .artwork-purchase .artwork-button {
-        margin-top: 0 !important;
       }
 
       .artwork-story {
@@ -366,6 +353,7 @@
     </nav>
 
     <button
+      class="mobile-menu-toggle"
       id="menuButton"
       type="button"
       aria-label="Abrir menú"
@@ -378,7 +366,11 @@
 
   <!-- MENÚ MÓVIL -->
 
-  <nav id="mobileMenu" aria-label="Navegación móvil">
+  <nav
+    class="mobile-nav"
+    id="mobileMenu"
+    aria-label="Navegación móvil"
+  >
     <a href="./index.html">Inicio</a>
     <a href="./obra.html">Obra</a>
     <a href="./artista.html">Artista</a>
@@ -391,7 +383,6 @@
     <!-- IMAGEN -->
 
     <section class="artwork-image-section">
-
       <div class="artwork-image-inner">
 
         <img
@@ -400,13 +391,11 @@
         >
 
       </div>
-
     </section>
 
     <!-- INFORMACIÓN -->
 
     <section class="artwork-details">
-
       <div class="artwork-details-inner">
 
         <div class="artwork-details-title">
@@ -458,26 +447,18 @@
           </div>
 
           <div class="artwork-purchase">
-
-            <a
-              href="./contacto.html"
-              class="artwork-button"
-            >
+            <a href="./contacto.html" class="artwork-button">
               Adquirir obra
             </a>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- SOBRE LA OBRA -->
 
     <section class="artwork-story">
-
       <div class="artwork-story-inner">
 
         <div>
@@ -509,15 +490,12 @@
           </p>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- CIERRE -->
 
     <section class="artwork-final">
-
       <div class="artwork-final-inner">
 
         <p class="eyebrow">
@@ -528,15 +506,11 @@
           Consultar disponibilidad.
         </h2>
 
-        <a
-          href="./contacto.html"
-          class="text-link"
-        >
+        <a href="./contacto.html" class="text-link">
           CONTACTAR →
         </a>
 
       </div>
-
     </section>
 
   </main>
@@ -546,15 +520,8 @@
   <footer class="footer">
 
     <div>
-
-      <p class="section-number">
-        CORRALES
-      </p>
-
-      <p>
-        Arte contemporáneo · Originales sobre lienzo
-      </p>
-
+      <p class="section-number">CORRALES</p>
+      <p>Arte contemporáneo · Originales sobre lienzo</p>
     </div>
 
     <a href="./obra.html">
@@ -570,8 +537,6 @@
     const menuButton = document.getElementById("menuButton");
     const mobileMenu = document.getElementById("mobileMenu");
     const header = document.querySelector(".site-header");
-
-    /* ABRIR Y CERRAR MENÚ */
 
     menuButton.addEventListener("click", function() {
 
@@ -590,23 +555,19 @@
 
     });
 
-    /* CERRAR MENÚ AL ELEGIR UNA PÁGINA */
-
     mobileMenu.querySelectorAll("a").forEach(function(link) {
 
       link.addEventListener("click", function() {
 
         mobileMenu.classList.remove("open");
-
         menuButton.textContent = "MENÚ";
-
         menuButton.setAttribute("aria-expanded", "false");
 
       });
 
     });
 
-    /* ENCABEZADO INTELIGENTE */
+    /* OCULTAR AL BAJAR Y MOSTRAR AL SUBIR */
 
     let lastScrollY = window.scrollY;
 
