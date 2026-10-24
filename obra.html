@@ -32,10 +32,39 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=92"
+    href="./styles.css?v=147"
   >
 
   <style>
+
+    /* =========================
+       HEADER INTELIGENTE
+       ========================= */
+
+    .site-header{
+      position:sticky !important;
+      top:0 !important;
+      z-index:999999 !important;
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease !important;
+
+      will-change:transform;
+
+      background:rgba(243,239,231,.96) !important;
+
+      backdrop-filter:blur(10px) !important;
+      -webkit-backdrop-filter:blur(10px) !important;
+
+      overflow:visible !important;
+    }
+
+    .site-header.header-hidden{
+      transform:translateY(-110%) !important;
+      opacity:0 !important;
+    }
+
 
     /* =========================
        MENÚ MÓVIL
@@ -47,63 +76,6 @@
 
     .mobile-nav{
       display:none;
-    }
-
-    @media(max-width:800px){
-
-      .site-header{
-        display:flex !important;
-        align-items:center !important;
-        justify-content:space-between !important;
-        min-height:72px;
-        padding:18px !important;
-      }
-
-      .site-header .nav{
-        display:none !important;
-      }
-
-      .mobile-menu-toggle{
-        display:block !important;
-        border:0;
-        background:transparent;
-        color:#161513;
-        font-family:"DM Sans",sans-serif;
-        font-size:12px;
-        font-weight:500;
-        letter-spacing:.12em;
-        text-transform:uppercase;
-        padding:10px 0;
-        cursor:pointer;
-      }
-
-      .mobile-nav{
-        display:none;
-        position:fixed;
-        top:72px;
-        left:0;
-        right:0;
-        z-index:9999;
-        padding:20px 18px 30px;
-        background:#f3efe7;
-        border-bottom:1px solid rgba(22,21,19,.18);
-      }
-
-      .mobile-nav.open{
-        display:block !important;
-      }
-
-      .mobile-nav a{
-        display:block;
-        padding:17px 0;
-        border-bottom:1px solid rgba(22,21,19,.18);
-        color:#161513;
-        font-family:"Playfair Display",serif;
-        font-size:32px;
-        line-height:1;
-        text-decoration:none;
-      }
-
     }
 
 
@@ -195,6 +167,7 @@
       display:block;
       width:100%;
       height:auto;
+
       transition:
         transform .35s ease,
         opacity .35s ease;
@@ -212,9 +185,13 @@
     .archive-card h2{
       margin:0 0 11px;
       max-width:22ch;
+
       font-family:"Playfair Display",serif;
+
       font-size:clamp(1.6rem,2.4vw,2.35rem);
+
       font-weight:400;
+
       line-height:1.06;
     }
 
@@ -225,18 +202,27 @@
 
     .archive-meta{
       margin:0 0 4px;
+
       font-size:.8rem;
+
       line-height:1.5;
+
       color:var(--muted);
     }
 
     .archive-card-bottom{
       margin-top:16px;
+
       padding-top:14px;
+
       border-top:1px solid var(--line);
+
       display:flex;
+
       justify-content:space-between;
+
       gap:20px;
+
       align-items:center;
     }
 
@@ -247,8 +233,11 @@
 
     .archive-status{
       font-size:.62rem;
+
       letter-spacing:.12em;
+
       text-transform:uppercase;
+
       color:var(--muted);
     }
 
@@ -259,6 +248,7 @@
 
     .archive-final{
       padding:105px 28px 120px;
+
       border-top:1px solid var(--line);
     }
 
@@ -269,10 +259,15 @@
 
     .archive-final h2{
       margin:18px 0 32px;
+
       max-width:10ch;
+
       font-size:clamp(3.8rem,7vw,7rem);
+
       line-height:.92;
+
       font-weight:400;
+
       letter-spacing:-.035em;
     }
 
@@ -283,69 +278,187 @@
 
     @media(max-width:800px){
 
+      .site-header{
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:space-between !important;
+
+        min-height:118px !important;
+
+        padding:18px !important;
+
+        overflow:visible !important;
+      }
+
+
+      .site-header .nav{
+        display:none !important;
+      }
+
+
+      .mobile-menu-toggle{
+        display:block !important;
+
+        border:0;
+
+        background:transparent;
+
+        color:#161513;
+
+        font-family:"DM Sans",sans-serif;
+
+        font-size:12px;
+
+        font-weight:500;
+
+        letter-spacing:.12em;
+
+        text-transform:uppercase;
+
+        padding:10px 0;
+
+        cursor:pointer;
+      }
+
+
+      .mobile-nav{
+        display:none;
+
+        position:fixed;
+
+        top:118px;
+
+        left:0;
+
+        right:0;
+
+        z-index:999998;
+
+        padding:20px 18px 30px;
+
+        background:#f3efe7;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+      }
+
+
+      .mobile-nav.open{
+        display:block !important;
+      }
+
+
+      .mobile-nav a{
+        display:block;
+
+        padding:17px 0;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+
+        color:#161513;
+
+        font-family:"Playfair Display",serif;
+
+        font-size:32px;
+
+        line-height:1;
+
+        text-decoration:none;
+      }
+
+
       .archive-hero{
         padding:65px 18px 55px;
       }
+
 
       .archive-hero h1{
         font-size:clamp(4rem,18vw,6rem);
       }
 
+
       .archive-intro{
         font-size:.98rem;
+
         line-height:1.7;
       }
 
+
       .archive-filter-bar{
         padding:22px 18px;
+
         gap:18px;
       }
+
 
       .archive-filter{
         font-size:.6rem;
       }
 
+
       .archive-grid{
         padding:55px 18px 90px;
-        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+
         column-gap:14px;
+
         row-gap:58px;
       }
+
 
       .archive-card-content{
         padding-top:12px;
       }
 
+
       .archive-card h2{
         margin-bottom:8px;
+
         font-size:clamp(1.15rem,5vw,1.5rem);
+
         line-height:1.02;
       }
 
+
       .archive-meta{
         font-size:.68rem;
+
         line-height:1.4;
       }
 
+
       .archive-card-bottom{
         margin-top:11px;
+
         padding-top:10px;
+
         display:block;
       }
 
+
       .archive-price{
         display:block;
+
         margin-bottom:5px;
+
         font-size:.7rem;
       }
+
 
       .archive-status{
         font-size:.55rem;
       }
 
+
       .archive-final{
         padding:80px 18px 95px;
       }
+
 
       .archive-final h2{
         font-size:clamp(3.4rem,15vw,5.2rem);
@@ -361,15 +474,32 @@
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
+
 
     <a
       href="./index.html"
       class="brand"
     >
       CORRALES
+    </a>
+
+
+    <a
+      href="./index.html"
+      class="header-logo"
+      aria-label="Inicio Corrales"
+    >
+
+      <img
+        src="./assets/Logo-header.PNG?v=4"
+        alt=""
+      >
+
     </a>
 
 
@@ -408,29 +538,50 @@
       MENÚ
     </button>
 
+
   </header>
 
 
-  <!-- MENÚ MÓVIL -->
+
+  <!-- =========================
+       MENÚ MÓVIL
+       ========================= -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
   >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
 
   </nav>
+
 
 
   <main>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+         ========================= -->
 
     <section class="archive-hero">
 
@@ -455,7 +606,10 @@
     </section>
 
 
-    <!-- FILTROS -->
+
+    <!-- =========================
+         FILTROS
+         ========================= -->
 
     <div class="archive-filter-bar">
 
@@ -478,7 +632,10 @@
     </div>
 
 
-    <!-- CATÁLOGO -->
+
+    <!-- =========================
+         CATÁLOGO
+         ========================= -->
 
     <section class="archive-grid">
 
@@ -533,6 +690,7 @@
       </article>
 
 
+
       <!-- TIERRA -->
 
       <article class="archive-card">
@@ -581,6 +739,7 @@
         </div>
 
       </article>
+
 
 
       <!-- PERDÓN -->
@@ -633,6 +792,7 @@
       </article>
 
 
+
       <!-- MI CULPA -->
 
       <article class="archive-card">
@@ -683,6 +843,7 @@
       </article>
 
 
+
       <!-- NOCHE -->
 
       <article class="archive-card">
@@ -731,6 +892,7 @@
         </div>
 
       </article>
+
 
 
       <!-- BANCO -->
@@ -786,7 +948,10 @@
     </section>
 
 
-    <!-- CIERRE -->
+
+    <!-- =========================
+         CIERRE
+         ========================= -->
 
     <section class="archive-final">
 
@@ -816,6 +981,11 @@
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
   <footer class="footer">
 
     <div>
@@ -837,6 +1007,11 @@
   </footer>
 
 
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
   <script>
 
     const menuButton =
@@ -845,6 +1020,11 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const header =
+      document.querySelector(".site-header");
+
+
+    /* MENÚ MÓVIL */
 
     menuButton.addEventListener(
       "click",
@@ -861,6 +1041,14 @@
           isOpen ? "true" : "false"
         );
 
+        if(isOpen){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
       }
     );
 
@@ -873,9 +1061,12 @@
           "click",
           function(){
 
-            mobileMenu.classList.remove("open");
+            mobileMenu.classList.remove(
+              "open"
+            );
 
-            menuButton.textContent = "MENÚ";
+            menuButton.textContent =
+              "MENÚ";
 
             menuButton.setAttribute(
               "aria-expanded",
@@ -886,6 +1077,96 @@
         );
 
       });
+
+
+    /* =========================
+       HEADER INTELIGENTE
+       BAJAR = OCULTAR
+       SUBIR = MOSTRAR
+       ========================= */
+
+    let lastScrollY =
+      window.scrollY;
+
+
+    window.addEventListener(
+      "scroll",
+      function(){
+
+        const currentScrollY =
+          window.scrollY;
+
+
+        /* Si el menú está abierto,
+           no ocultar header */
+
+        if(
+          mobileMenu.classList.contains(
+            "open"
+          )
+        ){
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+
+        }
+
+
+        /* Cerca del inicio
+           siempre visible */
+
+        if(currentScrollY < 80){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+
+        }
+
+
+        /* BAJANDO */
+
+        if(
+          currentScrollY >
+          lastScrollY
+        ){
+
+          header.classList.add(
+            "header-hidden"
+          );
+
+        }
+
+
+        /* SUBIENDO */
+
+        else if(
+          currentScrollY <
+          lastScrollY
+        ){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
+
+        lastScrollY =
+          currentScrollY;
+
+      },
+      {
+        passive:true
+      }
+    );
 
   </script>
 
