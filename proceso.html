@@ -32,10 +32,43 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=23"
+    href="./styles.css?v=149"
   >
 
   <style>
+
+    /* =========================
+       HEADER INTELIGENTE
+       ========================= */
+
+    .site-header{
+      position:sticky !important;
+      top:0 !important;
+      z-index:999999 !important;
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease !important;
+
+      will-change:transform;
+
+      background:rgba(243,239,231,.96) !important;
+
+      backdrop-filter:blur(10px) !important;
+      -webkit-backdrop-filter:blur(10px) !important;
+
+      overflow:visible !important;
+    }
+
+    .site-header.header-hidden{
+      transform:translateY(-110%) !important;
+      opacity:0 !important;
+    }
+
+
+    /* =========================
+       MENÚ MÓVIL
+       ========================= */
 
     .mobile-menu-toggle{
       display:none;
@@ -45,63 +78,10 @@
       display:none;
     }
 
-    @media(max-width:800px){
 
-      .site-header{
-        display:flex !important;
-        align-items:center !important;
-        justify-content:space-between !important;
-        min-height:72px;
-        padding:18px !important;
-      }
-
-      .site-header .nav{
-        display:none !important;
-      }
-
-      .mobile-menu-toggle{
-        display:block !important;
-        border:0;
-        background:transparent;
-        color:#161513;
-        font-family:"DM Sans",sans-serif;
-        font-size:12px;
-        font-weight:500;
-        letter-spacing:.12em;
-        text-transform:uppercase;
-        padding:10px 0;
-        cursor:pointer;
-      }
-
-      .mobile-nav{
-        display:none;
-        position:fixed;
-        top:72px;
-        left:0;
-        right:0;
-        z-index:9999;
-        padding:20px 18px 30px;
-        background:#f3efe7;
-        border-bottom:1px solid rgba(22,21,19,.18);
-      }
-
-      .mobile-nav.open{
-        display:block !important;
-      }
-
-      .mobile-nav a{
-        display:block;
-        padding:17px 0;
-        border-bottom:1px solid rgba(22,21,19,.18);
-        color:#161513;
-        font-family:"Playfair Display",serif;
-        font-size:32px;
-        line-height:1;
-        text-decoration:none;
-      }
-
-    }
-
+    /* =========================
+       HERO
+       ========================= */
 
     .process-hero{
       padding:90px 28px 80px;
@@ -123,11 +103,19 @@
       color:var(--muted);
     }
 
+
+    /* =========================
+       SECCIONES DEL PROCESO
+       ========================= */
+
     .process-section{
       padding:100px 28px;
       border-bottom:1px solid var(--line);
+
       display:grid;
+
       grid-template-columns:.35fr 1.65fr;
+
       gap:50px;
     }
 
@@ -137,31 +125,55 @@
 
     .process-content h2{
       margin:0 0 26px;
+
       font-size:clamp(2.8rem,5vw,5rem);
+
       line-height:1;
     }
 
     .process-content p{
       max-width:760px;
+
       margin:0 0 20px;
+
       font-size:1.05rem;
+
       line-height:1.75;
+
       color:#38342f;
     }
 
+
+    /* IMÁGENES PENDIENTES */
+
     .process-placeholder{
       margin-top:42px;
+
       min-height:420px;
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
+
       border:1px solid var(--line);
+
       background:#e5dfd5;
+
       color:var(--muted);
+
       font-size:.72rem;
+
       letter-spacing:.14em;
+
       text-transform:uppercase;
     }
+
+
+    /* =========================
+       CIERRE
+       ========================= */
 
     .process-end{
       padding:110px 28px;
@@ -169,53 +181,167 @@
 
     .process-end h2{
       margin:18px 0 36px;
+
       font-size:clamp(3.2rem,7vw,6.5rem);
+
       line-height:.95;
     }
 
+
+    /* =========================
+       MÓVIL
+       ========================= */
+
     @media(max-width:800px){
+
+      .site-header{
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:space-between !important;
+
+        min-height:118px !important;
+
+        padding:18px !important;
+
+        overflow:visible !important;
+      }
+
+
+      .site-header .nav{
+        display:none !important;
+      }
+
+
+      .mobile-menu-toggle{
+        display:block !important;
+
+        border:0;
+
+        background:transparent;
+
+        color:#161513;
+
+        font-family:"DM Sans",sans-serif;
+
+        font-size:12px;
+
+        font-weight:500;
+
+        letter-spacing:.12em;
+
+        text-transform:uppercase;
+
+        padding:10px 0;
+
+        cursor:pointer;
+      }
+
+
+      .mobile-nav{
+        display:none;
+
+        position:fixed;
+
+        top:118px;
+
+        left:0;
+
+        right:0;
+
+        z-index:999998;
+
+        padding:20px 18px 30px;
+
+        background:#f3efe7;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+      }
+
+
+      .mobile-nav.open{
+        display:block !important;
+      }
+
+
+      .mobile-nav a{
+        display:block;
+
+        padding:17px 0;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+
+        color:#161513;
+
+        font-family:"Playfair Display",serif;
+
+        font-size:32px;
+
+        line-height:1;
+
+        text-decoration:none;
+      }
+
 
       .process-hero{
         padding:72px 18px 58px;
       }
 
+
       .process-hero h1{
-        font-size:clamp(3.5rem,16vw,5.5rem);
+        font-size:
+          clamp(3.5rem,16vw,5.5rem);
       }
+
 
       .process-intro{
         font-size:1rem;
       }
 
+
       .process-section{
         padding:75px 18px;
+
         display:block;
       }
+
 
       .process-section .section-number{
         margin-bottom:30px;
       }
 
+
       .process-content h2{
-        font-size:clamp(2.8rem,12vw,4.2rem);
+        font-size:
+          clamp(2.8rem,12vw,4.2rem);
       }
+
 
       .process-content p{
         font-size:.98rem;
+
         line-height:1.68;
       }
 
+
       .process-placeholder{
         min-height:300px;
+
         margin-top:34px;
       }
+
 
       .process-end{
         padding:80px 18px;
       }
 
+
       .process-end h2{
-        font-size:clamp(3rem,14vw,4.8rem);
+        font-size:
+          clamp(3rem,14vw,4.8rem);
       }
 
     }
@@ -228,19 +354,59 @@
 <body>
 
 
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <header class="site-header">
 
-    <a href="./index.html" class="brand">
+
+    <a
+      href="./index.html"
+      class="brand"
+    >
       CORRALES
     </a>
 
+
+    <a
+      href="./index.html"
+      class="header-logo"
+      aria-label="Inicio Corrales"
+    >
+
+      <img
+        src="./assets/Logo-header.PNG?v=4"
+        alt=""
+      >
+
+    </a>
+
+
     <nav class="nav">
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
+
     </nav>
+
 
     <button
       class="mobile-menu-toggle"
@@ -252,25 +418,50 @@
       MENÚ
     </button>
 
+
   </header>
 
+
+
+  <!-- =========================
+       MENÚ MÓVIL
+       ========================= -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
   >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
 
   </nav>
 
 
+
   <main>
 
+
+    <!-- =========================
+         HERO
+         ========================= -->
 
     <section class="process-hero">
 
@@ -293,6 +484,10 @@
     </section>
 
 
+
+    <!-- =========================
+         01 · OBSERVAR
+         ========================= -->
 
     <section class="process-section">
 
@@ -328,6 +523,10 @@
 
 
 
+    <!-- =========================
+         02 · FOTOGRAFIAR
+         ========================= -->
+
     <section class="process-section">
 
       <p class="section-number">
@@ -360,6 +559,10 @@
     </section>
 
 
+
+    <!-- =========================
+         03 · COMPONER
+         ========================= -->
 
     <section class="process-section">
 
@@ -394,6 +597,10 @@
 
 
 
+    <!-- =========================
+         04 · PINTAR
+         ========================= -->
+
     <section class="process-section">
 
       <p class="section-number">
@@ -426,6 +633,10 @@
     </section>
 
 
+
+    <!-- =========================
+         05 · TERMINAR
+         ========================= -->
 
     <section class="process-section">
 
@@ -460,6 +671,10 @@
 
 
 
+    <!-- =========================
+         CIERRE
+         ========================= -->
+
     <section class="process-end">
 
       <p class="eyebrow">
@@ -471,7 +686,10 @@
         la obra.
       </h2>
 
-      <a href="./obra.html" class="text-link">
+      <a
+        href="./obra.html"
+        class="text-link"
+      >
         VER ARCHIVO DE OBRA →
       </a>
 
@@ -481,6 +699,10 @@
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer class="footer">
 
@@ -504,6 +726,10 @@
 
 
 
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
   <script>
 
     const menuButton =
@@ -512,23 +738,34 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const header =
+      document.querySelector(".site-header");
+
+
+    /* MENÚ MÓVIL */
 
     menuButton.addEventListener(
       "click",
       function(){
 
-        mobileMenu.classList.toggle("open");
-
         const isOpen =
-          mobileMenu.classList.contains("open");
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          isOpen
-        );
+          mobileMenu.classList.toggle("open");
 
         menuButton.textContent =
           isOpen ? "CERRAR" : "MENÚ";
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+        if(isOpen){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
 
       }
     );
@@ -542,9 +779,12 @@
           "click",
           function(){
 
-            mobileMenu.classList.remove("open");
+            mobileMenu.classList.remove(
+              "open"
+            );
 
-            menuButton.textContent = "MENÚ";
+            menuButton.textContent =
+              "MENÚ";
 
             menuButton.setAttribute(
               "aria-expanded",
@@ -555,6 +795,96 @@
         );
 
       });
+
+
+    /* =========================
+       HEADER INTELIGENTE
+       BAJAR = OCULTAR
+       SUBIR = MOSTRAR
+       ========================= */
+
+    let lastScrollY =
+      window.scrollY;
+
+
+    window.addEventListener(
+      "scroll",
+      function(){
+
+        const currentScrollY =
+          window.scrollY;
+
+
+        /* Si el menú está abierto,
+           mantener header visible */
+
+        if(
+          mobileMenu.classList.contains(
+            "open"
+          )
+        ){
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+
+        }
+
+
+        /* Cerca del inicio,
+           siempre visible */
+
+        if(currentScrollY < 80){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+
+        }
+
+
+        /* BAJANDO */
+
+        if(
+          currentScrollY >
+          lastScrollY
+        ){
+
+          header.classList.add(
+            "header-hidden"
+          );
+
+        }
+
+
+        /* SUBIENDO */
+
+        else if(
+          currentScrollY <
+          lastScrollY
+        ){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
+
+        lastScrollY =
+          currentScrollY;
+
+      },
+      {
+        passive:true
+      }
+    );
 
   </script>
 
