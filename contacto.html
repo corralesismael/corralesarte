@@ -219,6 +219,23 @@
       color: var(--muted);
     }
 
+    /* ENLACES DE CONTACTO */
+
+    a.channel-row {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    a.channel-row:hover .channel-name {
+      opacity: .6;
+    }
+
+    a.channel-row:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+
     /* VERSIÓN MÓVIL */
 
     @media (max-width: 800px) {
@@ -375,6 +392,8 @@
 
       .channel-status {
         font-size: .55rem;
+        overflow-wrap: anywhere;
+        text-align: right;
       }
 
     }
@@ -607,31 +626,39 @@
 
             <!-- CORREO -->
 
-            <div class="channel-row">
+            <a
+              class="channel-row"
+              href="mailto:corralesss444@gmail.com"
+            >
 
               <span class="channel-name">
                 Correo
               </span>
 
               <span class="channel-status">
-                Próximamente
+                corralesss444@gmail.com ↗
               </span>
 
-            </div>
+            </a>
 
             <!-- INSTAGRAM -->
 
-            <div class="channel-row">
+            <a
+              class="channel-row"
+              href="https://www.instagram.com/corralesss_/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
 
               <span class="channel-name">
                 Instagram
               </span>
 
               <span class="channel-status">
-                Próximamente
+                @Corralesss_ ↗
               </span>
 
-            </div>
+            </a>
 
             <!-- COMPRA EN LÍNEA -->
 
