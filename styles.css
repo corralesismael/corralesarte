@@ -2072,3 +2072,83 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — LOGO HEADER CORREGIDO
+   ========================================================= */
+
+.site-header{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Logo centrado entre CORRALES y MENÚ */
+.header-logo{
+  position: absolute !important;
+  left: 50% !important;
+  top: 58% !important;
+  transform: translate(-50%, -50%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100px !important;
+  height: 100px !important;
+
+  z-index: 100000 !important;
+  text-decoration: none !important;
+  overflow: visible !important;
+}
+
+.header-logo img{
+  display: block !important;
+  width: 94px !important;
+  height: 94px !important;
+
+  min-width: 94px !important;
+  min-height: 94px !important;
+  max-width: 94px !important;
+  max-height: 94px !important;
+
+  object-fit: contain !important;
+}
+
+/* Asegura que CORRALES y MENÚ queden por encima si hace falta */
+.site-header .brand,
+.mobile-menu-toggle{
+  position: relative !important;
+  z-index: 100001 !important;
+}
+
+/* =========================
+   MÓVIL
+   ========================= */
+@media (max-width: 800px){
+
+  .site-header{
+    min-height: 120px !important;
+    padding: 18px !important;
+    overflow: visible !important;
+  }
+
+  .header-logo{
+    left: 50% !important;
+    top: 62% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: 106px !important;
+    height: 106px !important;
+  }
+
+  .header-logo img{
+    width: 98px !important;
+    height: 98px !important;
+
+    min-width: 98px !important;
+    min-height: 98px !important;
+    max-width: 98px !important;
+    max-height: 98px !important;
+
+    object-fit: contain !important;
+  }
+}
