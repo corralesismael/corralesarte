@@ -10,11 +10,11 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Corrales Arte — Ismael Corrales</title>
+  <title>Ismael Corrales — Pintura contemporánea</title>
 
   <meta
     name="description"
-    content="Sitio oficial del artista visual Ismael Corrales. Pintura contemporánea, obras originales y arte disponible."
+    content="Pintura contemporánea de Ismael Corrales. Obras originales, archivo, proceso y adquisición."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,13 +32,8 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=18"
+    href="./styles.css?v=90"
   >
-
-
-  <!-- =====================================================
-       CORRECCIÓN DEL MENÚ MÓVIL
-       ===================================================== -->
 
   <style>
 
@@ -51,95 +46,317 @@
     }
 
 
+    /* HERO */
+
+    .home-hero{
+      min-height:calc(100vh - 72px);
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:60px;
+      align-items:center;
+      padding:72px 28px 88px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .home-hero-copy{
+      max-width:760px;
+    }
+
+    .home-hero h1{
+      margin:22px 0 34px;
+      max-width:8.5ch;
+      font-size:clamp(4.7rem,9vw,9rem);
+      line-height:.86;
+      font-weight:400;
+      letter-spacing:-.045em;
+    }
+
+    .home-hero-intro{
+      max-width:560px;
+      margin:0 0 38px;
+      font-size:1.05rem;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .home-feature{
+      align-self:end;
+    }
+
+    .home-feature a{
+      display:block;
+      text-decoration:none;
+    }
+
+    .home-feature img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .home-feature-meta{
+      display:flex;
+      justify-content:space-between;
+      gap:25px;
+      margin-top:14px;
+      font-size:.72rem;
+      line-height:1.45;
+      color:var(--muted);
+    }
+
+
+    /* SECCIONES */
+
+    .home-section{
+      padding:105px 28px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .home-section-grid{
+      display:grid;
+      grid-template-columns:.32fr 1.68fr;
+      gap:55px;
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .home-section-content{
+      max-width:950px;
+    }
+
+    .home-section h2{
+      margin:0 0 28px;
+      max-width:11ch;
+      font-size:clamp(3.6rem,7vw,7rem);
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:-.03em;
+    }
+
+    .home-section-copy{
+      max-width:680px;
+      margin:0 0 35px;
+      font-size:1.05rem;
+      line-height:1.75;
+      color:#4f4a43;
+    }
+
+
+    /* OBRAS */
+
+    .home-works{
+      padding:105px 28px 120px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .home-works-header{
+      display:grid;
+      grid-template-columns:.32fr 1.68fr;
+      gap:55px;
+      max-width:1420px;
+      margin:0 auto 60px;
+    }
+
+    .home-works-header h2{
+      margin:0 0 24px;
+      max-width:11ch;
+      font-size:clamp(3.6rem,7vw,7rem);
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:-.03em;
+    }
+
+    .home-works-header p{
+      max-width:650px;
+      margin:0;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .works-grid{
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .home-works-footer{
+      max-width:1420px;
+      margin:55px auto 0;
+    }
+
+
+    /* CIERRE */
+
+    .home-final{
+      padding:120px 28px 135px;
+    }
+
+    .home-final-inner{
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .home-final h2{
+      margin:18px 0 36px;
+      max-width:10ch;
+      font-size:clamp(4rem,8vw,8rem);
+      line-height:.9;
+      font-weight:400;
+      letter-spacing:-.04em;
+    }
+
+    .home-final-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:26px;
+    }
+
+
+    /* MÓVIL */
+
     @media(max-width:800px){
 
       .site-header{
         display:flex !important;
         align-items:center !important;
         justify-content:space-between !important;
-
         min-height:72px;
-
         padding:18px !important;
       }
-
 
       .site-header .nav{
         display:none !important;
       }
 
-
       .mobile-menu-toggle{
         display:block !important;
-
         border:0;
-
         background:transparent;
-
         color:#161513;
-
         font-family:"DM Sans",sans-serif;
-
         font-size:12px;
-
         font-weight:500;
-
         letter-spacing:.12em;
-
         text-transform:uppercase;
-
         padding:10px 0;
-
         cursor:pointer;
       }
 
-
       .mobile-nav{
         display:none;
-
         position:fixed;
-
         top:72px;
         left:0;
         right:0;
-
         z-index:9999;
-
         padding:20px 18px 30px;
-
         background:#f3efe7;
-
         border-bottom:1px solid rgba(22,21,19,.18);
       }
-
 
       .mobile-nav.open{
         display:block !important;
       }
 
-
       .mobile-nav a{
         display:block;
-
         padding:17px 0;
-
         border-bottom:1px solid rgba(22,21,19,.18);
-
         color:#161513;
-
         font-family:"Playfair Display",serif;
-
         font-size:32px;
-
         line-height:1;
-
         text-decoration:none;
+      }
+
+
+      .home-hero{
+        min-height:auto;
+        display:block;
+        padding:65px 18px 78px;
+      }
+
+      .home-hero h1{
+        margin-top:20px;
+        font-size:clamp(4rem,17vw,6rem);
+      }
+
+      .home-hero-intro{
+        font-size:.98rem;
+      }
+
+      .home-feature{
+        margin-top:58px;
+      }
+
+      .home-feature-meta{
+        font-size:.65rem;
+      }
+
+
+      .home-section{
+        padding:82px 18px;
+      }
+
+      .home-section-grid{
+        display:block;
+      }
+
+      .home-section-grid > .section-number{
+        margin-bottom:30px;
+      }
+
+      .home-section h2{
+        font-size:clamp(3rem,14vw,5rem);
+      }
+
+      .home-section-copy{
+        font-size:.98rem;
+        line-height:1.7;
+      }
+
+
+      .home-works{
+        padding:82px 18px 95px;
+      }
+
+      .home-works-header{
+        display:block;
+        margin-bottom:45px;
+      }
+
+      .home-works-header > .section-number{
+        margin-bottom:30px;
+      }
+
+      .home-works-header h2{
+        font-size:clamp(3rem,14vw,5rem);
+      }
+
+      .home-works-footer{
+        margin-top:42px;
+      }
+
+
+      .home-final{
+        padding:90px 18px 105px;
+      }
+
+      .home-final h2{
+        font-size:clamp(3.7rem,16vw,5.8rem);
+      }
+
+      .home-final-links{
+        display:block;
+      }
+
+      .home-final-links .text-link{
+        margin-right:24px;
+        margin-bottom:18px;
       }
 
     }
 
   </style>
-
 
 </head>
 
@@ -147,12 +364,9 @@
 <body>
 
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
-
 
     <a
       href="./index.html"
@@ -161,9 +375,6 @@
       CORRALES
     </a>
 
-
-
-    <!-- MENÚ DE ESCRITORIO -->
 
     <nav class="nav">
 
@@ -190,9 +401,6 @@
     </nav>
 
 
-
-    <!-- BOTÓN MENÚ MÓVIL -->
-
     <button
       class="mobile-menu-toggle"
       id="menuButton"
@@ -203,14 +411,11 @@
       MENÚ
     </button>
 
-
   </header>
 
 
 
-  <!-- =====================================================
-       MENÚ MÓVIL
-       ===================================================== -->
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
@@ -244,53 +449,49 @@
   <main>
 
 
-    <!-- =====================================================
-         PORTADA
-         ===================================================== -->
+    <!-- HERO -->
 
-    <section
-      class="hero"
-      id="inicio"
-    >
+    <section class="home-hero">
 
 
-      <div class="hero-copy">
+      <div class="home-hero-copy">
 
         <p class="eyebrow">
-          Ismael Corrales · Pintura contemporánea
+          ISMAEL CORRALES · PINTURA CONTEMPORÁNEA
         </p>
 
-
         <h1>
-          La pintura como memoria,
-          tensión y presencia.
+          La pintura como memoria, tensión y presencia.
         </h1>
 
+        <p class="home-hero-intro">
+          Archivo de obra original desarrollado desde la observación,
+          la experiencia cotidiana y la construcción de imágenes
+          mediante pintura acrílica sobre lienzo.
+        </p>
 
         <a
-          class="text-link"
           href="./obra.html"
+          class="text-link"
         >
-          Explorar obras ↓
+          EXPLORAR OBRAS →
         </a>
 
       </div>
 
 
-
-      <figure class="hero-art">
+      <figure class="home-feature">
 
         <a href="./tierra.html">
 
           <img
             src="./assets/tierra.jpg"
-            alt="Lo que pasa en la tierra se queda en la tierra, obra de Ismael Corrales"
+            alt="Lo que pasa en la tierra se queda en la tierra"
           >
 
         </a>
 
-
-        <figcaption>
+        <figcaption class="home-feature-meta">
 
           <span>
             Lo que pasa en la tierra se queda en la tierra
@@ -309,71 +510,75 @@
 
 
 
-    <!-- =====================================================
-         ARTISTA
-         ===================================================== -->
+    <!-- ARTISTA -->
 
-    <section
-      class="section"
-      id="artista"
-    >
+    <section class="home-section">
 
+      <div class="home-section-grid">
 
-      <p class="section-number">
-        01 — Artista
-      </p>
+        <p class="section-number">
+          01 · ARTISTA
+        </p>
 
 
-      <h2>
-        Ismael Corrales
-      </h2>
+        <div class="home-section-content">
 
+          <h2>
+            Ismael Corrales.
+          </h2>
 
-      <p>
-        Artista visual enfocado en pintura acrílica sobre lienzo.
-        Su trabajo explora escenas íntimas, tensión emocional,
-        símbolos cotidianos y contrastes de luz con una sensibilidad
-        cercana al claroscuro.
-      </p>
+          <p class="home-section-copy">
+            Artista visual autodidacta cuya práctica se desarrolla
+            principalmente a través de la pintura acrílica sobre lienzo,
+            con una atención constante a la luz, el contraste y la
+            construcción de atmósferas.
+          </p>
 
+          <a
+            href="./artista.html"
+            class="text-link"
+          >
+            CONOCE MI HISTORIA →
+          </a>
 
-      <a
-        href="./artista.html"
-        class="text-link"
-      >
-        Conoce mi historia →
-      </a>
+        </div>
 
+      </div>
 
     </section>
 
 
 
-    <!-- =====================================================
-         OBRAS
-         ===================================================== -->
+    <!-- OBRA -->
 
-    <section
-      class="section"
-      id="obra"
-    >
+    <section class="home-works">
 
 
-      <p class="section-number">
-        02 — Obras disponibles
-      </p>
+      <div class="home-works-header">
+
+        <p class="section-number">
+          02 · OBRA
+        </p>
 
 
-      <h2>
-        Selección actual · originales
-      </h2>
+        <div>
+
+          <h2>
+            Selección actual.
+          </h2>
+
+          <p>
+            Pinturas originales disponibles dentro del archivo actual.
+          </p>
+
+        </div>
+
+      </div>
 
 
 
       <div class="works-grid">
 
-
-        <!-- 01 -->
 
         <article class="work">
 
@@ -387,22 +592,14 @@
 
           </a>
 
-
           <h3>
-
             <a href="./consuelo.html">
               Ese consuelo
             </a>
-
           </h3>
 
-
           <p>
-            2025 · Acrílico sobre lienzo
-          </p>
-
-          <p>
-            75 × 100 cm
+            2025 · 75 × 100 cm
           </p>
 
           <p>
@@ -412,8 +609,6 @@
         </article>
 
 
-
-        <!-- 02 -->
 
         <article class="work">
 
@@ -427,22 +622,14 @@
 
           </a>
 
-
           <h3>
-
             <a href="./tierra.html">
               Lo que pasa en la tierra se queda en la tierra
             </a>
-
           </h3>
 
-
           <p>
-            2026 · Acrílico sobre lienzo
-          </p>
-
-          <p>
-            60 × 80 cm
+            2026 · 60 × 80 cm
           </p>
 
           <p>
@@ -452,8 +639,6 @@
         </article>
 
 
-
-        <!-- 03 -->
 
         <article class="work">
 
@@ -467,22 +652,14 @@
 
           </a>
 
-
           <h3>
-
             <a href="./perdon.html">
               El peso del perdón
             </a>
-
           </h3>
 
-
           <p>
-            2025 · Acrílico sobre lienzo
-          </p>
-
-          <p>
-            60 × 50 cm
+            2025 · 60 × 50 cm
           </p>
 
           <p>
@@ -492,8 +669,6 @@
         </article>
 
 
-
-        <!-- 04 -->
 
         <article class="work">
 
@@ -507,22 +682,14 @@
 
           </a>
 
-
           <h3>
-
             <a href="./culpa.html">
               Mi culpa
             </a>
-
           </h3>
 
-
           <p>
-            2025 · Acrílico sobre lienzo
-          </p>
-
-          <p>
-            60 × 90 cm
+            2025 · 60 × 90 cm
           </p>
 
           <p>
@@ -532,8 +699,6 @@
         </article>
 
 
-
-        <!-- 05 -->
 
         <article class="work">
 
@@ -547,22 +712,14 @@
 
           </a>
 
-
           <h3>
-
             <a href="./noche.html">
               La noche oscura del alma
             </a>
-
           </h3>
 
-
           <p>
-            2025 · Acrílico sobre lienzo
-          </p>
-
-          <p>
-            60 × 45 cm
+            2025 · 60 × 45 cm
           </p>
 
           <p>
@@ -572,8 +729,6 @@
         </article>
 
 
-
-        <!-- 06 -->
 
         <article class="work">
 
@@ -587,22 +742,14 @@
 
           </a>
 
-
           <h3>
-
             <a href="./banco.html">
               Solo amo a mi cuenta de banco
             </a>
-
           </h3>
 
-
           <p>
-            2025 · Acrílico sobre lienzo
-          </p>
-
-          <p>
-            50 × 35 cm
+            2025 · 50 × 35 cm
           </p>
 
           <p>
@@ -615,18 +762,14 @@
       </div>
 
 
-      <div
-        style="
-          margin-top:60px;
-          text-align:center;
-        "
-      >
+
+      <div class="home-works-footer">
 
         <a
           href="./obra.html"
           class="text-link"
         >
-          Ver archivo de obra →
+          VER ARCHIVO DE OBRA →
         </a>
 
       </div>
@@ -636,109 +779,123 @@
 
 
 
-    <!-- =====================================================
-         PROCESO
-         ===================================================== -->
+    <!-- PROCESO -->
 
-    <section class="section">
+    <section class="home-section">
 
+      <div class="home-section-grid">
 
-      <p class="section-number">
-        03 — Proceso
-      </p>
-
-
-      <h2>
-        Del entorno al lienzo.
-      </h2>
+        <p class="section-number">
+          03 · PROCESO
+        </p>
 
 
-      <p>
-        Observación, fotografía, composición y pintura forman parte
-        de un proceso continuo para transformar escenas cotidianas
-        en imágenes.
-      </p>
+        <div class="home-section-content">
 
+          <h2>
+            Del entorno al lienzo.
+          </h2>
 
-      <a
-        href="./proceso.html"
-        class="text-link"
-      >
-        Conocer el proceso →
-      </a>
+          <p class="home-section-copy">
+            Observación, referencias, composición y pintura forman
+            parte de un proceso continuo de construcción de imágenes.
+          </p>
 
+          <a
+            href="./proceso.html"
+            class="text-link"
+          >
+            VER PROCESO →
+          </a>
 
-    </section>
+        </div>
 
-
-
-    <!-- =====================================================
-         ADQUIRIR
-         ===================================================== -->
-
-    <section class="section">
-
-
-      <p class="section-number">
-        04 — Adquirir obra
-      </p>
-
-
-      <h2>
-        Obras originales disponibles.
-      </h2>
-
-
-      <p>
-        Consulta las obras disponibles y obtén información sobre
-        compra, forma de pago, envío o entrega.
-      </p>
-
-
-      <a
-        href="./contacto.html"
-        class="text-link"
-      >
-        Consultar disponibilidad →
-      </a>
-
+      </div>
 
     </section>
 
 
 
-    <!-- =====================================================
-         CONTACTO
-         ===================================================== -->
+    <!-- ADQUIRIR -->
 
-    <section
-      class="section"
-      id="contacto"
-    >
+    <section class="home-section">
 
+      <div class="home-section-grid">
 
-      <p class="section-number">
-        05 — Contacto
-      </p>
+        <p class="section-number">
+          04 · ADQUIRIR
+        </p>
 
 
-      <h2>
-        CORRALES
-      </h2>
+        <div class="home-section-content">
+
+          <h2>
+            Vivir con una obra.
+          </h2>
+
+          <p class="home-section-copy">
+            Las piezas disponibles pueden adquirirse directamente.
+            Cada compra se coordina de manera individual para confirmar
+            disponibilidad, pago, envío o entrega.
+          </p>
+
+          <a
+            href="./contacto.html"
+            class="text-link"
+          >
+            ADQUIRIR OBRA →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
-      <p>
-        Arte contemporáneo · Originales sobre lienzo
-      </p>
 
+    <!-- CIERRE -->
 
-      <a
-        href="./contacto.html"
-        class="text-link"
-      >
-        Contacto →
-      </a>
+    <section class="home-final">
 
+      <div class="home-final-inner">
+
+        <p class="eyebrow">
+          CORRALES
+        </p>
+
+        <h2>
+          Observar.<br>
+          Pintar.<br>
+          Permanecer.
+        </h2>
+
+        <div class="home-final-links">
+
+          <a
+            href="./obra.html"
+            class="text-link"
+          >
+            OBRA →
+          </a>
+
+          <a
+            href="./artista.html"
+            class="text-link"
+          >
+            ARTISTA →
+          </a>
+
+          <a
+            href="./contacto.html"
+            class="text-link"
+          >
+            CONTACTO →
+          </a>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -747,12 +904,7 @@
 
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
   <footer class="footer">
-
 
     <div>
 
@@ -766,19 +918,13 @@
 
     </div>
 
-
-    <a href="#inicio">
+    <a href="#">
       Volver arriba ↑
     </a>
-
 
   </footer>
 
 
-
-  <!-- =====================================================
-       JAVASCRIPT DEL MENÚ
-       ===================================================== -->
 
   <script>
 
@@ -793,38 +939,24 @@
       "click",
       function(){
 
-        mobileMenu.classList.toggle("open");
-
         const isOpen =
-          mobileMenu.classList.contains("open");
+          mobileMenu.classList.toggle("open");
 
+        menuButton.textContent =
+          isOpen ? "CERRAR" : "MENÚ";
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen
+          isOpen ? "true" : "false"
         );
-
-
-        if(isOpen){
-
-          menuButton.textContent = "CERRAR";
-
-        }else{
-
-          menuButton.textContent = "MENÚ";
-
-        }
 
       }
     );
 
 
-    const mobileLinks =
-      mobileMenu.querySelectorAll("a");
-
-
-    mobileLinks.forEach(
-      function(link){
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link){
 
         link.addEventListener(
           "click",
@@ -832,7 +964,8 @@
 
             mobileMenu.classList.remove("open");
 
-            menuButton.textContent = "MENÚ";
+            menuButton.textContent =
+              "MENÚ";
 
             menuButton.setAttribute(
               "aria-expanded",
@@ -842,8 +975,7 @@
           }
         );
 
-      }
-    );
+      });
 
   </script>
 
