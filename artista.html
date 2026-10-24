@@ -2,13 +2,8 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ismael Corrales — Artista</title>
 
@@ -18,417 +13,296 @@
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="./styles.css?v=148"
-  >
+  <link rel="stylesheet" href="./styles.css?v=206">
 
   <style>
 
-    /* =========================
-       HEADER INTELIGENTE
-       ========================= */
+    /* ENCABEZADO */
 
-    .site-header{
-      position:sticky !important;
-      top:0 !important;
-      z-index:999999 !important;
-
-      transition:
-        transform .3s ease,
-        opacity .3s ease !important;
-
-      will-change:transform;
-
-      background:rgba(243,239,231,.96) !important;
-
-      backdrop-filter:blur(10px) !important;
-      -webkit-backdrop-filter:blur(10px) !important;
-
-      overflow:visible !important;
+    .site-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 999999 !important;
+      transition: transform .3s ease, opacity .3s ease !important;
+      will-change: transform;
+      background: rgba(243,239,231,.96) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      overflow: visible !important;
     }
 
-    .site-header.header-hidden{
-      transform:translateY(-110%) !important;
-      opacity:0 !important;
+    .site-header.header-hidden {
+      transform: translateY(-110%) !important;
+      opacity: 0 !important;
+    }
+
+    .mobile-menu-toggle,
+    .mobile-nav {
+      display: none;
     }
 
 
-    /* =========================
-       MENÚ MÓVIL
-       ========================= */
+    /* PRESENTACIÓN */
 
-    .mobile-menu-toggle{
-      display:none;
+    .artist-hero {
+      padding: 95px 28px 80px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .mobile-nav{
-      display:none;
+    .artist-hero-inner {
+      max-width: 1420px;
+      margin: 0 auto;
     }
 
-
-    /* =========================
-       HERO
-       ========================= */
-
-    .artist-hero{
-      padding:95px 28px 80px;
-      border-bottom:1px solid var(--line);
+    .artist-hero h1 {
+      margin: 20px 0 40px;
+      max-width: 9ch;
+      font-size: clamp(4.8rem, 10vw, 9rem);
+      line-height: .86;
+      font-weight: 400;
+      letter-spacing: -.045em;
     }
 
-    .artist-hero-inner{
-      max-width:1420px;
-      margin:0 auto;
+    .artist-statement {
+      max-width: 760px;
+      margin: 0 0 30px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4.5vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -.025em;
     }
 
-    .artist-hero h1{
-      margin:20px 0 40px;
-      max-width:9ch;
-      font-size:clamp(4.8rem,10vw,9rem);
-      line-height:.86;
-      font-weight:400;
-      letter-spacing:-.045em;
-    }
-
-    .artist-statement{
-      max-width:760px;
-      margin:0 0 30px;
-      font-family:"Playfair Display",serif;
-      font-size:clamp(2.2rem,4.5vw,4.6rem);
-      line-height:1.02;
-      letter-spacing:-.025em;
-    }
-
-    .artist-intro{
-      max-width:650px;
-      margin:0;
-      font-size:1.05rem;
-      line-height:1.75;
-      color:var(--muted);
+    .artist-intro {
+      max-width: 650px;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
     }
 
 
-    /* =========================
-       RETRATO
-       ========================= */
+    /* RETRATO */
 
-    .artist-portrait{
-      max-width:1420px;
-      margin:0 auto;
-      padding:75px 28px 90px;
+    .artist-portrait {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 75px 28px 90px;
     }
 
-    .artist-portrait figure{
-      margin:0;
+    .artist-portrait figure {
+      margin: 0;
     }
 
-    .artist-portrait img{
-      display:block;
-      width:100%;
-      max-height:900px;
-      object-fit:cover;
-      object-position:center;
+    .artist-portrait img {
+      display: block;
+      width: 100%;
+      max-height: 900px;
+      object-fit: cover;
+      object-position: center;
     }
 
-    .artist-caption{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      margin-top:14px;
-      font-size:.72rem;
-      color:var(--muted);
-    }
-
-
-    /* =========================
-       BIOGRAFÍA
-       ========================= */
-
-    .artist-bio{
-      padding:105px 28px;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .artist-bio-inner{
-      max-width:1420px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:.32fr 1.68fr;
-      gap:55px;
-    }
-
-    .artist-bio-content{
-      max-width:900px;
-    }
-
-    .artist-bio h2{
-      margin:0 0 42px;
-      max-width:10ch;
-      font-size:clamp(3.5rem,7vw,7rem);
-      line-height:.92;
-      font-weight:400;
-      letter-spacing:-.035em;
-    }
-
-    .artist-bio p{
-      max-width:760px;
-      margin:0 0 26px;
-      font-size:1.05rem;
-      line-height:1.78;
-      color:#4f4a43;
+    .artist-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 14px;
+      font-size: .72rem;
+      color: var(--muted);
     }
 
 
-    /* =========================
-       INFORMACIÓN
-       ========================= */
+    /* BIOGRAFÍA */
 
-    .artist-info{
-      padding:100px 28px 115px;
+    .artist-bio {
+      padding: 105px 28px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .artist-info-inner{
-      max-width:1420px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:.32fr 1.68fr;
-      gap:55px;
+    .artist-bio-inner {
+      max-width: 1420px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .32fr 1.68fr;
+      gap: 55px;
     }
 
-    .artist-info-table{
-      max-width:900px;
-      border-top:1px solid var(--line);
+    .artist-bio-content {
+      max-width: 900px;
     }
 
-    .artist-info-row{
-      display:grid;
-      grid-template-columns:150px 1fr;
-      gap:25px;
-      padding:20px 0;
-      border-bottom:1px solid var(--line);
+    .artist-bio h2 {
+      margin: 0 0 42px;
+      max-width: 10ch;
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      line-height: .92;
+      font-weight: 400;
+      letter-spacing: -.035em;
     }
 
-    .artist-info-label{
-      font-size:.68rem;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .artist-info-value{
-      font-size:.95rem;
-      line-height:1.5;
+    .artist-bio p {
+      max-width: 760px;
+      margin: 0 0 26px;
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: #4f4a43;
     }
 
 
-    /* =========================
-       CIERRE
-       ========================= */
+    /* CIERRE */
 
-    .artist-final{
-      padding:105px 28px 120px;
-      border-top:1px solid var(--line);
+    .artist-final {
+      padding: 105px 28px 120px;
+      border-top: 1px solid var(--line);
     }
 
-    .artist-final-inner{
-      max-width:1420px;
-      margin:0 auto;
+    .artist-final-inner {
+      max-width: 1420px;
+      margin: 0 auto;
     }
 
-    .artist-final h2{
-      margin:18px 0 32px;
-      max-width:10ch;
-      font-size:clamp(3.8rem,7vw,7rem);
-      line-height:.92;
-      font-weight:400;
-      letter-spacing:-.035em;
+    .artist-final h2 {
+      margin: 18px 0 32px;
+      max-width: 10ch;
+      font-size: clamp(3.8rem, 7vw, 7rem);
+      line-height: .92;
+      font-weight: 400;
+      letter-spacing: -.035em;
     }
 
 
-    /* =========================
-       MÓVIL
-       ========================= */
+    /* VERSIÓN MÓVIL */
 
-    @media(max-width:800px){
+    @media (max-width: 800px) {
 
-      .site-header{
-        display:flex !important;
-        align-items:center !important;
-        justify-content:space-between !important;
-
-        min-height:118px !important;
-
-        padding:18px !important;
-
-        overflow:visible !important;
+      .site-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 118px !important;
+        padding: 18px !important;
+        overflow: visible !important;
       }
 
-      .site-header .nav{
-        display:none !important;
+      .site-header .nav {
+        display: none !important;
       }
 
-      .mobile-menu-toggle{
-        display:block !important;
-
-        border:0;
-
-        background:transparent;
-
-        color:#161513;
-
-        font-family:"DM Sans",sans-serif;
-
-        font-size:12px;
-
-        font-weight:500;
-
-        letter-spacing:.12em;
-
-        text-transform:uppercase;
-
-        padding:10px 0;
-
-        cursor:pointer;
+      .mobile-menu-toggle {
+        display: block !important;
+        border: 0;
+        background: transparent;
+        color: #161513;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        padding: 10px 0;
+        cursor: pointer;
       }
 
-      .mobile-nav{
-        display:none;
-
-        position:fixed;
-
-        top:118px;
-
-        left:0;
-        right:0;
-
-        z-index:999998;
-
-        padding:20px 18px 30px;
-
-        background:#f3efe7;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 118px;
+        left: 0;
+        right: 0;
+        z-index: 999998;
+        padding: 20px 18px 30px;
+        background: #f3efe7;
+        border-bottom: 1px solid rgba(22,21,19,.18);
       }
 
-      .mobile-nav.open{
-        display:block !important;
+      .mobile-nav.open {
+        display: block !important;
       }
 
-      .mobile-nav a{
-        display:block;
-
-        padding:17px 0;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
-
-        color:#161513;
-
-        font-family:"Playfair Display",serif;
-
-        font-size:32px;
-
-        line-height:1;
-
-        text-decoration:none;
+      .mobile-nav a {
+        display: block;
+        padding: 17px 0;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+        color: #161513;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        line-height: 1;
+        text-decoration: none;
       }
 
 
-      .artist-hero{
-        padding:65px 18px 60px;
+      /* PRESENTACIÓN MÓVIL */
+
+      .artist-hero {
+        padding: 65px 18px 60px;
       }
 
-      .artist-hero h1{
-        font-size:clamp(4rem,18vw,6rem);
+      .artist-hero h1 {
+        font-size: clamp(4rem, 18vw, 6rem);
       }
 
-      .artist-statement{
-        font-size:clamp(2.2rem,10vw,3.5rem);
+      .artist-statement {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
       }
 
-      .artist-intro{
-        font-size:.98rem;
+      .artist-intro {
+        font-size: .98rem;
       }
 
-      .artist-portrait{
-        padding:55px 18px 70px;
+
+      /* RETRATO MÓVIL */
+
+      .artist-portrait {
+        padding: 55px 18px 70px;
       }
 
-      .artist-portrait img{
-        max-height:none;
+      .artist-portrait img {
+        max-height: none;
       }
 
-      .artist-caption{
-        font-size:.64rem;
+      .artist-caption {
+        font-size: .64rem;
       }
 
-      .artist-bio{
-        padding:82px 18px;
+
+      /* BIOGRAFÍA MÓVIL */
+
+      .artist-bio {
+        padding: 82px 18px;
       }
 
-      .artist-bio-inner{
-        display:block;
+      .artist-bio-inner {
+        display: block;
       }
 
-      .artist-bio-inner > .section-number{
-        margin-bottom:30px;
+      .artist-bio-inner > .section-number {
+        margin-bottom: 30px;
       }
 
-      .artist-bio h2{
-        font-size:clamp(3rem,14vw,5rem);
+      .artist-bio h2 {
+        font-size: clamp(3rem, 14vw, 5rem);
       }
 
-      .artist-bio p{
-        font-size:.98rem;
-        line-height:1.72;
+      .artist-bio p {
+        font-size: .98rem;
+        line-height: 1.72;
       }
 
-      .artist-info{
-        padding:82px 18px 95px;
+
+      /* CIERRE MÓVIL */
+
+      .artist-final {
+        padding: 80px 18px 95px;
       }
 
-      .artist-info-inner{
-        display:block;
-      }
-
-      .artist-info-inner > .section-number{
-        margin-bottom:30px;
-      }
-
-      .artist-info-row{
-        grid-template-columns:105px 1fr;
-        gap:15px;
-        padding:17px 0;
-      }
-
-      .artist-info-label{
-        font-size:.6rem;
-      }
-
-      .artist-info-value{
-        font-size:.9rem;
-      }
-
-      .artist-final{
-        padding:80px 18px 95px;
-      }
-
-      .artist-final h2{
-        font-size:clamp(3.4rem,15vw,5.2rem);
+      .artist-final h2 {
+        font-size: clamp(3.4rem, 15vw, 5.2rem);
       }
 
     }
@@ -440,59 +314,34 @@
 
 <body>
 
-
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- ENCABEZADO -->
 
   <header class="site-header">
 
-    <a
-      href="./index.html"
-      class="brand"
-    >
+    <a href="./index.html" class="brand">
       CORRALES
     </a>
-
 
     <a
       href="./index.html"
       class="header-logo"
       aria-label="Inicio Corrales"
     >
-
       <img
         src="./assets/Logo-header.PNG?v=4"
         alt=""
       >
-
     </a>
-
 
     <nav class="nav">
 
-      <a href="./index.html">
-        Inicio
-      </a>
-
-      <a href="./obra.html">
-        Obra
-      </a>
-
-      <a href="./artista.html">
-        Artista
-      </a>
-
-      <a href="./proceso.html">
-        Proceso
-      </a>
-
-      <a href="./contacto.html">
-        Contacto
-      </a>
+      <a href="./index.html">Inicio</a>
+      <a href="./obra.html">Obra</a>
+      <a href="./artista.html">Artista</a>
+      <a href="./proceso.html">Proceso</a>
+      <a href="./contacto.html">Contacto</a>
 
     </nav>
-
 
     <button
       class="mobile-menu-toggle"
@@ -507,46 +356,26 @@
   </header>
 
 
-
-  <!-- =========================
-       MENÚ MÓVIL
-       ========================= -->
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
+    aria-label="Navegación móvil"
   >
 
-    <a href="./index.html">
-      Inicio
-    </a>
-
-    <a href="./obra.html">
-      Obra
-    </a>
-
-    <a href="./artista.html">
-      Artista
-    </a>
-
-    <a href="./proceso.html">
-      Proceso
-    </a>
-
-    <a href="./contacto.html">
-      Contacto
-    </a>
+    <a href="./index.html">Inicio</a>
+    <a href="./obra.html">Obra</a>
+    <a href="./artista.html">Artista</a>
+    <a href="./proceso.html">Proceso</a>
+    <a href="./contacto.html">Contacto</a>
 
   </nav>
 
 
-
   <main>
 
-
-    <!-- =========================
-         HERO
-         ========================= -->
+    <!-- PRESENTACIÓN -->
 
     <section class="artist-hero">
 
@@ -565,7 +394,7 @@
         </p>
 
         <p class="artist-intro">
-          Artista visual autodidacta cuya práctica se desarrolla
+          Artista visual cuya práctica se desarrolla
           principalmente a través de la pintura acrílica sobre lienzo.
         </p>
 
@@ -574,10 +403,7 @@
     </section>
 
 
-
-    <!-- =========================
-         RETRATO
-         ========================= -->
+    <!-- RETRATO -->
 
     <section class="artist-portrait">
 
@@ -606,10 +432,7 @@
     </section>
 
 
-
-    <!-- =========================
-         BIOGRAFÍA
-         ========================= -->
+    <!-- BIOGRAFÍA -->
 
     <section class="artist-bio">
 
@@ -619,7 +442,6 @@
           01 · BIOGRAFÍA
         </p>
 
-
         <div class="artist-bio-content">
 
           <h2>
@@ -627,7 +449,7 @@
           </h2>
 
           <p>
-            Ismael Corrales comenzó a pintar en 2020 de manera autodidacta.
+            Ismael Corrales comenzó a pintar en 2020.
             Su acercamiento inicial surgió a través de la acuarela y el
             retrato, desarrollándose posteriormente hacia el acrílico
             sobre lienzo.
@@ -661,86 +483,8 @@
     </section>
 
 
-
-    <!-- =========================
-         INFORMACIÓN
-         ========================= -->
-
-    <section class="artist-info">
-
-      <div class="artist-info-inner">
-
-        <p class="section-number">
-          02 · INFORMACIÓN
-        </p>
-
-
-        <div class="artist-info-table">
-
-
-          <div class="artist-info-row">
-
-            <span class="artist-info-label">
-              Artista
-            </span>
-
-            <span class="artist-info-value">
-              Ismael Corrales
-            </span>
-
-          </div>
-
-
-          <div class="artist-info-row">
-
-            <span class="artist-info-label">
-              Práctica
-            </span>
-
-            <span class="artist-info-value">
-              Pintura
-            </span>
-
-          </div>
-
-
-          <div class="artist-info-row">
-
-            <span class="artist-info-label">
-              Técnica
-            </span>
-
-            <span class="artist-info-value">
-              Acrílico sobre lienzo
-            </span>
-
-          </div>
-
-
-          <div class="artist-info-row">
-
-            <span class="artist-info-label">
-              Inicio
-            </span>
-
-            <span class="artist-info-value">
-              2020
-            </span>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CIERRE
-         ========================= -->
+    <!-- CIERRE -->
+    <!-- La sección 02 · INFORMACIÓN fue eliminada -->
 
     <section class="artist-final">
 
@@ -765,14 +509,10 @@
 
     </section>
 
-
   </main>
 
 
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- PIE DE PÁGINA -->
 
   <footer class="footer">
 
@@ -795,10 +535,7 @@
   </footer>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-       ========================= -->
+  <!-- FUNCIONES DEL MENÚ -->
 
   <script>
 
@@ -812,153 +549,89 @@
       document.querySelector(".site-header");
 
 
-    /* MENÚ MÓVIL */
+    /* ABRIR Y CERRAR MENÚ */
 
-    menuButton.addEventListener(
-      "click",
-      function(){
+    menuButton.addEventListener("click", function() {
 
-        const isOpen =
-          mobileMenu.classList.toggle("open");
+      const isOpen =
+        mobileMenu.classList.toggle("open");
 
-        menuButton.textContent =
-          isOpen ? "CERRAR" : "MENÚ";
+      menuButton.textContent =
+        isOpen ? "CERRAR" : "MENÚ";
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+      if (isOpen) {
+        header.classList.remove("header-hidden");
+      }
+
+    });
+
+
+    /* CERRAR MENÚ AL NAVEGAR */
+
+    mobileMenu.querySelectorAll("a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        mobileMenu.classList.remove("open");
+
+        menuButton.textContent = "MENÚ";
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen ? "true" : "false"
-        );
-
-        if(isOpen){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-        }
-
-      }
-    );
-
-
-    mobileMenu
-      .querySelectorAll("a")
-      .forEach(function(link){
-
-        link.addEventListener(
-          "click",
-          function(){
-
-            mobileMenu.classList.remove(
-              "open"
-            );
-
-            menuButton.textContent =
-              "MENÚ";
-
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          }
+          "false"
         );
 
       });
 
-
-    /* =========================
-       HEADER INTELIGENTE
-       BAJAR = OCULTAR
-       SUBIR = MOSTRAR
-       ========================= */
-
-    let lastScrollY =
-      window.scrollY;
+    });
 
 
-    window.addEventListener(
-      "scroll",
-      function(){
+    /* ENCABEZADO INTELIGENTE */
 
-        const currentScrollY =
-          window.scrollY;
+    let lastScrollY = window.scrollY;
 
+    window.addEventListener("scroll", function() {
 
-        /* Si el menú está abierto,
-           no ocultamos el header */
+      const currentScrollY = window.scrollY;
 
-        if(
-          mobileMenu.classList.contains(
-            "open"
-          )
-        ){
+      if (mobileMenu.classList.contains("open")) {
 
-          lastScrollY =
-            currentScrollY;
+        header.classList.remove("header-hidden");
 
-          return;
+        lastScrollY = currentScrollY;
 
-        }
-
-
-        /* Cerca del inicio,
-           siempre visible */
-
-        if(currentScrollY < 80){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-          lastScrollY =
-            currentScrollY;
-
-          return;
-
-        }
-
-
-        /* BAJANDO */
-
-        if(
-          currentScrollY >
-          lastScrollY
-        ){
-
-          header.classList.add(
-            "header-hidden"
-          );
-
-        }
-
-
-        /* SUBIENDO */
-
-        else if(
-          currentScrollY <
-          lastScrollY
-        ){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-        }
-
-
-        lastScrollY =
-          currentScrollY;
-
-      },
-      {
-        passive:true
+        return;
       }
-    );
+
+      if (currentScrollY < 80) {
+
+        header.classList.remove("header-hidden");
+
+        lastScrollY = currentScrollY;
+
+        return;
+      }
+
+      if (currentScrollY > lastScrollY) {
+
+        header.classList.add("header-hidden");
+
+      } else if (currentScrollY < lastScrollY) {
+
+        header.classList.remove("header-hidden");
+
+      }
+
+      lastScrollY = currentScrollY;
+
+    }, { passive: true });
 
   </script>
 
-
 </body>
-
 </html>
