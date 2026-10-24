@@ -14,7 +14,7 @@
 
   <meta
     name="description"
-    content="Conoce la historia, trayectoria y práctica artística de Ismael Corrales."
+    content="Biografía y práctica artística de Ismael Corrales."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +32,14 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=21"
+    href="./styles.css?v=94"
   >
 
   <style>
+
+    /* =========================
+       MENÚ MÓVIL
+       ========================= */
 
     .mobile-menu-toggle{
       display:none;
@@ -100,185 +104,277 @@
         text-decoration:none;
       }
 
-      .artist-header{
-        padding:55px 33px 60px;
-      }
-
-      .artist-title{
-        font-size:19vw;
-      }
-
-      .artist-statement{
-        margin-top:48px;
-        font-size:9vw;
-      }
-
-      .artist-intro{
-        font-size:17px;
-      }
-
-      .artist-portrait{
-        padding-left:33px;
-        padding-right:33px;
-      }
-
-      .artist-photo img{
-        width:100%;
-        max-height:none;
-      }
-
-      .artist-biography{
-        padding-top:65px;
-        padding-bottom:65px;
-      }
-
-      .artist-detail-row{
-        grid-template-columns:100px 1fr;
-        gap:20px;
-      }
-
     }
 
 
-    .artist-page{
-      background:#f3efe5;
-      color:#111;
+    /* =========================
+       HERO
+       ========================= */
+
+    .artist-hero{
+      padding:95px 28px 80px;
+      border-bottom:1px solid var(--line);
     }
 
-    .artist-header{
-      padding:58px 33px 55px;
-      border-bottom:1px solid rgba(0,0,0,.18);
+    .artist-hero-inner{
+      max-width:1420px;
+      margin:0 auto;
     }
 
-    .artist-eyebrow{
-      margin:0 0 30px;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:14px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:#777269;
-    }
-
-    .artist-title{
-      margin:0;
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(64px,14vw,110px);
+    .artist-hero h1{
+      margin:20px 0 40px;
+      max-width:9ch;
+      font-size:clamp(4.8rem,10vw,9rem);
       line-height:.86;
       font-weight:400;
       letter-spacing:-.045em;
     }
 
     .artist-statement{
-      max-width:620px;
-      margin:54px 0 28px;
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(31px,7vw,50px);
-      line-height:1.12;
-      font-weight:400;
+      max-width:760px;
+      margin:0 0 30px;
+      font-family:"Playfair Display",serif;
+      font-size:clamp(2.2rem,4.5vw,4.6rem);
+      line-height:1.02;
+      letter-spacing:-.025em;
     }
 
     .artist-intro{
-      max-width:620px;
+      max-width:650px;
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:18px;
-      line-height:1.7;
-      color:#777269;
+      font-size:1.05rem;
+      line-height:1.75;
+      color:var(--muted);
     }
+
+
+    /* =========================
+       RETRATO
+       ========================= */
 
     .artist-portrait{
-      padding:0 33px 70px;
-      border-bottom:1px solid rgba(0,0,0,.18);
+      max-width:1420px;
+      margin:0 auto;
+      padding:75px 28px 90px;
     }
 
-    .artist-photo{
+    .artist-portrait figure{
       margin:0;
-      padding-top:50px;
     }
 
-    .artist-photo img{
+    .artist-portrait img{
       display:block;
       width:100%;
-      height:auto;
-      max-height:820px;
+      max-height:900px;
       object-fit:cover;
       object-position:center;
     }
 
-    .artist-photo figcaption{
+    .artist-caption{
       display:flex;
       justify-content:space-between;
       gap:20px;
-      padding-top:16px;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:15px;
-      color:#777269;
+      margin-top:14px;
+      font-size:.72rem;
+      color:var(--muted);
     }
 
-    .artist-biography{
-      padding:75px 33px;
-      border-bottom:1px solid rgba(0,0,0,.18);
+
+    /* =========================
+       BIOGRAFÍA
+       ========================= */
+
+    .artist-bio{
+      padding:105px 28px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
-    .section-label{
-      margin:0 0 30px;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:14px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:#777269;
-    }
-
-    .biography-title{
-      max-width:650px;
-      margin:0 0 45px;
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(42px,9vw,70px);
-      line-height:.98;
-      font-weight:400;
-      letter-spacing:-.025em;
-    }
-
-    .biography-text{
-      max-width:680px;
-    }
-
-    .biography-text p{
-      margin:0 0 28px;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:18px;
-      line-height:1.75;
-      color:#5f5b54;
-    }
-
-    .artist-details{
-      padding:70px 33px;
-    }
-
-    .artist-detail-row{
+    .artist-bio-inner{
+      max-width:1420px;
+      margin:0 auto;
       display:grid;
-      grid-template-columns:115px 1fr;
-      gap:30px;
-      padding:22px 0;
-      border-top:1px solid rgba(0,0,0,.16);
+      grid-template-columns:.32fr 1.68fr;
+      gap:55px;
     }
 
-    .artist-detail-row:last-child{
-      border-bottom:1px solid rgba(0,0,0,.16);
+    .artist-bio-content{
+      max-width:900px;
     }
 
-    .detail-label{
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:12px;
-      letter-spacing:.12em;
+    .artist-bio h2{
+      margin:0 0 42px;
+      max-width:10ch;
+      font-size:clamp(3.5rem,7vw,7rem);
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:-.035em;
+    }
+
+    .artist-bio p{
+      max-width:760px;
+      margin:0 0 26px;
+      font-size:1.05rem;
+      line-height:1.78;
+      color:#4f4a43;
+    }
+
+
+    /* =========================
+       INFORMACIÓN
+       ========================= */
+
+    .artist-info{
+      padding:100px 28px 115px;
+    }
+
+    .artist-info-inner{
+      max-width:1420px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:.32fr 1.68fr;
+      gap:55px;
+    }
+
+    .artist-info-table{
+      max-width:900px;
+      border-top:1px solid var(--line);
+    }
+
+    .artist-info-row{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:25px;
+      padding:20px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .artist-info-label{
+      font-size:.68rem;
+      letter-spacing:.13em;
       text-transform:uppercase;
-      color:#777269;
+      color:var(--muted);
     }
 
-    .detail-value{
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:16px;
+    .artist-info-value{
+      font-size:.95rem;
       line-height:1.5;
+    }
+
+
+    /* =========================
+       CIERRE
+       ========================= */
+
+    .artist-final{
+      padding:105px 28px 120px;
+      border-top:1px solid var(--line);
+    }
+
+    .artist-final-inner{
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .artist-final h2{
+      margin:18px 0 32px;
+      max-width:10ch;
+      font-size:clamp(3.8rem,7vw,7rem);
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:-.035em;
+    }
+
+
+    /* =========================
+       MÓVIL
+       ========================= */
+
+    @media(max-width:800px){
+
+      .artist-hero{
+        padding:65px 18px 60px;
+      }
+
+      .artist-hero h1{
+        font-size:clamp(4rem,18vw,6rem);
+      }
+
+      .artist-statement{
+        font-size:clamp(2.2rem,10vw,3.5rem);
+      }
+
+      .artist-intro{
+        font-size:.98rem;
+      }
+
+      .artist-portrait{
+        padding:55px 18px 70px;
+      }
+
+      .artist-portrait img{
+        max-height:none;
+      }
+
+      .artist-caption{
+        font-size:.64rem;
+      }
+
+      .artist-bio{
+        padding:82px 18px;
+      }
+
+      .artist-bio-inner{
+        display:block;
+      }
+
+      .artist-bio-inner > .section-number{
+        margin-bottom:30px;
+      }
+
+      .artist-bio h2{
+        font-size:clamp(3rem,14vw,5rem);
+      }
+
+      .artist-bio p{
+        font-size:.98rem;
+        line-height:1.72;
+      }
+
+      .artist-info{
+        padding:82px 18px 95px;
+      }
+
+      .artist-info-inner{
+        display:block;
+      }
+
+      .artist-info-inner > .section-number{
+        margin-bottom:30px;
+      }
+
+      .artist-info-row{
+        grid-template-columns:105px 1fr;
+        gap:15px;
+        padding:17px 0;
+      }
+
+      .artist-info-label{
+        font-size:.6rem;
+      }
+
+      .artist-info-value{
+        font-size:.9rem;
+      }
+
+      .artist-final{
+        padding:80px 18px 95px;
+      }
+
+      .artist-final h2{
+        font-size:clamp(3.4rem,15vw,5.2rem);
+      }
+
     }
 
   </style>
@@ -286,22 +382,31 @@
 </head>
 
 
-<body class="artist-page">
+<body>
 
+
+  <!-- HEADER -->
 
   <header class="site-header">
 
-    <a href="./index.html" class="brand">
+    <a
+      href="./index.html"
+      class="brand"
+    >
       CORRALES
     </a>
 
+
     <nav class="nav">
+
       <a href="./index.html">Inicio</a>
       <a href="./obra.html">Obra</a>
       <a href="./artista.html">Artista</a>
       <a href="./proceso.html">Proceso</a>
       <a href="./contacto.html">Contacto</a>
+
     </nav>
+
 
     <button
       class="mobile-menu-toggle"
@@ -315,6 +420,8 @@
 
   </header>
 
+
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
@@ -330,38 +437,42 @@
   </nav>
 
 
-
   <main>
 
 
-    <section class="artist-header">
+    <!-- HERO -->
 
-      <p class="artist-eyebrow">
-        Artista · Biografía
-      </p>
+    <section class="artist-hero">
 
-      <h1 class="artist-title">
-        Ismael<br>
-        Corrales.
-      </h1>
+      <div class="artist-hero-inner">
 
-      <p class="artist-statement">
-        Pintar es una forma de observar aquello que normalmente permanece oculto.
-      </p>
+        <p class="eyebrow">
+          ARTISTA · BIOGRAFÍA
+        </p>
 
-      <p class="artist-intro">
-        Ismael Corrales es un artista visual autodidacta cuya práctica
-        se desarrolla principalmente a través de la pintura acrílica
-        sobre lienzo.
-      </p>
+        <h1>
+          Ismael Corrales.
+        </h1>
+
+        <p class="artist-statement">
+          Pintar es una forma de observar aquello que normalmente permanece oculto.
+        </p>
+
+        <p class="artist-intro">
+          Artista visual autodidacta cuya práctica se desarrolla
+          principalmente a través de la pintura acrílica sobre lienzo.
+        </p>
+
+      </div>
 
     </section>
 
 
+    <!-- RETRATO -->
 
     <section class="artist-portrait">
 
-      <figure class="artist-photo">
+      <figure>
 
         <img
           src="./assets/retrato.png.PNG"
@@ -369,9 +480,16 @@
           loading="eager"
         >
 
-        <figcaption>
-          <span>Ismael Corrales</span>
-          <span>Artista visual</span>
+        <figcaption class="artist-caption">
+
+          <span>
+            Ismael Corrales
+          </span>
+
+          <span>
+            Artista visual
+          </span>
+
         </figcaption>
 
       </figure>
@@ -379,81 +497,150 @@
     </section>
 
 
+    <!-- BIOGRAFÍA -->
 
-    <section class="artist-biography">
+    <section class="artist-bio">
 
-      <p class="section-label">
-        Biografía
-      </p>
+      <div class="artist-bio-inner">
 
-      <h2 class="biography-title">
-        Una práctica construida desde la observación.
-      </h2>
-
-      <div class="biography-text">
-
-        <p>
-          Ismael Corrales comenzó a pintar en 2020 de manera autodidacta.
-          Su acercamiento inicial a la pintura surgió a través de la
-          acuarela y el retrato, desarrollándose posteriormente hacia
-          el acrílico sobre lienzo.
+        <p class="section-number">
+          01 · BIOGRAFÍA
         </p>
 
-        <p>
-          Su trabajo parte de la observación de personas, objetos y
-          situaciones de la vida cotidiana. A través de la pintura,
-          estas escenas se transforman en imágenes que exploran
-          experiencias personales, emociones y aspectos de la
-          condición humana.
-        </p>
 
-        <p>
-          La luz, el contraste y la construcción de atmósferas ocupan
-          un lugar central dentro de su lenguaje visual. Su práctica
-          mantiene una relación constante con el claroscuro y con
-          distintas tradiciones de la pintura figurativa.
-        </p>
+        <div class="artist-bio-content">
 
-        <p>
-          Corrales continúa desarrollando un archivo de obra que
-          funciona como registro de su evolución artística y de su
-          manera de interpretar el entorno.
-        </p>
+          <h2>
+            Una práctica construida desde la observación.
+          </h2>
+
+          <p>
+            Ismael Corrales comenzó a pintar en 2020 de manera autodidacta.
+            Su acercamiento inicial surgió a través de la acuarela y el
+            retrato, desarrollándose posteriormente hacia el acrílico
+            sobre lienzo.
+          </p>
+
+          <p>
+            Su trabajo parte de la observación de personas, objetos y
+            situaciones de la vida cotidiana. A través de la pintura,
+            estas escenas se transforman en imágenes que exploran
+            experiencias personales, emociones y aspectos de la
+            condición humana.
+          </p>
+
+          <p>
+            La luz, el contraste y la construcción de atmósferas ocupan
+            un lugar central dentro de su lenguaje visual. Su práctica
+            mantiene una relación constante con el claroscuro y con
+            distintas tradiciones de la pintura figurativa.
+          </p>
+
+          <p>
+            Corrales continúa desarrollando un archivo de obra que
+            funciona como registro de su evolución artística y de su
+            manera de interpretar el entorno.
+          </p>
+
+        </div>
 
       </div>
 
     </section>
 
 
+    <!-- INFORMACIÓN -->
 
-    <section class="artist-details">
+    <section class="artist-info">
 
-      <p class="section-label">
-        Información
-      </p>
+      <div class="artist-info-inner">
+
+        <p class="section-number">
+          02 · INFORMACIÓN
+        </p>
 
 
-      <div class="artist-detail-row">
-        <span class="detail-label">Artista</span>
-        <span class="detail-value">Ismael Corrales</span>
+        <div class="artist-info-table">
+
+          <div class="artist-info-row">
+
+            <span class="artist-info-label">
+              Artista
+            </span>
+
+            <span class="artist-info-value">
+              Ismael Corrales
+            </span>
+
+          </div>
+
+
+          <div class="artist-info-row">
+
+            <span class="artist-info-label">
+              Práctica
+            </span>
+
+            <span class="artist-info-value">
+              Pintura
+            </span>
+
+          </div>
+
+
+          <div class="artist-info-row">
+
+            <span class="artist-info-label">
+              Técnica
+            </span>
+
+            <span class="artist-info-value">
+              Acrílico sobre lienzo
+            </span>
+
+          </div>
+
+
+          <div class="artist-info-row">
+
+            <span class="artist-info-label">
+              Inicio
+            </span>
+
+            <span class="artist-info-value">
+              2020
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
 
-
-      <div class="artist-detail-row">
-        <span class="detail-label">Práctica</span>
-        <span class="detail-value">Pintura</span>
-      </div>
+    </section>
 
 
-      <div class="artist-detail-row">
-        <span class="detail-label">Técnica</span>
-        <span class="detail-value">Acrílico sobre lienzo</span>
-      </div>
+    <!-- CIERRE -->
 
+    <section class="artist-final">
 
-      <div class="artist-detail-row">
-        <span class="detail-label">Inicio</span>
-        <span class="detail-value">2020</span>
+      <div class="artist-final-inner">
+
+        <p class="eyebrow">
+          CONTINUAR
+        </p>
+
+        <h2>
+          Explorar la obra.
+        </h2>
+
+        <a
+          href="./obra.html"
+          class="text-link"
+        >
+          VER ARCHIVO →
+        </a>
+
       </div>
 
     </section>
@@ -461,6 +648,26 @@
 
   </main>
 
+
+  <footer class="footer">
+
+    <div>
+
+      <p class="section-number">
+        CORRALES
+      </p>
+
+      <p>
+        Arte contemporáneo · Originales sobre lienzo
+      </p>
+
+    </div>
+
+    <a href="#">
+      Volver arriba ↑
+    </a>
+
+  </footer>
 
 
   <script>
@@ -476,18 +683,16 @@
       "click",
       function(){
 
-        mobileMenu.classList.toggle("open");
-
         const isOpen =
-          mobileMenu.classList.contains("open");
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          isOpen
-        );
+          mobileMenu.classList.toggle("open");
 
         menuButton.textContent =
           isOpen ? "CERRAR" : "MENÚ";
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
 
       }
     );
