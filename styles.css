@@ -1557,3 +1557,155 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — LOGOTIPO CENTRAL DEL HEADER
+   ========================================================= */
+
+.site-header{
+  position:sticky;
+}
+
+.header-logo{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:54px;
+  height:54px;
+
+  z-index:25;
+
+  text-decoration:none;
+
+  pointer-events:auto;
+}
+
+.header-logo img{
+  display:block;
+
+  width:48px;
+  height:48px;
+
+  object-fit:contain;
+}
+
+
+/* En escritorio se oculta para conservar
+   la navegación horizontal actual */
+
+@media(min-width:801px){
+
+  .header-logo{
+    display:none;
+  }
+
+}
+
+
+/* =========================================================
+   CORRALES — HEADER MÓVIL
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .site-header{
+    position:sticky !important;
+
+    top:0 !important;
+
+    z-index:99999 !important;
+
+    min-height:72px !important;
+
+    padding:18px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:space-between !important;
+  }
+
+
+  .header-logo{
+    display:flex !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    position:absolute !important;
+
+    left:50% !important;
+
+    top:50% !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    width:52px !important;
+
+    height:52px !important;
+
+    z-index:100000 !important;
+  }
+
+
+  .header-logo img{
+    width:46px !important;
+
+    height:46px !important;
+
+    object-fit:contain !important;
+  }
+
+
+  .site-header .brand{
+    position:relative;
+
+    z-index:100001;
+  }
+
+
+  .mobile-menu-toggle{
+    position:relative;
+
+    z-index:100001;
+  }
+
+}
+
+
+/* =========================================================
+   CORRALES — LOGOTIPO DEL CIERRE
+   ========================================================= */
+
+.home-final-logo{
+  display:block;
+
+  width:min(420px,65vw);
+
+  height:auto;
+
+  object-fit:contain;
+
+  margin:30px 0 45px;
+}
+
+
+@media(max-width:800px){
+
+  .home-final-logo{
+    width:min(330px,82vw);
+
+    margin:26px 0 42px;
+  }
+
+}
