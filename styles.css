@@ -2200,3 +2200,43 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — HEADER FIJO AL HACER SCROLL
+   ========================================================= */
+
+.site-header{
+  position:sticky !important;
+  top:0 !important;
+  z-index:99999 !important;
+
+  overflow:visible !important;
+
+  background:rgba(243,239,231,.96) !important;
+
+  backdrop-filter:blur(10px) !important;
+  -webkit-backdrop-filter:blur(10px) !important;
+}
+
+@media(max-width:800px){
+
+  .site-header{
+    position:sticky !important;
+    top:0 !important;
+
+    min-height:118px !important;
+
+    z-index:99999 !important;
+
+    overflow:visible !important;
+  }
+
+  .header-logo{
+    z-index:100000 !important;
+  }
+
+  .site-header .brand,
+  .mobile-menu-toggle{
+    z-index:100001 !important;
+  }
+
+}
