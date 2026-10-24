@@ -32,10 +32,39 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=94"
+    href="./styles.css?v=148"
   >
 
   <style>
+
+    /* =========================
+       HEADER INTELIGENTE
+       ========================= */
+
+    .site-header{
+      position:sticky !important;
+      top:0 !important;
+      z-index:999999 !important;
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease !important;
+
+      will-change:transform;
+
+      background:rgba(243,239,231,.96) !important;
+
+      backdrop-filter:blur(10px) !important;
+      -webkit-backdrop-filter:blur(10px) !important;
+
+      overflow:visible !important;
+    }
+
+    .site-header.header-hidden{
+      transform:translateY(-110%) !important;
+      opacity:0 !important;
+    }
+
 
     /* =========================
        MENÚ MÓVIL
@@ -47,63 +76,6 @@
 
     .mobile-nav{
       display:none;
-    }
-
-    @media(max-width:800px){
-
-      .site-header{
-        display:flex !important;
-        align-items:center !important;
-        justify-content:space-between !important;
-        min-height:72px;
-        padding:18px !important;
-      }
-
-      .site-header .nav{
-        display:none !important;
-      }
-
-      .mobile-menu-toggle{
-        display:block !important;
-        border:0;
-        background:transparent;
-        color:#161513;
-        font-family:"DM Sans",sans-serif;
-        font-size:12px;
-        font-weight:500;
-        letter-spacing:.12em;
-        text-transform:uppercase;
-        padding:10px 0;
-        cursor:pointer;
-      }
-
-      .mobile-nav{
-        display:none;
-        position:fixed;
-        top:72px;
-        left:0;
-        right:0;
-        z-index:9999;
-        padding:20px 18px 30px;
-        background:#f3efe7;
-        border-bottom:1px solid rgba(22,21,19,.18);
-      }
-
-      .mobile-nav.open{
-        display:block !important;
-      }
-
-      .mobile-nav a{
-        display:block;
-        padding:17px 0;
-        border-bottom:1px solid rgba(22,21,19,.18);
-        color:#161513;
-        font-family:"Playfair Display",serif;
-        font-size:32px;
-        line-height:1;
-        text-decoration:none;
-      }
-
     }
 
 
@@ -292,6 +264,90 @@
 
     @media(max-width:800px){
 
+      .site-header{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:space-between !important;
+
+        min-height:118px !important;
+
+        padding:18px !important;
+
+        overflow:visible !important;
+      }
+
+      .site-header .nav{
+        display:none !important;
+      }
+
+      .mobile-menu-toggle{
+        display:block !important;
+
+        border:0;
+
+        background:transparent;
+
+        color:#161513;
+
+        font-family:"DM Sans",sans-serif;
+
+        font-size:12px;
+
+        font-weight:500;
+
+        letter-spacing:.12em;
+
+        text-transform:uppercase;
+
+        padding:10px 0;
+
+        cursor:pointer;
+      }
+
+      .mobile-nav{
+        display:none;
+
+        position:fixed;
+
+        top:118px;
+
+        left:0;
+        right:0;
+
+        z-index:999998;
+
+        padding:20px 18px 30px;
+
+        background:#f3efe7;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-nav.open{
+        display:block !important;
+      }
+
+      .mobile-nav a{
+        display:block;
+
+        padding:17px 0;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+
+        color:#161513;
+
+        font-family:"Playfair Display",serif;
+
+        font-size:32px;
+
+        line-height:1;
+
+        text-decoration:none;
+      }
+
+
       .artist-hero{
         padding:65px 18px 60px;
       }
@@ -385,7 +441,9 @@
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
 
@@ -397,13 +455,41 @@
     </a>
 
 
+    <a
+      href="./index.html"
+      class="header-logo"
+      aria-label="Inicio Corrales"
+    >
+
+      <img
+        src="./assets/Logo-header.PNG?v=4"
+        alt=""
+      >
+
+    </a>
+
+
     <nav class="nav">
 
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
 
     </nav>
 
@@ -421,26 +507,46 @@
   </header>
 
 
-  <!-- MENÚ MÓVIL -->
+
+  <!-- =========================
+       MENÚ MÓVIL
+       ========================= -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
   >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
 
   </nav>
+
 
 
   <main>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+         ========================= -->
 
     <section class="artist-hero">
 
@@ -468,7 +574,10 @@
     </section>
 
 
-    <!-- RETRATO -->
+
+    <!-- =========================
+         RETRATO
+         ========================= -->
 
     <section class="artist-portrait">
 
@@ -497,7 +606,10 @@
     </section>
 
 
-    <!-- BIOGRAFÍA -->
+
+    <!-- =========================
+         BIOGRAFÍA
+         ========================= -->
 
     <section class="artist-bio">
 
@@ -549,7 +661,10 @@
     </section>
 
 
-    <!-- INFORMACIÓN -->
+
+    <!-- =========================
+         INFORMACIÓN
+         ========================= -->
 
     <section class="artist-info">
 
@@ -561,6 +676,7 @@
 
 
         <div class="artist-info-table">
+
 
           <div class="artist-info-row">
 
@@ -613,6 +729,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -620,7 +737,10 @@
     </section>
 
 
-    <!-- CIERRE -->
+
+    <!-- =========================
+         CIERRE
+         ========================= -->
 
     <section class="artist-final">
 
@@ -649,6 +769,11 @@
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
   <footer class="footer">
 
     <div>
@@ -670,6 +795,11 @@
   </footer>
 
 
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
   <script>
 
     const menuButton =
@@ -678,6 +808,11 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const header =
+      document.querySelector(".site-header");
+
+
+    /* MENÚ MÓVIL */
 
     menuButton.addEventListener(
       "click",
@@ -694,6 +829,14 @@
           isOpen ? "true" : "false"
         );
 
+        if(isOpen){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
       }
     );
 
@@ -706,9 +849,12 @@
           "click",
           function(){
 
-            mobileMenu.classList.remove("open");
+            mobileMenu.classList.remove(
+              "open"
+            );
 
-            menuButton.textContent = "MENÚ";
+            menuButton.textContent =
+              "MENÚ";
 
             menuButton.setAttribute(
               "aria-expanded",
@@ -719,6 +865,96 @@
         );
 
       });
+
+
+    /* =========================
+       HEADER INTELIGENTE
+       BAJAR = OCULTAR
+       SUBIR = MOSTRAR
+       ========================= */
+
+    let lastScrollY =
+      window.scrollY;
+
+
+    window.addEventListener(
+      "scroll",
+      function(){
+
+        const currentScrollY =
+          window.scrollY;
+
+
+        /* Si el menú está abierto,
+           no ocultamos el header */
+
+        if(
+          mobileMenu.classList.contains(
+            "open"
+          )
+        ){
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+
+        }
+
+
+        /* Cerca del inicio,
+           siempre visible */
+
+        if(currentScrollY < 80){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+
+        }
+
+
+        /* BAJANDO */
+
+        if(
+          currentScrollY >
+          lastScrollY
+        ){
+
+          header.classList.add(
+            "header-hidden"
+          );
+
+        }
+
+
+        /* SUBIENDO */
+
+        else if(
+          currentScrollY <
+          lastScrollY
+        ){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
+
+        lastScrollY =
+          currentScrollY;
+
+      },
+      {
+        passive:true
+      }
+    );
 
   </script>
 
