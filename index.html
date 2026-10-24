@@ -32,9 +32,8 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=132"
+    href="./styles.css?v=135"
   >
-
 
   <style>
 
@@ -47,22 +46,15 @@
     }
 
 
-    /* =========================
-       HERO
-       ========================= */
+    /* HERO */
 
     .home-hero{
       min-height:calc(100vh - 72px);
-
       display:grid;
       grid-template-columns:1.05fr .95fr;
-
       gap:60px;
-
       align-items:center;
-
       padding:72px 28px 88px;
-
       border-bottom:1px solid var(--line);
     }
 
@@ -72,27 +64,18 @@
 
     .home-hero h1{
       margin:22px 0 34px;
-
       max-width:8.5ch;
-
       font-size:clamp(4.7rem,9vw,9rem);
-
       line-height:.86;
-
       font-weight:400;
-
       letter-spacing:-.045em;
     }
 
     .home-hero-intro{
       max-width:560px;
-
       margin:0 0 38px;
-
       font-size:1.05rem;
-
       line-height:1.7;
-
       color:var(--muted);
     }
 
@@ -113,40 +96,27 @@
 
     .home-feature-meta{
       display:flex;
-
       justify-content:space-between;
-
       gap:25px;
-
       margin-top:14px;
-
       font-size:.72rem;
-
       line-height:1.45;
-
       color:var(--muted);
     }
 
 
-    /* =========================
-       SECCIONES
-       ========================= */
+    /* SECCIONES */
 
     .home-section{
       padding:105px 28px;
-
       border-bottom:1px solid var(--line);
     }
 
     .home-section-grid{
       display:grid;
-
       grid-template-columns:.32fr 1.68fr;
-
       gap:55px;
-
       max-width:1420px;
-
       margin:0 auto;
     }
 
@@ -156,93 +126,65 @@
 
     .home-section h2{
       margin:0 0 28px;
-
       max-width:11ch;
-
       font-size:clamp(3.6rem,7vw,7rem);
-
       line-height:.92;
-
       font-weight:400;
-
       letter-spacing:-.03em;
     }
 
     .home-section-copy{
       max-width:680px;
-
       margin:0 0 35px;
-
       font-size:1.05rem;
-
       line-height:1.75;
-
       color:#4f4a43;
     }
 
 
-    /* =========================
-       OBRAS
-       ========================= */
+    /* OBRAS */
 
     .home-works{
       padding:105px 28px 120px;
-
       border-bottom:1px solid var(--line);
     }
 
     .home-works-header{
       display:grid;
-
       grid-template-columns:.32fr 1.68fr;
-
       gap:55px;
-
       max-width:1420px;
-
       margin:0 auto 60px;
     }
 
     .home-works-header h2{
       margin:0 0 24px;
-
       max-width:11ch;
-
       font-size:clamp(3.6rem,7vw,7rem);
-
       line-height:.92;
-
       font-weight:400;
-
       letter-spacing:-.03em;
     }
 
     .home-works-header p{
       max-width:650px;
-
       margin:0;
-
       line-height:1.7;
-
       color:var(--muted);
     }
 
     .works-grid{
       max-width:1420px;
-
       margin:0 auto;
     }
 
     .home-works-footer{
       max-width:1420px;
-
       margin:55px auto 0;
     }
 
 
-    /* =========================
-       CIERRE
-       ========================= */
+    /* CIERRE */
 
     .home-final{
       padding:70px 28px 80px;
@@ -260,201 +202,137 @@
     }
 
 
-    /* =========================
-       MÓVIL
-       ========================= */
+    /* MÓVIL */
 
     @media(max-width:800px){
 
       .site-header{
         display:flex !important;
-
         align-items:center !important;
-
         justify-content:space-between !important;
-
         min-height:72px;
-
         padding:18px !important;
       }
-
 
       .site-header .nav{
         display:none !important;
       }
 
-
       .mobile-menu-toggle{
         display:block !important;
-
         border:0;
-
         background:transparent;
-
         color:#161513;
-
         font-family:"DM Sans",sans-serif;
-
         font-size:12px;
-
         font-weight:500;
-
         letter-spacing:.12em;
-
         text-transform:uppercase;
-
         padding:10px 0;
-
         cursor:pointer;
       }
 
-
       .mobile-nav{
         display:none;
-
         position:fixed;
-
         top:72px;
-
         left:0;
-
         right:0;
-
         z-index:9999;
-
         padding:20px 18px 30px;
-
         background:#f3efe7;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
+        border-bottom:1px solid rgba(22,21,19,.18);
       }
-
 
       .mobile-nav.open{
         display:block !important;
       }
 
-
       .mobile-nav a{
         display:block;
-
         padding:17px 0;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
-
+        border-bottom:1px solid rgba(22,21,19,.18);
         color:#161513;
-
         font-family:"Playfair Display",serif;
-
         font-size:32px;
-
         line-height:1;
-
         text-decoration:none;
       }
 
-
       .home-hero{
         min-height:auto;
-
         display:block;
-
         padding:65px 18px 78px;
       }
 
-
       .home-hero h1{
         margin-top:20px;
-
-        font-size:
-          clamp(4rem,17vw,6rem);
+        font-size:clamp(4rem,17vw,6rem);
       }
-
 
       .home-hero-intro{
         font-size:.98rem;
       }
 
-
       .home-feature{
         margin-top:58px;
       }
-
 
       .home-feature-meta{
         font-size:.65rem;
       }
 
-
       .home-section{
         padding:82px 18px;
       }
-
 
       .home-section-grid{
         display:block;
       }
 
-
       .home-section-grid > .section-number{
         margin-bottom:30px;
       }
 
-
       .home-section h2{
-        font-size:
-          clamp(3rem,14vw,5rem);
+        font-size:clamp(3rem,14vw,5rem);
       }
-
 
       .home-section-copy{
         font-size:.98rem;
-
         line-height:1.7;
       }
-
 
       .home-works{
         padding:82px 18px 95px;
       }
 
-
       .home-works-header{
         display:block;
-
         margin-bottom:45px;
       }
-
 
       .home-works-header > .section-number{
         margin-bottom:30px;
       }
 
-
       .home-works-header h2{
-        font-size:
-          clamp(3rem,14vw,5rem);
+        font-size:clamp(3rem,14vw,5rem);
       }
-
 
       .home-works-footer{
         margin-top:42px;
       }
 
-
       .home-final{
         padding:55px 18px 65px;
       }
-
 
       .home-final-links{
         display:flex !important;
         justify-content:space-between;
         gap:20px;
       }
-
 
       .home-final-links .text-link{
         margin:0 !important;
@@ -471,12 +349,9 @@
 <body>
 
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- HEADER -->
 
   <header class="site-header">
-
 
     <a
       href="./index.html"
@@ -485,8 +360,6 @@
       CORRALES
     </a>
 
-
-    <!-- LOGOTIPO CENTRAL -->
 
     <a
       href="./index.html"
@@ -504,25 +377,11 @@
 
     <nav class="nav">
 
-      <a href="./index.html">
-        Inicio
-      </a>
-
-      <a href="./obra.html">
-        Obra
-      </a>
-
-      <a href="./artista.html">
-        Artista
-      </a>
-
-      <a href="./proceso.html">
-        Proceso
-      </a>
-
-      <a href="./contacto.html">
-        Contacto
-      </a>
+      <a href="./index.html">Inicio</a>
+      <a href="./obra.html">Obra</a>
+      <a href="./artista.html">Artista</a>
+      <a href="./proceso.html">Proceso</a>
+      <a href="./contacto.html">Contacto</a>
 
     </nav>
 
@@ -537,50 +396,29 @@
       MENÚ
     </button>
 
-
   </header>
 
 
-
-  <!-- =========================
-       MENÚ MÓVIL
-       ========================= -->
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
   >
 
-    <a href="./index.html">
-      Inicio
-    </a>
-
-    <a href="./obra.html">
-      Obra
-    </a>
-
-    <a href="./artista.html">
-      Artista
-    </a>
-
-    <a href="./proceso.html">
-      Proceso
-    </a>
-
-    <a href="./contacto.html">
-      Contacto
-    </a>
+    <a href="./index.html">Inicio</a>
+    <a href="./obra.html">Obra</a>
+    <a href="./artista.html">Artista</a>
+    <a href="./proceso.html">Proceso</a>
+    <a href="./contacto.html">Contacto</a>
 
   </nav>
-
 
 
   <main>
 
 
-    <!-- =========================
-         HERO
-         ========================= -->
+    <!-- HERO -->
 
     <section class="home-hero">
 
@@ -640,10 +478,7 @@
     </section>
 
 
-
-    <!-- =========================
-         ARTISTA
-         ========================= -->
+    <!-- ARTISTA -->
 
     <section class="home-section">
 
@@ -683,10 +518,7 @@
     </section>
 
 
-
-    <!-- =========================
-         OBRA
-         ========================= -->
+    <!-- OBRA -->
 
     <section class="home-works">
 
@@ -748,7 +580,6 @@
         </article>
 
 
-
         <article class="work">
 
           <a href="./tierra.html">
@@ -776,7 +607,6 @@
           </p>
 
         </article>
-
 
 
         <article class="work">
@@ -808,7 +638,6 @@
         </article>
 
 
-
         <article class="work">
 
           <a href="./culpa.html">
@@ -838,7 +667,6 @@
         </article>
 
 
-
         <article class="work">
 
           <a href="./noche.html">
@@ -866,7 +694,6 @@
           </p>
 
         </article>
-
 
 
         <article class="work">
@@ -901,7 +728,6 @@
       </div>
 
 
-
       <div class="home-works-footer">
 
         <a
@@ -917,10 +743,7 @@
     </section>
 
 
-
-    <!-- =========================
-         PROCESO
-         ========================= -->
+    <!-- PROCESO -->
 
     <section class="home-section">
 
@@ -958,10 +781,7 @@
     </section>
 
 
-
-    <!-- =========================
-         ADQUIRIR
-         ========================= -->
+    <!-- ADQUIRIR -->
 
     <section class="home-section">
 
@@ -1000,10 +820,7 @@
     </section>
 
 
-
-    <!-- =========================
-         CIERRE
-         ========================= -->
+    <!-- CIERRE -->
 
     <section class="home-final">
 
@@ -1042,10 +859,7 @@
   </main>
 
 
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -1068,6 +882,7 @@
   </footer>
 
 
+  <!-- MENÚ MÓVIL -->
 
   <script>
 
@@ -1086,15 +901,11 @@
           mobileMenu.classList.toggle("open");
 
         menuButton.textContent =
-          isOpen
-            ? "CERRAR"
-            : "MENÚ";
+          isOpen ? "CERRAR" : "MENÚ";
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen
-            ? "true"
-            : "false"
+          isOpen ? "true" : "false"
         );
 
       }
