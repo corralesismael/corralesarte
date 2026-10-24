@@ -2240,3 +2240,20 @@ h3{
   }
 
 }
+/* HEADER INTELIGENTE */
+
+.site-header{
+  position:sticky !important;
+  top:0 !important;
+
+  transition:
+    transform .3s ease,
+    opacity .3s ease !important;
+
+  will-change:transform;
+}
+
+.site-header.header-hidden{
+  transform:translateY(-110%) !important;
+  opacity:0 !important;
+}
