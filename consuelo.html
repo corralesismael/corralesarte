@@ -32,7 +32,7 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=30"
+    href="./styles.css?v=98"
   >
 
   <style>
@@ -67,54 +67,39 @@
         display:block !important;
         visibility:visible !important;
         opacity:1 !important;
-
         position:fixed !important;
-
-        top:24px !important;
+        top:23px !important;
         right:18px !important;
-
         z-index:999999 !important;
-
-        width:auto !important;
-        height:auto !important;
 
         margin:0 !important;
         padding:4px 0 !important;
 
         border:0 !important;
         background:#f3efe7 !important;
-
         color:#161513 !important;
 
         font-family:"DM Sans",sans-serif !important;
         font-size:12px !important;
         font-weight:500 !important;
-
-        line-height:1 !important;
         letter-spacing:.12em !important;
-
         text-transform:uppercase !important;
-
-        cursor:pointer !important;
       }
 
       #mobileMenu{
         display:none;
+        position:fixed;
+        top:72px;
+        left:0;
+        right:0;
+        z-index:999998;
 
-        position:fixed !important;
+        padding:20px 18px 30px;
 
-        top:72px !important;
-        left:0 !important;
-        right:0 !important;
-
-        z-index:999998 !important;
-
-        padding:20px 18px 30px !important;
-
-        background:#f3efe7 !important;
+        background:#f3efe7;
 
         border-bottom:
-          1px solid rgba(22,21,19,.18) !important;
+          1px solid rgba(22,21,19,.18);
       }
 
       #mobileMenu.open{
@@ -122,328 +107,280 @@
       }
 
       #mobileMenu a{
-        display:block !important;
-
-        padding:17px 0 !important;
+        display:block;
+        padding:17px 0;
 
         border-bottom:
-          1px solid rgba(22,21,19,.18) !important;
+          1px solid rgba(22,21,19,.18);
 
-        color:#161513 !important;
+        color:#161513;
 
-        font-family:
-          "Playfair Display",
-          serif !important;
+        font-family:"Playfair Display",serif;
+        font-size:32px;
+        line-height:1;
 
-        font-size:32px !important;
-        line-height:1 !important;
-
-        text-decoration:none !important;
+        text-decoration:none;
       }
 
     }
-
-    @media(min-width:801px){
-
-      #menuButton{
-        display:none !important;
-      }
-
-      #mobileMenu{
-        display:none !important;
-      }
-
-    }
-
 
 
     /* =========================
-       FICHA DE OBRA
+       HERO DE OBRA
        ========================= */
 
-    .artwork-page{
-      padding:80px 28px 0;
+    .artwork-hero{
+      padding:90px 28px 65px;
+      border-bottom:1px solid var(--line);
     }
 
-    .artwork-header{
-      max-width:1200px;
-      margin:0 auto 55px;
-    }
-
-    .artwork-header h1{
-      margin:18px 0 0;
-
-      max-width:900px;
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size:
-        clamp(4rem,9vw,8rem);
-
-      font-weight:400;
-      line-height:.9;
-
-      letter-spacing:-.035em;
-    }
-
-
-
-    .artwork-image{
-      max-width:1200px;
+    .artwork-hero-inner{
+      max-width:1420px;
       margin:0 auto;
     }
 
-    .artwork-image img{
-      display:block;
+    .artwork-hero h1{
+      margin:20px 0 0;
+      max-width:10ch;
 
+      font-size:
+        clamp(4.8rem,10vw,9rem);
+
+      line-height:.86;
+      font-weight:400;
+      letter-spacing:-.045em;
+    }
+
+
+    /* =========================
+       IMAGEN
+       ========================= */
+
+    .artwork-image-section{
+      padding:75px 28px 0;
+    }
+
+    .artwork-image-inner{
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .artwork-image-inner img{
+      display:block;
       width:100%;
       height:auto;
     }
 
 
+    /* =========================
+       INFORMACIÓN
+       ========================= */
 
-    .artwork-information{
-      max-width:1200px;
+    .artwork-details{
+      padding:95px 28px 105px;
+      border-bottom:1px solid var(--line);
+    }
 
-      margin:70px auto 0;
+    .artwork-details-inner{
+      max-width:1420px;
+      margin:0 auto;
 
       display:grid;
-
-      grid-template-columns:
-        .65fr 1.35fr;
-
-      gap:70px;
-
-      padding-bottom:90px;
-
-      border-bottom:
-        1px solid var(--line);
+      grid-template-columns:.38fr 1.62fr;
+      gap:60px;
     }
 
-
-
-    .artwork-information h2{
+    .artwork-details-title h2{
       margin:0;
+      max-width:8ch;
 
       font-size:
-        clamp(2.6rem,5vw,4.8rem);
+        clamp(3.3rem,6vw,6rem);
 
-      line-height:1;
+      line-height:.93;
+      font-weight:400;
+      letter-spacing:-.03em;
     }
-
-
 
     .artwork-meta{
-      border-top:
-        1px solid var(--line);
+      border-top:1px solid var(--line);
     }
-
-
 
     .artwork-meta-row{
       display:grid;
+      grid-template-columns:145px 1fr;
+      gap:28px;
 
-      grid-template-columns:
-        130px 1fr;
+      padding:20px 0;
 
-      gap:25px;
-
-      padding:18px 0;
-
-      border-bottom:
-        1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
-
-
     .artwork-meta-label{
-      font-size:.7rem;
-
-      letter-spacing:.12em;
-
+      font-size:.66rem;
+      letter-spacing:.13em;
       text-transform:uppercase;
 
       color:var(--muted);
     }
 
-
-
     .artwork-meta-value{
       font-size:.95rem;
-
       line-height:1.5;
     }
 
-
-
-    .artwork-button{
-      display:inline-block;
-
-      margin-top:35px;
-
-      padding:15px 22px;
-
-      border:
-        1px solid #161513;
-
-      color:#161513;
-
-      text-decoration:none;
-
-      font-size:.72rem;
-
-      letter-spacing:.12em;
-
-      text-transform:uppercase;
+    .artwork-purchase{
+      margin-top:38px;
     }
 
 
+    /* =========================
+       SOBRE LA OBRA
+       ========================= */
 
-    .artwork-about{
-      max-width:1200px;
+    .artwork-story{
+      padding:105px 28px;
+      border-bottom:1px solid var(--line);
+    }
 
+    .artwork-story-inner{
+      max-width:1420px;
       margin:0 auto;
-
-      padding:90px 0;
 
       display:grid;
-
-      grid-template-columns:
-        .65fr 1.35fr;
-
-      gap:70px;
-
-      border-bottom:
-        1px solid var(--line);
+      grid-template-columns:.38fr 1.62fr;
+      gap:60px;
     }
 
-
-
-    .artwork-about h2{
+    .artwork-story h2{
       margin:0;
+      max-width:8ch;
 
       font-size:
-        clamp(2.6rem,5vw,4.8rem);
+        clamp(3.3rem,6vw,6rem);
 
-      line-height:1;
+      line-height:.93;
+      font-weight:400;
+      letter-spacing:-.03em;
     }
 
+    .artwork-story-copy{
+      max-width:760px;
+    }
 
-
-    .artwork-about p{
-      max-width:720px;
-
-      margin:0 0 24px;
-
-      color:#4f4a43;
+    .artwork-story-copy p{
+      margin:0 0 26px;
 
       font-size:1.05rem;
+      line-height:1.78;
 
-      line-height:1.75;
+      color:#4f4a43;
     }
 
 
+    /* =========================
+       CIERRE
+       ========================= */
 
-    .artwork-contact{
-      max-width:1200px;
+    .artwork-final{
+      padding:110px 28px 125px;
+    }
 
+    .artwork-final-inner{
+      max-width:1420px;
       margin:0 auto;
-
-      padding:90px 0 110px;
     }
 
-
-
-    .artwork-contact h2{
-      margin:18px 0 30px;
-
-      max-width:900px;
+    .artwork-final h2{
+      margin:18px 0 34px;
+      max-width:10ch;
 
       font-size:
-        clamp(3.2rem,7vw,6.5rem);
+        clamp(3.8rem,7vw,7rem);
 
-      line-height:.95;
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:-.035em;
     }
 
 
+    /* =========================
+       MÓVIL
+       ========================= */
 
     @media(max-width:800px){
 
-      .artwork-page{
-        padding:
-          65px 18px 0;
+      .artwork-hero{
+        padding:65px 18px 50px;
       }
 
-
-
-      .artwork-header{
-        margin-bottom:40px;
-      }
-
-
-
-      .artwork-header h1{
+      .artwork-hero h1{
         font-size:
-          clamp(3.5rem,16vw,5.6rem);
+          clamp(4rem,18vw,6rem);
       }
 
+      .artwork-image-section{
+        padding:50px 18px 0;
+      }
 
+      .artwork-details{
+        padding:75px 18px 82px;
+      }
 
-      .artwork-information,
-      .artwork-about{
+      .artwork-details-inner{
         display:block;
-
-        margin-top:55px;
-
-        padding-bottom:65px;
       }
 
+      .artwork-details-title{
+        margin-bottom:36px;
+      }
 
-
-      .artwork-information h2,
-      .artwork-about h2{
-        margin-bottom:35px;
-
+      .artwork-details-title h2{
         font-size:
-          clamp(2.8rem,12vw,4rem);
+          clamp(3rem,14vw,5rem);
       }
-
-
 
       .artwork-meta-row{
-        grid-template-columns:
-          105px 1fr;
-
+        grid-template-columns:105px 1fr;
         gap:15px;
+        padding:17px 0;
       }
 
-
-
-      .artwork-about{
-        padding-top:65px;
+      .artwork-meta-label{
+        font-size:.6rem;
       }
 
-
-
-      .artwork-about p{
-        font-size:.98rem;
-        line-height:1.7;
+      .artwork-meta-value{
+        font-size:.9rem;
       }
 
-
-
-      .artwork-contact{
-        padding:
-          65px 0 85px;
+      .artwork-story{
+        padding:82px 18px;
       }
 
+      .artwork-story-inner{
+        display:block;
+      }
 
+      .artwork-story h2{
+        margin-bottom:36px;
 
-      .artwork-contact h2{
         font-size:
-          clamp(3rem,14vw,4.8rem);
+          clamp(3rem,14vw,5rem);
+      }
+
+      .artwork-story-copy p{
+        font-size:.98rem;
+        line-height:1.72;
+      }
+
+      .artwork-final{
+        padding:85px 18px 100px;
+      }
+
+      .artwork-final h2{
+        font-size:
+          clamp(3.4rem,15vw,5.2rem);
       }
 
     }
@@ -467,31 +404,15 @@
       CORRALES
     </a>
 
-
     <nav class="nav">
 
-      <a href="./index.html">
-        Inicio
-      </a>
-
-      <a href="./obra.html">
-        Obra
-      </a>
-
-      <a href="./artista.html">
-        Artista
-      </a>
-
-      <a href="./proceso.html">
-        Proceso
-      </a>
-
-      <a href="./contacto.html">
-        Contacto
-      </a>
+      <a href="./index.html">Inicio</a>
+      <a href="./obra.html">Obra</a>
+      <a href="./artista.html">Artista</a>
+      <a href="./proceso.html">Proceso</a>
+      <a href="./contacto.html">Contacto</a>
 
     </nav>
-
 
     <button
       id="menuButton"
@@ -505,7 +426,6 @@
   </header>
 
 
-
   <!-- MENÚ MÓVIL -->
 
   <nav
@@ -513,270 +433,258 @@
     aria-label="Navegación móvil"
   >
 
-    <a href="./index.html">
-      Inicio
-    </a>
-
-    <a href="./obra.html">
-      Obra
-    </a>
-
-    <a href="./artista.html">
-      Artista
-    </a>
-
-    <a href="./proceso.html">
-      Proceso
-    </a>
-
-    <a href="./contacto.html">
-      Contacto
-    </a>
+    <a href="./index.html">Inicio</a>
+    <a href="./obra.html">Obra</a>
+    <a href="./artista.html">Artista</a>
+    <a href="./proceso.html">Proceso</a>
+    <a href="./contacto.html">Contacto</a>
 
   </nav>
 
 
+  <main>
 
-  <main class="artwork-page">
 
+    <!-- HERO -->
 
-    <!-- TÍTULO -->
+    <section class="artwork-hero">
 
-    <section class="artwork-header">
+      <div class="artwork-hero-inner">
 
-      <p class="eyebrow">
-        OBRA · 2025
-      </p>
+        <p class="eyebrow">
+          OBRA · 2025
+        </p>
 
-      <h1>
-        Ese consuelo
-      </h1>
+        <h1>
+          Ese consuelo
+        </h1>
+
+      </div>
 
     </section>
-
 
 
     <!-- IMAGEN -->
 
-    <section class="artwork-image">
+    <section class="artwork-image-section">
 
-      <img
-        src="./assets/consuelo.jpg"
-        alt="Ese consuelo, pintura de Ismael Corrales"
-      >
+      <div class="artwork-image-inner">
+
+        <img
+          src="./assets/consuelo.jpg"
+          alt="Ese consuelo, pintura de Ismael Corrales"
+        >
+
+      </div>
 
     </section>
-
 
 
     <!-- INFORMACIÓN -->
 
-    <section class="artwork-information">
+    <section class="artwork-details">
+
+      <div class="artwork-details-inner">
 
 
-      <div>
+        <div class="artwork-details-title">
 
-        <p class="eyebrow">
-          INFORMACIÓN
-        </p>
+          <p class="section-number">
+            01 · INFORMACIÓN
+          </p>
 
-        <h2>
-          Ese<br>
-          consuelo.
-        </h2>
-
-      </div>
-
-
-
-      <div>
-
-
-        <div class="artwork-meta">
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Artista
-            </span>
-
-            <span class="artwork-meta-value">
-              Ismael Corrales
-            </span>
-
-          </div>
-
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Título
-            </span>
-
-            <span class="artwork-meta-value">
-              Ese consuelo
-            </span>
-
-          </div>
-
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Año
-            </span>
-
-            <span class="artwork-meta-value">
-              2025
-            </span>
-
-          </div>
-
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Técnica
-            </span>
-
-            <span class="artwork-meta-value">
-              Acrílico sobre lienzo
-            </span>
-
-          </div>
-
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Dimensiones
-            </span>
-
-            <span class="artwork-meta-value">
-              75 × 100 cm
-            </span>
-
-          </div>
-
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Estado
-            </span>
-
-            <span class="artwork-meta-value">
-              Disponible
-            </span>
-
-          </div>
-
-
-
-          <div class="artwork-meta-row">
-
-            <span class="artwork-meta-label">
-              Precio
-            </span>
-
-            <span class="artwork-meta-value">
-              $80 USD
-            </span>
-
-          </div>
-
+          <h2>
+            Ese consuelo.
+          </h2>
 
         </div>
 
 
+        <div>
 
-        <a
-          href="./contacto.html"
-          class="artwork-button"
-        >
-          Adquirir obra
-        </a>
+          <div class="artwork-meta">
 
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Artista
+              </span>
+
+              <span class="artwork-meta-value">
+                Ismael Corrales
+              </span>
+
+            </div>
+
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Título
+              </span>
+
+              <span class="artwork-meta-value">
+                Ese consuelo
+              </span>
+
+            </div>
+
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Año
+              </span>
+
+              <span class="artwork-meta-value">
+                2025
+              </span>
+
+            </div>
+
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Técnica
+              </span>
+
+              <span class="artwork-meta-value">
+                Acrílico sobre lienzo
+              </span>
+
+            </div>
+
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Dimensiones
+              </span>
+
+              <span class="artwork-meta-value">
+                75 × 100 cm
+              </span>
+
+            </div>
+
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Estado
+              </span>
+
+              <span class="artwork-meta-value">
+                Disponible
+              </span>
+
+            </div>
+
+
+            <div class="artwork-meta-row">
+
+              <span class="artwork-meta-label">
+                Precio
+              </span>
+
+              <span class="artwork-meta-value">
+                $80 USD
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="artwork-purchase">
+
+            <a
+              href="./contacto.html"
+              class="artwork-button"
+            >
+              Adquirir obra
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
 
-
     </section>
-
 
 
     <!-- SOBRE LA OBRA -->
 
-    <section class="artwork-about">
+    <section class="artwork-story">
+
+      <div class="artwork-story-inner">
 
 
-      <div>
+        <div>
 
-        <p class="eyebrow">
-          SOBRE LA OBRA
-        </p>
+          <p class="section-number">
+            02 · SOBRE LA OBRA
+          </p>
 
-        <h2>
-          Ese<br>
-          consuelo.
-        </h2>
+          <h2>
+            Ese consuelo.
+          </h2>
+
+        </div>
+
+
+        <div class="artwork-story-copy">
+
+          <p>
+            Parte del archivo pictórico de Ismael Corrales, esta obra
+            se construye desde la observación de una escena cotidiana
+            y su transformación mediante la pintura.
+          </p>
+
+          <p>
+            La composición, la relación entre las figuras y el tratamiento
+            de la luz forman parte de una búsqueda centrada en la presencia,
+            la memoria y la experiencia humana.
+          </p>
+
+        </div>
 
       </div>
-
-
-
-      <div>
-
-        <p>
-          Parte del archivo pictórico de Ismael Corrales, esta obra
-          se construye desde la observación de una escena cotidiana
-          y su transformación mediante la pintura.
-        </p>
-
-        <p>
-          La composición, la relación entre las figuras y el tratamiento
-          de la luz forman parte de una búsqueda centrada en la presencia,
-          la memoria y la experiencia humana.
-        </p>
-
-      </div>
-
 
     </section>
 
 
+    <!-- CIERRE -->
 
-    <!-- CONSULTAR -->
+    <section class="artwork-final">
 
-    <section class="artwork-contact">
+      <div class="artwork-final-inner">
 
-      <p class="eyebrow">
-        ADQUIRIR
-      </p>
+        <p class="eyebrow">
+          ADQUIRIR
+        </p>
 
-      <h2>
-        Consultar<br>
-        disponibilidad.
-      </h2>
+        <h2>
+          Consultar disponibilidad.
+        </h2>
 
-      <a
-        href="./contacto.html"
-        class="text-link"
-      >
-        CONTACTAR →
-      </a>
+        <a
+          href="./contacto.html"
+          class="text-link"
+        >
+          CONTACTAR →
+        </a>
+
+      </div>
 
     </section>
 
 
   </main>
-
 
 
   <footer class="footer">
@@ -798,7 +706,6 @@
     </a>
 
   </footer>
-
 
 
   <script>
@@ -837,9 +744,7 @@
           "click",
           function(){
 
-            mobileMenu
-              .classList
-              .remove("open");
+            mobileMenu.classList.remove("open");
 
             menuButton.textContent =
               "MENÚ";
