@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -30,438 +29,312 @@
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="./styles.css?v=147"
-  >
+  <link rel="stylesheet" href="./styles.css?v=92">
 
   <style>
 
-    /* =========================
-       HEADER INTELIGENTE
-       ========================= */
+    /* MENÚ MÓVIL */
 
-    .site-header{
-      position:sticky !important;
-      top:0 !important;
-      z-index:999999 !important;
-
-      transition:
-        transform .3s ease,
-        opacity .3s ease !important;
-
-      will-change:transform;
-
-      background:rgba(243,239,231,.96) !important;
-
-      backdrop-filter:blur(10px) !important;
-      -webkit-backdrop-filter:blur(10px) !important;
-
-      overflow:visible !important;
+    .mobile-menu-toggle {
+      display: none;
     }
 
-    .site-header.header-hidden{
-      transform:translateY(-110%) !important;
-      opacity:0 !important;
+    .mobile-nav {
+      display: none;
     }
 
+    @media (max-width: 800px) {
 
-    /* =========================
-       MENÚ MÓVIL
-       ========================= */
+      .site-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 72px;
+        padding: 18px !important;
+      }
 
-    .mobile-menu-toggle{
-      display:none;
-    }
+      .site-header .nav {
+        display: none !important;
+      }
 
-    .mobile-nav{
-      display:none;
-    }
+      .mobile-menu-toggle {
+        display: block !important;
+        border: 0;
+        background: transparent;
+        color: #161513;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        padding: 10px 0;
+        cursor: pointer;
+      }
 
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        padding: 20px 18px 30px;
+        background: #f3efe7;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
 
-    /* =========================
-       ENCABEZADO DE OBRA
-       ========================= */
+      .mobile-nav.open {
+        display: block !important;
+      }
 
-    .archive-hero{
-      padding:95px 28px 75px;
-      border-bottom:1px solid var(--line);
-    }
+      .mobile-nav a {
+        display: block;
+        padding: 17px 0;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+        color: #161513;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        line-height: 1;
+        text-decoration: none;
+      }
 
-    .archive-hero-inner{
-      max-width:1420px;
-      margin:0 auto;
-    }
-
-    .archive-hero h1{
-      margin:20px 0 32px;
-      max-width:8ch;
-      font-size:clamp(4.8rem,10vw,9rem);
-      line-height:.86;
-      font-weight:400;
-      letter-spacing:-.045em;
-    }
-
-    .archive-intro{
-      max-width:640px;
-      margin:0;
-      font-size:1.08rem;
-      line-height:1.75;
-      color:var(--muted);
     }
 
 
-    /* =========================
-       FILTROS
-       ========================= */
+    /* ENCABEZADO DE OBRA */
 
-    .archive-filter-bar{
-      max-width:1420px;
-      margin:0 auto;
-      padding:28px 28px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:24px;
-      border-bottom:1px solid var(--line);
+    .archive-hero {
+      padding: 95px 28px 75px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .archive-filter{
-      font-size:.68rem;
-      font-weight:500;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      color:var(--muted);
+    .archive-hero-inner {
+      max-width: 1420px;
+      margin: 0 auto;
     }
 
-    .archive-filter.active{
-      color:#161513;
+    .archive-hero h1 {
+      margin: 20px 0 32px;
+      max-width: 8ch;
+      font-size: clamp(4.8rem, 10vw, 9rem);
+      line-height: .86;
+      font-weight: 400;
+      letter-spacing: -.045em;
+    }
+
+    .archive-intro {
+      max-width: 640px;
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--muted);
     }
 
 
-    /* =========================
-       CATÁLOGO
-       ========================= */
+    /* FILTROS */
 
-    .archive-grid{
-      max-width:1420px;
-      margin:0 auto;
-      padding:75px 28px 120px;
-
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      column-gap:32px;
-      row-gap:85px;
+    .archive-filter-bar {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 28px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .archive-card{
-      min-width:0;
+    .archive-filter {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
-    .archive-image-link{
-      display:block;
-      overflow:hidden;
-      background:#e7e1d8;
+    .archive-filter.active {
+      color: #161513;
     }
 
-    .archive-card img{
-      display:block;
-      width:100%;
-      height:auto;
+
+    /* CATÁLOGO */
+
+    .archive-grid {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 75px 28px 120px;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 85px;
+    }
+
+    .archive-card {
+      min-width: 0;
+    }
+
+    .archive-image-link {
+      display: block;
+      overflow: hidden;
+      background: #e7e1d8;
+    }
+
+    .archive-card img {
+      display: block;
+      width: 100%;
+      height: auto;
 
       transition:
         transform .35s ease,
         opacity .35s ease;
     }
 
-    .archive-card:hover img{
-      transform:scale(1.012);
-      opacity:.97;
+    .archive-card:hover img {
+      transform: scale(1.012);
+      opacity: .97;
     }
 
-    .archive-card-content{
-      padding-top:17px;
+    .archive-card-content {
+      padding-top: 17px;
     }
 
-    .archive-card h2{
-      margin:0 0 11px;
-      max-width:22ch;
-
-      font-family:"Playfair Display",serif;
-
-      font-size:clamp(1.6rem,2.4vw,2.35rem);
-
-      font-weight:400;
-
-      line-height:1.06;
+    .archive-card h2 {
+      margin: 0 0 11px;
+      max-width: 22ch;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+      font-weight: 400;
+      line-height: 1.06;
     }
 
-    .archive-card h2 a{
-      color:inherit;
-      text-decoration:none;
+    .archive-card h2 a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .archive-meta{
-      margin:0 0 4px;
-
-      font-size:.8rem;
-
-      line-height:1.5;
-
-      color:var(--muted);
+    .archive-meta {
+      margin: 0 0 4px;
+      font-size: .8rem;
+      line-height: 1.5;
+      color: var(--muted);
     }
 
-    .archive-card-bottom{
-      margin-top:16px;
+    .archive-card-bottom {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
 
-      padding-top:14px;
-
-      border-top:1px solid var(--line);
-
-      display:flex;
-
-      justify-content:space-between;
-
-      gap:20px;
-
-      align-items:center;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
     }
 
-    .archive-price{
-      font-size:.78rem;
-      font-weight:500;
+    .archive-price {
+      font-size: .78rem;
+      font-weight: 500;
     }
 
-    .archive-status{
-      font-size:.62rem;
-
-      letter-spacing:.12em;
-
-      text-transform:uppercase;
-
-      color:var(--muted);
+    .archive-status {
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
 
-    /* =========================
-       CIERRE
-       ========================= */
+    /* CIERRE */
 
-    .archive-final{
-      padding:105px 28px 120px;
-
-      border-top:1px solid var(--line);
+    .archive-final {
+      padding: 105px 28px 120px;
+      border-top: 1px solid var(--line);
     }
 
-    .archive-final-inner{
-      max-width:1420px;
-      margin:0 auto;
+    .archive-final-inner {
+      max-width: 1420px;
+      margin: 0 auto;
     }
 
-    .archive-final h2{
-      margin:18px 0 32px;
-
-      max-width:10ch;
-
-      font-size:clamp(3.8rem,7vw,7rem);
-
-      line-height:.92;
-
-      font-weight:400;
-
-      letter-spacing:-.035em;
+    .archive-final h2 {
+      margin: 18px 0 32px;
+      max-width: 10ch;
+      font-size: clamp(3.8rem, 7vw, 7rem);
+      line-height: .92;
+      font-weight: 400;
+      letter-spacing: -.035em;
     }
 
 
-    /* =========================
-       MÓVIL
-       ========================= */
+    /* VERSIÓN MÓVIL */
 
-    @media(max-width:800px){
+    @media (max-width: 800px) {
 
-      .site-header{
-        display:flex !important;
-
-        align-items:center !important;
-
-        justify-content:space-between !important;
-
-        min-height:118px !important;
-
-        padding:18px !important;
-
-        overflow:visible !important;
+      .archive-hero {
+        padding: 65px 18px 55px;
       }
 
-
-      .site-header .nav{
-        display:none !important;
+      .archive-hero h1 {
+        font-size: clamp(4rem, 18vw, 6rem);
       }
 
-
-      .mobile-menu-toggle{
-        display:block !important;
-
-        border:0;
-
-        background:transparent;
-
-        color:#161513;
-
-        font-family:"DM Sans",sans-serif;
-
-        font-size:12px;
-
-        font-weight:500;
-
-        letter-spacing:.12em;
-
-        text-transform:uppercase;
-
-        padding:10px 0;
-
-        cursor:pointer;
+      .archive-intro {
+        font-size: .98rem;
+        line-height: 1.7;
       }
 
-
-      .mobile-nav{
-        display:none;
-
-        position:fixed;
-
-        top:118px;
-
-        left:0;
-
-        right:0;
-
-        z-index:999998;
-
-        padding:20px 18px 30px;
-
-        background:#f3efe7;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
+      .archive-filter-bar {
+        padding: 22px 18px;
+        gap: 18px;
       }
 
-
-      .mobile-nav.open{
-        display:block !important;
+      .archive-filter {
+        font-size: .6rem;
       }
 
-
-      .mobile-nav a{
-        display:block;
-
-        padding:17px 0;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
-
-        color:#161513;
-
-        font-family:"Playfair Display",serif;
-
-        font-size:32px;
-
-        line-height:1;
-
-        text-decoration:none;
+      .archive-grid {
+        padding: 55px 18px 90px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 14px;
+        row-gap: 58px;
       }
 
-
-      .archive-hero{
-        padding:65px 18px 55px;
+      .archive-card-content {
+        padding-top: 12px;
       }
 
-
-      .archive-hero h1{
-        font-size:clamp(4rem,18vw,6rem);
+      .archive-card h2 {
+        margin-bottom: 8px;
+        font-size: clamp(1.15rem, 5vw, 1.5rem);
+        line-height: 1.02;
       }
 
-
-      .archive-intro{
-        font-size:.98rem;
-
-        line-height:1.7;
+      .archive-meta {
+        font-size: .68rem;
+        line-height: 1.4;
       }
 
-
-      .archive-filter-bar{
-        padding:22px 18px;
-
-        gap:18px;
+      .archive-card-bottom {
+        margin-top: 11px;
+        padding-top: 10px;
+        display: block;
       }
 
-
-      .archive-filter{
-        font-size:.6rem;
+      .archive-price {
+        display: block;
+        margin-bottom: 5px;
+        font-size: .7rem;
       }
 
-
-      .archive-grid{
-        padding:55px 18px 90px;
-
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-
-        column-gap:14px;
-
-        row-gap:58px;
+      .archive-status {
+        font-size: .55rem;
       }
 
-
-      .archive-card-content{
-        padding-top:12px;
+      .archive-final {
+        padding: 80px 18px 95px;
       }
 
-
-      .archive-card h2{
-        margin-bottom:8px;
-
-        font-size:clamp(1.15rem,5vw,1.5rem);
-
-        line-height:1.02;
-      }
-
-
-      .archive-meta{
-        font-size:.68rem;
-
-        line-height:1.4;
-      }
-
-
-      .archive-card-bottom{
-        margin-top:11px;
-
-        padding-top:10px;
-
-        display:block;
-      }
-
-
-      .archive-price{
-        display:block;
-
-        margin-bottom:5px;
-
-        font-size:.7rem;
-      }
-
-
-      .archive-status{
-        font-size:.55rem;
-      }
-
-
-      .archive-final{
-        padding:80px 18px 95px;
-      }
-
-
-      .archive-final h2{
-        font-size:clamp(3.4rem,15vw,5.2rem);
+      .archive-final h2 {
+        font-size: clamp(3.4rem, 15vw, 5.2rem);
       }
 
     }
@@ -473,60 +346,27 @@
 
 <body>
 
-
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- ENCABEZADO -->
 
   <header class="site-header">
 
-
-    <a
-      href="./index.html"
-      class="brand"
-    >
+    <a href="./index.html" class="brand">
       CORRALES
     </a>
 
-
-    <a
-      href="./index.html"
-      class="header-logo"
-      aria-label="Inicio Corrales"
-    >
-
-      <img
-        src="./assets/Logo-header.PNG?v=4"
-        alt=""
-      >
-
-    </a>
-
-
     <nav class="nav">
 
-      <a href="./index.html">
-        Inicio
-      </a>
+      <a href="./index.html">Inicio</a>
 
-      <a href="./obra.html">
-        Obra
-      </a>
+      <a href="./obra.html">Obra</a>
 
-      <a href="./artista.html">
-        Artista
-      </a>
+      <a href="./artista.html">Artista</a>
 
-      <a href="./proceso.html">
-        Proceso
-      </a>
+      <a href="./proceso.html">Proceso</a>
 
-      <a href="./contacto.html">
-        Contacto
-      </a>
+      <a href="./contacto.html">Contacto</a>
 
     </nav>
-
 
     <button
       class="mobile-menu-toggle"
@@ -538,50 +378,32 @@
       MENÚ
     </button>
 
-
   </header>
 
 
-
-  <!-- =========================
-       MENÚ MÓVIL
-       ========================= -->
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
   >
 
-    <a href="./index.html">
-      Inicio
-    </a>
+    <a href="./index.html">Inicio</a>
 
-    <a href="./obra.html">
-      Obra
-    </a>
+    <a href="./obra.html">Obra</a>
 
-    <a href="./artista.html">
-      Artista
-    </a>
+    <a href="./artista.html">Artista</a>
 
-    <a href="./proceso.html">
-      Proceso
-    </a>
+    <a href="./proceso.html">Proceso</a>
 
-    <a href="./contacto.html">
-      Contacto
-    </a>
+    <a href="./contacto.html">Contacto</a>
 
   </nav>
 
 
-
   <main>
 
-
-    <!-- =========================
-         HERO
-         ========================= -->
+    <!-- PRESENTACIÓN -->
 
     <section class="archive-hero">
 
@@ -606,10 +428,7 @@
     </section>
 
 
-
-    <!-- =========================
-         FILTROS
-         ========================= -->
+    <!-- FILTROS: SIN 2026 NI 2025 -->
 
     <div class="archive-filter-bar">
 
@@ -621,21 +440,10 @@
         DISPONIBLES
       </span>
 
-      <span class="archive-filter">
-        2026
-      </span>
-
-      <span class="archive-filter">
-        2025
-      </span>
-
     </div>
 
 
-
-    <!-- =========================
-         CATÁLOGO
-         ========================= -->
+    <!-- CATÁLOGO DE PINTURAS -->
 
     <section class="archive-grid">
 
@@ -690,8 +498,7 @@
       </article>
 
 
-
-      <!-- TIERRA -->
+      <!-- LO QUE PASA EN LA TIERRA -->
 
       <article class="archive-card">
 
@@ -741,8 +548,7 @@
       </article>
 
 
-
-      <!-- PERDÓN -->
+      <!-- EL PESO DEL PERDÓN -->
 
       <article class="archive-card">
 
@@ -790,7 +596,6 @@
         </div>
 
       </article>
-
 
 
       <!-- MI CULPA -->
@@ -843,8 +648,7 @@
       </article>
 
 
-
-      <!-- NOCHE -->
+      <!-- LA NOCHE OSCURA DEL ALMA -->
 
       <article class="archive-card">
 
@@ -894,8 +698,7 @@
       </article>
 
 
-
-      <!-- BANCO -->
+      <!-- SOLO AMO A MI CUENTA DE BANCO -->
 
       <article class="archive-card">
 
@@ -944,14 +747,10 @@
 
       </article>
 
-
     </section>
 
 
-
-    <!-- =========================
-         CIERRE
-         ========================= -->
+    <!-- CIERRE: TEXTO ACTUALIZADO -->
 
     <section class="archive-final">
 
@@ -962,8 +761,7 @@
         </p>
 
         <h2>
-          Una pieza.<br>
-          Una presencia.
+          Una pieza que adorna tu entorno
         </h2>
 
         <a
@@ -977,14 +775,10 @@
 
     </section>
 
-
   </main>
 
 
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- PIE DE PÁGINA -->
 
   <footer class="footer">
 
@@ -1007,10 +801,7 @@
   </footer>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-       ========================= -->
+  <!-- FUNCIONES DEL MENÚ -->
 
   <script>
 
@@ -1020,15 +811,10 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
-    const header =
-      document.querySelector(".site-header");
-
-
-    /* MENÚ MÓVIL */
 
     menuButton.addEventListener(
       "click",
-      function(){
+      function() {
 
         const isOpen =
           mobileMenu.classList.toggle("open");
@@ -1041,32 +827,21 @@
           isOpen ? "true" : "false"
         );
 
-        if(isOpen){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-        }
-
       }
     );
 
 
     mobileMenu
       .querySelectorAll("a")
-      .forEach(function(link){
+      .forEach(function(link) {
 
         link.addEventListener(
           "click",
-          function(){
+          function() {
 
-            mobileMenu.classList.remove(
-              "open"
-            );
+            mobileMenu.classList.remove("open");
 
-            menuButton.textContent =
-              "MENÚ";
+            menuButton.textContent = "MENÚ";
 
             menuButton.setAttribute(
               "aria-expanded",
@@ -1078,99 +853,7 @@
 
       });
 
-
-    /* =========================
-       HEADER INTELIGENTE
-       BAJAR = OCULTAR
-       SUBIR = MOSTRAR
-       ========================= */
-
-    let lastScrollY =
-      window.scrollY;
-
-
-    window.addEventListener(
-      "scroll",
-      function(){
-
-        const currentScrollY =
-          window.scrollY;
-
-
-        /* Si el menú está abierto,
-           no ocultar header */
-
-        if(
-          mobileMenu.classList.contains(
-            "open"
-          )
-        ){
-
-          lastScrollY =
-            currentScrollY;
-
-          return;
-
-        }
-
-
-        /* Cerca del inicio
-           siempre visible */
-
-        if(currentScrollY < 80){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-          lastScrollY =
-            currentScrollY;
-
-          return;
-
-        }
-
-
-        /* BAJANDO */
-
-        if(
-          currentScrollY >
-          lastScrollY
-        ){
-
-          header.classList.add(
-            "header-hidden"
-          );
-
-        }
-
-
-        /* SUBIENDO */
-
-        else if(
-          currentScrollY <
-          lastScrollY
-        ){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-        }
-
-
-        lastScrollY =
-          currentScrollY;
-
-      },
-      {
-        passive:true
-      }
-    );
-
   </script>
 
-
 </body>
-
 </html>
