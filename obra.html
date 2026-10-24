@@ -14,7 +14,7 @@
 
   <meta
     name="description"
-    content="Archivo de obra de Ismael Corrales. Selección de pinturas originales disponibles."
+    content="Archivo de obra de Ismael Corrales. Pinturas originales disponibles."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,13 +32,14 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=19"
+    href="./styles.css?v=92"
   >
 
-
-  <!-- MENÚ MÓVIL -->
-
   <style>
+
+    /* =========================
+       MENÚ MÓVIL
+       ========================= */
 
     .mobile-menu-toggle{
       display:none;
@@ -105,6 +106,253 @@
 
     }
 
+
+    /* =========================
+       ENCABEZADO DE OBRA
+       ========================= */
+
+    .archive-hero{
+      padding:95px 28px 75px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .archive-hero-inner{
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .archive-hero h1{
+      margin:20px 0 32px;
+      max-width:8ch;
+      font-size:clamp(4.8rem,10vw,9rem);
+      line-height:.86;
+      font-weight:400;
+      letter-spacing:-.045em;
+    }
+
+    .archive-intro{
+      max-width:640px;
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+
+    /* =========================
+       FILTROS
+       ========================= */
+
+    .archive-filter-bar{
+      max-width:1420px;
+      margin:0 auto;
+      padding:28px 28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .archive-filter{
+      font-size:.68rem;
+      font-weight:500;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .archive-filter.active{
+      color:#161513;
+    }
+
+
+    /* =========================
+       CATÁLOGO
+       ========================= */
+
+    .archive-grid{
+      max-width:1420px;
+      margin:0 auto;
+      padding:75px 28px 120px;
+
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      column-gap:32px;
+      row-gap:85px;
+    }
+
+    .archive-card{
+      min-width:0;
+    }
+
+    .archive-image-link{
+      display:block;
+      overflow:hidden;
+      background:#e7e1d8;
+    }
+
+    .archive-card img{
+      display:block;
+      width:100%;
+      height:auto;
+      transition:
+        transform .35s ease,
+        opacity .35s ease;
+    }
+
+    .archive-card:hover img{
+      transform:scale(1.012);
+      opacity:.97;
+    }
+
+    .archive-card-content{
+      padding-top:17px;
+    }
+
+    .archive-card h2{
+      margin:0 0 11px;
+      max-width:22ch;
+      font-family:"Playfair Display",serif;
+      font-size:clamp(1.6rem,2.4vw,2.35rem);
+      font-weight:400;
+      line-height:1.06;
+    }
+
+    .archive-card h2 a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .archive-meta{
+      margin:0 0 4px;
+      font-size:.8rem;
+      line-height:1.5;
+      color:var(--muted);
+    }
+
+    .archive-card-bottom{
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+    }
+
+    .archive-price{
+      font-size:.78rem;
+      font-weight:500;
+    }
+
+    .archive-status{
+      font-size:.62rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+
+    /* =========================
+       CIERRE
+       ========================= */
+
+    .archive-final{
+      padding:105px 28px 120px;
+      border-top:1px solid var(--line);
+    }
+
+    .archive-final-inner{
+      max-width:1420px;
+      margin:0 auto;
+    }
+
+    .archive-final h2{
+      margin:18px 0 32px;
+      max-width:10ch;
+      font-size:clamp(3.8rem,7vw,7rem);
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:-.035em;
+    }
+
+
+    /* =========================
+       MÓVIL
+       ========================= */
+
+    @media(max-width:800px){
+
+      .archive-hero{
+        padding:65px 18px 55px;
+      }
+
+      .archive-hero h1{
+        font-size:clamp(4rem,18vw,6rem);
+      }
+
+      .archive-intro{
+        font-size:.98rem;
+        line-height:1.7;
+      }
+
+      .archive-filter-bar{
+        padding:22px 18px;
+        gap:18px;
+      }
+
+      .archive-filter{
+        font-size:.6rem;
+      }
+
+      .archive-grid{
+        padding:55px 18px 90px;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        column-gap:14px;
+        row-gap:58px;
+      }
+
+      .archive-card-content{
+        padding-top:12px;
+      }
+
+      .archive-card h2{
+        margin-bottom:8px;
+        font-size:clamp(1.15rem,5vw,1.5rem);
+        line-height:1.02;
+      }
+
+      .archive-meta{
+        font-size:.68rem;
+        line-height:1.4;
+      }
+
+      .archive-card-bottom{
+        margin-top:11px;
+        padding-top:10px;
+        display:block;
+      }
+
+      .archive-price{
+        display:block;
+        margin-bottom:5px;
+        font-size:.7rem;
+      }
+
+      .archive-status{
+        font-size:.55rem;
+      }
+
+      .archive-final{
+        padding:80px 18px 95px;
+      }
+
+      .archive-final h2{
+        font-size:clamp(3.4rem,15vw,5.2rem);
+      }
+
+    }
+
   </style>
 
 </head>
@@ -163,7 +411,6 @@
   </header>
 
 
-
   <!-- MENÚ MÓVIL -->
 
   <nav
@@ -171,125 +418,112 @@
     id="mobileMenu"
   >
 
-    <a href="./index.html">
-      Inicio
-    </a>
-
-    <a href="./obra.html">
-      Obra
-    </a>
-
-    <a href="./artista.html">
-      Artista
-    </a>
-
-    <a href="./proceso.html">
-      Proceso
-    </a>
-
-    <a href="./contacto.html">
-      Contacto
-    </a>
+    <a href="./index.html">Inicio</a>
+    <a href="./obra.html">Obra</a>
+    <a href="./artista.html">Artista</a>
+    <a href="./proceso.html">Proceso</a>
+    <a href="./contacto.html">Contacto</a>
 
   </nav>
-
 
 
   <main>
 
 
-    <!-- CABECERA -->
+    <!-- HERO -->
 
-    <section class="catalog-header">
+    <section class="archive-hero">
 
-      <p class="eyebrow">
-        OBRA · ARCHIVO
-      </p>
+      <div class="archive-hero-inner">
 
-      <h1>
-        Archivo de<br>
-        obra.
-      </h1>
+        <p class="eyebrow">
+          OBRA · ARCHIVO
+        </p>
 
-      <p class="catalog-intro">
-        Selección de pinturas originales de Ismael Corrales.
-      </p>
+        <h1>
+          Archivo de obra.
+        </h1>
 
-
-      <div class="catalog-filters">
-
-        <span>
-          TODAS
-        </span>
-
-        <span>
-          DISPONIBLES
-        </span>
-
-        <span>
-          2026
-        </span>
-
-        <span>
-          2025
-        </span>
+        <p class="archive-intro">
+          Selección de pinturas originales de Ismael Corrales.
+          Cada pieza forma parte de un archivo en desarrollo construido
+          desde la observación, la memoria y la experiencia cotidiana.
+        </p>
 
       </div>
 
     </section>
 
 
+    <!-- FILTROS -->
+
+    <div class="archive-filter-bar">
+
+      <span class="archive-filter active">
+        TODAS
+      </span>
+
+      <span class="archive-filter">
+        DISPONIBLES
+      </span>
+
+      <span class="archive-filter">
+        2026
+      </span>
+
+      <span class="archive-filter">
+        2025
+      </span>
+
+    </div>
+
 
     <!-- CATÁLOGO -->
 
-    <section class="catalog-grid">
+    <section class="archive-grid">
 
 
-      <!-- 01 — ESE CONSUELO -->
+      <!-- ESE CONSUELO -->
 
-      <article class="catalog-item">
+      <article class="archive-card">
 
         <a
           href="./consuelo.html"
-          class="catalog-image-link"
+          class="archive-image-link"
         >
 
           <img
             src="./assets/consuelo.jpg"
-            alt="Ese consuelo, pintura de Ismael Corrales"
+            alt="Ese consuelo"
             loading="lazy"
           >
 
         </a>
 
-
-        <div class="catalog-info">
+        <div class="archive-card-content">
 
           <h2>
-
             <a href="./consuelo.html">
               Ese consuelo
             </a>
-
           </h2>
 
-          <p>
+          <p class="archive-meta">
             2025 · Acrílico sobre lienzo
           </p>
 
-          <p>
+          <p class="archive-meta">
             75 × 100 cm
           </p>
 
+          <div class="archive-card-bottom">
 
-          <div class="catalog-bottom">
-
-            <span>
+            <span class="archive-price">
               $80 USD
             </span>
 
-            <span>
-              DISPONIBLE
+            <span class="archive-status">
+              Disponible
             </span>
 
           </div>
@@ -299,14 +533,13 @@
       </article>
 
 
+      <!-- TIERRA -->
 
-      <!-- 02 — TIERRA -->
-
-      <article class="catalog-item">
+      <article class="archive-card">
 
         <a
           href="./tierra.html"
-          class="catalog-image-link"
+          class="archive-image-link"
         >
 
           <img
@@ -317,34 +550,30 @@
 
         </a>
 
-
-        <div class="catalog-info">
+        <div class="archive-card-content">
 
           <h2>
-
             <a href="./tierra.html">
               Lo que pasa en la tierra se queda en la tierra
             </a>
-
           </h2>
 
-          <p>
+          <p class="archive-meta">
             2026 · Acrílico sobre lienzo
           </p>
 
-          <p>
+          <p class="archive-meta">
             60 × 80 cm
           </p>
 
+          <div class="archive-card-bottom">
 
-          <div class="catalog-bottom">
-
-            <span>
+            <span class="archive-price">
               $80 USD
             </span>
 
-            <span>
-              DISPONIBLE
+            <span class="archive-status">
+              Disponible
             </span>
 
           </div>
@@ -354,14 +583,13 @@
       </article>
 
 
+      <!-- PERDÓN -->
 
-      <!-- 03 — PERDÓN -->
-
-      <article class="catalog-item">
+      <article class="archive-card">
 
         <a
           href="./perdon.html"
-          class="catalog-image-link"
+          class="archive-image-link"
         >
 
           <img
@@ -372,34 +600,30 @@
 
         </a>
 
-
-        <div class="catalog-info">
+        <div class="archive-card-content">
 
           <h2>
-
             <a href="./perdon.html">
               El peso del perdón
             </a>
-
           </h2>
 
-          <p>
+          <p class="archive-meta">
             2025 · Acrílico sobre lienzo
           </p>
 
-          <p>
+          <p class="archive-meta">
             60 × 50 cm
           </p>
 
+          <div class="archive-card-bottom">
 
-          <div class="catalog-bottom">
-
-            <span>
+            <span class="archive-price">
               $80 USD
             </span>
 
-            <span>
-              DISPONIBLE
+            <span class="archive-status">
+              Disponible
             </span>
 
           </div>
@@ -409,14 +633,13 @@
       </article>
 
 
+      <!-- MI CULPA -->
 
-      <!-- 04 — MI CULPA -->
-
-      <article class="catalog-item">
+      <article class="archive-card">
 
         <a
           href="./culpa.html"
-          class="catalog-image-link"
+          class="archive-image-link"
         >
 
           <img
@@ -427,34 +650,30 @@
 
         </a>
 
-
-        <div class="catalog-info">
+        <div class="archive-card-content">
 
           <h2>
-
             <a href="./culpa.html">
               Mi culpa
             </a>
-
           </h2>
 
-          <p>
+          <p class="archive-meta">
             2025 · Acrílico sobre lienzo
           </p>
 
-          <p>
+          <p class="archive-meta">
             60 × 90 cm
           </p>
 
+          <div class="archive-card-bottom">
 
-          <div class="catalog-bottom">
-
-            <span>
+            <span class="archive-price">
               $80 USD
             </span>
 
-            <span>
-              DISPONIBLE
+            <span class="archive-status">
+              Disponible
             </span>
 
           </div>
@@ -464,14 +683,13 @@
       </article>
 
 
+      <!-- NOCHE -->
 
-      <!-- 05 — NOCHE OSCURA -->
-
-      <article class="catalog-item">
+      <article class="archive-card">
 
         <a
           href="./noche.html"
-          class="catalog-image-link"
+          class="archive-image-link"
         >
 
           <img
@@ -482,34 +700,30 @@
 
         </a>
 
-
-        <div class="catalog-info">
+        <div class="archive-card-content">
 
           <h2>
-
             <a href="./noche.html">
               La noche oscura del alma
             </a>
-
           </h2>
 
-          <p>
+          <p class="archive-meta">
             2025 · Acrílico sobre lienzo
           </p>
 
-          <p>
+          <p class="archive-meta">
             60 × 45 cm
           </p>
 
+          <div class="archive-card-bottom">
 
-          <div class="catalog-bottom">
-
-            <span>
+            <span class="archive-price">
               $80 USD
             </span>
 
-            <span>
-              DISPONIBLE
+            <span class="archive-status">
+              Disponible
             </span>
 
           </div>
@@ -519,14 +733,13 @@
       </article>
 
 
+      <!-- BANCO -->
 
-      <!-- 06 — CUENTA DE BANCO -->
-
-      <article class="catalog-item">
+      <article class="archive-card">
 
         <a
           href="./banco.html"
-          class="catalog-image-link"
+          class="archive-image-link"
         >
 
           <img
@@ -537,34 +750,30 @@
 
         </a>
 
-
-        <div class="catalog-info">
+        <div class="archive-card-content">
 
           <h2>
-
             <a href="./banco.html">
               Solo amo a mi cuenta de banco
             </a>
-
           </h2>
 
-          <p>
+          <p class="archive-meta">
             2025 · Acrílico sobre lienzo
           </p>
 
-          <p>
+          <p class="archive-meta">
             50 × 35 cm
           </p>
 
+          <div class="archive-card-bottom">
 
-          <div class="catalog-bottom">
-
-            <span>
+            <span class="archive-price">
               $80 USD
             </span>
 
-            <span>
-              DISPONIBLE
+            <span class="archive-status">
+              Disponible
             </span>
 
           </div>
@@ -577,11 +786,35 @@
     </section>
 
 
+    <!-- CIERRE -->
+
+    <section class="archive-final">
+
+      <div class="archive-final-inner">
+
+        <p class="eyebrow">
+          OBRA ORIGINAL
+        </p>
+
+        <h2>
+          Una pieza.<br>
+          Una presencia.
+        </h2>
+
+        <a
+          href="./contacto.html"
+          class="text-link"
+        >
+          CONSULTAR ADQUISICIÓN →
+        </a>
+
+      </div>
+
+    </section>
+
+
   </main>
 
-
-
-  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -597,15 +830,12 @@
 
     </div>
 
-    <a href="./index.html">
-      Inicio ↑
+    <a href="#">
+      Volver arriba ↑
     </a>
 
   </footer>
 
-
-
-  <!-- JAVASCRIPT -->
 
   <script>
 
@@ -620,38 +850,24 @@
       "click",
       function(){
 
-        mobileMenu.classList.toggle("open");
-
         const isOpen =
-          mobileMenu.classList.contains("open");
+          mobileMenu.classList.toggle("open");
 
+        menuButton.textContent =
+          isOpen ? "CERRAR" : "MENÚ";
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen
+          isOpen ? "true" : "false"
         );
-
-
-        if(isOpen){
-
-          menuButton.textContent = "CERRAR";
-
-        }else{
-
-          menuButton.textContent = "MENÚ";
-
-        }
 
       }
     );
 
 
-    const mobileLinks =
-      mobileMenu.querySelectorAll("a");
-
-
-    mobileLinks.forEach(
-      function(link){
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link){
 
         link.addEventListener(
           "click",
@@ -669,8 +885,7 @@
           }
         );
 
-      }
-    );
+      });
 
   </script>
 
