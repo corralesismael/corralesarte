@@ -2152,3 +2152,51 @@ h3{
     object-fit: contain !important;
   }
 }
+/* =========================================================
+   AJUSTE FINAL HEADER MÓVIL
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .site-header{
+    min-height:118px !important;
+    padding:18px !important;
+    overflow:visible !important;
+  }
+
+  .header-logo{
+    position:absolute !important;
+
+    left:50% !important;
+    top:58% !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    width:100px !important;
+    height:100px !important;
+
+    overflow:visible !important;
+  }
+
+  .header-logo img{
+    display:block !important;
+
+    width:94px !important;
+    height:94px !important;
+
+    min-width:94px !important;
+    min-height:94px !important;
+
+    max-width:94px !important;
+    max-height:94px !important;
+
+    object-fit:contain !important;
+
+    transform:none !important;
+  }
+
+  .mobile-nav{
+    top:118px !important;
+  }
+
+}
