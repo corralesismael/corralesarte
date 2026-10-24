@@ -1744,3 +1744,118 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — LOGOTIPO CENTRAL SOBRESALIENTE
+   ========================================================= */
+
+.site-header{
+  position:relative !important;
+  overflow:visible !important;
+}
+
+
+/* LOGOTIPO */
+
+.header-logo{
+  position:absolute !important;
+
+  left:50% !important;
+  top:50% !important;
+
+  transform:translate(-50%,-50%) !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:70px !important;
+  height:70px !important;
+
+  z-index:100000 !important;
+
+  text-decoration:none !important;
+
+  overflow:visible !important;
+}
+
+
+.header-logo img{
+  display:block !important;
+
+  width:64px !important;
+  height:64px !important;
+
+  max-width:none !important;
+
+  object-fit:contain !important;
+
+  overflow:visible !important;
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .site-header{
+    position:relative !important;
+
+    min-height:72px !important;
+
+    overflow:visible !important;
+  }
+
+
+  .header-logo{
+    position:absolute !important;
+
+    left:50% !important;
+
+    /*
+       Ligeramente más abajo del centro
+       para que sobresalga visualmente
+    */
+
+    top:54% !important;
+
+    transform:
+      translate(-50%,-50%) !important;
+
+    width:74px !important;
+    height:74px !important;
+
+    z-index:100000 !important;
+
+    overflow:visible !important;
+  }
+
+
+  .header-logo img{
+    display:block !important;
+
+    width:68px !important;
+    height:68px !important;
+
+    object-fit:contain !important;
+
+    max-width:none !important;
+  }
+
+
+  .site-header .brand{
+    position:relative !important;
+
+    z-index:100001 !important;
+  }
+
+
+  .mobile-menu-toggle{
+    position:relative !important;
+
+    z-index:100001 !important;
+  }
+
+}
