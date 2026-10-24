@@ -32,8 +32,9 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=90"
+    href="./styles.css?v=124"
   >
+
 
   <style>
 
@@ -46,15 +47,22 @@
     }
 
 
-    /* HERO */
+    /* =========================
+       HERO
+       ========================= */
 
     .home-hero{
       min-height:calc(100vh - 72px);
+
       display:grid;
       grid-template-columns:1.05fr .95fr;
+
       gap:60px;
+
       align-items:center;
+
       padding:72px 28px 88px;
+
       border-bottom:1px solid var(--line);
     }
 
@@ -64,18 +72,27 @@
 
     .home-hero h1{
       margin:22px 0 34px;
+
       max-width:8.5ch;
+
       font-size:clamp(4.7rem,9vw,9rem);
+
       line-height:.86;
+
       font-weight:400;
+
       letter-spacing:-.045em;
     }
 
     .home-hero-intro{
       max-width:560px;
+
       margin:0 0 38px;
+
       font-size:1.05rem;
+
       line-height:1.7;
+
       color:var(--muted);
     }
 
@@ -96,27 +113,40 @@
 
     .home-feature-meta{
       display:flex;
+
       justify-content:space-between;
+
       gap:25px;
+
       margin-top:14px;
+
       font-size:.72rem;
+
       line-height:1.45;
+
       color:var(--muted);
     }
 
 
-    /* SECCIONES */
+    /* =========================
+       SECCIONES
+       ========================= */
 
     .home-section{
       padding:105px 28px;
+
       border-bottom:1px solid var(--line);
     }
 
     .home-section-grid{
       display:grid;
+
       grid-template-columns:.32fr 1.68fr;
+
       gap:55px;
+
       max-width:1420px;
+
       margin:0 auto;
     }
 
@@ -126,167 +156,245 @@
 
     .home-section h2{
       margin:0 0 28px;
+
       max-width:11ch;
+
       font-size:clamp(3.6rem,7vw,7rem);
+
       line-height:.92;
+
       font-weight:400;
+
       letter-spacing:-.03em;
     }
 
     .home-section-copy{
       max-width:680px;
+
       margin:0 0 35px;
+
       font-size:1.05rem;
+
       line-height:1.75;
+
       color:#4f4a43;
     }
 
 
-    /* OBRAS */
+    /* =========================
+       OBRAS
+       ========================= */
 
     .home-works{
       padding:105px 28px 120px;
+
       border-bottom:1px solid var(--line);
     }
 
     .home-works-header{
       display:grid;
+
       grid-template-columns:.32fr 1.68fr;
+
       gap:55px;
+
       max-width:1420px;
+
       margin:0 auto 60px;
     }
 
     .home-works-header h2{
       margin:0 0 24px;
+
       max-width:11ch;
+
       font-size:clamp(3.6rem,7vw,7rem);
+
       line-height:.92;
+
       font-weight:400;
+
       letter-spacing:-.03em;
     }
 
     .home-works-header p{
       max-width:650px;
+
       margin:0;
+
       line-height:1.7;
+
       color:var(--muted);
     }
 
     .works-grid{
       max-width:1420px;
+
       margin:0 auto;
     }
 
     .home-works-footer{
       max-width:1420px;
+
       margin:55px auto 0;
     }
 
 
-    /* CIERRE */
+    /* =========================
+       CIERRE
+       ========================= */
 
     .home-final{
-      padding:120px 28px 135px;
+      padding:110px 28px 120px;
     }
 
     .home-final-inner{
       max-width:1420px;
+
       margin:0 auto;
     }
 
-    .home-final h2{
-      margin:18px 0 36px;
-      max-width:10ch;
-      font-size:clamp(4rem,8vw,8rem);
-      line-height:.9;
-      font-weight:400;
-      letter-spacing:-.04em;
+    .home-final-logo{
+      display:block;
+
+      width:min(420px,65vw);
+
+      height:auto;
+
+      margin:30px 0 45px;
     }
 
     .home-final-links{
       display:flex;
+
       flex-wrap:wrap;
+
       gap:26px;
     }
 
 
-    /* MÓVIL */
+    /* =========================
+       MÓVIL
+       ========================= */
 
     @media(max-width:800px){
 
       .site-header{
         display:flex !important;
+
         align-items:center !important;
+
         justify-content:space-between !important;
+
         min-height:72px;
+
         padding:18px !important;
       }
+
 
       .site-header .nav{
         display:none !important;
       }
 
+
       .mobile-menu-toggle{
         display:block !important;
+
         border:0;
+
         background:transparent;
+
         color:#161513;
+
         font-family:"DM Sans",sans-serif;
+
         font-size:12px;
+
         font-weight:500;
+
         letter-spacing:.12em;
+
         text-transform:uppercase;
+
         padding:10px 0;
+
         cursor:pointer;
       }
 
+
       .mobile-nav{
         display:none;
+
         position:fixed;
+
         top:72px;
+
         left:0;
+
         right:0;
+
         z-index:9999;
+
         padding:20px 18px 30px;
+
         background:#f3efe7;
-        border-bottom:1px solid rgba(22,21,19,.18);
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
       }
+
 
       .mobile-nav.open{
         display:block !important;
       }
 
+
       .mobile-nav a{
         display:block;
+
         padding:17px 0;
-        border-bottom:1px solid rgba(22,21,19,.18);
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+
         color:#161513;
+
         font-family:"Playfair Display",serif;
+
         font-size:32px;
+
         line-height:1;
+
         text-decoration:none;
       }
 
 
       .home-hero{
         min-height:auto;
+
         display:block;
+
         padding:65px 18px 78px;
       }
 
+
       .home-hero h1{
         margin-top:20px;
-        font-size:clamp(4rem,17vw,6rem);
+
+        font-size:
+          clamp(4rem,17vw,6rem);
       }
+
 
       .home-hero-intro{
         font-size:.98rem;
       }
 
+
       .home-feature{
         margin-top:58px;
       }
+
 
       .home-feature-meta{
         font-size:.65rem;
@@ -297,20 +405,26 @@
         padding:82px 18px;
       }
 
+
       .home-section-grid{
         display:block;
       }
+
 
       .home-section-grid > .section-number{
         margin-bottom:30px;
       }
 
+
       .home-section h2{
-        font-size:clamp(3rem,14vw,5rem);
+        font-size:
+          clamp(3rem,14vw,5rem);
       }
+
 
       .home-section-copy{
         font-size:.98rem;
+
         line-height:1.7;
       }
 
@@ -319,18 +433,24 @@
         padding:82px 18px 95px;
       }
 
+
       .home-works-header{
         display:block;
+
         margin-bottom:45px;
       }
+
 
       .home-works-header > .section-number{
         margin-bottom:30px;
       }
 
+
       .home-works-header h2{
-        font-size:clamp(3rem,14vw,5rem);
+        font-size:
+          clamp(3rem,14vw,5rem);
       }
+
 
       .home-works-footer{
         margin-top:42px;
@@ -338,19 +458,25 @@
 
 
       .home-final{
-        padding:90px 18px 105px;
+        padding:82px 18px 95px;
       }
 
-      .home-final h2{
-        font-size:clamp(3.7rem,16vw,5.8rem);
+
+      .home-final-logo{
+        width:min(330px,82vw);
+
+        margin:26px 0 42px;
       }
+
 
       .home-final-links{
         display:block;
       }
 
+
       .home-final-links .text-link{
         margin-right:24px;
+
         margin-bottom:18px;
       }
 
@@ -364,7 +490,9 @@
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
 
@@ -373,6 +501,22 @@
       class="brand"
     >
       CORRALES
+    </a>
+
+
+    <!-- LOGO CENTRADO -->
+
+    <a
+      href="./index.html"
+      class="header-logo"
+      aria-label="Inicio Corrales"
+    >
+
+      <img
+        src="./assets/logo-header.png"
+        alt="Corrales"
+      >
+
     </a>
 
 
@@ -414,8 +558,9 @@
   </header>
 
 
-
-  <!-- MENÚ MÓVIL -->
+  <!-- =========================
+       MENÚ MÓVIL
+       ========================= -->
 
   <nav
     class="mobile-nav"
@@ -449,7 +594,9 @@
   <main>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+         ========================= -->
 
     <section class="home-hero">
 
@@ -510,11 +657,14 @@
 
 
 
-    <!-- ARTISTA -->
+    <!-- =========================
+         ARTISTA
+         ========================= -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
+
 
         <p class="section-number">
           01 · ARTISTA
@@ -543,18 +693,22 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- OBRA -->
+    <!-- =========================
+         OBRA
+         ========================= -->
 
     <section class="home-works">
 
 
       <div class="home-works-header">
+
 
         <p class="section-number">
           02 · OBRA
@@ -573,12 +727,15 @@
 
         </div>
 
+
       </div>
 
 
 
       <div class="works-grid">
 
+
+        <!-- OBRA 1 -->
 
         <article class="work">
 
@@ -593,9 +750,11 @@
           </a>
 
           <h3>
+
             <a href="./consuelo.html">
               Ese consuelo
             </a>
+
           </h3>
 
           <p>
@@ -610,6 +769,8 @@
 
 
 
+        <!-- OBRA 2 -->
+
         <article class="work">
 
           <a href="./tierra.html">
@@ -623,9 +784,11 @@
           </a>
 
           <h3>
+
             <a href="./tierra.html">
               Lo que pasa en la tierra se queda en la tierra
             </a>
+
           </h3>
 
           <p>
@@ -640,6 +803,8 @@
 
 
 
+        <!-- OBRA 3 -->
+
         <article class="work">
 
           <a href="./perdon.html">
@@ -653,9 +818,11 @@
           </a>
 
           <h3>
+
             <a href="./perdon.html">
               El peso del perdón
             </a>
+
           </h3>
 
           <p>
@@ -670,6 +837,8 @@
 
 
 
+        <!-- OBRA 4 -->
+
         <article class="work">
 
           <a href="./culpa.html">
@@ -683,9 +852,11 @@
           </a>
 
           <h3>
+
             <a href="./culpa.html">
               Mi culpa
             </a>
+
           </h3>
 
           <p>
@@ -700,6 +871,8 @@
 
 
 
+        <!-- OBRA 5 -->
+
         <article class="work">
 
           <a href="./noche.html">
@@ -713,9 +886,11 @@
           </a>
 
           <h3>
+
             <a href="./noche.html">
               La noche oscura del alma
             </a>
+
           </h3>
 
           <p>
@@ -730,6 +905,8 @@
 
 
 
+        <!-- OBRA 6 -->
+
         <article class="work">
 
           <a href="./banco.html">
@@ -743,9 +920,11 @@
           </a>
 
           <h3>
+
             <a href="./banco.html">
               Solo amo a mi cuenta de banco
             </a>
+
           </h3>
 
           <p>
@@ -779,11 +958,14 @@
 
 
 
-    <!-- PROCESO -->
+    <!-- =========================
+         PROCESO
+         ========================= -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
+
 
         <p class="section-number">
           03 · PROCESO
@@ -810,17 +992,21 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- ADQUIRIR -->
+    <!-- =========================
+         ADQUIRIR
+         ========================= -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
+
 
         <p class="section-number">
           04 · ADQUIRIR
@@ -848,27 +1034,39 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
 
-    <!-- CIERRE -->
+    <!-- =========================
+         CIERRE
+         ========================= -->
 
     <section class="home-final">
 
       <div class="home-final-inner">
 
+
         <p class="eyebrow">
           CORRALES
         </p>
 
-        <h2>
-          Observar.<br>
-          Pintar.<br>
-          Permanecer.
-        </h2>
+
+        <!-- REEMPLAZA:
+             Observar.
+             Pintar.
+             Permanecer.
+             POR EL LOGOTIPO -->
+
+        <img
+          src="./assets/logo-cierre.png"
+          alt="Corrales"
+          class="home-final-logo"
+        >
+
 
         <div class="home-final-links">
 
@@ -895,6 +1093,7 @@
 
         </div>
 
+
       </div>
 
     </section>
@@ -903,6 +1102,10 @@
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer class="footer">
 
@@ -925,6 +1128,10 @@
   </footer>
 
 
+
+  <!-- =========================
+       MENÚ MÓVIL
+       ========================= -->
 
   <script>
 
