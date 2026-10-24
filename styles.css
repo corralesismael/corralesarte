@@ -1859,3 +1859,120 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — LOGOTIPO CENTRAL 96 PX
+   ========================================================= */
+
+.site-header{
+  position:relative !important;
+  overflow:visible !important;
+}
+
+
+/* CONTENEDOR DEL LOGO */
+
+.header-logo{
+  position:absolute !important;
+
+  left:50% !important;
+  top:50% !important;
+
+  transform:translate(-50%,-50%) !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:102px !important;
+  height:102px !important;
+
+  z-index:100000 !important;
+
+  overflow:visible !important;
+
+  text-decoration:none !important;
+}
+
+
+/* IMAGEN DEL LOGO — 96 PX */
+
+.header-logo img{
+  display:block !important;
+
+  width:96px !important;
+  height:96px !important;
+
+  min-width:96px !important;
+  min-height:96px !important;
+
+  max-width:96px !important;
+  max-height:96px !important;
+
+  object-fit:contain !important;
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .site-header{
+    position:relative !important;
+
+    min-height:72px !important;
+
+    overflow:visible !important;
+  }
+
+
+  .header-logo{
+    display:flex !important;
+
+    position:absolute !important;
+
+    left:50% !important;
+    top:53% !important;
+
+    transform:translate(-50%,-50%) !important;
+
+    width:102px !important;
+    height:102px !important;
+
+    z-index:100000 !important;
+
+    overflow:visible !important;
+  }
+
+
+  .header-logo img{
+    display:block !important;
+
+    width:96px !important;
+    height:96px !important;
+
+    min-width:96px !important;
+    min-height:96px !important;
+
+    max-width:96px !important;
+    max-height:96px !important;
+
+    object-fit:contain !important;
+  }
+
+
+  .site-header .brand{
+    position:relative !important;
+
+    z-index:100001 !important;
+  }
+
+
+  .mobile-menu-toggle{
+    position:relative !important;
+
+    z-index:100001 !important;
+  }
+
+}
