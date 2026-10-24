@@ -32,7 +32,7 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=127"
+    href="./styles.css?v=132"
   >
 
 
@@ -477,6 +477,7 @@
 
   <header class="site-header">
 
+
     <a
       href="./index.html"
       class="brand"
@@ -485,7 +486,7 @@
     </a>
 
 
-    <!-- LOGO CENTRADO -->
+    <!-- LOGOTIPO CENTRAL -->
 
     <a
       href="./index.html"
@@ -494,7 +495,7 @@
     >
 
       <img
-        src="./assets/logo-header.PNG"
+        src="./assets/Logo-header.PNG"
         alt=""
       >
 
@@ -536,7 +537,9 @@
       MENÚ
     </button>
 
+
   </header>
+
 
 
   <!-- =========================
@@ -1000,7 +1003,6 @@
 
     <!-- =========================
          CIERRE
-         SOLO ENLACES
          ========================= -->
 
     <section class="home-final">
@@ -1084,11 +1086,15 @@
           mobileMenu.classList.toggle("open");
 
         menuButton.textContent =
-          isOpen ? "CERRAR" : "MENÚ";
+          isOpen
+            ? "CERRAR"
+            : "MENÚ";
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen ? "true" : "false"
+          isOpen
+            ? "true"
+            : "false"
         );
 
       }
