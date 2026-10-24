@@ -1709,3 +1709,38 @@ h3{
   }
 
 }
+/* CIERRE DEL INICIO: SOLO ENLACES */
+
+.home-final{
+  padding:70px 28px 80px !important;
+}
+
+.home-final-inner{
+  max-width:1420px;
+  margin:0 auto;
+}
+
+.home-final-links{
+  display:flex;
+  gap:50px;
+  align-items:flex-start;
+}
+
+@media(max-width:800px){
+
+  .home-final{
+    padding:55px 18px 65px !important;
+  }
+
+  .home-final-links{
+    display:flex !important;
+    justify-content:space-between;
+    gap:20px;
+  }
+
+  .home-final-links .text-link{
+    margin:0 !important;
+    white-space:nowrap;
+  }
+
+}
