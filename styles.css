@@ -1225,3 +1225,335 @@ figcaption{
   }
 
 }
+/* =========================================================
+   CORRALES — PULIDO VISUAL GENERAL
+   ========================================================= */
+
+
+/* ---------- BASE ---------- */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#f3efe7;
+  color:#161513;
+  font-family:"DM Sans",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{
+  max-width:100%;
+}
+
+a{
+  color:inherit;
+}
+
+::selection{
+  background:#161513;
+  color:#f3efe7;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.site-header{
+  min-height:72px;
+  box-sizing:border-box;
+  border-bottom:1px solid rgba(22,21,19,.16);
+  background:#f3efe7;
+}
+
+.brand{
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.nav{
+  gap:28px;
+}
+
+.nav a{
+  position:relative;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:1px;
+  background:#161513;
+  transition:width .2s ease;
+}
+
+.nav a:hover::after{
+  width:100%;
+}
+
+
+/* ---------- TIPOGRAFÍA EDITORIAL ---------- */
+
+h1,
+h2,
+h3{
+  text-wrap:balance;
+}
+
+.eyebrow,
+.section-number{
+  font-size:.68rem;
+  font-weight:500;
+  letter-spacing:.15em;
+  line-height:1.4;
+  text-transform:uppercase;
+  color:#6f6a62;
+}
+
+.text-link{
+  display:inline-block;
+  position:relative;
+  padding-bottom:5px;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.text-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:#161513;
+  transform-origin:left;
+  transition:transform .2s ease;
+}
+
+.text-link:hover::after{
+  transform:scaleX(.55);
+}
+
+
+/* ---------- BOTONES ---------- */
+
+.artwork-button{
+  box-sizing:border-box;
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.artwork-button:hover{
+  background:#161513;
+  color:#f3efe7;
+}
+
+
+/* ---------- CATÁLOGO ---------- */
+
+.catalog-grid img,
+.works-grid img{
+  transition:
+    transform .35s ease,
+    opacity .35s ease;
+}
+
+.catalog-item:hover img,
+.work:hover img{
+  transform:scale(1.012);
+  opacity:.96;
+}
+
+.catalog-item h2 a,
+.work h3 a{
+  text-decoration:none;
+}
+
+
+/* ---------- FICHAS DE OBRA ---------- */
+
+.artwork-image{
+  overflow:hidden;
+}
+
+.artwork-image img{
+  display:block;
+}
+
+.artwork-meta-row{
+  align-items:start;
+}
+
+.artwork-meta-label{
+  padding-top:2px;
+}
+
+.artwork-meta-value{
+  color:#2c2925;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+  border-top:1px solid rgba(22,21,19,.16);
+}
+
+.footer a{
+  text-decoration:none;
+}
+
+.footer a:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media(max-width:800px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .site-header{
+    min-height:72px !important;
+  }
+
+  .brand{
+    font-size:.72rem;
+  }
+
+  .eyebrow,
+  .section-number{
+    font-size:.62rem;
+    letter-spacing:.14em;
+  }
+
+
+  /* Evita títulos demasiado pegados a los bordes */
+
+  .hero,
+  .catalog-header,
+  .artist-header,
+  .process-hero,
+  .contact-hero{
+    box-sizing:border-box;
+  }
+
+
+  /* Más respiración vertical */
+
+  .section{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+
+
+  /* Botones más cómodos para tocar */
+
+  .artwork-button{
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 20px;
+  }
+
+
+  /* Links editoriales */
+
+  .text-link{
+    min-height:32px;
+    display:inline-flex;
+    align-items:center;
+  }
+
+
+  /* Catálogo */
+
+  .catalog-grid{
+    row-gap:55px;
+  }
+
+  .catalog-info{
+    padding-top:14px;
+  }
+
+  .catalog-info h2{
+    margin-bottom:9px;
+  }
+
+  .catalog-info p{
+    line-height:1.45;
+  }
+
+
+  /* Fichas de obra */
+
+  .artwork-header{
+    padding-top:4px;
+  }
+
+  .artwork-meta-row{
+    padding-top:17px;
+    padding-bottom:17px;
+  }
+
+  .artwork-meta-label{
+    font-size:.62rem;
+  }
+
+  .artwork-meta-value{
+    font-size:.9rem;
+  }
+
+
+  /* Footer */
+
+  .footer{
+    gap:35px;
+    padding-top:36px;
+    padding-bottom:36px;
+  }
+
+}
+
+
+/* =========================================================
+   PANTALLAS GRANDES
+   ========================================================= */
+
+@media(min-width:1200px){
+
+  .site-header{
+    padding-left:32px;
+    padding-right:32px;
+  }
+
+  .footer{
+    padding-left:32px;
+    padding-right:32px;
+  }
+
+}
