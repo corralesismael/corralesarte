@@ -1976,3 +1976,46 @@ h3{
   }
 
 }
+/* =========================================================
+   CORRALES — LOGOTIPO CENTRAL 120 PX
+   ========================================================= */
+
+.header-logo{
+  width:126px !important;
+  height:126px !important;
+}
+
+.header-logo img{
+  width:120px !important;
+  height:120px !important;
+
+  min-width:120px !important;
+  min-height:120px !important;
+
+  max-width:120px !important;
+  max-height:120px !important;
+
+  object-fit:contain !important;
+}
+
+@media(max-width:800px){
+
+  .header-logo{
+    top:54% !important;
+
+    width:126px !important;
+    height:126px !important;
+  }
+
+  .header-logo img{
+    width:120px !important;
+    height:120px !important;
+
+    min-width:120px !important;
+    min-height:120px !important;
+
+    max-width:120px !important;
+    max-height:120px !important;
+  }
+
+}
