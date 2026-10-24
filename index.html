@@ -7,43 +7,30 @@
 
   <title>Ismael Corrales — Pintura contemporánea</title>
 
-  <meta
-    name="description"
-    content="Pintura contemporánea de Ismael Corrales. Obras originales, archivo, proceso y adquisición."
-  >
+  <meta name="description"
+    content="Pintura contemporánea de Ismael Corrales. Obras originales, archivo, proceso y adquisición.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles.css?v=176">
+  <link rel="stylesheet" href="./styles.css?v=200">
 
   <style>
 
-    /* =====================================
-       ENCABEZADO
-    ===================================== */
+    /* ENCABEZADO */
 
     .site-header {
       position: sticky !important;
       top: 0 !important;
       z-index: 999999 !important;
-
-      transition:
-        transform .3s ease,
-        opacity .3s ease !important;
-
-      will-change: transform;
-
       background: rgba(243,239,231,.96) !important;
-
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform .3s ease, opacity .3s ease !important;
       overflow: visible !important;
     }
 
@@ -58,18 +45,13 @@
     }
 
 
-    /* =====================================
-       PORTADA
-    ===================================== */
+    /* PORTADA */
 
     .home-hero {
       min-height: calc(100vh - 72px);
-
       display: flex;
       align-items: center;
-
       padding: 100px 28px 115px;
-
       border-bottom: 1px solid var(--line);
     }
 
@@ -85,54 +67,41 @@
 
     .home-hero h1 {
       max-width: 12ch;
-
       margin: 0 0 45px;
-
       font-family: "Playfair Display", serif;
       font-size: clamp(4.5rem, 8.2vw, 8.8rem);
       font-weight: 400;
-
       line-height: .98;
       letter-spacing: -.045em;
     }
 
     .home-hero-intro {
       max-width: 610px;
-
       margin: 0 0 38px;
-
       font-size: 1.05rem;
       line-height: 1.75;
-
       color: var(--muted);
     }
 
     .home-hero .text-link {
       display: inline-block;
-
       font-size: .85rem;
       letter-spacing: .12em;
-
       text-transform: uppercase;
     }
 
 
-    /* =====================================
-       SECCIONES GENERALES
-    ===================================== */
+    /* SECCIONES GENERALES */
 
     .home-section {
       padding: 105px 28px;
-
       border-bottom: 1px solid var(--line);
     }
 
     .home-section-grid {
       display: grid;
       grid-template-columns: .32fr 1.68fr;
-
       gap: 55px;
-
       max-width: 1420px;
       margin: 0 auto;
     }
@@ -143,130 +112,108 @@
 
     .home-section h2 {
       max-width: 11ch;
-
       margin: 0 0 28px;
-
       font-size: clamp(3.6rem, 7vw, 7rem);
       font-weight: 400;
-
       line-height: .92;
       letter-spacing: -.03em;
     }
 
     .home-section-copy {
       max-width: 680px;
-
       margin: 0 0 35px;
-
       font-size: 1.05rem;
       line-height: 1.75;
-
       color: #4f4a43;
     }
 
 
-    /* =====================================
-       SELECCIÓN ACTUAL — DOS COLUMNAS
-    ===================================== */
+    /* SELECCIÓN ACTUAL */
 
     .home-works {
       padding: 105px 28px 120px;
-
       border-bottom: 1px solid var(--line);
     }
 
     .home-works-header {
       display: grid;
       grid-template-columns: .32fr 1.68fr;
-
       gap: 55px;
-
       max-width: 1420px;
       margin: 0 auto 60px;
     }
 
     .home-works-header h2 {
       max-width: 11ch;
-
       margin: 0 0 24px;
-
       font-size: clamp(3.6rem, 7vw, 7rem);
       font-weight: 400;
-
       line-height: .92;
       letter-spacing: -.03em;
     }
 
     .home-works-header p {
       max-width: 650px;
-
       margin: 0;
-
       line-height: 1.7;
       color: var(--muted);
     }
 
+
     /*
-       Estas reglas tienen prioridad sobre
-       la distribución anterior de styles.css.
+      DOS COLUMNAS FORZADAS
+
+      Se usa un identificador específico para
+      que el CSS anterior no cambie la cuadrícula.
     */
 
-    .home-works .works-grid {
+    #corrales-seleccion-actual {
       display: grid !important;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr)) !important;
-
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       gap: 60px 28px !important;
-
-      max-width: 1420px;
-      margin: 0 auto;
-
-      align-items: start;
+      width: 100% !important;
+      max-width: 1420px !important;
+      margin: 0 auto !important;
+      align-items: start !important;
     }
 
-    .home-works .works-grid .work {
+    #corrales-seleccion-actual > article {
       display: block !important;
-
       width: 100% !important;
       min-width: 0 !important;
       max-width: none !important;
-
       margin: 0 !important;
+      padding: 0 !important;
+      float: none !important;
+      grid-column: auto !important;
     }
 
-    .home-works .works-grid .work > a {
-      display: block;
-      width: 100%;
-    }
-
-    .home-works .works-grid .work img {
-      display: block;
-
+    #corrales-seleccion-actual > article > a {
+      display: block !important;
       width: 100% !important;
-      height: auto !important;
-
-      max-width: 100% !important;
-
-      object-fit: contain !important;
-      object-position: center;
     }
 
-    .home-works .works-grid .work h3 {
-      margin-top: 18px;
-      margin-bottom: 8px;
+    #corrales-seleccion-actual img {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      object-position: center !important;
+    }
 
+    #corrales-seleccion-actual h3 {
+      margin: 18px 0 8px;
       line-height: 1.35;
     }
 
-    .home-works .works-grid .work h3 a {
+    #corrales-seleccion-actual h3 a {
       color: inherit;
       text-decoration: none;
     }
 
-    .home-works .works-grid .work p {
+    #corrales-seleccion-actual p {
       margin: 5px 0;
-
       line-height: 1.5;
     }
 
@@ -276,9 +223,7 @@
     }
 
 
-    /* =====================================
-       CIERRE
-    ===================================== */
+    /* CIERRE */
 
     .home-final {
       padding: 70px 28px 80px;
@@ -292,30 +237,20 @@
     .home-final-links {
       display: flex;
       gap: 50px;
-
       align-items: flex-start;
     }
 
 
-    /* =====================================
-       VERSIÓN MÓVIL
-    ===================================== */
+    /* VERSIÓN MÓVIL */
 
     @media (max-width: 800px) {
 
-      /* ENCABEZADO */
-
       .site-header {
         display: flex !important;
-
         align-items: center !important;
         justify-content: space-between !important;
-
         min-height: 118px !important;
-
         padding: 18px !important;
-
-        overflow: visible !important;
       }
 
       .site-header .nav {
@@ -324,51 +259,33 @@
 
       .mobile-menu-toggle {
         display: block !important;
-
         visibility: visible !important;
         opacity: 1 !important;
-
         position: relative !important;
-        top: auto !important;
-        right: auto !important;
-
         z-index: 100001 !important;
-
         margin: 0 !important;
         padding: 10px 0 !important;
-
         border: 0 !important;
         background: transparent !important;
-
         color: #161513 !important;
-
         font-family: "DM Sans", sans-serif !important;
         font-size: 12px !important;
         font-weight: 500 !important;
-
         letter-spacing: .12em !important;
         text-transform: uppercase !important;
-
         cursor: pointer;
       }
 
       .mobile-nav {
         display: none;
-
         position: fixed;
-
         top: 118px;
         left: 0;
         right: 0;
-
         z-index: 999998;
-
         padding: 20px 18px 30px;
-
         background: #f3efe7;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
+        border-bottom: 1px solid rgba(22,21,19,.18);
       }
 
       .mobile-nav.open {
@@ -377,17 +294,11 @@
 
       .mobile-nav a {
         display: block;
-
         padding: 17px 0;
-
-        border-bottom:
-          1px solid rgba(22,21,19,.18);
-
+        border-bottom: 1px solid rgba(22,21,19,.18);
         color: #161513;
-
         font-family: "Playfair Display", serif;
         font-size: 32px;
-
         line-height: 1;
         text-decoration: none;
       }
@@ -397,10 +308,6 @@
 
       .home-hero {
         min-height: calc(100svh - 118px);
-
-        display: flex;
-        align-items: center;
-
         padding: 65px 18px 85px;
       }
 
@@ -414,22 +321,15 @@
 
       .home-hero h1 {
         max-width: 100%;
-
         margin: 0 0 35px;
-
         font-size: clamp(3.45rem, 13vw, 5.8rem);
-
         line-height: 1;
         letter-spacing: -.04em;
-
-        overflow-wrap: normal;
       }
 
       .home-hero-intro {
         max-width: 100%;
-
         margin-bottom: 34px;
-
         font-size: .98rem;
         line-height: 1.7;
       }
@@ -459,7 +359,7 @@
       }
 
 
-      /* SELECCIÓN ACTUAL MÓVIL */
+      /* DOS COLUMNAS EN IPHONE */
 
       .home-works {
         padding: 82px 18px 95px;
@@ -467,7 +367,6 @@
 
       .home-works-header {
         display: block;
-
         margin-bottom: 45px;
       }
 
@@ -479,41 +378,33 @@
         font-size: clamp(3rem, 14vw, 5rem);
       }
 
-      .home-works .works-grid {
+      #corrales-seleccion-actual {
         display: grid !important;
-
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr)) !important;
-
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 38px 14px !important;
-
-        align-items: start;
       }
 
-      .home-works .works-grid .work {
-        min-width: 0 !important;
+      #corrales-seleccion-actual > article {
         width: 100% !important;
+        min-width: 0 !important;
       }
 
-      .home-works .works-grid .work img {
+      #corrales-seleccion-actual img {
         width: 100% !important;
         height: auto !important;
-
         object-fit: contain !important;
       }
 
-      .home-works .works-grid .work h3 {
+      #corrales-seleccion-actual h3 {
         margin-top: 12px;
         margin-bottom: 6px;
-
         font-size: 14px !important;
         line-height: 1.35;
       }
 
-      .home-works .works-grid .work p {
+      #corrales-seleccion-actual p {
         font-size: 12px !important;
         line-height: 1.45;
-
         margin: 4px 0;
       }
 
@@ -530,15 +421,12 @@
 
       .home-final-links {
         display: flex !important;
-
         justify-content: space-between;
-
         gap: 20px;
       }
 
       .home-final-links .text-link {
         margin: 0 !important;
-
         white-space: nowrap;
       }
 
@@ -548,12 +436,9 @@
 
 </head>
 
-
 <body>
 
-  <!-- =====================================
-       ENCABEZADO
-  ===================================== -->
+  <!-- ENCABEZADO -->
 
   <header class="site-header">
 
@@ -564,22 +449,20 @@
     <a
       href="./index.html"
       class="header-logo"
-      aria-label="Inicio Corrales"
-    >
+      aria-label="Inicio Corrales">
+
       <img
         src="./assets/Logo-header.PNG?v=4"
-        alt=""
-      >
+        alt="Logotipo Corrales">
+
     </a>
 
     <nav class="nav">
-
       <a href="./index.html">Inicio</a>
       <a href="./obra.html">Obra</a>
       <a href="./artista.html">Artista</a>
       <a href="./proceso.html">Proceso</a>
       <a href="./contacto.html">Contacto</a>
-
     </nav>
 
     <button
@@ -587,23 +470,19 @@
       id="menuButton"
       type="button"
       aria-label="Abrir menú"
-      aria-expanded="false"
-    >
+      aria-expanded="false">
       MENÚ
     </button>
 
   </header>
 
 
-  <!-- =====================================
-       MENÚ MÓVIL
-  ===================================== -->
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
-    aria-label="Navegación móvil"
-  >
+    aria-label="Navegación móvil">
 
     <a href="./index.html">Inicio</a>
     <a href="./obra.html">Obra</a>
@@ -616,11 +495,7 @@
 
   <main>
 
-
-    <!-- =====================================
-         PORTADA
-         SIN IMAGEN REPETIDA
-    ===================================== -->
+    <!-- PORTADA -->
 
     <section class="home-hero">
 
@@ -640,10 +515,7 @@
           mediante pintura acrílica sobre lienzo.
         </p>
 
-        <a
-          href="./obra.html"
-          class="text-link"
-        >
+        <a href="./obra.html" class="text-link">
           EXPLORAR OBRAS →
         </a>
 
@@ -652,9 +524,7 @@
     </section>
 
 
-    <!-- =====================================
-         ARTISTA
-    ===================================== -->
+    <!-- ARTISTA -->
 
     <section class="home-section">
 
@@ -677,10 +547,7 @@
             construcción de atmósferas.
           </p>
 
-          <a
-            href="./artista.html"
-            class="text-link"
-          >
+          <a href="./artista.html" class="text-link">
             CONOCE MI HISTORIA →
           </a>
 
@@ -691,10 +558,7 @@
     </section>
 
 
-    <!-- =====================================
-         SELECCIÓN ACTUAL
-         DOS COLUMNAS
-    ===================================== -->
+    <!-- SELECCIÓN ACTUAL -->
 
     <section class="home-works">
 
@@ -719,7 +583,19 @@
       </div>
 
 
-      <div class="works-grid">
+      <!-- CUADRÍCULA DE DOS COLUMNAS -->
+
+      <div
+        id="corrales-seleccion-actual"
+        class="works-grid"
+        style="
+          display:grid !important;
+          grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+          gap:38px 14px !important;
+          width:100% !important;
+          max-width:1420px !important;
+          margin:0 auto !important;
+        ">
 
 
         <!-- OBRA 1 -->
@@ -731,8 +607,7 @@
             <img
               src="./assets/consuelo.jpg"
               alt="Ese consuelo"
-              loading="lazy"
-            >
+              loading="lazy">
 
           </a>
 
@@ -742,13 +617,8 @@
             </a>
           </h3>
 
-          <p>
-            2025 · 75 × 100 cm
-          </p>
-
-          <p>
-            $80 USD
-          </p>
+          <p>2025 · 75 × 100 cm</p>
+          <p>$80 USD</p>
 
         </article>
 
@@ -762,8 +632,7 @@
             <img
               src="./assets/tierra.jpg"
               alt="Lo que pasa en la tierra se queda en la tierra"
-              loading="lazy"
-            >
+              loading="lazy">
 
           </a>
 
@@ -773,13 +642,8 @@
             </a>
           </h3>
 
-          <p>
-            2026 · 60 × 80 cm
-          </p>
-
-          <p>
-            $80 USD
-          </p>
+          <p>2026 · 60 × 80 cm</p>
+          <p>$80 USD</p>
 
         </article>
 
@@ -793,8 +657,7 @@
             <img
               src="./assets/perdon.jpg"
               alt="El peso del perdón"
-              loading="lazy"
-            >
+              loading="lazy">
 
           </a>
 
@@ -804,13 +667,8 @@
             </a>
           </h3>
 
-          <p>
-            2025 · 60 × 50 cm
-          </p>
-
-          <p>
-            $80 USD
-          </p>
+          <p>2025 · 60 × 50 cm</p>
+          <p>$80 USD</p>
 
         </article>
 
@@ -824,8 +682,7 @@
             <img
               src="./assets/culpa.jpg"
               alt="Mi culpa"
-              loading="lazy"
-            >
+              loading="lazy">
 
           </a>
 
@@ -835,13 +692,8 @@
             </a>
           </h3>
 
-          <p>
-            2025 · 60 × 90 cm
-          </p>
-
-          <p>
-            $80 USD
-          </p>
+          <p>2025 · 60 × 90 cm</p>
+          <p>$80 USD</p>
 
         </article>
 
@@ -855,8 +707,7 @@
             <img
               src="./assets/noche.jpg"
               alt="La noche oscura del alma"
-              loading="lazy"
-            >
+              loading="lazy">
 
           </a>
 
@@ -866,13 +717,8 @@
             </a>
           </h3>
 
-          <p>
-            2025 · 60 × 45 cm
-          </p>
-
-          <p>
-            $80 USD
-          </p>
+          <p>2025 · 60 × 45 cm</p>
+          <p>$80 USD</p>
 
         </article>
 
@@ -886,8 +732,7 @@
             <img
               src="./assets/banco.jpg"
               alt="Solo amo a mi cuenta de banco"
-              loading="lazy"
-            >
+              loading="lazy">
 
           </a>
 
@@ -897,26 +742,17 @@
             </a>
           </h3>
 
-          <p>
-            2025 · 50 × 35 cm
-          </p>
-
-          <p>
-            $80 USD
-          </p>
+          <p>2025 · 50 × 35 cm</p>
+          <p>$80 USD</p>
 
         </article>
-
 
       </div>
 
 
       <div class="home-works-footer">
 
-        <a
-          href="./obra.html"
-          class="text-link"
-        >
+        <a href="./obra.html" class="text-link">
           VER ARCHIVO DE OBRA →
         </a>
 
@@ -925,9 +761,7 @@
     </section>
 
 
-    <!-- =====================================
-         PROCESO
-    ===================================== -->
+    <!-- PROCESO -->
 
     <section class="home-section">
 
@@ -948,10 +782,7 @@
             parte de un proceso continuo de construcción de imágenes.
           </p>
 
-          <a
-            href="./proceso.html"
-            class="text-link"
-          >
+          <a href="./proceso.html" class="text-link">
             VER PROCESO →
           </a>
 
@@ -962,9 +793,7 @@
     </section>
 
 
-    <!-- =====================================
-         ADQUIRIR
-    ===================================== -->
+    <!-- ADQUIRIR -->
 
     <section class="home-section">
 
@@ -986,10 +815,7 @@
             disponibilidad, pago, envío o entrega.
           </p>
 
-          <a
-            href="./contacto.html"
-            class="text-link"
-          >
+          <a href="./contacto.html" class="text-link">
             ADQUIRIR OBRA →
           </a>
 
@@ -1000,9 +826,7 @@
     </section>
 
 
-    <!-- =====================================
-         CIERRE
-    ===================================== -->
+    <!-- CIERRE -->
 
     <section class="home-final">
 
@@ -1010,24 +834,15 @@
 
         <div class="home-final-links">
 
-          <a
-            href="./obra.html"
-            class="text-link"
-          >
+          <a href="./obra.html" class="text-link">
             OBRA →
           </a>
 
-          <a
-            href="./artista.html"
-            class="text-link"
-          >
+          <a href="./artista.html" class="text-link">
             ARTISTA →
           </a>
 
-          <a
-            href="./contacto.html"
-            class="text-link"
-          >
+          <a href="./contacto.html" class="text-link">
             CONTACTO →
           </a>
 
@@ -1037,13 +852,10 @@
 
     </section>
 
-
   </main>
 
 
-  <!-- =====================================
-       PIE DE PÁGINA
-  ===================================== -->
+  <!-- PIE DE PÁGINA -->
 
   <footer class="footer">
 
@@ -1066,31 +878,19 @@
   </footer>
 
 
-  <!-- =====================================
-       JAVASCRIPT
-  ===================================== -->
+  <!-- FUNCIONES DEL MENÚ -->
 
   <script>
 
-    const menuButton =
-      document.getElementById("menuButton");
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const header = document.querySelector(".site-header");
 
-    const mobileMenu =
-      document.getElementById("mobileMenu");
+    menuButton.addEventListener("click", function () {
 
-    const header =
-      document.querySelector(".site-header");
+      const isOpen = mobileMenu.classList.toggle("open");
 
-
-    /* ABRIR Y CERRAR MENÚ */
-
-    menuButton.addEventListener("click", function() {
-
-      const isOpen =
-        mobileMenu.classList.toggle("open");
-
-      menuButton.textContent =
-        isOpen ? "CERRAR" : "MENÚ";
+      menuButton.textContent = isOpen ? "CERRAR" : "MENÚ";
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -1104,31 +904,24 @@
     });
 
 
-    /* CERRAR MENÚ AL NAVEGAR */
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
 
-    mobileMenu.querySelectorAll("a").forEach(function(link) {
-
-      link.addEventListener("click", function() {
+      link.addEventListener("click", function () {
 
         mobileMenu.classList.remove("open");
 
         menuButton.textContent = "MENÚ";
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+        menuButton.setAttribute("aria-expanded", "false");
 
       });
 
     });
 
 
-    /* ENCABEZADO INTELIGENTE */
-
     let lastScrollY = window.scrollY;
 
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
 
       const currentScrollY = window.scrollY;
 
