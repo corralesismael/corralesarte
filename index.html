@@ -32,7 +32,7 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=145"
+    href="./styles.css?v=147"
   >
 
   <style>
@@ -43,6 +43,33 @@
 
     .mobile-nav{
       display:none;
+    }
+
+
+    /* =========================
+       HEADER INTELIGENTE
+       ========================= */
+
+    .site-header{
+      position:sticky !important;
+      top:0 !important;
+      z-index:999999 !important;
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease !important;
+
+      will-change:transform;
+
+      background:rgba(243,239,231,.96) !important;
+
+      backdrop-filter:blur(10px) !important;
+      -webkit-backdrop-filter:blur(10px) !important;
+    }
+
+    .site-header.header-hidden{
+      transform:translateY(-110%) !important;
+      opacity:0 !important;
     }
 
 
@@ -228,11 +255,9 @@
         overflow:visible !important;
       }
 
-
       .site-header .nav{
         display:none !important;
       }
-
 
       .mobile-menu-toggle{
         display:block !important;
@@ -258,7 +283,6 @@
         cursor:pointer;
       }
 
-
       .mobile-nav{
         display:none;
 
@@ -269,7 +293,7 @@
         left:0;
         right:0;
 
-        z-index:9999;
+        z-index:999998;
 
         padding:20px 18px 30px;
 
@@ -279,11 +303,9 @@
           1px solid rgba(22,21,19,.18);
       }
 
-
       .mobile-nav.open{
         display:block !important;
       }
-
 
       .mobile-nav a{
         display:block;
@@ -304,7 +326,6 @@
         text-decoration:none;
       }
 
-
       .home-hero{
         min-height:auto;
 
@@ -313,7 +334,6 @@
         padding:65px 18px 78px;
       }
 
-
       .home-hero h1{
         margin-top:20px;
 
@@ -321,42 +341,34 @@
           clamp(4rem,17vw,6rem);
       }
 
-
       .home-hero-intro{
         font-size:.98rem;
       }
-
 
       .home-feature{
         margin-top:58px;
       }
 
-
       .home-feature-meta{
         font-size:.65rem;
       }
-
 
       .home-section{
         padding:82px 18px;
       }
 
-
       .home-section-grid{
         display:block;
       }
-
 
       .home-section-grid > .section-number{
         margin-bottom:30px;
       }
 
-
       .home-section h2{
         font-size:
           clamp(3rem,14vw,5rem);
       }
-
 
       .home-section-copy{
         font-size:.98rem;
@@ -364,11 +376,9 @@
         line-height:1.7;
       }
 
-
       .home-works{
         padding:82px 18px 95px;
       }
-
 
       .home-works-header{
         display:block;
@@ -376,27 +386,22 @@
         margin-bottom:45px;
       }
 
-
       .home-works-header > .section-number{
         margin-bottom:30px;
       }
-
 
       .home-works-header h2{
         font-size:
           clamp(3rem,14vw,5rem);
       }
 
-
       .home-works-footer{
         margin-top:42px;
       }
 
-
       .home-final{
         padding:55px 18px 65px;
       }
-
 
       .home-final-links{
         display:flex !important;
@@ -405,7 +410,6 @@
 
         gap:20px;
       }
-
 
       .home-final-links .text-link{
         margin:0 !important;
@@ -1031,6 +1035,11 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const header =
+      document.querySelector(".site-header");
+
+
+    /* MENÚ MÓVIL */
 
     menuButton.addEventListener(
       "click",
@@ -1046,6 +1055,10 @@
           "aria-expanded",
           isOpen ? "true" : "false"
         );
+
+        if(isOpen){
+          header.classList.remove("header-hidden");
+        }
 
       }
     );
@@ -1073,6 +1086,87 @@
         );
 
       });
+
+
+    /* HEADER:
+       BAJAR = OCULTAR
+       SUBIR = MOSTRAR
+    */
+
+    let lastScrollY =
+      window.scrollY;
+
+    window.addEventListener(
+      "scroll",
+      function(){
+
+        const currentScrollY =
+          window.scrollY;
+
+
+        /* Si el menú está abierto,
+           no ocultamos el header */
+
+        if(
+          mobileMenu.classList.contains("open")
+        ){
+          lastScrollY =
+            currentScrollY;
+
+          return;
+        }
+
+
+        /* Cerca del inicio,
+           siempre visible */
+
+        if(currentScrollY < 80){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+          lastScrollY =
+            currentScrollY;
+
+          return;
+        }
+
+
+        /* BAJANDO */
+
+        if(
+          currentScrollY >
+          lastScrollY
+        ){
+
+          header.classList.add(
+            "header-hidden"
+          );
+
+        }
+
+
+        /* SUBIENDO */
+
+        else if(
+          currentScrollY <
+          lastScrollY
+        ){
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
+
+        lastScrollY =
+          currentScrollY;
+
+      },
+      { passive:true }
+    );
 
   </script>
 
