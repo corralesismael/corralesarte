@@ -32,7 +32,7 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=143"
+    href="./styles.css?v=145"
   >
 
   <style>
@@ -46,7 +46,9 @@
     }
 
 
-    /* HERO */
+    /* =========================
+       HERO
+       ========================= */
 
     .home-hero{
       min-height:calc(100vh - 72px);
@@ -105,7 +107,9 @@
     }
 
 
-    /* SECCIONES */
+    /* =========================
+       SECCIONES
+       ========================= */
 
     .home-section{
       padding:105px 28px;
@@ -142,7 +146,9 @@
     }
 
 
-    /* OBRAS */
+    /* =========================
+       OBRAS
+       ========================= */
 
     .home-works{
       padding:105px 28px 120px;
@@ -184,7 +190,9 @@
     }
 
 
-    /* CIERRE */
+    /* =========================
+       CIERRE
+       ========================= */
 
     .home-final{
       padding:70px 28px 80px;
@@ -202,7 +210,9 @@
     }
 
 
-    /* MÓVIL */
+    /* =========================
+       MÓVIL
+       ========================= */
 
     @media(max-width:800px){
 
@@ -210,131 +220,196 @@
         display:flex !important;
         align-items:center !important;
         justify-content:space-between !important;
+
+        min-height:118px !important;
+
         padding:18px !important;
+
+        overflow:visible !important;
       }
+
 
       .site-header .nav{
         display:none !important;
       }
 
+
       .mobile-menu-toggle{
         display:block !important;
+
         border:0;
+
         background:transparent;
+
         color:#161513;
+
         font-family:"DM Sans",sans-serif;
+
         font-size:12px;
+
         font-weight:500;
+
         letter-spacing:.12em;
+
         text-transform:uppercase;
+
         padding:10px 0;
+
         cursor:pointer;
       }
 
+
       .mobile-nav{
         display:none;
+
         position:fixed;
-        top:120px;
+
+        top:118px;
+
         left:0;
         right:0;
+
         z-index:9999;
+
         padding:20px 18px 30px;
+
         background:#f3efe7;
-        border-bottom:1px solid rgba(22,21,19,.18);
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
       }
+
 
       .mobile-nav.open{
         display:block !important;
       }
 
+
       .mobile-nav a{
         display:block;
+
         padding:17px 0;
-        border-bottom:1px solid rgba(22,21,19,.18);
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+
         color:#161513;
+
         font-family:"Playfair Display",serif;
+
         font-size:32px;
+
         line-height:1;
+
         text-decoration:none;
       }
 
+
       .home-hero{
         min-height:auto;
+
         display:block;
+
         padding:65px 18px 78px;
       }
 
+
       .home-hero h1{
         margin-top:20px;
-        font-size:clamp(4rem,17vw,6rem);
+
+        font-size:
+          clamp(4rem,17vw,6rem);
       }
+
 
       .home-hero-intro{
         font-size:.98rem;
       }
 
+
       .home-feature{
         margin-top:58px;
       }
+
 
       .home-feature-meta{
         font-size:.65rem;
       }
 
+
       .home-section{
         padding:82px 18px;
       }
+
 
       .home-section-grid{
         display:block;
       }
 
+
       .home-section-grid > .section-number{
         margin-bottom:30px;
       }
 
+
       .home-section h2{
-        font-size:clamp(3rem,14vw,5rem);
+        font-size:
+          clamp(3rem,14vw,5rem);
       }
+
 
       .home-section-copy{
         font-size:.98rem;
+
         line-height:1.7;
       }
+
 
       .home-works{
         padding:82px 18px 95px;
       }
 
+
       .home-works-header{
         display:block;
+
         margin-bottom:45px;
       }
+
 
       .home-works-header > .section-number{
         margin-bottom:30px;
       }
 
+
       .home-works-header h2{
-        font-size:clamp(3rem,14vw,5rem);
+        font-size:
+          clamp(3rem,14vw,5rem);
       }
+
 
       .home-works-footer{
         margin-top:42px;
       }
 
+
       .home-final{
         padding:55px 18px 65px;
       }
 
+
       .home-final-links{
         display:flex !important;
+
         justify-content:space-between;
+
         gap:20px;
       }
 
+
       .home-final-links .text-link{
         margin:0 !important;
+
         white-space:nowrap;
       }
 
@@ -348,9 +423,12 @@
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="site-header">
+
 
     <a
       href="./index.html"
@@ -367,7 +445,7 @@
     >
 
       <img
-        src="./assets/Logo-header.PNG?v=3"
+        src="./assets/Logo-header.PNG?v=4"
         alt=""
       >
 
@@ -376,11 +454,25 @@
 
     <nav class="nav">
 
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
 
     </nav>
 
@@ -395,29 +487,50 @@
       MENÚ
     </button>
 
+
   </header>
 
 
-  <!-- MENÚ MÓVIL -->
+
+  <!-- =========================
+       MENÚ MÓVIL
+       ========================= -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
   >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
 
   </nav>
+
 
 
   <main>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+         ========================= -->
 
     <section class="home-hero">
 
@@ -477,15 +590,20 @@
     </section>
 
 
-    <!-- ARTISTA -->
+
+    <!-- =========================
+         ARTISTA
+         ========================= -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
 
+
         <p class="section-number">
           01 · ARTISTA
         </p>
+
 
         <div class="home-section-content">
 
@@ -509,20 +627,27 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
-    <!-- OBRA -->
+
+    <!-- =========================
+         OBRA
+         ========================= -->
 
     <section class="home-works">
 
+
       <div class="home-works-header">
+
 
         <p class="section-number">
           02 · OBRA
         </p>
+
 
         <div>
 
@@ -536,7 +661,9 @@
 
         </div>
 
+
       </div>
+
 
 
       <div class="works-grid">
@@ -571,6 +698,7 @@
         </article>
 
 
+
         <article class="work">
 
           <a href="./tierra.html">
@@ -598,6 +726,7 @@
           </p>
 
         </article>
+
 
 
         <article class="work">
@@ -629,6 +758,7 @@
         </article>
 
 
+
         <article class="work">
 
           <a href="./culpa.html">
@@ -658,6 +788,7 @@
         </article>
 
 
+
         <article class="work">
 
           <a href="./noche.html">
@@ -685,6 +816,7 @@
           </p>
 
         </article>
+
 
 
         <article class="work">
@@ -719,6 +851,7 @@
       </div>
 
 
+
       <div class="home-works-footer">
 
         <a
@@ -730,18 +863,24 @@
 
       </div>
 
+
     </section>
 
 
-    <!-- PROCESO -->
+
+    <!-- =========================
+         PROCESO
+         ========================= -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
 
+
         <p class="section-number">
           03 · PROCESO
         </p>
+
 
         <div class="home-section-content">
 
@@ -763,20 +902,26 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
-    <!-- ADQUIRIR -->
+
+    <!-- =========================
+         ADQUIRIR
+         ========================= -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
 
+
         <p class="section-number">
           04 · ADQUIRIR
         </p>
+
 
         <div class="home-section-content">
 
@@ -799,12 +944,16 @@
 
         </div>
 
+
       </div>
 
     </section>
 
 
-    <!-- CIERRE -->
+
+    <!-- =========================
+         CIERRE
+         ========================= -->
 
     <section class="home-final">
 
@@ -843,7 +992,10 @@
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer class="footer">
 
@@ -866,7 +1018,10 @@
   </footer>
 
 
-  <!-- MENÚ MÓVIL -->
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
 
   <script>
 
