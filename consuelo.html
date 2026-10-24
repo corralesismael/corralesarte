@@ -32,7 +32,7 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=102"
+    href="./styles.css?v=104"
   >
 
   <style>
@@ -67,31 +67,39 @@
         display:block !important;
         visibility:visible !important;
         opacity:1 !important;
+
         position:fixed !important;
+
         top:23px !important;
         right:18px !important;
+
         z-index:999999 !important;
 
         margin:0 !important;
         padding:4px 0 !important;
 
         border:0 !important;
+
         background:#f3efe7 !important;
         color:#161513 !important;
 
         font-family:"DM Sans",sans-serif !important;
         font-size:12px !important;
         font-weight:500 !important;
+
         letter-spacing:.12em !important;
         text-transform:uppercase !important;
       }
 
       #mobileMenu{
         display:none;
+
         position:fixed;
+
         top:72px;
         left:0;
         right:0;
+
         z-index:999998;
 
         padding:20px 18px 30px;
@@ -108,6 +116,7 @@
 
       #mobileMenu a{
         display:block;
+
         padding:17px 0;
 
         border-bottom:
@@ -150,8 +159,10 @@
        ========================= */
 
     .artwork-details{
-      padding:95px 28px 105px;
-      border-bottom:1px solid var(--line);
+      padding:85px 28px 80px;
+
+      border-bottom:
+        1px solid var(--line);
     }
 
     .artwork-details-inner{
@@ -159,39 +170,71 @@
       margin:0 auto;
 
       display:grid;
-      grid-template-columns:.38fr 1.62fr;
+
+      grid-template-columns:
+        .38fr 1.62fr;
+
       gap:60px;
     }
 
     .artwork-details-title h2{
       margin:0;
+
       max-width:8ch;
 
       font-size:
         clamp(3.3rem,6vw,6rem);
 
       line-height:.93;
+
       font-weight:400;
+
       letter-spacing:-.03em;
     }
 
+
+    .section-label{
+      margin:0 0 16px;
+
+      font-family:"DM Sans",sans-serif;
+
+      font-size:.68rem;
+      font-weight:500;
+
+      letter-spacing:.15em;
+
+      line-height:1.4;
+
+      text-transform:uppercase;
+
+      color:#6f6a62;
+    }
+
+
     .artwork-meta{
-      border-top:1px solid var(--line);
+      border-top:
+        1px solid var(--line);
     }
 
     .artwork-meta-row{
       display:grid;
-      grid-template-columns:145px 1fr;
+
+      grid-template-columns:
+        145px 1fr;
+
       gap:28px;
 
       padding:20px 0;
 
-      border-bottom:1px solid var(--line);
+      border-bottom:
+        1px solid var(--line);
     }
 
     .artwork-meta-label{
       font-size:.66rem;
+
       letter-spacing:.13em;
+
       text-transform:uppercase;
 
       color:var(--muted);
@@ -202,8 +245,16 @@
       line-height:1.5;
     }
 
+
+    /* BOTÓN MÁS CERCA */
+
     .artwork-purchase{
-      margin-top:38px;
+      margin-top:24px !important;
+      padding:0 !important;
+    }
+
+    .artwork-purchase .artwork-button{
+      margin-top:0 !important;
     }
 
 
@@ -212,8 +263,10 @@
        ========================= */
 
     .artwork-story{
-      padding:105px 28px;
-      border-bottom:1px solid var(--line);
+      padding:90px 28px;
+
+      border-bottom:
+        1px solid var(--line);
     }
 
     .artwork-story-inner{
@@ -221,19 +274,25 @@
       margin:0 auto;
 
       display:grid;
-      grid-template-columns:.38fr 1.62fr;
+
+      grid-template-columns:
+        .38fr 1.62fr;
+
       gap:60px;
     }
 
     .artwork-story h2{
       margin:0;
+
       max-width:8ch;
 
       font-size:
         clamp(3.3rem,6vw,6rem);
 
       line-height:.93;
+
       font-weight:400;
+
       letter-spacing:-.03em;
     }
 
@@ -256,7 +315,7 @@
        ========================= */
 
     .artwork-final{
-      padding:110px 28px 125px;
+      padding:100px 28px 115px;
     }
 
     .artwork-final-inner{
@@ -266,13 +325,16 @@
 
     .artwork-final h2{
       margin:18px 0 34px;
+
       max-width:10ch;
 
       font-size:
         clamp(3.8rem,7vw,7rem);
 
       line-height:.92;
+
       font-weight:400;
+
       letter-spacing:-.035em;
     }
 
@@ -287,60 +349,93 @@
         padding:40px 18px 0;
       }
 
+
       .artwork-details{
-        padding:75px 18px 82px;
+        padding:65px 18px 58px;
       }
+
 
       .artwork-details-inner{
         display:block;
       }
 
+
       .artwork-details-title{
-        margin-bottom:36px;
+        margin-bottom:34px;
       }
+
+
+      .section-label{
+        margin-bottom:12px;
+
+        font-size:.62rem;
+      }
+
 
       .artwork-details-title h2{
         font-size:
           clamp(3rem,14vw,5rem);
       }
 
+
       .artwork-meta-row{
-        grid-template-columns:105px 1fr;
+        grid-template-columns:
+          105px 1fr;
+
         gap:15px;
+
         padding:17px 0;
       }
+
 
       .artwork-meta-label{
         font-size:.6rem;
       }
 
+
       .artwork-meta-value{
         font-size:.9rem;
       }
 
-      .artwork-story{
-        padding:82px 18px;
+
+      .artwork-purchase{
+        margin-top:26px !important;
       }
+
+
+      .artwork-purchase .artwork-button{
+        margin-top:0 !important;
+      }
+
+
+      .artwork-story{
+        padding:72px 18px;
+      }
+
 
       .artwork-story-inner{
         display:block;
       }
 
+
       .artwork-story h2{
-        margin-bottom:36px;
+        margin-bottom:34px;
 
         font-size:
           clamp(3rem,14vw,5rem);
       }
+
 
       .artwork-story-copy p{
         font-size:.98rem;
         line-height:1.72;
       }
 
+
       .artwork-final{
-        padding:85px 18px 100px;
+        padding:80px 18px 95px;
       }
+
 
       .artwork-final h2{
         font-size:
@@ -368,15 +463,31 @@
       CORRALES
     </a>
 
+
     <nav class="nav">
 
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./obra.html">
+        Obra
+      </a>
+
+      <a href="./artista.html">
+        Artista
+      </a>
+
+      <a href="./proceso.html">
+        Proceso
+      </a>
+
+      <a href="./contacto.html">
+        Contacto
+      </a>
 
     </nav>
+
 
     <button
       id="menuButton"
@@ -397,11 +508,25 @@
     aria-label="Navegación móvil"
   >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <a href="./index.html">
+      Inicio
+    </a>
+
+    <a href="./obra.html">
+      Obra
+    </a>
+
+    <a href="./artista.html">
+      Artista
+    </a>
+
+    <a href="./proceso.html">
+      Proceso
+    </a>
+
+    <a href="./contacto.html">
+      Contacto
+    </a>
 
   </nav>
 
@@ -434,8 +559,8 @@
 
         <div class="artwork-details-title">
 
-          <p class="section-number">
-            01 · INFORMACIÓN
+          <p class="section-label">
+            INFORMACIÓN
           </p>
 
           <h2>
@@ -446,6 +571,7 @@
 
 
         <div>
+
 
           <div class="artwork-meta">
 
@@ -542,6 +668,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -558,8 +685,8 @@
 
         <div>
 
-          <p class="section-number">
-            02 · SOBRE LA OBRA
+          <p class="section-label">
+            SOBRE LA OBRA
           </p>
 
           <h2>
@@ -584,6 +711,7 @@
           </p>
 
         </div>
+
 
       </div>
 
@@ -619,6 +747,8 @@
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div>
@@ -640,6 +770,8 @@
   </footer>
 
 
+  <!-- JAVASCRIPT -->
+
   <script>
 
     const menuButton =
@@ -657,11 +789,15 @@
           mobileMenu.classList.toggle("open");
 
         menuButton.textContent =
-          isOpen ? "CERRAR" : "MENÚ";
+          isOpen
+            ? "CERRAR"
+            : "MENÚ";
 
         menuButton.setAttribute(
           "aria-expanded",
-          isOpen ? "true" : "false"
+          isOpen
+            ? "true"
+            : "false"
         );
 
       }
