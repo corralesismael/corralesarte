@@ -7,15 +7,18 @@
 
   <title>Ismael Corrales — Pintura contemporánea</title>
 
-  <meta name="description"
-    content="Pintura contemporánea de Ismael Corrales. Obras originales, archivo, proceso y adquisición.">
+  <meta
+    name="description"
+    content="Pintura contemporánea de Ismael Corrales. Obras originales, archivo, proceso y adquisición."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="./styles.css?v=200">
 
@@ -44,6 +47,46 @@
       display: none;
     }
 
+    /* SELECTOR DE IDIOMAS */
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .language-switcher button {
+      padding: 5px 2px;
+      border: 0;
+      background: transparent;
+      color: #77716a;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .language-switcher button.active,
+    .language-switcher button[aria-pressed="true"] {
+      color: #161513;
+      font-weight: 600;
+    }
+
+    .language-switcher span {
+      color: #aaa49c;
+    }
+
+    .desktop-language {
+      margin-left: auto;
+      margin-right: 28px;
+    }
+
+    .mobile-language {
+      display: none;
+    }
 
     /* PORTADA */
 
@@ -90,7 +133,6 @@
       text-transform: uppercase;
     }
 
-
     /* SECCIONES GENERALES */
 
     .home-section {
@@ -127,7 +169,6 @@
       color: #4f4a43;
     }
 
-
     /* SELECCIÓN ACTUAL */
 
     .home-works {
@@ -159,13 +200,7 @@
       color: var(--muted);
     }
 
-
-    /*
-      DOS COLUMNAS FORZADAS
-
-      Se usa un identificador específico para
-      que el CSS anterior no cambie la cuadrícula.
-    */
+    /* DOS COLUMNAS */
 
     #corrales-seleccion-actual {
       display: grid !important;
@@ -222,7 +257,6 @@
       margin: 55px auto 0;
     }
 
-
     /* CIERRE */
 
     .home-final {
@@ -240,7 +274,6 @@
       align-items: flex-start;
     }
 
-
     /* VERSIÓN MÓVIL */
 
     @media (max-width: 800px) {
@@ -255,6 +288,21 @@
 
       .site-header .nav {
         display: none !important;
+      }
+
+      .desktop-language {
+        display: none !important;
+      }
+
+      .mobile-language {
+        display: flex;
+        justify-content: flex-start;
+        padding: 12px 0 18px;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-language button {
+        font-size: 13px;
       }
 
       .mobile-menu-toggle {
@@ -303,7 +351,6 @@
         text-decoration: none;
       }
 
-
       /* PORTADA MÓVIL */
 
       .home-hero {
@@ -334,7 +381,6 @@
         line-height: 1.7;
       }
 
-
       /* SECCIONES MÓVILES */
 
       .home-section {
@@ -358,8 +404,7 @@
         line-height: 1.7;
       }
 
-
-      /* DOS COLUMNAS EN IPHONE */
+      /* OBRAS EN DOS COLUMNAS */
 
       .home-works {
         padding: 82px 18px 95px;
@@ -412,7 +457,6 @@
         margin-top: 42px;
       }
 
-
       /* CIERRE MÓVIL */
 
       .home-final {
@@ -449,20 +493,66 @@
     <a
       href="./index.html"
       class="header-logo"
-      aria-label="Inicio Corrales">
-
+      aria-label="Inicio Corrales"
+    >
       <img
         src="./assets/Logo-header.PNG?v=4"
-        alt="Logotipo Corrales">
-
+        alt="Logotipo Corrales"
+      >
     </a>
 
+    <!-- SELECTOR DE IDIOMAS EN COMPUTADORA -->
+
+    <div
+      class="language-switcher desktop-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+
     <nav class="nav">
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+
+      <a
+        href="./index.html"
+        data-es="Inicio"
+        data-en="Home"
+      >Inicio</a>
+
+      <a
+        href="./obra.html"
+        data-es="Obra"
+        data-en="Artwork"
+      >Obra</a>
+
+      <a
+        href="./artista.html"
+        data-es="Artista"
+        data-en="Artist"
+      >Artista</a>
+
+      <a
+        href="./proceso.html"
+        data-es="Proceso"
+        data-en="Process"
+      >Proceso</a>
+
+      <a
+        href="./contacto.html"
+        data-es="Contacto"
+        data-en="Contact"
+      >Contacto</a>
+
     </nav>
 
     <button
@@ -470,28 +560,72 @@
       id="menuButton"
       type="button"
       aria-label="Abrir menú"
-      aria-expanded="false">
+      aria-expanded="false"
+      data-aria-es="Abrir menú"
+      data-aria-en="Open menu"
+    >
       MENÚ
     </button>
 
   </header>
-
 
   <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
-    aria-label="Navegación móvil">
+    aria-label="Navegación móvil"
+  >
 
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+    <!-- SELECTOR DE IDIOMAS EN IPHONE -->
+
+    <div
+      class="language-switcher mobile-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+    </div>
+
+    <a
+      href="./index.html"
+      data-es="Inicio"
+      data-en="Home"
+    >Inicio</a>
+
+    <a
+      href="./obra.html"
+      data-es="Obra"
+      data-en="Artwork"
+    >Obra</a>
+
+    <a
+      href="./artista.html"
+      data-es="Artista"
+      data-en="Artist"
+    >Artista</a>
+
+    <a
+      href="./proceso.html"
+      data-es="Proceso"
+      data-en="Process"
+    >Proceso</a>
+
+    <a
+      href="./contacto.html"
+      data-es="Contacto"
+      data-en="Contact"
+    >Contacto</a>
 
   </nav>
-
 
   <main>
 
@@ -501,21 +635,37 @@
 
       <div class="home-hero-copy">
 
-        <p class="eyebrow">
+        <p
+          class="eyebrow"
+          data-es="ISMAEL CORRALES · PINTURA CONTEMPORÁNEA"
+          data-en="ISMAEL CORRALES · CONTEMPORARY PAINTING"
+        >
           ISMAEL CORRALES · PINTURA CONTEMPORÁNEA
         </p>
 
-        <h1>
+        <h1
+          data-es="La pintura como memoria, expresión y presencia."
+          data-en="Painting as memory, expression and presence."
+        >
           La pintura como memoria, expresión y presencia.
         </h1>
 
-        <p class="home-hero-intro">
+        <p
+          class="home-hero-intro"
+          data-es="Archivo de obra original desarrollado desde la observación, la experiencia cotidiana y la construcción de imágenes mediante pintura acrílica sobre lienzo."
+          data-en="An archive of original artwork developed through observation, everyday experience and the creation of images using acrylic paint on canvas."
+        >
           Archivo de obra original desarrollado desde la observación,
           la experiencia cotidiana y la construcción de imágenes
           mediante pintura acrílica sobre lienzo.
         </p>
 
-        <a href="./obra.html" class="text-link">
+        <a
+          href="./obra.html"
+          class="text-link"
+          data-es="EXPLORAR OBRAS →"
+          data-en="EXPLORE ARTWORK →"
+        >
           EXPLORAR OBRAS →
         </a>
 
@@ -523,14 +673,17 @@
 
     </section>
 
-
     <!-- ARTISTA -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
 
-        <p class="section-number">
+        <p
+          class="section-number"
+          data-es="01 · ARTISTA"
+          data-en="01 · ARTIST"
+        >
           01 · ARTISTA
         </p>
 
@@ -540,14 +693,23 @@
             Ismael Corrales.
           </h2>
 
-          <p class="home-section-copy">
+          <p
+            class="home-section-copy"
+            data-es="Artista visual cuya práctica se desarrolla principalmente a través de la pintura acrílica sobre lienzo, con una atención constante a la luz, el contraste y la construcción de atmósferas."
+            data-en="A visual artist whose practice is primarily centered on acrylic painting on canvas, with a continuous focus on light, contrast and the creation of atmosphere."
+          >
             Artista visual cuya práctica se desarrolla
             principalmente a través de la pintura acrílica sobre lienzo,
             con una atención constante a la luz, el contraste y la
             construcción de atmósferas.
           </p>
 
-          <a href="./artista.html" class="text-link">
+          <a
+            href="./artista.html"
+            class="text-link"
+            data-es="INFORMACIÓN →"
+            data-en="LEARN MORE →"
+          >
             INFORMACIÓN →
           </a>
 
@@ -557,31 +719,39 @@
 
     </section>
 
-
     <!-- SELECCIÓN ACTUAL -->
 
     <section class="home-works">
 
       <div class="home-works-header">
 
-        <p class="section-number">
+        <p
+          class="section-number"
+          data-es="02 · OBRA"
+          data-en="02 · ARTWORK"
+        >
           02 · OBRA
         </p>
 
         <div>
 
-          <h2>
+          <h2
+            data-es="Selección actual."
+            data-en="Current selection."
+          >
             Selección actual.
           </h2>
 
-          <p>
+          <p
+            data-es="Pinturas dentro del archivo actual."
+            data-en="Paintings from the current archive."
+          >
             Pinturas dentro del archivo actual.
           </p>
 
         </div>
 
       </div>
-
 
       <!-- CUADRÍCULA DE DOS COLUMNAS -->
 
@@ -595,20 +765,19 @@
           width:100% !important;
           max-width:1420px !important;
           margin:0 auto !important;
-        ">
-
+        "
+      >
 
         <!-- OBRA 1 -->
 
         <article class="work">
 
           <a href="./consuelo.html">
-
             <img
               src="./assets/consuelo.jpg"
               alt="Ese consuelo"
-              loading="lazy">
-
+              loading="lazy"
+            >
           </a>
 
           <h3>
@@ -622,18 +791,16 @@
 
         </article>
 
-
         <!-- OBRA 2 -->
 
         <article class="work">
 
           <a href="./tierra.html">
-
             <img
               src="./assets/tierra.jpg"
               alt="Lo que pasa en la tierra se queda en la tierra"
-              loading="lazy">
-
+              loading="lazy"
+            >
           </a>
 
           <h3>
@@ -647,18 +814,16 @@
 
         </article>
 
-
         <!-- OBRA 3 -->
 
         <article class="work">
 
           <a href="./perdon.html">
-
             <img
               src="./assets/perdon.jpg"
               alt="El peso del perdón"
-              loading="lazy">
-
+              loading="lazy"
+            >
           </a>
 
           <h3>
@@ -672,18 +837,16 @@
 
         </article>
 
-
         <!-- OBRA 4 -->
 
         <article class="work">
 
           <a href="./culpa.html">
-
             <img
               src="./assets/culpa.jpg"
               alt="Mi culpa"
-              loading="lazy">
-
+              loading="lazy"
+            >
           </a>
 
           <h3>
@@ -697,18 +860,16 @@
 
         </article>
 
-
         <!-- OBRA 5 -->
 
         <article class="work">
 
           <a href="./noche.html">
-
             <img
               src="./assets/noche.jpg"
               alt="La noche oscura del alma"
-              loading="lazy">
-
+              loading="lazy"
+            >
           </a>
 
           <h3>
@@ -722,18 +883,16 @@
 
         </article>
 
-
         <!-- OBRA 6 -->
 
         <article class="work">
 
           <a href="./banco.html">
-
             <img
               src="./assets/banco.jpg"
               alt="Solo amo a mi cuenta de banco"
-              loading="lazy">
-
+              loading="lazy"
+            >
           </a>
 
           <h3>
@@ -749,10 +908,14 @@
 
       </div>
 
-
       <div class="home-works-footer">
 
-        <a href="./obra.html" class="text-link">
+        <a
+          href="./obra.html"
+          class="text-link"
+          data-es="VER ARCHIVO DE OBRA →"
+          data-en="VIEW ARTWORK ARCHIVE →"
+        >
           VER ARCHIVO DE OBRA →
         </a>
 
@@ -760,29 +923,44 @@
 
     </section>
 
-
     <!-- PROCESO -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
 
-        <p class="section-number">
+        <p
+          class="section-number"
+          data-es="03 · PROCESO"
+          data-en="03 · PROCESS"
+        >
           03 · PROCESO
         </p>
 
         <div class="home-section-content">
 
-          <h2>
+          <h2
+            data-es="Del entorno al lienzo."
+            data-en="From surroundings to canvas."
+          >
             Del entorno al lienzo.
           </h2>
 
-          <p class="home-section-copy">
+          <p
+            class="home-section-copy"
+            data-es="Observación, referencias, composición y pintura forman parte de un proceso continuo de construcción de imágenes."
+            data-en="Observation, references, composition and painting are part of an ongoing process of image-making."
+          >
             Observación, referencias, composición y pintura forman
             parte de un proceso continuo de construcción de imágenes.
           </p>
 
-          <a href="./proceso.html" class="text-link">
+          <a
+            href="./proceso.html"
+            class="text-link"
+            data-es="VER PROCESO →"
+            data-en="VIEW PROCESS →"
+          >
             VER PROCESO →
           </a>
 
@@ -792,30 +970,45 @@
 
     </section>
 
-
     <!-- ADQUIRIR -->
 
     <section class="home-section">
 
       <div class="home-section-grid">
 
-        <p class="section-number">
+        <p
+          class="section-number"
+          data-es="04 · ADQUIRIR"
+          data-en="04 · ACQUIRE"
+        >
           04 · ADQUIRIR
         </p>
 
         <div class="home-section-content">
 
-          <h2>
+          <h2
+            data-es="Vivir con una obra."
+            data-en="Living with art."
+          >
             Vivir con una obra.
           </h2>
 
-          <p class="home-section-copy">
+          <p
+            class="home-section-copy"
+            data-es="Las piezas disponibles pueden adquirirse directamente. Cada compra se coordina de manera individual para confirmar disponibilidad, pago, envío o entrega."
+            data-en="Available artworks may be purchased directly. Each purchase is arranged individually to confirm availability, payment, shipping or delivery."
+          >
             Las piezas disponibles pueden adquirirse directamente.
             Cada compra se coordina de manera individual para confirmar
             disponibilidad, pago, envío o entrega.
           </p>
 
-          <a href="./contacto.html" class="text-link">
+          <a
+            href="./contacto.html"
+            class="text-link"
+            data-es="ADQUIRIR OBRA →"
+            data-en="ACQUIRE ARTWORK →"
+          >
             ADQUIRIR OBRA →
           </a>
 
@@ -825,7 +1018,6 @@
 
     </section>
 
-
     <!-- CIERRE -->
 
     <section class="home-final">
@@ -834,15 +1026,30 @@
 
         <div class="home-final-links">
 
-          <a href="./obra.html" class="text-link">
+          <a
+            href="./obra.html"
+            class="text-link"
+            data-es="OBRA →"
+            data-en="ARTWORK →"
+          >
             OBRA →
           </a>
 
-          <a href="./artista.html" class="text-link">
+          <a
+            href="./artista.html"
+            class="text-link"
+            data-es="ARTISTA →"
+            data-en="ARTIST →"
+          >
             ARTISTA →
           </a>
 
-          <a href="./contacto.html" class="text-link">
+          <a
+            href="./contacto.html"
+            class="text-link"
+            data-es="CONTACTO →"
+            data-en="CONTACT →"
+          >
             CONTACTO →
           </a>
 
@@ -854,7 +1061,6 @@
 
   </main>
 
-
   <!-- PIE DE PÁGINA -->
 
   <footer class="footer">
@@ -865,18 +1071,24 @@
         CORRALES
       </p>
 
-      <p>
+      <p
+        data-es="Arte contemporáneo · Originales sobre lienzo"
+        data-en="Contemporary art · Original works on canvas"
+      >
         Arte contemporáneo · Originales sobre lienzo
       </p>
 
     </div>
 
-    <a href="#">
+    <a
+      href="#"
+      data-es="Volver arriba ↑"
+      data-en="Back to top ↑"
+    >
       Volver arriba ↑
     </a>
 
   </footer>
-
 
   <!-- FUNCIONES DEL MENÚ -->
 
@@ -886,16 +1098,37 @@
     const mobileMenu = document.getElementById("mobileMenu");
     const header = document.querySelector(".site-header");
 
+    function currentLanguage() {
+      return window.CorralesLanguage
+        ? window.CorralesLanguage.detect()
+        : "es";
+    }
+
+    function updateMenuButton(isOpen) {
+      const english = currentLanguage() === "en";
+
+      menuButton.textContent = isOpen
+        ? (english ? "CLOSE" : "CERRAR")
+        : (english ? "MENU" : "MENÚ");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? (english ? "Close menu" : "Cerrar menú")
+          : (english ? "Open menu" : "Abrir menú")
+      );
+    }
+
     menuButton.addEventListener("click", function () {
 
       const isOpen = mobileMenu.classList.toggle("open");
 
-      menuButton.textContent = isOpen ? "CERRAR" : "MENÚ";
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-      );
+      updateMenuButton(isOpen);
 
       if (isOpen) {
         header.classList.remove("header-hidden");
@@ -903,21 +1136,22 @@
 
     });
 
-
     mobileMenu.querySelectorAll("a").forEach(function (link) {
 
       link.addEventListener("click", function () {
 
         mobileMenu.classList.remove("open");
-
-        menuButton.textContent = "MENÚ";
-
-        menuButton.setAttribute("aria-expanded", "false");
+        updateMenuButton(false);
 
       });
 
     });
 
+    window.addEventListener("corrales:languagechange", function () {
+      updateMenuButton(mobileMenu.classList.contains("open"));
+    });
+
+    /* ENCABEZADO INTELIGENTE */
 
     let lastScrollY = window.scrollY;
 
@@ -928,19 +1162,17 @@
       if (mobileMenu.classList.contains("open")) {
 
         header.classList.remove("header-hidden");
-
         lastScrollY = currentScrollY;
-
         return;
+
       }
 
       if (currentScrollY < 80) {
 
         header.classList.remove("header-hidden");
-
         lastScrollY = currentScrollY;
-
         return;
+
       }
 
       if (currentScrollY > lastScrollY) {
@@ -958,6 +1190,10 @@
     }, { passive: true });
 
   </script>
+
+  <!-- SISTEMA DE IDIOMAS -->
+
+  <script src="./idiomas.js?v=2"></script>
 
 </body>
 </html>
