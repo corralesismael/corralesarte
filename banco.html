@@ -3,13 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Solo amo a mi cuenta de banco — Ismael Corrales</title>
 
   <meta
     name="description"
-    content="Solo amo a mi cuenta de banco, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2025."
+    content="Solo amo a mi cuenta de banco, pintura original vendida de Ismael Corrales. Acrílico sobre lienzo, 2025."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +24,11 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=167">
+  <link rel="stylesheet" href="./styles.css?v=147">
 
   <style>
 
-    /* ENCABEZADO INTELIGENTE */
+    /* ENCABEZADO */
 
     .site-header {
       position: sticky !important;
@@ -43,15 +47,53 @@
       opacity: 0 !important;
     }
 
-    #menuButton {
-      display: none !important;
-    }
-
-    #mobileMenu {
+    .mobile-menu-toggle,
+    .mobile-nav {
       display: none;
     }
 
-    /* IMAGEN */
+    /* SELECTOR DE IDIOMAS */
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .language-switcher button {
+      padding: 5px 2px;
+      border: 0;
+      background: transparent;
+      color: #77716a;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .language-switcher button.active,
+    .language-switcher button[aria-pressed="true"] {
+      color: #161513;
+      font-weight: 600;
+    }
+
+    .language-switcher span {
+      color: #aaa49c;
+    }
+
+    .desktop-language {
+      margin-left: auto;
+      margin-right: 28px;
+    }
+
+    .mobile-language {
+      display: none;
+    }
+
+    /* IMAGEN PRINCIPAL */
 
     .artwork-image-section {
       padding: 60px 28px 0;
@@ -60,6 +102,7 @@
     .artwork-image-inner {
       max-width: 1420px;
       margin: 0 auto;
+      position: relative;
     }
 
     .artwork-image-inner img {
@@ -68,7 +111,25 @@
       height: auto;
     }
 
-    /* INFORMACIÓN */
+    /* ETIQUETA VENDIDO */
+
+    .sold-badge {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background: #d00000;
+      color: #ffffff;
+      font-family: "DM Sans", sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      line-height: 1.2;
+    }
+
+    /* INFORMACIÓN DE LA OBRA */
 
     .artwork-details {
       padding: 85px 28px 80px;
@@ -103,6 +164,8 @@
       color: #6f6a62;
     }
 
+    /* DATOS TÉCNICOS */
+
     .artwork-meta {
       border-top: 1px solid var(--line);
     }
@@ -127,13 +190,25 @@
       line-height: 1.5;
     }
 
-    .artwork-purchase {
-      margin-top: 24px !important;
-      padding: 0 !important;
+    .sold-status {
+      color: #b40000;
+      font-weight: 600;
     }
 
-    .artwork-purchase .artwork-button {
-      margin-top: 0 !important;
+    /* AVISO DE VENTA */
+
+    .artwork-sold-notice {
+      margin-top: 30px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      background: #e9e3da;
+    }
+
+    .artwork-sold-notice p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.7;
+      color: #4f4a43;
     }
 
     /* SOBRE LA OBRA */
@@ -191,9 +266,9 @@
       letter-spacing: -.035em;
     }
 
-    /* ADAPTACIÓN MÓVIL */
+    /* VERSIÓN MÓVIL */
 
-    @media (max-width:800px) {
+    @media (max-width: 800px) {
 
       .site-header {
         display: flex !important;
@@ -208,13 +283,26 @@
         display: none !important;
       }
 
-      #menuButton {
+      .desktop-language {
+        display: none !important;
+      }
+
+      .mobile-language {
+        display: flex;
+        justify-content: flex-start;
+        padding: 12px 0 18px;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-language button {
+        font-size: 13px;
+      }
+
+      .mobile-menu-toggle {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         position: relative !important;
-        top: auto !important;
-        right: auto !important;
         z-index: 100001 !important;
         margin: 0 !important;
         padding: 10px 0 !important;
@@ -229,10 +317,10 @@
         cursor: pointer;
       }
 
-      #mobileMenu {
+      .mobile-nav {
         display: none;
         position: fixed;
-        top: 118px !important;
+        top: 118px;
         left: 0;
         right: 0;
         z-index: 999998;
@@ -241,11 +329,11 @@
         border-bottom: 1px solid rgba(22,21,19,.18);
       }
 
-      #mobileMenu.open {
+      .mobile-nav.open {
         display: block !important;
       }
 
-      #mobileMenu a {
+      .mobile-nav a {
         display: block;
         padding: 17px 0;
         border-bottom: 1px solid rgba(22,21,19,.18);
@@ -258,6 +346,14 @@
 
       .artwork-image-section {
         padding: 40px 18px 0;
+      }
+
+      .sold-badge {
+        left: 10px;
+        bottom: 10px;
+        padding: 8px 13px;
+        border-radius: 9px;
+        font-size: 15px;
       }
 
       .artwork-details {
@@ -295,8 +391,12 @@
         font-size: .9rem;
       }
 
-      .artwork-purchase {
-        margin-top: 26px !important;
+      .artwork-sold-notice {
+        padding: 18px;
+      }
+
+      .artwork-sold-notice p {
+        font-size: .88rem;
       }
 
       .artwork-story {
@@ -324,9 +424,11 @@
       .artwork-final h2 {
         font-size: clamp(3.4rem,15vw,5.2rem);
       }
+
     }
 
   </style>
+
 </head>
 
 <body>
@@ -343,6 +445,8 @@
       href="./index.html"
       class="header-logo"
       aria-label="Inicio Corrales"
+      data-aria-es="Inicio Corrales"
+      data-aria-en="Corrales home"
     >
       <img
         src="./assets/Logo-header.PNG?v=4"
@@ -350,15 +454,64 @@
       >
     </a>
 
+    <!-- IDIOMAS EN COMPUTADORA -->
+
+    <div
+      class="language-switcher desktop-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+
+    </div>
+
+    <!-- NAVEGACIÓN -->
+
     <nav class="nav">
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+
+      <a
+        href="./index.html"
+        data-es="Inicio"
+        data-en="Home"
+      >Inicio</a>
+
+      <a
+        href="./obra.html"
+        data-es="Obra"
+        data-en="Artwork"
+      >Obra</a>
+
+      <a
+        href="./artista.html"
+        data-es="Artista"
+        data-en="Artist"
+      >Artista</a>
+
+      <a
+        href="./proceso.html"
+        data-es="Proceso"
+        data-en="Process"
+      >Proceso</a>
+
+      <a
+        href="./contacto.html"
+        data-es="Contacto"
+        data-en="Contact"
+      >Contacto</a>
+
     </nav>
 
     <button
+      class="mobile-menu-toggle"
       id="menuButton"
       type="button"
       aria-label="Abrir menú"
@@ -371,19 +524,68 @@
 
   <!-- MENÚ MÓVIL -->
 
-  <nav id="mobileMenu" aria-label="Navegación móvil">
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+  <nav
+    class="mobile-nav"
+    id="mobileMenu"
+    aria-label="Navegación móvil"
+  >
+
+    <div
+      class="language-switcher mobile-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+
+    </div>
+
+    <a
+      href="./index.html"
+      data-es="Inicio"
+      data-en="Home"
+    >Inicio</a>
+
+    <a
+      href="./obra.html"
+      data-es="Obra"
+      data-en="Artwork"
+    >Obra</a>
+
+    <a
+      href="./artista.html"
+      data-es="Artista"
+      data-en="Artist"
+    >Artista</a>
+
+    <a
+      href="./proceso.html"
+      data-es="Proceso"
+      data-en="Process"
+    >Proceso</a>
+
+    <a
+      href="./contacto.html"
+      data-es="Contacto"
+      data-en="Contact"
+    >Contacto</a>
+
   </nav>
 
   <main>
 
-    <!-- IMAGEN -->
+    <!-- FOTOGRAFÍA DE LA OBRA -->
 
     <section class="artwork-image-section">
+
       <div class="artwork-image-inner">
 
         <img
@@ -391,17 +593,31 @@
           alt="Solo amo a mi cuenta de banco, pintura de Ismael Corrales"
         >
 
+        <span
+          class="sold-badge"
+          data-es="Vendido"
+          data-en="Sold"
+        >
+          Vendido
+        </span>
+
       </div>
+
     </section>
 
-    <!-- INFORMACIÓN -->
+    <!-- INFORMACIÓN DE LA OBRA -->
 
     <section class="artwork-details">
+
       <div class="artwork-details-inner">
 
         <div class="artwork-details-title">
 
-          <p class="section-label">
+          <p
+            class="section-label"
+            data-es="INFORMACIÓN"
+            data-en="INFORMATION"
+          >
             INFORMACIÓN
           </p>
 
@@ -415,56 +631,139 @@
 
           <div class="artwork-meta">
 
-            <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Artista</span>
-              <span class="artwork-meta-value">Ismael Corrales</span>
-            </div>
+            <!-- ARTISTA -->
 
             <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Año</span>
-              <span class="artwork-meta-value">2025</span>
+
+              <span
+                class="artwork-meta-label"
+                data-es="Artista"
+                data-en="Artist"
+              >
+                Artista
+              </span>
+
+              <span class="artwork-meta-value">
+                Ismael Corrales
+              </span>
+
             </div>
 
-            <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Técnica</span>
-              <span class="artwork-meta-value">Acrílico sobre lienzo</span>
-            </div>
+            <!-- AÑO -->
 
             <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Dimensiones</span>
-              <span class="artwork-meta-value">50 × 35 cm</span>
+
+              <span
+                class="artwork-meta-label"
+                data-es="Año"
+                data-en="Year"
+              >
+                Año
+              </span>
+
+              <span class="artwork-meta-value">
+                2025
+              </span>
+
             </div>
 
-            <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Estado</span>
-              <span class="artwork-meta-value">Disponible</span>
-            </div>
+            <!-- TÉCNICA -->
 
             <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Precio</span>
-              <span class="artwork-meta-value">$80 USD</span>
+
+              <span
+                class="artwork-meta-label"
+                data-es="Técnica"
+                data-en="Medium"
+              >
+                Técnica
+              </span>
+
+              <span
+                class="artwork-meta-value"
+                data-es="Acrílico sobre lienzo"
+                data-en="Acrylic on canvas"
+              >
+                Acrílico sobre lienzo
+              </span>
+
+            </div>
+
+            <!-- DIMENSIONES -->
+
+            <div class="artwork-meta-row">
+
+              <span
+                class="artwork-meta-label"
+                data-es="Dimensiones"
+                data-en="Dimensions"
+              >
+                Dimensiones
+              </span>
+
+              <span class="artwork-meta-value">
+                50 × 35 cm
+              </span>
+
+            </div>
+
+            <!-- ESTADO -->
+
+            <div class="artwork-meta-row">
+
+              <span
+                class="artwork-meta-label"
+                data-es="Estado"
+                data-en="Status"
+              >
+                Estado
+              </span>
+
+              <span
+                class="artwork-meta-value sold-status"
+                data-es="Vendido"
+                data-en="Sold"
+              >
+                Vendido
+              </span>
+
             </div>
 
           </div>
 
-          <div class="artwork-purchase">
-            <a href="./contacto.html" class="artwork-button">
-              Adquirir obra
-            </a>
+          <!-- AVISO DE OBRA VENDIDA -->
+
+          <div class="artwork-sold-notice">
+
+            <p
+              data-es="Esta obra ha sido vendida y ya no se encuentra disponible para adquisición."
+              data-en="This artwork has been sold and is no longer available for purchase."
+            >
+              Esta obra ha sido vendida y ya no se
+              encuentra disponible para adquisición.
+            </p>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- SOBRE LA OBRA -->
 
     <section class="artwork-story">
+
       <div class="artwork-story-inner">
 
         <div>
 
-          <p class="section-label">
+          <p
+            class="section-label"
+            data-es="SOBRE LA OBRA"
+            data-en="ABOUT THE ARTWORK"
+          >
             SOBRE LA OBRA
           </p>
 
@@ -476,40 +775,64 @@
 
         <div class="artwork-story-copy">
 
-          <p>
-            Esta obra aborda la relación entre identidad, deseo,
-            materialismo y valor personal dentro de una imagen construida
-            desde la observación y la pintura figurativa.
+          <p
+            data-es="Esta obra aborda la relación entre identidad, deseo, materialismo y valor personal dentro de una imagen construida desde la observación y la pintura figurativa."
+            data-en="This artwork explores the relationship between identity, desire, materialism and personal worth through an image shaped by observation and figurative painting."
+          >
+            Esta obra aborda la relación entre identidad,
+            deseo, materialismo y valor personal dentro de
+            una imagen construida desde la observación
+            y la pintura figurativa.
           </p>
 
-          <p>
-            El título funciona como parte de la lectura de la pieza,
-            confrontando la dimensión emocional con el dinero y los
-            símbolos asociados al éxito y al valor material.
+          <p
+            data-es="El título funciona como parte de la lectura de la pieza, confrontando la dimensión emocional con el dinero y los símbolos asociados al éxito y al valor material."
+            data-en="The title forms part of the interpretation of the piece, confronting the emotional dimension with money and the symbols associated with success and material value."
+          >
+            El título funciona como parte de la lectura
+            de la pieza, confrontando la dimensión emocional
+            con el dinero y los símbolos asociados al éxito
+            y al valor material.
           </p>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- CIERRE -->
 
     <section class="artwork-final">
+
       <div class="artwork-final-inner">
 
-        <p class="eyebrow">
-          ADQUIRIR
+        <p
+          class="eyebrow"
+          data-es="ARCHIVO DE OBRA"
+          data-en="ARTWORK ARCHIVE"
+        >
+          ARCHIVO DE OBRA
         </p>
 
-        <h2>
-          Consultar disponibilidad.
+        <h2
+          data-es="Explorar otras obras."
+          data-en="Explore other artworks."
+        >
+          Explorar otras obras.
         </h2>
 
-        <a href="./contacto.html" class="text-link">
-          CONTACTAR →
+        <a
+          href="./obra.html"
+          class="text-link"
+          data-es="VOLVER AL ARCHIVO →"
+          data-en="BACK TO THE ARCHIVE →"
+        >
+          VOLVER AL ARCHIVO →
         </a>
 
       </div>
+
     </section>
 
   </main>
@@ -524,38 +847,76 @@
         CORRALES
       </p>
 
-      <p>
+      <p
+        data-es="Arte contemporáneo · Originales sobre lienzo"
+        data-en="Contemporary art · Original works on canvas"
+      >
         Arte contemporáneo · Originales sobre lienzo
       </p>
 
     </div>
 
-    <a href="./obra.html">
+    <a
+      href="./obra.html"
+      data-es="Volver al archivo ↑"
+      data-en="Back to archive ↑"
+    >
       Volver al archivo ↑
     </a>
 
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- FUNCIONES -->
 
   <script>
 
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const header = document.querySelector(".site-header");
+    const menuButton =
+      document.getElementById("menuButton");
 
-    /* ABRIR Y CERRAR MENÚ */
+    const mobileMenu =
+      document.getElementById("mobileMenu");
 
-    menuButton.addEventListener("click", function() {
+    const header =
+      document.querySelector(".site-header");
 
-      const isOpen = mobileMenu.classList.toggle("open");
+    function currentLanguage() {
 
-      menuButton.textContent = isOpen ? "CERRAR" : "MENÚ";
+      return window.CorralesLanguage
+        ? window.CorralesLanguage.detect()
+        : "es";
+
+    }
+
+    function updateMenuButton(isOpen) {
+
+      const english = currentLanguage() === "en";
+
+      menuButton.textContent = isOpen
+        ? (english ? "CLOSE" : "CERRAR")
+        : (english ? "MENU" : "MENÚ");
 
       menuButton.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        String(isOpen)
       );
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? (english ? "Close menu" : "Cerrar menú")
+          : (english ? "Open menu" : "Abrir menú")
+      );
+
+    }
+
+    /* MENÚ MÓVIL */
+
+    menuButton.addEventListener("click", function() {
+
+      const isOpen =
+        mobileMenu.classList.toggle("open");
+
+      updateMenuButton(isOpen);
 
       if (isOpen) {
         header.classList.remove("header-hidden");
@@ -563,19 +924,48 @@
 
     });
 
-    /* CERRAR MENÚ AL SELECCIONAR UNA PÁGINA */
-
     mobileMenu.querySelectorAll("a").forEach(function(link) {
 
       link.addEventListener("click", function() {
 
         mobileMenu.classList.remove("open");
-        menuButton.textContent = "MENÚ";
-        menuButton.setAttribute("aria-expanded", "false");
+        updateMenuButton(false);
 
       });
 
     });
+
+    /* CAMBIO DE IDIOMA */
+
+    window.addEventListener(
+      "corrales:languagechange",
+      function() {
+
+        const english = currentLanguage() === "en";
+
+        updateMenuButton(
+          mobileMenu.classList.contains("open")
+        );
+
+        document.title =
+          "Solo amo a mi cuenta de banco — Ismael Corrales";
+
+        const description =
+          document.querySelector('meta[name="description"]');
+
+        if (description) {
+
+          description.setAttribute(
+            "content",
+            english
+              ? "Solo amo a mi cuenta de banco, a sold original painting by Ismael Corrales. Acrylic on canvas, 2025."
+              : "Solo amo a mi cuenta de banco, pintura original vendida de Ismael Corrales. Acrílico sobre lienzo, 2025."
+          );
+
+        }
+
+      }
+    );
 
     /* ENCABEZADO INTELIGENTE */
 
@@ -586,21 +976,29 @@
       const currentScrollY = window.scrollY;
 
       if (mobileMenu.classList.contains("open")) {
+
         header.classList.remove("header-hidden");
         lastScrollY = currentScrollY;
         return;
+
       }
 
       if (currentScrollY < 80) {
+
         header.classList.remove("header-hidden");
         lastScrollY = currentScrollY;
         return;
+
       }
 
       if (currentScrollY > lastScrollY) {
+
         header.classList.add("header-hidden");
+
       } else if (currentScrollY < lastScrollY) {
+
         header.classList.remove("header-hidden");
+
       }
 
       lastScrollY = currentScrollY;
@@ -608,6 +1006,10 @@
     }, { passive: true });
 
   </script>
+
+  <!-- SISTEMA DE IDIOMAS -->
+
+  <script src="./idiomas.js?v=2"></script>
 
 </body>
 </html>
