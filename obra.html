@@ -3,11 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Archivo de obra — Ismael Corrales</title>
 
@@ -17,91 +13,83 @@
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=92">
+  <link rel="stylesheet" href="./styles.css?v=147">
 
   <style>
 
-    /* MENÚ MÓVIL */
+    /* ENCABEZADO */
 
-    .mobile-menu-toggle {
-      display: none;
+    .site-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 999999 !important;
+      transition: transform .3s ease, opacity .3s ease !important;
+      will-change: transform;
+      background: rgba(243,239,231,.96) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      overflow: visible !important;
     }
 
+    .site-header.header-hidden {
+      transform: translateY(-110%) !important;
+      opacity: 0 !important;
+    }
+
+    .mobile-menu-toggle,
     .mobile-nav {
       display: none;
     }
 
-    @media (max-width: 800px) {
+    /* IDIOMAS */
 
-      .site-header {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        min-height: 72px;
-        padding: 18px !important;
-      }
-
-      .site-header .nav {
-        display: none !important;
-      }
-
-      .mobile-menu-toggle {
-        display: block !important;
-        border: 0;
-        background: transparent;
-        color: #161513;
-        font-family: "DM Sans", sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        padding: 10px 0;
-        cursor: pointer;
-      }
-
-      .mobile-nav {
-        display: none;
-        position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        padding: 20px 18px 30px;
-        background: #f3efe7;
-        border-bottom: 1px solid rgba(22,21,19,.18);
-      }
-
-      .mobile-nav.open {
-        display: block !important;
-      }
-
-      .mobile-nav a {
-        display: block;
-        padding: 17px 0;
-        border-bottom: 1px solid rgba(22,21,19,.18);
-        color: #161513;
-        font-family: "Playfair Display", serif;
-        font-size: 32px;
-        line-height: 1;
-        text-decoration: none;
-      }
-
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      white-space: nowrap;
     }
 
+    .language-switcher button {
+      padding: 5px 2px;
+      border: 0;
+      background: transparent;
+      color: #77716a;
+      font: inherit;
+      cursor: pointer;
+    }
 
-    /* ENCABEZADO DE OBRA */
+    .language-switcher button.active,
+    .language-switcher button[aria-pressed="true"] {
+      color: #161513;
+      font-weight: 600;
+    }
+
+    .language-switcher span {
+      color: #aaa49c;
+    }
+
+    .desktop-language {
+      margin-left: auto;
+      margin-right: 28px;
+    }
+
+    .mobile-language {
+      display: none;
+    }
+
+    /* PORTADA */
 
     .archive-hero {
       padding: 95px 28px 75px;
@@ -116,7 +104,7 @@
     .archive-hero h1 {
       margin: 20px 0 32px;
       max-width: 8ch;
-      font-size: clamp(4.8rem, 10vw, 9rem);
+      font-size: clamp(4.8rem,10vw,9rem);
       line-height: .86;
       font-weight: 400;
       letter-spacing: -.045em;
@@ -130,13 +118,12 @@
       color: var(--muted);
     }
 
-
     /* FILTROS */
 
     .archive-filter-bar {
       max-width: 1420px;
       margin: 0 auto;
-      padding: 28px 28px;
+      padding: 28px;
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
@@ -144,17 +131,26 @@
     }
 
     .archive-filter {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      font-family: "DM Sans", sans-serif;
       font-size: .68rem;
       font-weight: 500;
       letter-spacing: .13em;
       text-transform: uppercase;
       color: var(--muted);
+      cursor: pointer;
     }
 
     .archive-filter.active {
       color: #161513;
     }
 
+    .archive-filter:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 5px;
+    }
 
     /* CATÁLOGO */
 
@@ -162,15 +158,18 @@
       max-width: 1420px;
       margin: 0 auto;
       padding: 75px 28px 120px;
-
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2,minmax(0,1fr));
       column-gap: 32px;
       row-gap: 85px;
     }
 
     .archive-card {
       min-width: 0;
+    }
+
+    .archive-card[hidden] {
+      display: none !important;
     }
 
     .archive-image-link {
@@ -183,10 +182,7 @@
       display: block;
       width: 100%;
       height: auto;
-
-      transition:
-        transform .35s ease,
-        opacity .35s ease;
+      transition: transform .35s ease, opacity .35s ease;
     }
 
     .archive-card:hover img {
@@ -202,7 +198,7 @@
       margin: 0 0 11px;
       max-width: 22ch;
       font-family: "Playfair Display", serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+      font-size: clamp(1.6rem,2.4vw,2.35rem);
       font-weight: 400;
       line-height: 1.06;
     }
@@ -223,7 +219,6 @@
       margin-top: 16px;
       padding-top: 14px;
       border-top: 1px solid var(--line);
-
       display: flex;
       justify-content: space-between;
       gap: 20px;
@@ -242,7 +237,6 @@
       color: var(--muted);
     }
 
-
     /* CIERRE */
 
     .archive-final {
@@ -258,23 +252,96 @@
     .archive-final h2 {
       margin: 18px 0 32px;
       max-width: 10ch;
-      font-size: clamp(3.8rem, 7vw, 7rem);
+      font-size: clamp(3.8rem,7vw,7rem);
       line-height: .92;
       font-weight: 400;
       letter-spacing: -.035em;
     }
 
-
-    /* VERSIÓN MÓVIL */
+    /* MÓVIL */
 
     @media (max-width: 800px) {
+
+      .site-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 118px !important;
+        padding: 18px !important;
+        overflow: visible !important;
+      }
+
+      .site-header .nav {
+        display: none !important;
+      }
+
+      .desktop-language {
+        display: none !important;
+      }
+
+      .mobile-language {
+        display: flex;
+        justify-content: flex-start;
+        padding: 12px 0 18px;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-language button {
+        font-size: 13px;
+      }
+
+      .mobile-menu-toggle {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 100001 !important;
+        margin: 0 !important;
+        padding: 10px 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: #161513 !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        letter-spacing: .12em !important;
+        text-transform: uppercase !important;
+        cursor: pointer;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 118px;
+        left: 0;
+        right: 0;
+        z-index: 999998;
+        padding: 20px 18px 30px;
+        background: #f3efe7;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-nav.open {
+        display: block !important;
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 17px 0;
+        border-bottom: 1px solid rgba(22,21,19,.18);
+        color: #161513;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        line-height: 1;
+        text-decoration: none;
+      }
 
       .archive-hero {
         padding: 65px 18px 55px;
       }
 
       .archive-hero h1 {
-        font-size: clamp(4rem, 18vw, 6rem);
+        font-size: clamp(4rem,18vw,6rem);
       }
 
       .archive-intro {
@@ -293,7 +360,7 @@
 
       .archive-grid {
         padding: 55px 18px 90px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,minmax(0,1fr));
         column-gap: 14px;
         row-gap: 58px;
       }
@@ -304,7 +371,7 @@
 
       .archive-card h2 {
         margin-bottom: 8px;
-        font-size: clamp(1.15rem, 5vw, 1.5rem);
+        font-size: clamp(1.15rem,5vw,1.5rem);
         line-height: 1.02;
       }
 
@@ -334,7 +401,7 @@
       }
 
       .archive-final h2 {
-        font-size: clamp(3.4rem, 15vw, 5.2rem);
+        font-size: clamp(3.4rem,15vw,5.2rem);
       }
 
     }
@@ -342,7 +409,6 @@
   </style>
 
 </head>
-
 
 <body>
 
@@ -354,17 +420,72 @@
       CORRALES
     </a>
 
+    <a
+      href="./index.html"
+      class="header-logo"
+      aria-label="Inicio Corrales"
+      data-aria-es="Inicio Corrales"
+      data-aria-en="Corrales home"
+    >
+      <img
+        src="./assets/Logo-header.PNG?v=4"
+        alt=""
+      >
+    </a>
+
+    <!-- IDIOMAS EN COMPUTADORA -->
+
+    <div
+      class="language-switcher desktop-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+
+    </div>
+
+    <!-- NAVEGACIÓN -->
+
     <nav class="nav">
 
-      <a href="./index.html">Inicio</a>
+      <a
+        href="./index.html"
+        data-es="Inicio"
+        data-en="Home"
+      >Inicio</a>
 
-      <a href="./obra.html">Obra</a>
+      <a
+        href="./obra.html"
+        data-es="Obra"
+        data-en="Artwork"
+      >Obra</a>
 
-      <a href="./artista.html">Artista</a>
+      <a
+        href="./artista.html"
+        data-es="Artista"
+        data-en="Artist"
+      >Artista</a>
 
-      <a href="./proceso.html">Proceso</a>
+      <a
+        href="./proceso.html"
+        data-es="Proceso"
+        data-en="Process"
+      >Proceso</a>
 
-      <a href="./contacto.html">Contacto</a>
+      <a
+        href="./contacto.html"
+        data-es="Contacto"
+        data-en="Contact"
+      >Contacto</a>
 
     </nav>
 
@@ -380,89 +501,154 @@
 
   </header>
 
-
   <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
+    aria-label="Navegación móvil"
   >
 
-    <a href="./index.html">Inicio</a>
+    <div
+      class="language-switcher mobile-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
 
-    <a href="./obra.html">Obra</a>
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
 
-    <a href="./artista.html">Artista</a>
+      <span>/</span>
 
-    <a href="./proceso.html">Proceso</a>
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
 
-    <a href="./contacto.html">Contacto</a>
+    </div>
+
+    <a
+      href="./index.html"
+      data-es="Inicio"
+      data-en="Home"
+    >Inicio</a>
+
+    <a
+      href="./obra.html"
+      data-es="Obra"
+      data-en="Artwork"
+    >Obra</a>
+
+    <a
+      href="./artista.html"
+      data-es="Artista"
+      data-en="Artist"
+    >Artista</a>
+
+    <a
+      href="./proceso.html"
+      data-es="Proceso"
+      data-en="Process"
+    >Proceso</a>
+
+    <a
+      href="./contacto.html"
+      data-es="Contacto"
+      data-en="Contact"
+    >Contacto</a>
 
   </nav>
 
-
   <main>
 
-    <!-- PRESENTACIÓN -->
+    <!-- PORTADA DE OBRA -->
 
     <section class="archive-hero">
 
       <div class="archive-hero-inner">
 
-        <p class="eyebrow">
+        <p
+          class="eyebrow"
+          data-es="OBRA · ARCHIVO"
+          data-en="ARTWORK · ARCHIVE"
+        >
           OBRA · ARCHIVO
         </p>
 
-        <h1>
+        <h1
+          data-es="Archivo de obra."
+          data-en="Artwork archive."
+        >
           Archivo de obra.
         </h1>
 
-        <p class="archive-intro">
+        <p
+          class="archive-intro"
+          data-es="Selección de pinturas originales de Ismael Corrales. Cada pieza forma parte de un archivo en desarrollo construido desde la observación, la memoria y la experiencia cotidiana."
+          data-en="A selection of original paintings by Ismael Corrales. Each piece belongs to an evolving archive shaped by observation, memory and everyday experience."
+        >
           Selección de pinturas originales de Ismael Corrales.
-          Cada pieza forma parte de un archivo en desarrollo construido
-          desde la observación, la memoria y la experiencia cotidiana.
+          Cada pieza forma parte de un archivo en desarrollo
+          construido desde la observación, la memoria
+          y la experiencia cotidiana.
         </p>
 
       </div>
 
     </section>
 
+    <!-- FILTROS -->
 
-    <!-- FILTROS: SIN 2026 NI 2025 -->
+    <div
+      class="archive-filter-bar"
+      role="group"
+      aria-label="Filtrar obras"
+    >
 
-    <div class="archive-filter-bar">
-
-      <span class="archive-filter active">
+      <button
+        type="button"
+        class="archive-filter active"
+        data-filter="all"
+        aria-pressed="true"
+        data-es="TODAS"
+        data-en="ALL"
+      >
         TODAS
-      </span>
+      </button>
 
-      <span class="archive-filter">
+      <button
+        type="button"
+        class="archive-filter"
+        data-filter="available"
+        aria-pressed="false"
+        data-es="DISPONIBLES"
+        data-en="AVAILABLE"
+      >
         DISPONIBLES
-      </span>
+      </button>
 
     </div>
 
-
-    <!-- CATÁLOGO DE PINTURAS -->
+    <!-- GALERÍA -->
 
     <section class="archive-grid">
 
-
       <!-- ESE CONSUELO -->
 
-      <article class="archive-card">
+      <article
+        class="archive-card"
+        data-available="true"
+      >
 
         <a
           href="./consuelo.html"
           class="archive-image-link"
         >
-
           <img
             src="./assets/consuelo.jpg"
             alt="Ese consuelo"
             loading="lazy"
           >
-
         </a>
 
         <div class="archive-card-content">
@@ -473,7 +659,11 @@
             </a>
           </h2>
 
-          <p class="archive-meta">
+          <p
+            class="archive-meta"
+            data-es="2025 · Acrílico sobre lienzo"
+            data-en="2025 · Acrylic on canvas"
+          >
             2025 · Acrílico sobre lienzo
           </p>
 
@@ -487,7 +677,11 @@
               $80 USD
             </span>
 
-            <span class="archive-status">
+            <span
+              class="archive-status"
+              data-es="Disponible"
+              data-en="Available"
+            >
               Disponible
             </span>
 
@@ -497,22 +691,22 @@
 
       </article>
 
+      <!-- TIERRA -->
 
-      <!-- LO QUE PASA EN LA TIERRA -->
-
-      <article class="archive-card">
+      <article
+        class="archive-card"
+        data-available="true"
+      >
 
         <a
           href="./tierra.html"
           class="archive-image-link"
         >
-
           <img
             src="./assets/tierra.jpg"
             alt="Lo que pasa en la tierra se queda en la tierra"
             loading="lazy"
           >
-
         </a>
 
         <div class="archive-card-content">
@@ -523,7 +717,11 @@
             </a>
           </h2>
 
-          <p class="archive-meta">
+          <p
+            class="archive-meta"
+            data-es="2026 · Acrílico sobre lienzo"
+            data-en="2026 · Acrylic on canvas"
+          >
             2026 · Acrílico sobre lienzo
           </p>
 
@@ -537,7 +735,11 @@
               $80 USD
             </span>
 
-            <span class="archive-status">
+            <span
+              class="archive-status"
+              data-es="Disponible"
+              data-en="Available"
+            >
               Disponible
             </span>
 
@@ -547,22 +749,22 @@
 
       </article>
 
-
       <!-- EL PESO DEL PERDÓN -->
 
-      <article class="archive-card">
+      <article
+        class="archive-card"
+        data-available="true"
+      >
 
         <a
           href="./perdon.html"
           class="archive-image-link"
         >
-
           <img
             src="./assets/perdon.jpg"
             alt="El peso del perdón"
             loading="lazy"
           >
-
         </a>
 
         <div class="archive-card-content">
@@ -573,7 +775,11 @@
             </a>
           </h2>
 
-          <p class="archive-meta">
+          <p
+            class="archive-meta"
+            data-es="2025 · Acrílico sobre lienzo"
+            data-en="2025 · Acrylic on canvas"
+          >
             2025 · Acrílico sobre lienzo
           </p>
 
@@ -587,7 +793,11 @@
               $80 USD
             </span>
 
-            <span class="archive-status">
+            <span
+              class="archive-status"
+              data-es="Disponible"
+              data-en="Available"
+            >
               Disponible
             </span>
 
@@ -597,22 +807,22 @@
 
       </article>
 
-
       <!-- MI CULPA -->
 
-      <article class="archive-card">
+      <article
+        class="archive-card"
+        data-available="true"
+      >
 
         <a
           href="./culpa.html"
           class="archive-image-link"
         >
-
           <img
             src="./assets/culpa.jpg"
             alt="Mi culpa"
             loading="lazy"
           >
-
         </a>
 
         <div class="archive-card-content">
@@ -623,7 +833,11 @@
             </a>
           </h2>
 
-          <p class="archive-meta">
+          <p
+            class="archive-meta"
+            data-es="2025 · Acrílico sobre lienzo"
+            data-en="2025 · Acrylic on canvas"
+          >
             2025 · Acrílico sobre lienzo
           </p>
 
@@ -637,7 +851,11 @@
               $80 USD
             </span>
 
-            <span class="archive-status">
+            <span
+              class="archive-status"
+              data-es="Disponible"
+              data-en="Available"
+            >
               Disponible
             </span>
 
@@ -647,22 +865,22 @@
 
       </article>
 
-
       <!-- LA NOCHE OSCURA DEL ALMA -->
 
-      <article class="archive-card">
+      <article
+        class="archive-card"
+        data-available="true"
+      >
 
         <a
           href="./noche.html"
           class="archive-image-link"
         >
-
           <img
             src="./assets/noche.jpg"
             alt="La noche oscura del alma"
             loading="lazy"
           >
-
         </a>
 
         <div class="archive-card-content">
@@ -673,7 +891,11 @@
             </a>
           </h2>
 
-          <p class="archive-meta">
+          <p
+            class="archive-meta"
+            data-es="2025 · Acrílico sobre lienzo"
+            data-en="2025 · Acrylic on canvas"
+          >
             2025 · Acrílico sobre lienzo
           </p>
 
@@ -687,7 +909,11 @@
               $80 USD
             </span>
 
-            <span class="archive-status">
+            <span
+              class="archive-status"
+              data-es="Disponible"
+              data-en="Available"
+            >
               Disponible
             </span>
 
@@ -697,22 +923,22 @@
 
       </article>
 
-
       <!-- SOLO AMO A MI CUENTA DE BANCO -->
 
-      <article class="archive-card">
+      <article
+        class="archive-card"
+        data-available="true"
+      >
 
         <a
           href="./banco.html"
           class="archive-image-link"
         >
-
           <img
             src="./assets/banco.jpg"
             alt="Solo amo a mi cuenta de banco"
             loading="lazy"
           >
-
         </a>
 
         <div class="archive-card-content">
@@ -723,7 +949,11 @@
             </a>
           </h2>
 
-          <p class="archive-meta">
+          <p
+            class="archive-meta"
+            data-es="2025 · Acrílico sobre lienzo"
+            data-en="2025 · Acrylic on canvas"
+          >
             2025 · Acrílico sobre lienzo
           </p>
 
@@ -737,7 +967,11 @@
               $80 USD
             </span>
 
-            <span class="archive-status">
+            <span
+              class="archive-status"
+              data-es="Disponible"
+              data-en="Available"
+            >
               Disponible
             </span>
 
@@ -749,24 +983,33 @@
 
     </section>
 
-
-    <!-- CIERRE: TEXTO ACTUALIZADO -->
+    <!-- CIERRE -->
 
     <section class="archive-final">
 
       <div class="archive-final-inner">
 
-        <p class="eyebrow">
+        <p
+          class="eyebrow"
+          data-es="OBRA ORIGINAL"
+          data-en="ORIGINAL ARTWORK"
+        >
           OBRA ORIGINAL
         </p>
 
-        <h2>
-          Una pieza que adorna tu entorno
+        <h2
+          data-es="Una pieza. Una presencia."
+          data-en="One piece. One presence."
+        >
+          Una pieza.<br>
+          Una presencia.
         </h2>
 
         <a
           href="./contacto.html"
           class="text-link"
+          data-es="CONSULTAR ADQUISICIÓN →"
+          data-en="INQUIRE ABOUT ACQUISITION →"
         >
           CONSULTAR ADQUISICIÓN →
         </a>
@@ -776,7 +1019,6 @@
     </section>
 
   </main>
-
 
   <!-- PIE DE PÁGINA -->
 
@@ -788,20 +1030,26 @@
         CORRALES
       </p>
 
-      <p>
+      <p
+        data-es="Arte contemporáneo · Originales sobre lienzo"
+        data-en="Contemporary art · Original works on canvas"
+      >
         Arte contemporáneo · Originales sobre lienzo
       </p>
 
     </div>
 
-    <a href="#">
+    <a
+      href="#"
+      data-es="Volver arriba ↑"
+      data-en="Back to top ↑"
+    >
       Volver arriba ↑
     </a>
 
   </footer>
 
-
-  <!-- FUNCIONES DEL MENÚ -->
+  <!-- FUNCIONES -->
 
   <script>
 
@@ -811,49 +1059,182 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const header =
+      document.querySelector(".site-header");
 
-    menuButton.addEventListener(
-      "click",
+    function currentLanguage() {
+      return window.CorralesLanguage
+        ? window.CorralesLanguage.detect()
+        : "es";
+    }
+
+    function updateMenuButton(isOpen) {
+
+      const english = currentLanguage() === "en";
+
+      menuButton.textContent = isOpen
+        ? (english ? "CLOSE" : "CERRAR")
+        : (english ? "MENU" : "MENÚ");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? (english ? "Close menu" : "Cerrar menú")
+          : (english ? "Open menu" : "Abrir menú")
+      );
+
+    }
+
+    /* MENÚ MÓVIL */
+
+    menuButton.addEventListener("click", function() {
+
+      const isOpen =
+        mobileMenu.classList.toggle("open");
+
+      updateMenuButton(isOpen);
+
+      if (isOpen) {
+        header.classList.remove("header-hidden");
+      }
+
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        mobileMenu.classList.remove("open");
+        updateMenuButton(false);
+
+      });
+
+    });
+
+    /* FILTROS */
+
+    const filterButtons =
+      document.querySelectorAll(".archive-filter");
+
+    const artworkCards =
+      document.querySelectorAll(".archive-card");
+
+    filterButtons.forEach(function(button) {
+
+      button.addEventListener("click", function() {
+
+        const selectedFilter =
+          button.dataset.filter;
+
+        filterButtons.forEach(function(otherButton) {
+
+          const active = otherButton === button;
+
+          otherButton.classList.toggle("active", active);
+
+          otherButton.setAttribute(
+            "aria-pressed",
+            String(active)
+          );
+
+        });
+
+        artworkCards.forEach(function(card) {
+
+          const isAvailable =
+            card.dataset.available === "true";
+
+          card.hidden =
+            selectedFilter === "available" && !isAvailable;
+
+        });
+
+      });
+
+    });
+
+    /* CAMBIO DE IDIOMA */
+
+    window.addEventListener(
+      "corrales:languagechange",
       function() {
 
-        const isOpen =
-          mobileMenu.classList.toggle("open");
+        const english =
+          currentLanguage() === "en";
 
-        menuButton.textContent =
-          isOpen ? "CERRAR" : "MENÚ";
-
-        menuButton.setAttribute(
-          "aria-expanded",
-          isOpen ? "true" : "false"
+        updateMenuButton(
+          mobileMenu.classList.contains("open")
         );
+
+        document.title = english
+          ? "Artwork Archive — Ismael Corrales"
+          : "Archivo de obra — Ismael Corrales";
+
+        const description =
+          document.querySelector('meta[name="description"]');
+
+        if (description) {
+
+          description.setAttribute(
+            "content",
+            english
+              ? "Artwork archive by Ismael Corrales. Original paintings available."
+              : "Archivo de obra de Ismael Corrales. Pinturas originales disponibles."
+          );
+
+        }
 
       }
     );
 
+    /* ENCABEZADO INTELIGENTE */
 
-    mobileMenu
-      .querySelectorAll("a")
-      .forEach(function(link) {
+    let lastScrollY = window.scrollY;
 
-        link.addEventListener(
-          "click",
-          function() {
+    window.addEventListener("scroll", function() {
 
-            mobileMenu.classList.remove("open");
+      const currentScrollY = window.scrollY;
 
-            menuButton.textContent = "MENÚ";
+      if (mobileMenu.classList.contains("open")) {
 
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
+        header.classList.remove("header-hidden");
+        lastScrollY = currentScrollY;
+        return;
 
-          }
-        );
+      }
 
-      });
+      if (currentScrollY < 80) {
+
+        header.classList.remove("header-hidden");
+        lastScrollY = currentScrollY;
+        return;
+
+      }
+
+      if (currentScrollY > lastScrollY) {
+
+        header.classList.add("header-hidden");
+
+      } else if (currentScrollY < lastScrollY) {
+
+        header.classList.remove("header-hidden");
+
+      }
+
+      lastScrollY = currentScrollY;
+
+    }, { passive: true });
 
   </script>
+
+  <!-- SISTEMA DE IDIOMAS -->
+
+  <script src="./idiomas.js?v=2"></script>
 
 </body>
 </html>
