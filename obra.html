@@ -174,6 +174,7 @@
 
     .archive-image-link {
       display: block;
+      position: relative;
       overflow: hidden;
       background: #e7e1d8;
     }
@@ -235,6 +236,29 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--muted);
+    }
+
+    /* ETIQUETA DE OBRA VENDIDA */
+
+    .sold-badge {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+
+      padding: 12px 24px;
+      border-radius: 12px;
+
+      background: #d00000;
+      color: #ffffff;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      line-height: 1.2;
+
+      pointer-events: none;
     }
 
     /* CIERRE */
@@ -394,6 +418,16 @@
 
       .archive-status {
         font-size: .55rem;
+      }
+
+      /* ETIQUETA VENDIDO EN IPHONE */
+
+      .sold-badge {
+        left: 10px;
+        bottom: 10px;
+        padding: 8px 13px;
+        border-radius: 9px;
+        font-size: 15px;
       }
 
       .archive-final {
@@ -923,22 +957,32 @@
 
       </article>
 
-      <!-- SOLO AMO A MI CUENTA DE BANCO -->
+      <!-- SOLO AMO A MI CUENTA DE BANCO — VENDIDA -->
 
       <article
         class="archive-card"
-        data-available="true"
+        data-available="false"
       >
 
         <a
           href="./banco.html"
           class="archive-image-link"
         >
+
           <img
             src="./assets/banco.jpg"
             alt="Solo amo a mi cuenta de banco"
             loading="lazy"
           >
+
+          <span
+            class="sold-badge"
+            data-es="Vendido"
+            data-en="Sold"
+          >
+            Vendido
+          </span>
+
         </a>
 
         <div class="archive-card-content">
@@ -969,10 +1013,10 @@
 
             <span
               class="archive-status"
-              data-es="Disponible"
-              data-en="Available"
+              data-es="Vendido"
+              data-en="Sold"
             >
-              Disponible
+              Vendido
             </span>
 
           </div>
@@ -1001,8 +1045,7 @@
           data-es="Una pieza. Una presencia."
           data-en="One piece. One presence."
         >
-          Una pieza.<br>
-          Una presencia.
+          Una pieza. Una presencia.
         </h2>
 
         <a
