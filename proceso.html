@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -32,316 +31,315 @@
 
   <link
     rel="stylesheet"
-    href="./styles.css?v=149"
+    href="./styles.css?v=206"
   >
 
   <style>
 
-    /* =========================
-       HEADER INTELIGENTE
-       ========================= */
+    /* ENCABEZADO */
 
-    .site-header{
-      position:sticky !important;
-      top:0 !important;
-      z-index:999999 !important;
+    .site-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 999999 !important;
 
       transition:
         transform .3s ease,
         opacity .3s ease !important;
 
-      will-change:transform;
+      will-change: transform;
 
-      background:rgba(243,239,231,.96) !important;
+      background: rgba(243,239,231,.96) !important;
 
-      backdrop-filter:blur(10px) !important;
-      -webkit-backdrop-filter:blur(10px) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
 
-      overflow:visible !important;
+      overflow: visible !important;
     }
 
-    .site-header.header-hidden{
-      transform:translateY(-110%) !important;
-      opacity:0 !important;
+    .site-header.header-hidden {
+      transform: translateY(-110%) !important;
+      opacity: 0 !important;
     }
 
-
-    /* =========================
-       MENÚ MÓVIL
-       ========================= */
-
-    .mobile-menu-toggle{
-      display:none;
+    .mobile-menu-toggle,
+    .mobile-nav {
+      display: none;
     }
 
-    .mobile-nav{
-      display:none;
+    /* SELECTOR DE IDIOMAS */
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      white-space: nowrap;
     }
 
-
-    /* =========================
-       HERO
-       ========================= */
-
-    .process-hero{
-      padding:90px 28px 80px;
-      border-bottom:1px solid var(--line);
+    .language-switcher button {
+      padding: 5px 2px;
+      border: 0;
+      background: transparent;
+      color: #77716a;
+      font: inherit;
+      cursor: pointer;
     }
 
-    .process-hero h1{
-      margin:18px 0 30px;
-      max-width:10ch;
-      font-size:clamp(4rem,9vw,8rem);
-      line-height:.9;
+    .language-switcher button.active,
+    .language-switcher button[aria-pressed="true"] {
+      color: #161513;
+      font-weight: 600;
     }
 
-    .process-intro{
-      max-width:720px;
-      margin:0;
-      font-size:1.15rem;
-      line-height:1.7;
-      color:var(--muted);
+    .language-switcher span {
+      color: #aaa49c;
     }
 
-
-    /* =========================
-       SECCIONES DEL PROCESO
-       ========================= */
-
-    .process-section{
-      padding:100px 28px;
-      border-bottom:1px solid var(--line);
-
-      display:grid;
-
-      grid-template-columns:.35fr 1.65fr;
-
-      gap:50px;
+    .desktop-language {
+      margin-left: auto;
+      margin-right: 28px;
     }
 
-    .process-content{
-      max-width:900px;
+    .mobile-language {
+      display: none;
     }
 
-    .process-content h2{
-      margin:0 0 26px;
+    /* PORTADA */
 
-      font-size:clamp(2.8rem,5vw,5rem);
-
-      line-height:1;
+    .process-hero {
+      padding: 90px 28px 80px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .process-content p{
-      max-width:760px;
-
-      margin:0 0 20px;
-
-      font-size:1.05rem;
-
-      line-height:1.75;
-
-      color:#38342f;
+    .process-hero h1 {
+      margin: 18px 0 30px;
+      max-width: 10ch;
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: .9;
     }
 
-
-    /* IMÁGENES PENDIENTES */
-
-    .process-placeholder{
-      margin-top:42px;
-
-      min-height:420px;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      border:1px solid var(--line);
-
-      background:#e5dfd5;
-
-      color:var(--muted);
-
-      font-size:.72rem;
-
-      letter-spacing:.14em;
-
-      text-transform:uppercase;
+    .process-intro {
+      max-width: 720px;
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--muted);
     }
 
+    /* ETAPAS DEL PROCESO */
 
-    /* =========================
-       CIERRE
-       ========================= */
+    .process-section {
+      padding: 100px 28px;
+      border-bottom: 1px solid var(--line);
 
-    .process-end{
-      padding:110px 28px;
+      display: grid;
+      grid-template-columns: .35fr 1.65fr;
+      gap: 50px;
     }
 
-    .process-end h2{
-      margin:18px 0 36px;
-
-      font-size:clamp(3.2rem,7vw,6.5rem);
-
-      line-height:.95;
+    .process-content {
+      max-width: 900px;
     }
 
+    .process-content h2 {
+      margin: 0 0 26px;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+    }
 
-    /* =========================
-       MÓVIL
-       ========================= */
+    .process-content p {
+      max-width: 760px;
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #38342f;
+    }
 
-    @media(max-width:800px){
+    /* ESPACIOS PARA FOTOGRAFÍAS */
 
-      .site-header{
-        display:flex !important;
+    .process-placeholder {
+      margin-top: 42px;
+      min-height: 420px;
 
-        align-items:center !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-        justify-content:space-between !important;
+      border: 1px solid var(--line);
+      background: #e5dfd5;
 
-        min-height:118px !important;
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px;
+    }
 
-        padding:18px !important;
+    /* CIERRE */
 
-        overflow:visible !important;
+    .process-end {
+      padding: 110px 28px;
+    }
+
+    .process-end h2 {
+      margin: 18px 0 36px;
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      line-height: .95;
+    }
+
+    /* VERSIÓN MÓVIL */
+
+    @media (max-width: 800px) {
+
+      .site-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        min-height: 118px !important;
+        padding: 18px !important;
+        overflow: visible !important;
       }
 
-
-      .site-header .nav{
-        display:none !important;
+      .site-header .nav {
+        display: none !important;
       }
 
-
-      .mobile-menu-toggle{
-        display:block !important;
-
-        border:0;
-
-        background:transparent;
-
-        color:#161513;
-
-        font-family:"DM Sans",sans-serif;
-
-        font-size:12px;
-
-        font-weight:500;
-
-        letter-spacing:.12em;
-
-        text-transform:uppercase;
-
-        padding:10px 0;
-
-        cursor:pointer;
+      .desktop-language {
+        display: none !important;
       }
 
+      .mobile-language {
+        display: flex;
+        justify-content: flex-start;
 
-      .mobile-nav{
-        display:none;
-
-        position:fixed;
-
-        top:118px;
-
-        left:0;
-
-        right:0;
-
-        z-index:999998;
-
-        padding:20px 18px 30px;
-
-        background:#f3efe7;
+        padding: 12px 0 18px;
 
         border-bottom:
           1px solid rgba(22,21,19,.18);
       }
 
-
-      .mobile-nav.open{
-        display:block !important;
+      .mobile-language button {
+        font-size: 13px;
       }
 
+      .mobile-menu-toggle {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
 
-      .mobile-nav a{
-        display:block;
+        position: relative !important;
+        z-index: 100001 !important;
 
-        padding:17px 0;
+        margin: 0 !important;
+        padding: 10px 0 !important;
+
+        border: 0 !important;
+        background: transparent !important;
+
+        color: #161513 !important;
+
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+
+        letter-spacing: .12em !important;
+        text-transform: uppercase !important;
+
+        cursor: pointer;
+      }
+
+      .mobile-nav {
+        display: none;
+
+        position: fixed;
+        top: 118px;
+        left: 0;
+        right: 0;
+
+        z-index: 999998;
+
+        padding: 20px 18px 30px;
+
+        background: #f3efe7;
+
+        border-bottom:
+          1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-nav.open {
+        display: block !important;
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 17px 0;
 
         border-bottom:
           1px solid rgba(22,21,19,.18);
 
-        color:#161513;
+        color: #161513;
 
-        font-family:"Playfair Display",serif;
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        line-height: 1;
 
-        font-size:32px;
-
-        line-height:1;
-
-        text-decoration:none;
+        text-decoration: none;
       }
 
+      /* PORTADA MÓVIL */
 
-      .process-hero{
-        padding:72px 18px 58px;
+      .process-hero {
+        padding: 72px 18px 58px;
       }
 
-
-      .process-hero h1{
-        font-size:
-          clamp(3.5rem,16vw,5.5rem);
+      .process-hero h1 {
+        font-size: clamp(3.5rem, 16vw, 5.5rem);
       }
 
-
-      .process-intro{
-        font-size:1rem;
+      .process-intro {
+        font-size: 1rem;
       }
 
+      /* ETAPAS MÓVILES */
 
-      .process-section{
-        padding:75px 18px;
-
-        display:block;
+      .process-section {
+        padding: 75px 18px;
+        display: block;
       }
 
-
-      .process-section .section-number{
-        margin-bottom:30px;
+      .process-section .section-number {
+        margin-bottom: 30px;
       }
 
-
-      .process-content h2{
-        font-size:
-          clamp(2.8rem,12vw,4.2rem);
+      .process-content h2 {
+        font-size: clamp(2.8rem, 12vw, 4.2rem);
       }
 
-
-      .process-content p{
-        font-size:.98rem;
-
-        line-height:1.68;
+      .process-content p {
+        font-size: .98rem;
+        line-height: 1.68;
       }
 
-
-      .process-placeholder{
-        min-height:300px;
-
-        margin-top:34px;
+      .process-placeholder {
+        min-height: 300px;
+        margin-top: 34px;
       }
 
+      /* CIERRE MÓVIL */
 
-      .process-end{
-        padding:80px 18px;
+      .process-end {
+        padding: 80px 18px;
       }
 
-
-      .process-end h2{
-        font-size:
-          clamp(3rem,14vw,4.8rem);
+      .process-end h2 {
+        font-size: clamp(3rem, 14vw, 4.8rem);
       }
 
     }
@@ -350,16 +348,11 @@
 
 </head>
 
-
 <body>
 
-
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- ENCABEZADO -->
 
   <header class="site-header">
-
 
     <a
       href="./index.html"
@@ -368,45 +361,78 @@
       CORRALES
     </a>
 
-
     <a
       href="./index.html"
       class="header-logo"
       aria-label="Inicio Corrales"
     >
-
       <img
         src="./assets/Logo-header.PNG?v=4"
-        alt=""
+        alt="Logotipo Corrales"
       >
-
     </a>
 
+    <!-- IDIOMAS EN COMPUTADORA -->
+
+    <div
+      class="language-switcher desktop-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+
+      <button
+        type="button"
+        data-lang-button="es"
+      >
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button
+        type="button"
+        data-lang-button="en"
+      >
+        EN
+      </button>
+
+    </div>
+
+    <!-- NAVEGACIÓN -->
 
     <nav class="nav">
 
-      <a href="./index.html">
-        Inicio
-      </a>
+      <a
+        href="./index.html"
+        data-es="Inicio"
+        data-en="Home"
+      >Inicio</a>
 
-      <a href="./obra.html">
-        Obra
-      </a>
+      <a
+        href="./obra.html"
+        data-es="Obra"
+        data-en="Artwork"
+      >Obra</a>
 
-      <a href="./artista.html">
-        Artista
-      </a>
+      <a
+        href="./artista.html"
+        data-es="Artista"
+        data-en="Artist"
+      >Artista</a>
 
-      <a href="./proceso.html">
-        Proceso
-      </a>
+      <a
+        href="./proceso.html"
+        data-es="Proceso"
+        data-en="Process"
+      >Proceso</a>
 
-      <a href="./contacto.html">
-        Contacto
-      </a>
+      <a
+        href="./contacto.html"
+        data-es="Contacto"
+        data-en="Contact"
+      >Contacto</a>
 
     </nav>
-
 
     <button
       class="mobile-menu-toggle"
@@ -418,102 +444,151 @@
       MENÚ
     </button>
 
-
   </header>
 
-
-
-  <!-- =========================
-       MENÚ MÓVIL
-       ========================= -->
+  <!-- MENÚ MÓVIL -->
 
   <nav
     class="mobile-nav"
     id="mobileMenu"
+    aria-label="Navegación móvil"
   >
 
-    <a href="./index.html">
-      Inicio
-    </a>
+    <div
+      class="language-switcher mobile-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
 
-    <a href="./obra.html">
-      Obra
-    </a>
+      <button
+        type="button"
+        data-lang-button="es"
+      >
+        ES
+      </button>
 
-    <a href="./artista.html">
-      Artista
-    </a>
+      <span>/</span>
 
-    <a href="./proceso.html">
-      Proceso
-    </a>
+      <button
+        type="button"
+        data-lang-button="en"
+      >
+        EN
+      </button>
 
-    <a href="./contacto.html">
-      Contacto
-    </a>
+    </div>
+
+    <a
+      href="./index.html"
+      data-es="Inicio"
+      data-en="Home"
+    >Inicio</a>
+
+    <a
+      href="./obra.html"
+      data-es="Obra"
+      data-en="Artwork"
+    >Obra</a>
+
+    <a
+      href="./artista.html"
+      data-es="Artista"
+      data-en="Artist"
+    >Artista</a>
+
+    <a
+      href="./proceso.html"
+      data-es="Proceso"
+      data-en="Process"
+    >Proceso</a>
+
+    <a
+      href="./contacto.html"
+      data-es="Contacto"
+      data-en="Contact"
+    >Contacto</a>
 
   </nav>
 
-
-
   <main>
 
-
-    <!-- =========================
-         HERO
-         ========================= -->
+    <!-- PORTADA -->
 
     <section class="process-hero">
 
-      <p class="eyebrow">
+      <p
+        class="eyebrow"
+        data-es="PROCESO · PRÁCTICA"
+        data-en="PROCESS · PRACTICE"
+      >
         PROCESO · PRÁCTICA
       </p>
 
-      <h1>
-        Del entorno<br>
-        al lienzo.
+      <h1
+        data-es="Del entorno al lienzo."
+        data-en="From surroundings to canvas."
+      >
+        Del entorno al lienzo.
       </h1>
 
-      <p class="process-intro">
-        El proceso creativo comienza con la observación. Personas,
-        objetos, conversaciones y escenas cotidianas se convierten en
-        referencias que posteriormente son reconstruidas mediante la
-        fotografía, la composición y la pintura.
+      <p
+        class="process-intro"
+        data-es="El proceso creativo comienza con la observación. Personas, objetos, conversaciones y escenas cotidianas se convierten en referencias que posteriormente son reconstruidas mediante la fotografía, la composición y la pintura."
+        data-en="The creative process begins with observation. People, objects, conversations and everyday scenes become references that are later reconstructed through photography, composition and painting."
+      >
+        El proceso creativo comienza con la observación.
+        Personas, objetos, conversaciones y escenas cotidianas
+        se convierten en referencias que posteriormente son
+        reconstruidas mediante la fotografía, la composición
+        y la pintura.
       </p>
 
     </section>
 
-
-
-    <!-- =========================
-         01 · OBSERVAR
-         ========================= -->
+    <!-- 01 OBSERVAR -->
 
     <section class="process-section">
 
-      <p class="section-number">
+      <p
+        class="section-number"
+        data-es="01 · OBSERVAR"
+        data-en="01 · OBSERVE"
+      >
         01 · OBSERVAR
       </p>
 
       <div class="process-content">
 
-        <h2>
+        <h2
+          data-es="Encontrar la escena."
+          data-en="Finding the scene."
+        >
           Encontrar la escena.
         </h2>
 
-        <p>
+        <p
+          data-es="El punto de partida suele aparecer en la vida cotidiana: una persona, una postura, un objeto, un animal o una situación que despierta una imagen posible."
+          data-en="The starting point often emerges from everyday life: a person, a posture, an object, an animal or a situation that suggests a possible image."
+        >
           El punto de partida suele aparecer en la vida cotidiana:
-          una persona, una postura, un objeto, un animal o una situación
-          que despierta una imagen posible.
+          una persona, una postura, un objeto, un animal o una
+          situación que despierta una imagen posible.
         </p>
 
-        <p>
-          Antes de pensar en la pintura, la escena se observa y se
-          analiza. La intención es reconocer qué elemento tiene fuerza
-          suficiente para sostener una composición.
+        <p
+          data-es="Antes de pensar en la pintura, la escena se observa y se analiza. La intención es reconocer qué elemento tiene fuerza suficiente para sostener una composición."
+          data-en="Before considering the painting itself, the scene is observed and analyzed. The intention is to identify which element has enough strength to support a composition."
+        >
+          Antes de pensar en la pintura, la escena se observa
+          y se analiza. La intención es reconocer qué elemento
+          tiene fuerza suficiente para sostener una composición.
         </p>
 
-        <div class="process-placeholder">
+        <div
+          class="process-placeholder"
+          data-es="Imagen del proceso · Observación"
+          data-en="Process image · Observation"
+        >
           Imagen del proceso · Observación
         </div>
 
@@ -521,36 +596,51 @@
 
     </section>
 
-
-
-    <!-- =========================
-         02 · FOTOGRAFIAR
-         ========================= -->
+    <!-- 02 FOTOGRAFIAR -->
 
     <section class="process-section">
 
-      <p class="section-number">
+      <p
+        class="section-number"
+        data-es="02 · FOTOGRAFIAR"
+        data-en="02 · PHOTOGRAPH"
+      >
         02 · FOTOGRAFIAR
       </p>
 
       <div class="process-content">
 
-        <h2>
+        <h2
+          data-es="Construir la referencia."
+          data-en="Building the reference."
+        >
           Construir la referencia.
         </h2>
 
-        <p>
-          La fotografía funciona como una herramienta para conservar
-          el momento y comenzar a controlar la composición.
+        <p
+          data-es="La fotografía funciona como una herramienta para conservar el momento y comenzar a controlar la composición."
+          data-en="Photography serves as a tool to preserve the moment and begin shaping the composition."
+        >
+          La fotografía funciona como una herramienta
+          para conservar el momento y comenzar a controlar
+          la composición.
         </p>
 
-        <p>
-          En ocasiones se trabaja con modelos o escenas preparadas para
-          modificar posturas, controlar la dirección de la luz o probar
-          distintas perspectivas antes de llevar la imagen al lienzo.
+        <p
+          data-es="En ocasiones se trabaja con modelos o escenas preparadas para modificar posturas, controlar la dirección de la luz o probar distintas perspectivas antes de llevar la imagen al lienzo."
+          data-en="At times, models or staged scenes are used to adjust poses, control the direction of light or explore different perspectives before transferring the image to canvas."
+        >
+          En ocasiones se trabaja con modelos o escenas
+          preparadas para modificar posturas, controlar
+          la dirección de la luz o probar distintas
+          perspectivas antes de llevar la imagen al lienzo.
         </p>
 
-        <div class="process-placeholder">
+        <div
+          class="process-placeholder"
+          data-es="Imagen del proceso · Fotografía"
+          data-en="Process image · Photography"
+        >
           Imagen del proceso · Fotografía
         </div>
 
@@ -558,36 +648,51 @@
 
     </section>
 
-
-
-    <!-- =========================
-         03 · COMPONER
-         ========================= -->
+    <!-- 03 COMPONER -->
 
     <section class="process-section">
 
-      <p class="section-number">
+      <p
+        class="section-number"
+        data-es="03 · COMPONER"
+        data-en="03 · COMPOSE"
+      >
         03 · COMPONER
       </p>
 
       <div class="process-content">
 
-        <h2>
+        <h2
+          data-es="Decidir qué permanece."
+          data-en="Deciding what remains."
+        >
           Decidir qué permanece.
         </h2>
 
-        <p>
-          La referencia no se reproduce necesariamente de manera literal.
-          Elementos pueden desplazarse, desaparecer o incorporarse para
-          fortalecer la lectura de la escena.
+        <p
+          data-es="La referencia no se reproduce necesariamente de manera literal. Elementos pueden desplazarse, desaparecer o incorporarse para fortalecer la lectura de la escena."
+          data-en="The reference is not necessarily reproduced literally. Elements may be moved, removed or introduced to strengthen the visual interpretation of the scene."
+        >
+          La referencia no se reproduce necesariamente
+          de manera literal. Elementos pueden desplazarse,
+          desaparecer o incorporarse para fortalecer
+          la lectura de la escena.
         </p>
 
-        <p>
-          La luz, el espacio negativo, el contraste y la relación entre
-          las figuras determinan la estructura final de la composición.
+        <p
+          data-es="La luz, el espacio negativo, el contraste y la relación entre las figuras determinan la estructura final de la composición."
+          data-en="Light, negative space, contrast and the relationships between figures determine the final structure of the composition."
+        >
+          La luz, el espacio negativo, el contraste
+          y la relación entre las figuras determinan
+          la estructura final de la composición.
         </p>
 
-        <div class="process-placeholder">
+        <div
+          class="process-placeholder"
+          data-es="Imagen del proceso · Composición"
+          data-en="Process image · Composition"
+        >
           Imagen del proceso · Composición
         </div>
 
@@ -595,36 +700,51 @@
 
     </section>
 
-
-
-    <!-- =========================
-         04 · PINTAR
-         ========================= -->
+    <!-- 04 PINTAR -->
 
     <section class="process-section">
 
-      <p class="section-number">
+      <p
+        class="section-number"
+        data-es="04 · PINTAR"
+        data-en="04 · PAINT"
+      >
         04 · PINTAR
       </p>
 
       <div class="process-content">
 
-        <h2>
+        <h2
+          data-es="Llevar la imagen al lienzo."
+          data-en="Bringing the image to canvas."
+        >
           Llevar la imagen al lienzo.
         </h2>
 
-        <p>
-          La pintura se desarrolla principalmente con acrílico sobre
-          lienzo, construyendo gradualmente valores, color, volumen y
-          profundidad.
+        <p
+          data-es="La pintura se desarrolla principalmente con acrílico sobre lienzo, construyendo gradualmente valores, color, volumen y profundidad."
+          data-en="The painting is developed primarily with acrylic on canvas, gradually building tonal values, color, volume and depth."
+        >
+          La pintura se desarrolla principalmente
+          con acrílico sobre lienzo, construyendo
+          gradualmente valores, color, volumen
+          y profundidad.
         </p>
 
-        <p>
-          La luz y el contraste permiten dirigir la mirada y convertir
-          la oscuridad en una parte activa de la composición.
+        <p
+          data-es="La luz y el contraste permiten dirigir la mirada y convertir la oscuridad en una parte activa de la composición."
+          data-en="Light and contrast guide the viewer's eye and transform darkness into an active element of the composition."
+        >
+          La luz y el contraste permiten dirigir
+          la mirada y convertir la oscuridad
+          en una parte activa de la composición.
         </p>
 
-        <div class="process-placeholder">
+        <div
+          class="process-placeholder"
+          data-es="Imagen del proceso · Pintura"
+          data-en="Process image · Painting"
+        >
           Imagen del proceso · Pintura
         </div>
 
@@ -632,36 +752,51 @@
 
     </section>
 
-
-
-    <!-- =========================
-         05 · TERMINAR
-         ========================= -->
+    <!-- 05 TERMINAR -->
 
     <section class="process-section">
 
-      <p class="section-number">
+      <p
+        class="section-number"
+        data-es="05 · TERMINAR"
+        data-en="05 · FINISH"
+      >
         05 · TERMINAR
       </p>
 
       <div class="process-content">
 
-        <h2>
+        <h2
+          data-es="Saber cuándo detenerse."
+          data-en="Knowing when to stop."
+        >
           Saber cuándo detenerse.
         </h2>
 
-        <p>
-          El final de una obra no depende únicamente del detalle.
-          También implica reconocer cuándo la composición, la luz y la
-          atmósfera ya comunican lo necesario.
+        <p
+          data-es="El final de una obra no depende únicamente del detalle. También implica reconocer cuándo la composición, la luz y la atmósfera ya comunican lo necesario."
+          data-en="Finishing a painting is not solely a matter of detail. It also involves recognizing when the composition, light and atmosphere already communicate what is needed."
+        >
+          El final de una obra no depende únicamente
+          del detalle. También implica reconocer cuándo
+          la composición, la luz y la atmósfera ya
+          comunican lo necesario.
         </p>
 
-        <p>
-          Cada pintura queda incorporada al archivo como parte de un
-          proceso continuo de observación, práctica y aprendizaje.
+        <p
+          data-es="Cada pintura queda incorporada al archivo como parte de un proceso continuo de observación, práctica y aprendizaje."
+          data-en="Each painting becomes part of the archive as a record of an ongoing process of observation, practice and learning."
+        >
+          Cada pintura queda incorporada al archivo
+          como parte de un proceso continuo de
+          observación, práctica y aprendizaje.
         </p>
 
-        <div class="process-placeholder">
+        <div
+          class="process-placeholder"
+          data-es="Imagen del proceso · Obra terminada"
+          data-en="Process image · Finished artwork"
+        >
           Imagen del proceso · Obra terminada
         </div>
 
@@ -669,40 +804,39 @@
 
     </section>
 
-
-
-    <!-- =========================
-         CIERRE
-         ========================= -->
+    <!-- CIERRE -->
 
     <section class="process-end">
 
-      <p class="eyebrow">
+      <p
+        class="eyebrow"
+        data-es="CONTINUAR"
+        data-en="CONTINUE"
+      >
         CONTINUAR
       </p>
 
-      <h2>
-        Explorar<br>
-        la obra.
+      <h2
+        data-es="Explorar la obra."
+        data-en="Explore the artwork."
+      >
+        Explorar la obra.
       </h2>
 
       <a
         href="./obra.html"
         class="text-link"
+        data-es="VER ARCHIVO DE OBRA →"
+        data-en="VIEW ARTWORK ARCHIVE →"
       >
         VER ARCHIVO DE OBRA →
       </a>
 
     </section>
 
-
   </main>
 
-
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- PIE DE PÁGINA -->
 
   <footer class="footer">
 
@@ -712,23 +846,26 @@
         CORRALES
       </p>
 
-      <p>
+      <p
+        data-es="Arte contemporáneo · Originales sobre lienzo"
+        data-en="Contemporary art · Original works on canvas"
+      >
         Arte contemporáneo · Originales sobre lienzo
       </p>
 
     </div>
 
-    <a href="./index.html">
+    <a
+      href="./index.html"
+      data-es="Inicio ↑"
+      data-en="Home ↑"
+    >
       Inicio ↑
     </a>
 
   </footer>
 
-
-
-  <!-- =========================
-       JAVASCRIPT
-       ========================= -->
+  <!-- FUNCIONES DEL MENÚ -->
 
   <script>
 
@@ -741,154 +878,148 @@
     const header =
       document.querySelector(".site-header");
 
+    function currentLanguage() {
 
-    /* MENÚ MÓVIL */
+      return window.CorralesLanguage
+        ? window.CorralesLanguage.detect()
+        : "es";
 
-    menuButton.addEventListener(
-      "click",
-      function(){
+    }
 
-        const isOpen =
-          mobileMenu.classList.toggle("open");
+    function updateMenuButton(isOpen) {
 
-        menuButton.textContent =
-          isOpen ? "CERRAR" : "MENÚ";
+      const english = currentLanguage() === "en";
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          isOpen ? "true" : "false"
-        );
+      menuButton.textContent = isOpen
+        ? (english ? "CLOSE" : "CERRAR")
+        : (english ? "MENU" : "MENÚ");
 
-        if(isOpen){
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
 
-          header.classList.remove(
-            "header-hidden"
-          );
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? (english ? "Close menu" : "Cerrar menú")
+          : (english ? "Open menu" : "Abrir menú")
+      );
 
-        }
+    }
+
+    /* ABRIR Y CERRAR MENÚ */
+
+    menuButton.addEventListener("click", function() {
+
+      const isOpen =
+        mobileMenu.classList.toggle("open");
+
+      updateMenuButton(isOpen);
+
+      if (isOpen) {
+
+        header.classList.remove("header-hidden");
 
       }
-    );
 
+    });
 
-    mobileMenu
-      .querySelectorAll("a")
-      .forEach(function(link){
+    /* CERRAR MENÚ AL NAVEGAR */
 
-        link.addEventListener(
-          "click",
-          function(){
+    mobileMenu.querySelectorAll("a").forEach(function(link) {
 
-            mobileMenu.classList.remove(
-              "open"
-            );
+      link.addEventListener("click", function() {
 
-            menuButton.textContent =
-              "MENÚ";
+        mobileMenu.classList.remove("open");
 
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          }
-        );
+        updateMenuButton(false);
 
       });
 
+    });
 
-    /* =========================
-       HEADER INTELIGENTE
-       BAJAR = OCULTAR
-       SUBIR = MOSTRAR
-       ========================= */
-
-    let lastScrollY =
-      window.scrollY;
-
+    /* ACTUALIZAR IDIOMA */
 
     window.addEventListener(
-      "scroll",
-      function(){
+      "corrales:languagechange",
+      function() {
 
-        const currentScrollY =
-          window.scrollY;
+        updateMenuButton(
+          mobileMenu.classList.contains("open")
+        );
 
+        const english = currentLanguage() === "en";
 
-        /* Si el menú está abierto,
-           mantener header visible */
+        document.title = english
+          ? "Creative Process — Ismael Corrales"
+          : "Proceso creativo — Ismael Corrales";
 
-        if(
-          mobileMenu.classList.contains(
-            "open"
-          )
-        ){
+        const description = document.querySelector(
+          'meta[name="description"]'
+        );
 
-          lastScrollY =
-            currentScrollY;
+        if (description) {
 
-          return;
-
-        }
-
-
-        /* Cerca del inicio,
-           siempre visible */
-
-        if(currentScrollY < 80){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-          lastScrollY =
-            currentScrollY;
-
-          return;
-
-        }
-
-
-        /* BAJANDO */
-
-        if(
-          currentScrollY >
-          lastScrollY
-        ){
-
-          header.classList.add(
-            "header-hidden"
+          description.setAttribute(
+            "content",
+            english
+              ? "Explore the creative process of Ismael Corrales: observation, photography, composition and painting."
+              : "Conoce el proceso creativo de Ismael Corrales: observación, fotografía, composición y pintura."
           );
 
         }
 
-
-        /* SUBIENDO */
-
-        else if(
-          currentScrollY <
-          lastScrollY
-        ){
-
-          header.classList.remove(
-            "header-hidden"
-          );
-
-        }
-
-
-        lastScrollY =
-          currentScrollY;
-
-      },
-      {
-        passive:true
       }
     );
 
+    /* ENCABEZADO INTELIGENTE */
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", function() {
+
+      const currentScrollY = window.scrollY;
+
+      if (mobileMenu.classList.contains("open")) {
+
+        header.classList.remove("header-hidden");
+
+        lastScrollY = currentScrollY;
+
+        return;
+
+      }
+
+      if (currentScrollY < 80) {
+
+        header.classList.remove("header-hidden");
+
+        lastScrollY = currentScrollY;
+
+        return;
+
+      }
+
+      if (currentScrollY > lastScrollY) {
+
+        header.classList.add("header-hidden");
+
+      } else if (currentScrollY < lastScrollY) {
+
+        header.classList.remove("header-hidden");
+
+      }
+
+      lastScrollY = currentScrollY;
+
+    }, { passive: true });
+
   </script>
 
+  <!-- SISTEMA DE IDIOMAS -->
+
+  <script src="./idiomas.js?v=2"></script>
 
 </body>
-
 </html>
