@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>La noche oscura del alma — Ismael Corrales</title>
 
@@ -20,7 +24,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=162">
+  <link rel="stylesheet" href="./styles.css?v=147">
 
   <style>
 
@@ -30,11 +34,18 @@
       position: sticky !important;
       top: 0 !important;
       z-index: 999999 !important;
-      transition: transform .3s ease, opacity .3s ease !important;
+
+      transition:
+        transform .3s ease,
+        opacity .3s ease !important;
+
       will-change: transform;
+
       background: rgba(243,239,231,.96) !important;
+
       backdrop-filter: blur(10px) !important;
       -webkit-backdrop-filter: blur(10px) !important;
+
       overflow: visible !important;
     }
 
@@ -43,11 +54,50 @@
       opacity: 0 !important;
     }
 
-    #menuButton {
-      display: none !important;
+    .mobile-menu-toggle,
+    .mobile-nav {
+      display: none;
     }
 
-    #mobileMenu {
+    /* SELECTOR DE IDIOMAS */
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .language-switcher button {
+      padding: 5px 2px;
+      border: 0;
+      background: transparent;
+      color: #77716a;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .language-switcher button.active,
+    .language-switcher button[aria-pressed="true"] {
+      color: #161513;
+      font-weight: 600;
+    }
+
+    .language-switcher span {
+      color: #aaa49c;
+    }
+
+    .desktop-language {
+      margin-left: auto;
+      margin-right: 28px;
+    }
+
+    .mobile-language {
       display: none;
     }
 
@@ -78,6 +128,7 @@
     .artwork-details-inner {
       max-width: 1420px;
       margin: 0 auto;
+
       display: grid;
       grid-template-columns: .38fr 1.62fr;
       gap: 60px;
@@ -86,6 +137,7 @@
     .artwork-details-title h2 {
       margin: 0;
       max-width: 10ch;
+
       font-size: clamp(3.3rem,6vw,6rem);
       line-height: .93;
       font-weight: 400;
@@ -94,14 +146,19 @@
 
     .section-label {
       margin: 0 0 16px;
+
       font-family: "DM Sans", sans-serif;
       font-size: .68rem;
       font-weight: 500;
+
       letter-spacing: .15em;
       line-height: 1.4;
       text-transform: uppercase;
+
       color: #6f6a62;
     }
+
+    /* DATOS TÉCNICOS */
 
     .artwork-meta {
       border-top: 1px solid var(--line);
@@ -111,6 +168,7 @@
       display: grid;
       grid-template-columns: 145px 1fr;
       gap: 28px;
+
       padding: 20px 0;
       border-bottom: 1px solid var(--line);
     }
@@ -126,6 +184,8 @@
       font-size: .95rem;
       line-height: 1.5;
     }
+
+    /* BOTÓN DE ADQUISICIÓN */
 
     .artwork-purchase {
       margin-top: 24px !important;
@@ -146,6 +206,7 @@
     .artwork-story-inner {
       max-width: 1420px;
       margin: 0 auto;
+
       display: grid;
       grid-template-columns: .38fr 1.62fr;
       gap: 60px;
@@ -154,6 +215,7 @@
     .artwork-story h2 {
       margin: 0;
       max-width: 10ch;
+
       font-size: clamp(3.3rem,6vw,6rem);
       line-height: .93;
       font-weight: 400;
@@ -166,6 +228,7 @@
 
     .artwork-story-copy p {
       margin: 0 0 26px;
+
       font-size: 1.05rem;
       line-height: 1.78;
       color: #4f4a43;
@@ -185,6 +248,7 @@
     .artwork-final h2 {
       margin: 18px 0 34px;
       max-width: 10ch;
+
       font-size: clamp(3.8rem,7vw,7rem);
       line-height: .92;
       font-weight: 400;
@@ -193,14 +257,16 @@
 
     /* VERSIÓN MÓVIL */
 
-    @media (max-width:800px) {
+    @media (max-width: 800px) {
 
       .site-header {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
+
         min-height: 118px !important;
         padding: 18px !important;
+
         overflow: visible !important;
       }
 
@@ -208,57 +274,91 @@
         display: none !important;
       }
 
-      #menuButton {
+      .desktop-language {
+        display: none !important;
+      }
+
+      .mobile-language {
+        display: flex;
+        justify-content: flex-start;
+
+        padding: 12px 0 18px;
+
+        border-bottom: 1px solid rgba(22,21,19,.18);
+      }
+
+      .mobile-language button {
+        font-size: 13px;
+      }
+
+      .mobile-menu-toggle {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+
         position: relative !important;
-        top: auto !important;
-        right: auto !important;
         z-index: 100001 !important;
+
         margin: 0 !important;
         padding: 10px 0 !important;
+
         border: 0 !important;
         background: transparent !important;
+
         color: #161513 !important;
+
         font-family: "DM Sans", sans-serif !important;
         font-size: 12px !important;
         font-weight: 500 !important;
+
         letter-spacing: .12em !important;
         text-transform: uppercase !important;
+
         cursor: pointer;
       }
 
-      #mobileMenu {
+      .mobile-nav {
         display: none;
+
         position: fixed;
-        top: 118px !important;
+        top: 118px;
         left: 0;
         right: 0;
+
         z-index: 999998;
+
         padding: 20px 18px 30px;
         background: #f3efe7;
+
         border-bottom: 1px solid rgba(22,21,19,.18);
       }
 
-      #mobileMenu.open {
+      .mobile-nav.open {
         display: block !important;
       }
 
-      #mobileMenu a {
+      .mobile-nav a {
         display: block;
         padding: 17px 0;
+
         border-bottom: 1px solid rgba(22,21,19,.18);
+
         color: #161513;
+
         font-family: "Playfair Display", serif;
         font-size: 32px;
         line-height: 1;
+
         text-decoration: none;
       }
+
+      /* IMAGEN MÓVIL */
 
       .artwork-image-section {
         padding: 40px 18px 0;
       }
+
+      /* INFORMACIÓN MÓVIL */
 
       .artwork-details {
         padding: 65px 18px 58px;
@@ -299,6 +399,12 @@
         margin-top: 26px !important;
       }
 
+      .artwork-purchase .artwork-button {
+        margin-top: 0 !important;
+      }
+
+      /* DESCRIPCIÓN MÓVIL */
+
       .artwork-story {
         padding: 72px 18px;
       }
@@ -317,6 +423,8 @@
         line-height: 1.72;
       }
 
+      /* CIERRE MÓVIL */
+
       .artwork-final {
         padding: 80px 18px 95px;
       }
@@ -328,6 +436,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
@@ -344,6 +453,8 @@
       href="./index.html"
       class="header-logo"
       aria-label="Inicio Corrales"
+      data-aria-es="Inicio Corrales"
+      data-aria-en="Corrales home"
     >
       <img
         src="./assets/Logo-header.PNG?v=4"
@@ -351,15 +462,74 @@
       >
     </a>
 
+    <!-- IDIOMAS EN COMPUTADORA -->
+
+    <div
+      class="language-switcher desktop-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+
+    </div>
+
+    <!-- NAVEGACIÓN -->
+
     <nav class="nav">
-      <a href="./index.html">Inicio</a>
-      <a href="./obra.html">Obra</a>
-      <a href="./artista.html">Artista</a>
-      <a href="./proceso.html">Proceso</a>
-      <a href="./contacto.html">Contacto</a>
+
+      <a
+        href="./index.html"
+        data-es="Inicio"
+        data-en="Home"
+      >
+        Inicio
+      </a>
+
+      <a
+        href="./obra.html"
+        data-es="Obra"
+        data-en="Artwork"
+      >
+        Obra
+      </a>
+
+      <a
+        href="./artista.html"
+        data-es="Artista"
+        data-en="Artist"
+      >
+        Artista
+      </a>
+
+      <a
+        href="./proceso.html"
+        data-es="Proceso"
+        data-en="Process"
+      >
+        Proceso
+      </a>
+
+      <a
+        href="./contacto.html"
+        data-es="Contacto"
+        data-en="Contact"
+      >
+        Contacto
+      </a>
+
     </nav>
 
     <button
+      class="mobile-menu-toggle"
       id="menuButton"
       type="button"
       aria-label="Abrir menú"
@@ -372,19 +542,78 @@
 
   <!-- MENÚ MÓVIL -->
 
-  <nav id="mobileMenu" aria-label="Navegación móvil">
-    <a href="./index.html">Inicio</a>
-    <a href="./obra.html">Obra</a>
-    <a href="./artista.html">Artista</a>
-    <a href="./proceso.html">Proceso</a>
-    <a href="./contacto.html">Contacto</a>
+  <nav
+    class="mobile-nav"
+    id="mobileMenu"
+    aria-label="Navegación móvil"
+  >
+
+    <div
+      class="language-switcher mobile-language"
+      role="group"
+      aria-label="Seleccionar idioma"
+    >
+
+      <button type="button" data-lang-button="es">
+        ES
+      </button>
+
+      <span>/</span>
+
+      <button type="button" data-lang-button="en">
+        EN
+      </button>
+
+    </div>
+
+    <a
+      href="./index.html"
+      data-es="Inicio"
+      data-en="Home"
+    >
+      Inicio
+    </a>
+
+    <a
+      href="./obra.html"
+      data-es="Obra"
+      data-en="Artwork"
+    >
+      Obra
+    </a>
+
+    <a
+      href="./artista.html"
+      data-es="Artista"
+      data-en="Artist"
+    >
+      Artista
+    </a>
+
+    <a
+      href="./proceso.html"
+      data-es="Proceso"
+      data-en="Process"
+    >
+      Proceso
+    </a>
+
+    <a
+      href="./contacto.html"
+      data-es="Contacto"
+      data-en="Contact"
+    >
+      Contacto
+    </a>
+
   </nav>
 
   <main>
 
-    <!-- IMAGEN -->
+    <!-- FOTOGRAFÍA DE LA OBRA -->
 
     <section class="artwork-image-section">
+
       <div class="artwork-image-inner">
 
         <img
@@ -393,16 +622,22 @@
         >
 
       </div>
+
     </section>
 
-    <!-- INFORMACIÓN -->
+    <!-- INFORMACIÓN DE LA OBRA -->
 
     <section class="artwork-details">
+
       <div class="artwork-details-inner">
 
         <div class="artwork-details-title">
 
-          <p class="section-label">
+          <p
+            class="section-label"
+            data-es="INFORMACIÓN"
+            data-en="INFORMATION"
+          >
             INFORMACIÓN
           </p>
 
@@ -416,56 +651,158 @@
 
           <div class="artwork-meta">
 
-            <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Artista</span>
-              <span class="artwork-meta-value">Ismael Corrales</span>
-            </div>
+            <!-- ARTISTA -->
 
             <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Año</span>
-              <span class="artwork-meta-value">2025</span>
+
+              <span
+                class="artwork-meta-label"
+                data-es="Artista"
+                data-en="Artist"
+              >
+                Artista
+              </span>
+
+              <span class="artwork-meta-value">
+                Ismael Corrales
+              </span>
+
             </div>
 
-            <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Técnica</span>
-              <span class="artwork-meta-value">Acrílico sobre lienzo</span>
-            </div>
+            <!-- AÑO -->
 
             <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Dimensiones</span>
-              <span class="artwork-meta-value">60 × 45 cm</span>
+
+              <span
+                class="artwork-meta-label"
+                data-es="Año"
+                data-en="Year"
+              >
+                Año
+              </span>
+
+              <span class="artwork-meta-value">
+                2025
+              </span>
+
             </div>
 
-            <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Estado</span>
-              <span class="artwork-meta-value">Disponible</span>
-            </div>
+            <!-- TÉCNICA -->
 
             <div class="artwork-meta-row">
-              <span class="artwork-meta-label">Precio</span>
-              <span class="artwork-meta-value">$80 USD</span>
+
+              <span
+                class="artwork-meta-label"
+                data-es="Técnica"
+                data-en="Medium"
+              >
+                Técnica
+              </span>
+
+              <span
+                class="artwork-meta-value"
+                data-es="Acrílico sobre lienzo"
+                data-en="Acrylic on canvas"
+              >
+                Acrílico sobre lienzo
+              </span>
+
+            </div>
+
+            <!-- DIMENSIONES -->
+
+            <div class="artwork-meta-row">
+
+              <span
+                class="artwork-meta-label"
+                data-es="Dimensiones"
+                data-en="Dimensions"
+              >
+                Dimensiones
+              </span>
+
+              <span class="artwork-meta-value">
+                60 × 45 cm
+              </span>
+
+            </div>
+
+            <!-- ESTADO -->
+
+            <div class="artwork-meta-row">
+
+              <span
+                class="artwork-meta-label"
+                data-es="Estado"
+                data-en="Status"
+              >
+                Estado
+              </span>
+
+              <span
+                class="artwork-meta-value"
+                data-es="Disponible"
+                data-en="Available"
+              >
+                Disponible
+              </span>
+
+            </div>
+
+            <!-- PRECIO -->
+
+            <div class="artwork-meta-row">
+
+              <span
+                class="artwork-meta-label"
+                data-es="Precio"
+                data-en="Price"
+              >
+                Precio
+              </span>
+
+              <span class="artwork-meta-value">
+                $80 USD
+              </span>
+
             </div>
 
           </div>
 
+          <!-- ADQUIRIR OBRA -->
+
           <div class="artwork-purchase">
-            <a href="./contacto.html" class="artwork-button">
+
+            <a
+              href="./contacto.html"
+              class="artwork-button"
+              data-es="Adquirir obra"
+              data-en="Acquire artwork"
+            >
               Adquirir obra
             </a>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- SOBRE LA OBRA -->
 
     <section class="artwork-story">
+
       <div class="artwork-story-inner">
 
         <div>
 
-          <p class="section-label">
+          <p
+            class="section-label"
+            data-es="SOBRE LA OBRA"
+            data-en="ABOUT THE ARTWORK"
+          >
             SOBRE LA OBRA
           </p>
 
@@ -477,40 +814,64 @@
 
         <div class="artwork-story-copy">
 
-          <p>
-            Esta obra explora un estado de introspección y oscuridad,
-            utilizando la figura, el espacio y el contraste para construir
-            una atmósfera de aislamiento y tensión.
+          <p
+            data-es="Esta obra explora un estado de introspección y oscuridad, utilizando la figura, el espacio y el contraste para construir una atmósfera de aislamiento y tensión."
+            data-en="This artwork explores a state of introspection and darkness, using the figure, space, and contrast to create an atmosphere of isolation and tension."
+          >
+            Esta obra explora un estado de introspección
+            y oscuridad, utilizando la figura, el espacio
+            y el contraste para construir una atmósfera
+            de aislamiento y tensión.
           </p>
 
-          <p>
-            La luz funciona como un elemento narrativo dentro de la escena:
-            aparece de forma contenida frente a una composición dominada
-            por tonos oscuros, reforzando la sensación de búsqueda interior.
+          <p
+            data-es="La luz funciona como un elemento narrativo dentro de la escena: aparece de forma contenida frente a una composición dominada por tonos oscuros, reforzando la sensación de búsqueda interior."
+            data-en="Light functions as a narrative element within the scene: it appears in a restrained manner against a composition dominated by dark tones, reinforcing the sense of an inner search."
+          >
+            La luz funciona como un elemento narrativo
+            dentro de la escena: aparece de forma contenida
+            frente a una composición dominada por tonos
+            oscuros, reforzando la sensación de búsqueda interior.
           </p>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- CIERRE -->
 
     <section class="artwork-final">
+
       <div class="artwork-final-inner">
 
-        <p class="eyebrow">
+        <p
+          class="eyebrow"
+          data-es="ADQUIRIR"
+          data-en="ACQUISITION"
+        >
           ADQUIRIR
         </p>
 
-        <h2>
+        <h2
+          data-es="Consultar disponibilidad."
+          data-en="Inquire about availability."
+        >
           Consultar disponibilidad.
         </h2>
 
-        <a href="./contacto.html" class="text-link">
+        <a
+          href="./contacto.html"
+          class="text-link"
+          data-es="CONTACTAR →"
+          data-en="CONTACT →"
+        >
           CONTACTAR →
         </a>
 
       </div>
+
     </section>
 
   </main>
@@ -525,90 +886,200 @@
         CORRALES
       </p>
 
-      <p>
+      <p
+        data-es="Arte contemporáneo · Originales sobre lienzo"
+        data-en="Contemporary art · Original works on canvas"
+      >
         Arte contemporáneo · Originales sobre lienzo
       </p>
 
     </div>
 
-    <a href="./obra.html">
+    <a
+      href="./obra.html"
+      data-es="Volver al archivo ↑"
+      data-en="Back to archive ↑"
+    >
       Volver al archivo ↑
     </a>
 
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- FUNCIONES -->
 
   <script>
 
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const header = document.querySelector(".site-header");
+    const menuButton =
+      document.getElementById("menuButton");
 
-    /* ABRIR Y CERRAR MENÚ */
+    const mobileMenu =
+      document.getElementById("mobileMenu");
 
-    menuButton.addEventListener("click", function() {
+    const header =
+      document.querySelector(".site-header");
 
-      const isOpen = mobileMenu.classList.toggle("open");
+    function currentLanguage() {
 
-      menuButton.textContent = isOpen ? "CERRAR" : "MENÚ";
+      return window.CorralesLanguage
+        ? window.CorralesLanguage.detect()
+        : "es";
+
+    }
+
+    function updateMenuButton(isOpen) {
+
+      const english =
+        currentLanguage() === "en";
+
+      menuButton.textContent = isOpen
+        ? (english ? "CLOSE" : "CERRAR")
+        : (english ? "MENU" : "MENÚ");
 
       menuButton.setAttribute(
         "aria-expanded",
-        isOpen ? "true" : "false"
+        String(isOpen)
       );
 
-      if (isOpen) {
-        header.classList.remove("header-hidden");
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? (english ? "Close menu" : "Cerrar menú")
+          : (english ? "Open menu" : "Abrir menú")
+      );
+
+    }
+
+    /* MENÚ MÓVIL */
+
+    menuButton.addEventListener(
+      "click",
+      function() {
+
+        const isOpen =
+          mobileMenu.classList.toggle("open");
+
+        updateMenuButton(isOpen);
+
+        if (isOpen) {
+          header.classList.remove("header-hidden");
+        }
+
       }
+    );
 
-    });
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function(link) {
 
-    /* CERRAR MENÚ AL SELECCIONAR UNA PÁGINA */
+        link.addEventListener(
+          "click",
+          function() {
 
-    mobileMenu.querySelectorAll("a").forEach(function(link) {
+            mobileMenu.classList.remove("open");
+            updateMenuButton(false);
 
-      link.addEventListener("click", function() {
-
-        mobileMenu.classList.remove("open");
-        menuButton.textContent = "MENÚ";
-        menuButton.setAttribute("aria-expanded", "false");
+          }
+        );
 
       });
 
-    });
+    /* CAMBIO DE IDIOMA */
+
+    window.addEventListener(
+      "corrales:languagechange",
+      function() {
+
+        const english =
+          currentLanguage() === "en";
+
+        updateMenuButton(
+          mobileMenu.classList.contains("open")
+        );
+
+        document.title =
+          "La noche oscura del alma — Ismael Corrales";
+
+        const description =
+          document.querySelector(
+            'meta[name="description"]'
+          );
+
+        if (description) {
+
+          description.setAttribute(
+            "content",
+            english
+              ? "La noche oscura del alma, an original painting by Ismael Corrales. Acrylic on canvas, 2025."
+              : "La noche oscura del alma, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2025."
+          );
+
+        }
+
+      }
+    );
 
     /* ENCABEZADO INTELIGENTE */
 
     let lastScrollY = window.scrollY;
 
-    window.addEventListener("scroll", function() {
+    window.addEventListener(
+      "scroll",
+      function() {
 
-      const currentScrollY = window.scrollY;
+        const currentScrollY =
+          window.scrollY;
 
-      if (mobileMenu.classList.contains("open")) {
-        header.classList.remove("header-hidden");
+        if (
+          mobileMenu.classList.contains("open")
+        ) {
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+          lastScrollY = currentScrollY;
+          return;
+
+        }
+
+        if (currentScrollY < 80) {
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+          lastScrollY = currentScrollY;
+          return;
+
+        }
+
+        if (currentScrollY > lastScrollY) {
+
+          header.classList.add(
+            "header-hidden"
+          );
+
+        } else if (
+          currentScrollY < lastScrollY
+        ) {
+
+          header.classList.remove(
+            "header-hidden"
+          );
+
+        }
+
         lastScrollY = currentScrollY;
-        return;
-      }
 
-      if (currentScrollY < 80) {
-        header.classList.remove("header-hidden");
-        lastScrollY = currentScrollY;
-        return;
-      }
-
-      if (currentScrollY > lastScrollY) {
-        header.classList.add("header-hidden");
-      } else if (currentScrollY < lastScrollY) {
-        header.classList.remove("header-hidden");
-      }
-
-      lastScrollY = currentScrollY;
-
-    }, { passive: true });
+      },
+      { passive: true }
+    );
 
   </script>
+
+  <!-- SISTEMA DE IDIOMAS -->
+
+  <script src="./idiomas.js?v=2"></script>
 
 </body>
 </html>
