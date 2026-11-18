@@ -1,78 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-
   <title>El peso del perdón — Ismael Corrales</title>
-
   <meta
     name="description"
     content="El peso del perdón, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2025."
   >
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
     rel="stylesheet"
   >
-
   <link rel="stylesheet" href="./styles.css?v=147">
-
   <style>
-
     /* ENCABEZADO */
-
     .site-header {
       position: sticky !important;
       top: 0 !important;
       z-index: 999999 !important;
-
       transition:
         transform .3s ease,
         opacity .3s ease !important;
-
       will-change: transform;
-
       background: rgba(243,239,231,.96) !important;
-
       backdrop-filter: blur(10px) !important;
       -webkit-backdrop-filter: blur(10px) !important;
-
       overflow: visible !important;
     }
-
     .site-header.header-hidden {
       transform: translateY(-110%) !important;
       opacity: 0 !important;
     }
-
     .mobile-menu-toggle,
     .mobile-nav {
       display: none;
     }
-
     /* SELECTOR DE IDIOMAS */
-
     .language-switcher {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 7px;
-
       font-family: "DM Sans", sans-serif;
       font-size: 11px;
       letter-spacing: .08em;
       white-space: nowrap;
     }
-
     .language-switcher button {
       padding: 5px 2px;
       border: 0;
@@ -81,374 +60,274 @@
       font: inherit;
       cursor: pointer;
     }
-
     .language-switcher button.active,
     .language-switcher button[aria-pressed="true"] {
       color: #161513;
       font-weight: 600;
     }
-
     .language-switcher span {
       color: #aaa49c;
     }
-
     .desktop-language {
       margin-left: auto;
       margin-right: 28px;
     }
-
     .mobile-language {
       display: none;
     }
-
     /* IMAGEN */
-
     .artwork-image-section {
       padding: 60px 28px 0;
     }
-
     .artwork-image-inner {
       max-width: 1420px;
       margin: 0 auto;
     }
-
     .artwork-image-inner img {
       display: block;
       width: 100%;
       height: auto;
     }
-
     /* INFORMACIÓN */
-
     .artwork-details {
       padding: 85px 28px 80px;
       border-bottom: 1px solid var(--line);
     }
-
     .artwork-details-inner {
       max-width: 1420px;
       margin: 0 auto;
-
       display: grid;
       grid-template-columns: .38fr 1.62fr;
       gap: 60px;
     }
-
     .artwork-details-title h2 {
       margin: 0;
       max-width: 10ch;
-
       font-size: clamp(3.3rem,6vw,6rem);
       line-height: .93;
       font-weight: 400;
       letter-spacing: -.03em;
     }
-
     .section-label {
       margin: 0 0 16px;
-
       font-family: "DM Sans", sans-serif;
       font-size: .68rem;
       font-weight: 500;
-
       letter-spacing: .15em;
       line-height: 1.4;
       text-transform: uppercase;
-
       color: #6f6a62;
     }
-
     /* DATOS TÉCNICOS */
-
     .artwork-meta {
       border-top: 1px solid var(--line);
     }
-
     .artwork-meta-row {
       display: grid;
       grid-template-columns: 145px 1fr;
       gap: 28px;
-
       padding: 20px 0;
       border-bottom: 1px solid var(--line);
     }
-
     .artwork-meta-label {
       font-size: .66rem;
       letter-spacing: .13em;
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .artwork-meta-value {
       font-size: .95rem;
       line-height: 1.5;
     }
-
     /* BOTÓN DE ADQUISICIÓN */
-
     .artwork-purchase {
       margin-top: 24px !important;
       padding: 0 !important;
     }
-
     .artwork-purchase .artwork-button {
       margin-top: 0 !important;
     }
-
     /* SOBRE LA OBRA */
-
     .artwork-story {
       padding: 90px 28px;
       border-bottom: 1px solid var(--line);
     }
-
     .artwork-story-inner {
       max-width: 1420px;
       margin: 0 auto;
-
       display: grid;
       grid-template-columns: .38fr 1.62fr;
       gap: 60px;
     }
-
     .artwork-story h2 {
       margin: 0;
       max-width: 10ch;
-
       font-size: clamp(3.3rem,6vw,6rem);
       line-height: .93;
       font-weight: 400;
       letter-spacing: -.03em;
     }
-
     .artwork-story-copy {
       max-width: 760px;
     }
-
     .artwork-story-copy p {
       margin: 0 0 26px;
-
       font-size: 1.05rem;
       line-height: 1.78;
       color: #4f4a43;
     }
-
     /* CIERRE */
-
     .artwork-final {
       padding: 100px 28px 115px;
     }
-
     .artwork-final-inner {
       max-width: 1420px;
       margin: 0 auto;
     }
-
     .artwork-final h2 {
       margin: 18px 0 34px;
       max-width: 10ch;
-
       font-size: clamp(3.8rem,7vw,7rem);
       line-height: .92;
       font-weight: 400;
       letter-spacing: -.035em;
     }
-
     /* VERSIÓN MÓVIL */
-
     @media (max-width: 800px) {
-
       .site-header {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-
         min-height: 118px !important;
         padding: 18px !important;
-
         overflow: visible !important;
       }
-
       .site-header .nav {
         display: none !important;
       }
-
       .desktop-language {
         display: none !important;
       }
-
       .mobile-language {
         display: flex;
         justify-content: flex-start;
-
         padding: 12px 0 18px;
-
         border-bottom: 1px solid rgba(22,21,19,.18);
       }
-
       .mobile-language button {
         font-size: 13px;
       }
-
       .mobile-menu-toggle {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-
         position: relative !important;
         z-index: 100001 !important;
-
         margin: 0 !important;
         padding: 10px 0 !important;
-
         border: 0 !important;
         background: transparent !important;
-
         color: #161513 !important;
-
         font-family: "DM Sans", sans-serif !important;
         font-size: 12px !important;
         font-weight: 500 !important;
-
         letter-spacing: .12em !important;
         text-transform: uppercase !important;
-
         cursor: pointer;
       }
-
       .mobile-nav {
         display: none;
-
         position: fixed;
         top: 118px;
         left: 0;
         right: 0;
-
         z-index: 999998;
-
         padding: 20px 18px 30px;
         background: #f3efe7;
-
         border-bottom: 1px solid rgba(22,21,19,.18);
       }
-
       .mobile-nav.open {
         display: block !important;
       }
-
       .mobile-nav a {
         display: block;
         padding: 17px 0;
-
         border-bottom: 1px solid rgba(22,21,19,.18);
-
         color: #161513;
-
         font-family: "Playfair Display", serif;
         font-size: 32px;
         line-height: 1;
-
         text-decoration: none;
       }
-
       /* IMAGEN MÓVIL */
-
       .artwork-image-section {
         padding: 40px 18px 0;
       }
-
       /* INFORMACIÓN MÓVIL */
-
       .artwork-details {
         padding: 65px 18px 58px;
       }
-
       .artwork-details-inner {
         display: block;
       }
-
       .artwork-details-title {
         margin-bottom: 34px;
       }
-
       .section-label {
         margin-bottom: 12px;
         font-size: .62rem;
       }
-
       .artwork-details-title h2 {
         font-size: clamp(3rem,14vw,5rem);
       }
-
       .artwork-meta-row {
         grid-template-columns: 105px 1fr;
         gap: 15px;
         padding: 17px 0;
       }
-
       .artwork-meta-label {
         font-size: .6rem;
       }
-
       .artwork-meta-value {
         font-size: .9rem;
       }
-
       .artwork-purchase {
         margin-top: 26px !important;
       }
-
       .artwork-purchase .artwork-button {
         margin-top: 0 !important;
       }
-
       /* DESCRIPCIÓN MÓVIL */
-
       .artwork-story {
         padding: 72px 18px;
       }
-
       .artwork-story-inner {
         display: block;
       }
-
       .artwork-story h2 {
         margin-bottom: 34px;
         font-size: clamp(3rem,14vw,5rem);
       }
-
       .artwork-story-copy p {
         font-size: .98rem;
         line-height: 1.72;
       }
-
       /* CIERRE MÓVIL */
-
       .artwork-final {
         padding: 80px 18px 95px;
       }
-
       .artwork-final h2 {
         font-size: clamp(3.4rem,15vw,5.2rem);
       }
-
     }
-
   </style>
-
 </head>
-
 <body>
-
   <!-- ENCABEZADO -->
-
   <header class="site-header">
-
     <a href="./index.html" class="brand">
       CORRALES
     </a>
-
     <a
       href="./index.html"
       class="header-logo"
@@ -461,31 +340,22 @@
         alt=""
       >
     </a>
-
     <!-- IDIOMAS EN COMPUTADORA -->
-
     <div
       class="language-switcher desktop-language"
       role="group"
       aria-label="Seleccionar idioma"
     >
-
       <button type="button" data-lang-button="es">
         ES
       </button>
-
       <span>/</span>
-
       <button type="button" data-lang-button="en">
         EN
       </button>
-
     </div>
-
     <!-- NAVEGACIÓN -->
-
     <nav class="nav">
-
       <a
         href="./index.html"
         data-es="Inicio"
@@ -493,7 +363,6 @@
       >
         Inicio
       </a>
-
       <a
         href="./obra.html"
         data-es="Obra"
@@ -501,7 +370,6 @@
       >
         Obra
       </a>
-
       <a
         href="./artista.html"
         data-es="Artista"
@@ -509,7 +377,6 @@
       >
         Artista
       </a>
-
       <a
         href="./proceso.html"
         data-es="Proceso"
@@ -517,7 +384,6 @@
       >
         Proceso
       </a>
-
       <a
         href="./contacto.html"
         data-es="Contacto"
@@ -525,9 +391,7 @@
       >
         Contacto
       </a>
-
     </nav>
-
     <button
       class="mobile-menu-toggle"
       id="menuButton"
@@ -537,35 +401,26 @@
     >
       MENÚ
     </button>
-
   </header>
-
   <!-- MENÚ MÓVIL -->
-
   <nav
     class="mobile-nav"
     id="mobileMenu"
     aria-label="Navegación móvil"
   >
-
     <div
       class="language-switcher mobile-language"
       role="group"
       aria-label="Seleccionar idioma"
     >
-
       <button type="button" data-lang-button="es">
         ES
       </button>
-
       <span>/</span>
-
       <button type="button" data-lang-button="en">
         EN
       </button>
-
     </div>
-
     <a
       href="./index.html"
       data-es="Inicio"
@@ -573,7 +428,6 @@
     >
       Inicio
     </a>
-
     <a
       href="./obra.html"
       data-es="Obra"
@@ -581,7 +435,6 @@
     >
       Obra
     </a>
-
     <a
       href="./artista.html"
       data-es="Artista"
@@ -589,7 +442,6 @@
     >
       Artista
     </a>
-
     <a
       href="./proceso.html"
       data-es="Proceso"
@@ -597,7 +449,6 @@
     >
       Proceso
     </a>
-
     <a
       href="./contacto.html"
       data-es="Contacto"
@@ -605,34 +456,21 @@
     >
       Contacto
     </a>
-
   </nav>
-
   <main>
-
     <!-- FOTOGRAFÍA DE LA OBRA -->
-
     <section class="artwork-image-section">
-
       <div class="artwork-image-inner">
-
         <img
           src="./assets/perdon.jpg"
           alt="El peso del perdón, pintura de Ismael Corrales"
         >
-
       </div>
-
     </section>
-
     <!-- INFORMACIÓN DE LA OBRA -->
-
     <section class="artwork-details">
-
       <div class="artwork-details-inner">
-
         <div class="artwork-details-title">
-
           <p
             class="section-label"
             data-es="INFORMACIÓN"
@@ -640,21 +478,14 @@
           >
             INFORMACIÓN
           </p>
-
           <h2>
             El peso del perdón.
           </h2>
-
         </div>
-
         <div>
-
           <div class="artwork-meta">
-
             <!-- ARTISTA -->
-
             <div class="artwork-meta-row">
-
               <span
                 class="artwork-meta-label"
                 data-es="Artista"
@@ -662,17 +493,12 @@
               >
                 Artista
               </span>
-
               <span class="artwork-meta-value">
                 Ismael Corrales
               </span>
-
             </div>
-
             <!-- AÑO -->
-
             <div class="artwork-meta-row">
-
               <span
                 class="artwork-meta-label"
                 data-es="Año"
@@ -680,17 +506,12 @@
               >
                 Año
               </span>
-
               <span class="artwork-meta-value">
                 2025
               </span>
-
             </div>
-
             <!-- TÉCNICA -->
-
             <div class="artwork-meta-row">
-
               <span
                 class="artwork-meta-label"
                 data-es="Técnica"
@@ -698,7 +519,6 @@
               >
                 Técnica
               </span>
-
               <span
                 class="artwork-meta-value"
                 data-es="Acrílico sobre lienzo"
@@ -706,13 +526,9 @@
               >
                 Acrílico sobre lienzo
               </span>
-
             </div>
-
             <!-- DIMENSIONES -->
-
             <div class="artwork-meta-row">
-
               <span
                 class="artwork-meta-label"
                 data-es="Dimensiones"
@@ -720,17 +536,12 @@
               >
                 Dimensiones
               </span>
-
               <span class="artwork-meta-value">
                 60 × 50 cm
               </span>
-
             </div>
-
             <!-- ESTADO -->
-
             <div class="artwork-meta-row">
-
               <span
                 class="artwork-meta-label"
                 data-es="Estado"
@@ -738,7 +549,6 @@
               >
                 Estado
               </span>
-
               <span
                 class="artwork-meta-value"
                 data-es="Disponible"
@@ -746,13 +556,9 @@
               >
                 Disponible
               </span>
-
             </div>
-
             <!-- PRECIO -->
-
             <div class="artwork-meta-row">
-
               <span
                 class="artwork-meta-label"
                 data-es="Precio"
@@ -760,44 +566,31 @@
               >
                 Precio
               </span>
-
               <span class="artwork-meta-value">
                 $80 USD
               </span>
-
             </div>
-
           </div>
-
-          <!-- ADQUIRIR OBRA -->
-
+          <!-- ADQUIRIR OBRA — STRIPE -->
           <div class="artwork-purchase">
-
             <a
-              href="./contacto.html"
+              href="https://buy.stripe.com/fZu7sEaQ6cK75SR2RPbAs01"
               class="artwork-button"
               data-es="Adquirir obra"
               data-en="Acquire artwork"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Adquirir obra
             </a>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
-
     <!-- SOBRE LA OBRA -->
-
     <section class="artwork-story">
-
       <div class="artwork-story-inner">
-
         <div>
-
           <p
             class="section-label"
             data-es="SOBRE LA OBRA"
@@ -805,15 +598,11 @@
           >
             SOBRE LA OBRA
           </p>
-
           <h2>
             El peso del perdón.
           </h2>
-
         </div>
-
         <div class="artwork-story-copy">
-
           <p
             data-es="La obra plantea una escena vinculada con la fe, la culpa y la posibilidad del perdón. La relación entre las figuras convierte el gesto cotidiano en una imagen de tensión, vulnerabilidad y reflexión."
             data-en="The artwork presents a scene connected to faith, guilt, and the possibility of forgiveness. The relationship between the figures transforms an everyday gesture into an image of tension, vulnerability, and reflection."
@@ -824,7 +613,6 @@
             gesto cotidiano en una imagen de tensión,
             vulnerabilidad y reflexión.
           </p>
-
           <p
             data-es="La composición utiliza el contraste entre luz y oscuridad para dirigir la mirada hacia el encuentro entre los personajes, reforzando el peso emocional de la escena."
             data-en="The composition uses the contrast between light and darkness to draw the viewer's attention to the encounter between the figures, reinforcing the emotional weight of the scene."
@@ -834,19 +622,12 @@
             hacia el encuentro entre los personajes,
             reforzando el peso emocional de la escena.
           </p>
-
         </div>
-
       </div>
-
     </section>
-
     <!-- CIERRE -->
-
     <section class="artwork-final">
-
       <div class="artwork-final-inner">
-
         <p
           class="eyebrow"
           data-es="ADQUIRIR"
@@ -854,14 +635,12 @@
         >
           ADQUIRIR
         </p>
-
         <h2
           data-es="Consultar disponibilidad."
           data-en="Inquire about availability."
         >
           Consultar disponibilidad.
         </h2>
-
         <a
           href="./contacto.html"
           class="text-link"
@@ -870,32 +649,22 @@
         >
           CONTACTAR →
         </a>
-
       </div>
-
     </section>
-
   </main>
-
   <!-- PIE DE PÁGINA -->
-
   <footer class="footer">
-
     <div>
-
       <p class="section-number">
         CORRALES
       </p>
-
       <p
         data-es="Arte contemporáneo · Originales sobre lienzo"
         data-en="Contemporary art · Original works on canvas"
       >
         Arte contemporáneo · Originales sobre lienzo
       </p>
-
     </div>
-
     <a
       href="./obra.html"
       data-es="Volver al archivo ↑"
@@ -903,184 +672,125 @@
     >
       Volver al archivo ↑
     </a>
-
   </footer>
-
   <!-- FUNCIONES -->
-
   <script>
-
     const menuButton =
       document.getElementById("menuButton");
-
     const mobileMenu =
       document.getElementById("mobileMenu");
-
     const header =
       document.querySelector(".site-header");
-
     function currentLanguage() {
-
       return window.CorralesLanguage
         ? window.CorralesLanguage.detect()
         : "es";
-
     }
-
     function updateMenuButton(isOpen) {
-
       const english =
         currentLanguage() === "en";
-
       menuButton.textContent = isOpen
         ? (english ? "CLOSE" : "CERRAR")
         : (english ? "MENU" : "MENÚ");
-
       menuButton.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
-
       menuButton.setAttribute(
         "aria-label",
         isOpen
           ? (english ? "Close menu" : "Cerrar menú")
           : (english ? "Open menu" : "Abrir menú")
       );
-
     }
-
     /* MENÚ MÓVIL */
-
     menuButton.addEventListener(
       "click",
       function() {
-
         const isOpen =
           mobileMenu.classList.toggle("open");
-
         updateMenuButton(isOpen);
-
         if (isOpen) {
           header.classList.remove("header-hidden");
         }
-
       }
     );
-
     mobileMenu
       .querySelectorAll("a")
       .forEach(function(link) {
-
         link.addEventListener(
           "click",
           function() {
-
             mobileMenu.classList.remove("open");
             updateMenuButton(false);
-
           }
         );
-
       });
-
     /* CAMBIO DE IDIOMA */
-
     window.addEventListener(
       "corrales:languagechange",
       function() {
-
         const english =
           currentLanguage() === "en";
-
         updateMenuButton(
           mobileMenu.classList.contains("open")
         );
-
         document.title =
           "El peso del perdón — Ismael Corrales";
-
         const description =
           document.querySelector(
             'meta[name="description"]'
           );
-
         if (description) {
-
           description.setAttribute(
             "content",
             english
               ? "El peso del perdón, an original painting by Ismael Corrales. Acrylic on canvas, 2025."
               : "El peso del perdón, pintura original de Ismael Corrales. Acrílico sobre lienzo, 2025."
           );
-
         }
-
       }
     );
-
     /* ENCABEZADO INTELIGENTE */
-
     let lastScrollY = window.scrollY;
-
     window.addEventListener(
       "scroll",
       function() {
-
         const currentScrollY =
           window.scrollY;
-
         if (
           mobileMenu.classList.contains("open")
         ) {
-
           header.classList.remove(
             "header-hidden"
           );
-
           lastScrollY = currentScrollY;
           return;
-
         }
-
         if (currentScrollY < 80) {
-
           header.classList.remove(
             "header-hidden"
           );
-
           lastScrollY = currentScrollY;
           return;
-
         }
-
         if (currentScrollY > lastScrollY) {
-
           header.classList.add(
             "header-hidden"
           );
-
         } else if (
           currentScrollY < lastScrollY
         ) {
-
           header.classList.remove(
             "header-hidden"
           );
-
         }
-
         lastScrollY = currentScrollY;
-
       },
       { passive: true }
     );
-
   </script>
-
   <!-- SISTEMA DE IDIOMAS -->
-
   <script src="./idiomas.js?v=2"></script>
-
 </body>
 </html>
